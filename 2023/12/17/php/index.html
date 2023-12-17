@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——tags | Hexo</title>
+  <title>我的技术与生活——php | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/7B3620DD7F3C761C9C25D3F134833D7A_1700579656162.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——tags`
+    document.title = `我的技术与生活——php`
   </script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -347,14 +347,274 @@
       <div id="main-container" class="main-container">
 
 
-  <link rel="stylesheet" href="/css/partial/tags.css" />
+  <link rel="stylesheet" href="/css/partial/article.css" />
 
-<div class="tags">
-  <h2 class="tags-title">小站标签</h2>
-  <div class="tags-list">
-    <a href="/tags/study/" style="font-size: 10px;">-study</a>
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title">php</h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          <div class="article-info--categories">
+            <span>分类：</span>
+            
+          </div>
+          
+          
+          <div class="article-info--tags">
+            <span>标签：</span>
+            
+          </div>
+          
+          <p class="article-info--date">日期：2023-12-17 13:59:53</p>
+        </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
+      </div>
+    </div>
+    <article class="article-content markdown-body">
+      <p>php格式：</p>
+<?php
+
+...
+
+?>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><hr>
+<p>定义变量：</p>
+<p>$+变量名。</p>
+<p>赋值变量,变量前一定要带着$;</p>
+<p><strong>变量名不能以数字开头，不建议使用汉字</strong></p>
+<hr>
+<p>打印变量</p>
+<p>echo相当于printf。 echo $变量名，’&lt;标签&gt;’；</p>
+<hr>
+<p>删除变量用 unset(变量名)</p>
+<p>unset($var2);</p>
+<hr>
+<p>预定义变量：</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png" alt="image-20231217141534425"></p>
+<hr>
+<p>可变变量</p>
+<p>$a&#x3D;’b’;</p>
+<p>$b&#x3D;’aa’;</p>
+<p>那么$$a&#x3D;’aa’;</p>
+<hr>
+<p>常量定义：</p>
+<p>1.define(‘常量名’，常量值)；</p>
+<p>2.const 常量名&#x3D;常量值；</p>
+<p>常量定义不需要加$;</p>
+<p>define定义的常量名可以是特殊符号，若是特殊符号，则需要用echo constant（’ 常量名’）来打印；const 不能用特殊符号；</p>
+<hr>
+<p>系统常量：</p>
+<p>系统自带的常量，可直接用；</p>
+<p>PHP_VERSION:  php版本</p>
+<p>PHP_INT_SIZE:   int类型大小</p>
+<p>PHP_INT_MAX:   int可表示最大值</p>
+<p>系统魔术常量:  双下划线开始+常量名+双下划线结束，可随环境变换而变换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__DIR__: 当前被执行的脚本所在电脑的绝对路径</span><br><span class="line">__FILE__:当前被执行的脚本所在电脑的绝对路径（带自己文件的名字）</span><br><span class="line">__LINE__:当前所属的行数</span><br><span class="line">__NAMESPACE__:当前所属的命名空间</span><br><span class="line">__CLASS__:当前所属的类</span><br><span class="line">__METHOD__:当前所属的方法</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="php数据类型"><a href="#php数据类型" class="headerlink" title="php数据类型"></a>php数据类型</h2><p>基本类型：</p>
+<pre><code> 整型：int
+</code></pre>
+<p>​	浮点型：float&#x2F;double</p>
+<p>​	字符串型: string</p>
+<p>​	布尔类型:  bool&#x2F;boolean</p>
+<p>复合数据类型:</p>
+<p>​	对象类型：object,存放对象（面向对象）</p>
+<p>​	数组类型：array，存储多个数据（一次性）</p>
+<p>特殊数据类型:</p>
+<p>​	资源类型：resource，存放资源数据（php外部数据，如数据库，文件）</p>
+<p>​	空类型：NULL</p>
+<hr>
+<p>类型转换：</p>
+<p>1.自动转换：系统根据需求自己判定，自己转换</p>
+<p>2.强制转换：认为根据需求手动转换  echo（类型）变量名；</p>
+<p>说明：</p>
+<p>1.布尔ture&#x3D;1，false&#x3D;0</p>
+<p>2.以字母开头的字符串，永远为0；</p>
+<p>3.以数字开头的字符串，取到碰到字符串为止（不会同时包含两个小数点）</p>
+<hr>
+<p>类型判断：</p>
+<p>用一组类型判断函数来判断.</p>
+<p>var_dump(is_xxx(变量名))： xxx为类型名,如果变量的类型为xxx，则返回 1，反之，返回0；</p>
+<p>var_dump(变量名)： 直接返回类型；</p>
+<p>Gettype(变量名):  得到该类型对应字符串；</p>
+<p>Settype(变量名，类型) ：设定数据类型，与强制转换不同</p>
+<p>​	1.强制类型转换，是转换数据值；</p>
+<p>​	2.settype是改变数据本身类型；</p>
+<hr>
+<p>整数类型进制：</p>
+<p>$a&#x3D;120; &#x2F;&#x2F;10进制</p>
+<p>$a&#x3D;0b110; &#x2F;&#x2F;2… 数字前加0b</p>
+<p>$a&#x3D;0120;  &#x2F;&#x2F;8…                  0</p>
+<p>$a&#x3D;0x120; &#x2F;&#x2F;16…                0x</p>
+<p>php默认转换10进制输出</p>
+<p>decbin():    10-&gt;2</p>
+<p>decoct():     10-&gt;8</p>
+<p>dechex():     10-&gt;16</p>
+<p>bindec():        2-&gt;10</p>
+<p>dec: 十进制  bin：二进制   oct：八进制   hex：十六进制</p>
+<hr>
+<p>判断变量值是否存在：</p>
+<p>empty（变量名）；</p>
+<p>isset（变量名）；</p>
+<p>区别：</p>
+<p>empty 如果值为空或0；返回true</p>
+<p>isset   只有值不存在才返回true</p>
+<hr>
+<p>运算符：</p>
+<p>比较运算符：</p>
+<pre><code> ===  全等于，左边与右边相同：大小以及数据类型相同，返回true
+</code></pre>
+<p>​	!&#x3D;&#x3D;    不全等于，只要大小或类型不同，就返回false；</p>
+<p>逻辑运算符：</p>
+<p>​	跟c一样；</p>
+<p>连接运算符：</p>
+<p>​	. ：将两个字符串连起来；</p>
+<p>​	.&#x3D;：a.&#x3D;b;&#x3D;&gt;a&#x3D;a.b;</p>
+<p>错误运算符：</p>
+<p>​	@：在可能出错的表达式前加@；</p>
+<p>​	错误运算符通常在生产环境（上线）会用到，在开发时不会用到</p>
+<p>三目运算符：</p>
+<p>​	跟c一样；</p>
+<p>自操作运算符：</p>
+<p>​	++；</p>
+<p>​	–；</p>
+<hr>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>if-else和swith-case</p>
+<p>跟c差不多</p>
+<hr>
+<p>for循环</p>
+<p>跟c差不多</p>
+<p>PHP_EOF：回车换行；</p>
+<p>break n（n&#x3D;1，2，3……）；跳出n个循环；</p>
+<hr>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数值数组定义:1.$var1&#x3D;array(“ …”,”… “,”… “);</p>
+<p>​				2.$var1&#x3D;[“…”,”…’’,”…”];</p>
+<p>​				3.$var1&#x3D;[];</p>
+<p>​					$var1[3]&#x3D;’a’;</p>
+<p>关联数组：</p>
+<p>​	$var1&#x3D;[</p>
+<pre><code>    &quot;test&quot;=&gt;&quot;da&quot;,“0”,&quot;1&quot;,&quot;2&quot;
+</code></pre>
+<p>​	];</p>
+<p>​	$var1[test]&#x3D;da;</p>
+<hr>
+<p>数组长度：count($var1);</p>
+<hr>
+<p>数组遍历：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.foreach($var1 as  $value)  echo $value; </span><br><span class="line">         2.foreach($var1 as $key =&gt;$value)  key:下标</span><br><span class="line">         注意：key和value可以自命名</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>多维数组：</p>
+<p>$arr&#x3D;[</p>
+<p>“0”&#x3D;&gt;[</p>
+<pre><code>          &quot;a&quot;,&quot;b
+</code></pre>
+<p>​          ],</p>
+<p>“1”&#x3D;&gt;[</p>
+<p>​				“c”,”d”;</p>
+<p>​          ],</p>
+<p>“3”&#x3D;&gt;”f”</p>
+<p>];</p>
+<p>遍历跟c差不多，只不过用多个foreach遍历</p>
+<hr>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>​    内置函数：</p>
+<p>​        date(“Y-m-d H:i:s”)</p>
+<hr>
+<p>定义函数：</p>
+<p>function  名字（类型 变量名）{</p>
+<p>   ….</p>
+<p>return …；</p>
+<p>}</p>
+<p>严格模式 ：declare（strict_type&#x3D;1）; 使用严格模式后，函数的变量类型要与定义时的类型一致</p>
+<hr>
+<p>变量作用域</p>
+<p>​	跟c差不多；</p>
+<p>​	函数内部是局部变量，外部是全局变量，如果想用全局变量，得在变量前加global；</p>
+<hr>
+<p>static作用域</p>
+<p>一般，函数用完后，其内部的局部变量就会被删除，要想不被删除，在变量前使用static。</p>
+<hr>
+
+    </article>
+    
+    <div class="read-nums">
+      <!-- id 将作为查询条件 -->
+      <span id="2023/12/17/php/" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">浏览量</em>
+        <i class="leancloud-visitors-count"></i>
+      </span>
+    </div>
+    <div class="comments-intro">
+      <h2>评论区</h2>
+      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
+    </div>
+    <div id="vcomments" class="vcomments"></div>
+    
+  </div>
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">php数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">3.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">4.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li></ol>
+      </div>
+      
+        <div class="catelogue catelogue-2">
+           
+          
+            <p>
+              <span>下一篇</span>
+              <a href="/2023/12/09/HTML学习篇/">HTML学习篇</a>
+            </p>
+          
+        </div>
+      
+    </div>
   </div>
 </div>
+
+
+<script>
+  // var定义，避免pjax重新进来造成的重复声明错误
+  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
+  new Valine({
+    el: '#vcomments',
+    appId: config.appId,
+    appKey: config.appKey,
+    placeholder: config.placeholder,
+    meta: config.meta,
+    recordIP: config.recordIP,
+    visitor: config.visitor,
+    enableQQ: config.enableQQ,
+    path: '2023/12/17/php/'
+  })
+</script>
+
+
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
+</script> 
 
 </div>
       <div class="main-right-wrapper"><div class="main-right">
