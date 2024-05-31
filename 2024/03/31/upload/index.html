@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>upload | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/kinsey973/yun.svg"><link rel="mask-icon" href="/kinsey973/yun.svg" color="#0078E7"><link rel="preload" href="/kinsey973/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/kinsey973/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"github.com","root":"/kinsey973/","title":"云游君的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://waline.yunyoujun.cn","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/kinsey973/css/hexo-theme-yun.css"><script src="/kinsey973/js/hexo-theme-yun.js" type="module"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="upload1-js绕过1.验证合法性 当我们上传文件时，如果文件是php格式，就会被拦截，抓包抓不到任何东西  2.绕过拦截 为了绕过拦截，我们可以修改文件格式，把php格式修改成jpg格式，此时就成功上传了文件（文件内部是一句话木马，可以创建一个后门，进而就可以操控服务器），通过了前端认证  3.修改文件信息 我们要上传的是一个php文件，因此，我们要修改文件格式，我们在burp进行 修改，再">
+<meta property="og:type" content="article">
+<meta property="og:title" content="upload">
+<meta property="og:url" content="https://github.com/kinsey973/2024/03/31/upload/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="upload1-js绕过1.验证合法性 当我们上传文件时，如果文件是php格式，就会被拦截，抓包抓不到任何东西  2.绕过拦截 为了绕过拦截，我们可以修改文件格式，把php格式修改成jpg格式，此时就成功上传了文件（文件内部是一句话木马，可以创建一个后门，进而就可以操控服务器），通过了前端认证  3.修改文件信息 我们要上传的是一个php文件，因此，我们要修改文件格式，我们在burp进行 修改，再">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171706993.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171708232.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171714127.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171718701.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171900817.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171908193.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171917597.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171921410.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171922053.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403172030105.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403172033328.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182109775.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182107451.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182111690.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182145690.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191439854.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191452092.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191526468.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191545041.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191549499.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191605160.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191607330.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192123103.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192127294.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192140326.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192156962.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192158979.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192203735.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211917071.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211922394.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211923935.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211925297.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403212001738.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403222022491.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210321170454498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210321170626734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210321170639692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403232015432.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403241418612.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021032117224664.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210321172305338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210321172610126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021032117270367.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2024-03-31T11:54:18.000Z">
+<meta property="article:modified_time" content="2024-03-31T11:54:50.680Z">
+<meta property="article:author" content="kinsey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171706993.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/kinsey973/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/kinsey973/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/kinsey973/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/kinsey973/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/kinsey973/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/kinsey973/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">23</span></a></div><div class="site-state-item"><a href="/kinsey973/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/kinsey973/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">2</span></a></div><a class="site-state-item hty-icon-button" href="/kinsey973/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/kisey973" title="Twitter" target="_blank" style="color:#1da1f2"><span class="icon iconify" data-icon="ri:twitter-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/kinsey973/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/kinsey973/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#upload1-js%E7%BB%95%E8%BF%87"><span class="toc-number">1.</span> <span class="toc-text">upload1-js绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-2-content-type%E7%BB%95%E8%BF%87"><span class="toc-number">2.</span> <span class="toc-text">upload -2 content-type绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-3-%E7%89%B9%E6%AE%8A%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">3.</span> <span class="toc-text">upload-3 特殊后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-4-htaccess%E7%BB%95%E8%BF%87%EF%BC%88%E9%BB%91%E5%90%8D%E5%8D%95%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">upload-4 .htaccess绕过（黑名单）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload5-user-ini%E7%BB%95%E8%BF%87"><span class="toc-number">5.</span> <span class="toc-text">upload5 .user.ini绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-6-%E5%A4%A7%E5%86%99%E7%BB%95%E8%BF%87"><span class="toc-number">6.</span> <span class="toc-text">upload-6 大写绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-7-%E7%A9%BA%E6%A0%BC%E7%BB%95%E8%BF%87"><span class="toc-number">7.</span> <span class="toc-text">upload-7 空格绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload%E2%80%948%E5%90%8E%E7%BC%80%E5%8A%A0%E7%82%B9%E7%BB%95%E8%BF%87"><span class="toc-number">8.</span> <span class="toc-text">upload—8后缀加点绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-9-DATA%E7%BB%95%E8%BF%87"><span class="toc-number">9.</span> <span class="toc-text">upload-9 $DATA绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-10-%E7%82%B9%E7%A9%BA%E6%A0%BC%E7%82%B9%E7%BB%95%E8%BF%87"><span class="toc-number">10.</span> <span class="toc-text">upload-10 点空格点绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-11-%E5%8F%8C%E5%86%99%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">11.</span> <span class="toc-text">upload-11 双写后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-12-00%E6%88%AA%E6%96%AD%E7%BB%95%E8%BF%87"><span class="toc-number">12.</span> <span class="toc-text">upload-12  %00截断绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-13-0x00%E6%88%AA%E6%96%AD%EF%BC%880x%E6%98%AF16%E8%BF%9B%E5%88%B6%E7%9A%84%E6%A0%87%E8%AF%86%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">upload-13 0x00截断（0x是16进制的标识）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-14-%E5%AD%97%E8%8A%82%E6%A0%87%E8%AF%86%E7%BB%95%E8%BF%87"><span class="toc-number">14.</span> <span class="toc-text">upload-14 字节标识绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-15-%E5%9B%BE%E7%89%87%E9%A9%AC%E7%BB%95%E8%BF%87"><span class="toc-number">15.</span> <span class="toc-text">upload-15 图片马绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-16%E5%9B%BE%E7%89%87%E9%A9%AC%E7%BB%95%E8%BF%87"><span class="toc-number">16.</span> <span class="toc-text">upload-16图片马绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-17-%E5%9B%BE%E7%89%87%E7%9A%84%E4%BA%8C%E6%AC%A1%E6%B8%B2%E6%9F%93"><span class="toc-number">17.</span> <span class="toc-text">upload-17 图片的二次渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-18-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89"><span class="toc-number">18.</span> <span class="toc-text">upload-18 条件竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-19-apache%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89"><span class="toc-number">19.</span> <span class="toc-text">upload-19 apache解析漏洞+条件竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">20.</span> <span class="toc-text">upload 后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-21%E5%AE%A1%E8%AE%A1-%E6%95%B0%E7%BB%84%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">21.</span> <span class="toc-text">upload-21审计+数组后缀绕过</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://github.com/kinsey973/kinsey973/2024/03/31/upload/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">upload<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/upload.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-03-31 19:54:18" itemprop="dateCreated datePublished" datetime="2024-03-31T19:54:18+08:00">2024-03-31</time></div><span class="leancloud_visitors" id="/kinsey973/2024/03/31/upload/" data-flag-title="upload"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/kinsey973/2024/03/31/upload/"></span></span></a><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="upload1-js绕过"><a href="#upload1-js绕过" class="headerlink" title="upload1-js绕过"></a>upload1-js绕过</h3><p>1.验证合法性</p>
+<p>当我们上传文件时，如果文件是php格式，就会被拦截，抓包抓不到任何东西</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171706993.png" alt="image-20240317170606819" loading="lazy"></p>
+<p>2.绕过拦截</p>
+<p>为了绕过拦截，我们可以修改文件格式，把php格式修改成jpg格式，此时就成功上传了文件（文件内部是一句话木马，可以创建一个后门，进而就可以操控服务器），通过了前端认证</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171708232.png" alt="image-20240317170835134" loading="lazy"></p>
+<p>3.修改文件信息</p>
+<p>我们要上传的是一个php文件，因此，我们要修改文件格式，我们在burp进行</p>
+<p>修改，再发送出去</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171714127.png" alt="image-20240317171413025" loading="lazy"></p>
+<p>4.在新标签页打开上传的图片</p>
+<p>我们打开后可以发现图片格式是php，说明我们的一句话木马已成功上传到网站</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171718701.png" alt="image-20240317171823663" loading="lazy"></p>
+<p>5.添加url</p>
+<p>在蚁剑上添加url，输入密码，就能访问服务器了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171900817.png" alt="image-20240317190050680" loading="lazy"></p>
+<hr>
+<p>还可以通过检查代码来进行</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171908193.png" alt="image-20240317190855090" loading="lazy"></p>
+<p>我们可以看到这个框架绑定了一个js，我们可以直接return true来绕过，或者禁用js</p>
+<hr>
+<h3 id="upload-2-content-type绕过"><a href="#upload-2-content-type绕过" class="headerlink" title="upload -2 content-type绕过"></a>upload -2 content-type绕过</h3><p>1.验证合法性</p>
+<p>上传php文件，发现可以抓到包，说明验证是在后端进行的</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171917597.png" alt="image-20240317191746465" loading="lazy"></p>
+<p>2.判断代码对哪部分进行了验证</p>
+<p>上传图片，删掉content-type，如果报错，说明对这部分进行了验证</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171921410.png" alt="image-20240317192130352" loading="lazy"></p>
+<p>3.修改格式</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403171922053.png" alt="image-20240317192206503" loading="lazy"></p>
+<p>我们发现，php格式的返回类型跟jpeg格式的不一样，我们可以把php的返回类型改成和jpeg的一样就可以上传了</p>
+<hr>
+<h3 id="upload-3-特殊后缀绕过"><a href="#upload-3-特殊后缀绕过" class="headerlink" title="upload-3 特殊后缀绕过"></a>upload-3 特殊后缀绕过</h3><p>上传php文件发现可以抓包，说明在后端进行的，</p>
+<p>提交后发现上传失败，原因是使用了php后缀</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403172030105.png" alt="image-20240317203016023" loading="lazy"></p>
+<p>我们检查源码，发现不能上传.asp,.aspx,.php,.jsp后缀文件</p>
+<p>因此考虑更改后缀为php3，php5，phphtml等中的一种。</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403172033328.png" alt="image-20240317203303257" loading="lazy"></p>
+<p>我们在这里修改为php3，提交后成功上传（这里有个报错点，Apache服务器不对php3以php格式解析，因此要修改配置文件，这里就不演示了，去csdn上搜）</p>
+<hr>
+<h3 id="upload-4-htaccess绕过（黑名单）"><a href="#upload-4-htaccess绕过（黑名单）" class="headerlink" title="upload-4 .htaccess绕过（黑名单）"></a>upload-4 .htaccess绕过（黑名单）</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182109775.png" alt="image-20240318210951658" loading="lazy"></p>
+<p>1.检查合法性</p>
+<p>通过源码可知，一大堆后缀都被过滤了，但.htaccess后缀没有被过滤，因此可以通过.htaccess配置文件来绕过</p>
+<p>在配置文件中输入AddType application&#x2F;x-httpd-php .jpg .txt，可以将.jpg格式的文件以php格式打开</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182107451.png" alt="image-20240318210658226" loading="lazy"></p>
+<p>2.上传</p>
+<p>先上传.htaccess文件，再上传.jpg格式的php文件，再像前几关那样打开图片，连接到服务器</p>
+<hr>
+<h3 id="upload5-user-ini绕过"><a href="#upload5-user-ini绕过" class="headerlink" title="upload5 .user.ini绕过"></a>upload5 .user.ini绕过</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182111690.png" alt="image-20240318211121323" loading="lazy"></p>
+<p>.user.ini文件上传前提</p>
+<p>.user.ini可以生效，且该上传目录有php文件</p>
+<hr>
+<p><code>auto_prepend_file</code> 是 PHP 的一个配置选项，可以用来指定一个文件，在每个 PHP 脚本执行之前自动包含该文件的内容。这个文件会在 PHP 脚本的头部被包含执行，即在执行脚本之前会先执行这个文件。</p>
+<p>要使用 <code>auto_prepend_file</code> 配置选项，需要修改您的 php.ini 配置文件。您可以在 php.ini 文件中添加类似如下的配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file = &quot;/path/to/your/prepend/file.php&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>您需要将 “&#x2F;path&#x2F;to&#x2F;your&#x2F;prepend&#x2F;file.php” 替换为您想要在每个 PHP 脚本执行之前自动包含的文件的路径。配置完成后，重启您的 Web 服务器或 PHP-FPM 服务，使配置生效。从那时起，指定的文件将在每个 PHP 脚本执行之前被自动包含执行。</p>
+<p>请注意，使用 <code>auto_prepend_file</code> 可能会影响整个应用程序的行为，因此请谨慎使用，并确保所包含的文件不会影响到您的应用程序的正常运行。</p>
+<hr>
+<p>auto_prepend file为自动包含文件</p>
+<p>.ini文件里写auto_prepend file&#x3D;111.jpg （里面有一句话木马）</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403182145690.png" alt="image-20240318214540581" loading="lazy"></p>
+<p>剩下的就先上传.ini文件，再上传jpg文件（要等五分钟生效才能用蚁剑连接，所以可以用下面方法）</p>
+<p><strong>点加空格加点绕过</strong></p>
+<p>原理：源代码会检验一遍文件名，去除末尾的.和空格后就不会再次进行检验，使用.php. .的格式，去除.和空格后为格式为php.，可绕过过滤，而系统解析时会自动去除末尾的.，从而上传成功</p>
+<p>1.上传php文件</p>
+<p>2.在burp上修改php格式</p>
+<hr>
+<h3 id="upload-6-大写绕过"><a href="#upload-6-大写绕过" class="headerlink" title="upload-6 大写绕过"></a>upload-6 大写绕过</h3><p>原理：文件格式的大小写系统都会自动解析成小写，因此可通过更改文件大写来进行绕过</p>
+<p>1.把文件格式改成大写</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191439854.png" alt="image-20240319143913782" loading="lazy"></p>
+<p>2.上传</p>
+<p>直接上传</p>
+<p>3.连接</p>
+<p>复制图片链接到蚁剑进行连接</p>
+<hr>
+<h3 id="upload-7-空格绕过"><a href="#upload-7-空格绕过" class="headerlink" title="upload-7 空格绕过"></a>upload-7 空格绕过</h3><p>原理：在文件格式后加空格，系统在解析文件时会自动删掉空格</p>
+<p>1.加空格</p>
+<p>先进行抓包，在格式后加几个空格，然后发送</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191452092.png" alt="image-20240319145248036" loading="lazy"></p>
+<p>2.连接</p>
+<p>复制图片链接到蚁剑进行连接</p>
+<hr>
+<h3 id="upload—8后缀加点绕过"><a href="#upload—8后缀加点绕过" class="headerlink" title="upload—8后缀加点绕过"></a>upload—8后缀加点绕过</h3><p>跟上关方法一样，只不过加空格变成了加点</p>
+<hr>
+<h3 id="upload-9-DATA绕过"><a href="#upload-9-DATA绕过" class="headerlink" title="upload-9 $DATA绕过"></a>upload-9 $DATA绕过</h3><p>前置知识：<strong>额外数据流</strong></p>
+<p>在·Windows·操作系统中，当你看到文件名后跟着”::$DATA”时，它表示文件的一个附加数<br>据流。数据流是一种用于在文件内部存储额外数据的机制。</p>
+<p>在普通情况下，我们使用的文件只有一个默认的数据流，可以通过文件名访问。但是<br>Windows·NT·文件系统 (NTFS) 支持在文件内部创建额外的数据流，以存储其他信息。这<br>些额外的数据流可以通过在文件名后面添加”.:$DATA”来访问。“<br>例如，”1.txt”是一个文件，而”1.txt::$DATA”是这个文件的一个附加数据流。这样的数据流可<br>以用于存储文件的元数据、备份信息、标签等。</p>
+<p>需要注意的是，大多数常规的文件操作工具不会意识到这些额外的数据流，而只会处理默认的数据流。要访问或操作这些附加数据流，通常需要使用特定的命令行工具或编程接口。“</p>
+<p><strong>写入方法</strong></p>
+<p>在文件命令行里输入</p>
+<p>echo 内容 &gt;&gt;文件名:额外数据流（可随便命名）</p>
+<p>type 文件名1&gt;&gt;文件名2:数据流名 将文件名1的内容写到文件名2的额外数据流中</p>
+<p>查看</p>
+<p>notepad 文件名:额外数据流    用记事本来访问额外数据流</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191526468.png" alt="image-20240319152655342" loading="lazy"></p>
+<hr>
+<p>绕过原理：windows系统不允许文件后缀中出现::$DATA,在解析时会自动删除，因此可通过此方式进行绕过</p>
+<p>1.抓包改写</p>
+<p>上传php文件，在.php后加::$DATA</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191545041.png" alt="image-20240319154545944" loading="lazy"></p>
+<p>2.更改网站名</p>
+<p>打开图片链接后发现404报错，原因是网站名后面加了::$DATA，而上传的文件把这删掉了，因此我们需要删掉这个，才能打开链接</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191549499.png" alt="image-20240319154928478" loading="lazy"></p>
+<p>3.连接</p>
+<p>然后通过蚁剑连接服务器</p>
+<hr>
+<h3 id="upload-10-点空格点绕过"><a href="#upload-10-点空格点绕过" class="headerlink" title="upload-10 点空格点绕过"></a>upload-10 点空格点绕过</h3><p><strong>点加空格加点绕过</strong></p>
+<p>原理：源代码会检验一遍文件名，去除末尾的.和空格后就不会再次进行检验，使用.php. .的格式，去除.和空格后为格式为php.，可绕过过滤，而系统解析时会自动去除末尾的.，从而上传成功</p>
+<p>1.上传php文件</p>
+<p>2.在burp上修改php后缀，加上. .绕过</p>
+<hr>
+<h3 id="upload-11-双写后缀绕过"><a href="#upload-11-双写后缀绕过" class="headerlink" title="upload-11 双写后缀绕过"></a>upload-11 双写后缀绕过</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191605160.png" alt="image-20240319160510139" loading="lazy"></p>
+<p>原理：源码里的这行代码会把文件后缀替换成空，由于此方式是从左到右进行检查的，因此可以将.php写成.pphphp，这样过滤一遍后就成了.php文件了</p>
+<p>1.抓包改写</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403191607330.png" alt="image-20240319160750309" loading="lazy"></p>
+<p>2.连接</p>
+<hr>
+<h3 id="upload-12-00截断绕过"><a href="#upload-12-00截断绕过" class="headerlink" title="upload-12  %00截断绕过"></a>upload-12  %00截断绕过</h3><p>**前置知识  **空字符</p>
+<p>​	0x00 在编程语言中使用</p>
+<p>​	%00 在url编码中使用</p>
+<p>空字符后面的东西都不会读取</p>
+<p>url编码先将ascii转为16进制，然后再加%。</p>
+<hr>
+<p>原理：通过%00截断后面的语句，使得页面上传成功</p>
+<p>这一关白名单，最终文件的存放位置是以拼接的方式，可以使用%00截断，但需要<code>php版本&lt;5.3.4</code>，并且<code>magic_quotes_gpc</code>关闭。</p>
+<p>1.抓包修改</p>
+<p>通过修改提交路径使页面提交的是php文件，而不是jpg文件，为了避免上传失败，需要在.php后加%00，从而截断后面的.jpg文件，使得php文件上传成功，</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192123103.png" alt="image-20240319212313954" loading="lazy"></p>
+<p>要是不加%00，就会出现一个文件路径里面还有一个文件，这明显不成立，使得上传报错，所以需要%00截断</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192127294.png" alt="image-20240319212700249" loading="lazy"></p>
+<p>2.打开图片链接</p>
+<p>打开时会遇到下面情况<img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192140326.png" alt="image-20240319214033283" loading="lazy"></p>
+<p>需要将网站链接php后面那一串删掉才能正确返回页面，然后将修改后的页面url复制到蚁剑上，再连接服务器</p>
+<hr>
+<h3 id="upload-13-0x00截断（0x是16进制的标识）"><a href="#upload-13-0x00截断（0x是16进制的标识）" class="headerlink" title="upload-13 0x00截断（0x是16进制的标识）"></a>upload-13 0x00截断（0x是16进制的标识）</h3><p>这一关白名单，文件上传路径拼接生成，而且使用了post发送的数据进行拼接，我们可以控制post数据进行0x00截断绕过白名单</p>
+<blockquote>
+<p>补充知识：POST不会对里面的数据自动解码，需要在Hex中修改。</p>
+</blockquote>
+<p>1.抓包修改</p>
+<p>在upload&#x2F;后面添加1.php+ ，+号是用来方便修改hex</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192156962.png" alt="image-20240319215632915" loading="lazy"></p>
+<p>2.修改hex值</p>
+<p>在burp的hex里找到2b(2b是+号的16进制编码)，我们要把它修改为00，再提交</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192158979.png" alt="image-20240319215828929" loading="lazy"></p>
+<p>提交后，我们发现页面上传了图片，随后的操作跟上一关相同</p>
+<hr>
+<h3 id="upload-14-字节标识绕过"><a href="#upload-14-字节标识绕过" class="headerlink" title="upload-14 字节标识绕过"></a>upload-14 字节标识绕过</h3><p><strong>前置知识</strong>：<strong>图片字节标识</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403192203735.png" alt="image-20240319220301682" loading="lazy"></p>
+<p>utf-8中，一个英文字符占一个字节，中文（含繁体字）占3个字节</p>
+<p>通过修改php文件更改后的jpg文件的前两个字节，从而实现绕过</p>
+<p>1.修改</p>
+<p>当我们直接修改php文件后缀为jpg时，上传会出错，因为此源码是通过对jpg图片的16进制的前2个字节进行验证，因此我们要修改文件的前两个字节为89 50，这是png图片的前两个字节</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211917071.png" alt="image-20240321191729962" loading="lazy"></p>
+<p>方法为先在右下角string里的&lt;前加aa两个字母，这时会发现右上角多出了2个61，将他们修改为89 50，再上传就能上传成功了，但打开图片链接放到蚁剑上进行连接，会发生失败，我们要通过文件包含来进行运行</p>
+<p>2.文件包含</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211922394.png" alt="image-20240321192204368" loading="lazy"></p>
+<p>点击文件包含，会跳转到另一个页面，在这个页面通过文件包含来访问图片</p>
+<p>在url后面添加?file&#x3D;upload&#x2F;4020240321192032.png（图片后面的链接），但依然会报错</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211923935.png" alt="image-20240321192317823" loading="lazy"></p>
+<p>原因是jpg文件里@出现了问题，解决方法是将@和它后面的东西换到下一行去，在保存就能成功了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403211925297.png" alt="image-20240321192546260" loading="lazy"></p>
+<h3 id="upload-15-图片马绕过"><a href="#upload-15-图片马绕过" class="headerlink" title="upload-15 图片马绕过"></a>upload-15 图片马绕过</h3><p>copy  111.png&#x2F;b+1.php a.png 将1.php中的内容拷进11.png中并重新生成png文件a</p>
+<p>在这个命令中，<code>/b</code> 是一个参数，用于指示复制操作的模式。在 Windows 系统中，<code>/b</code> 参数用于指示 <code>copy</code> 命令执行二进制拷贝，即按字节进行拷贝，而不进行任何转换。</p>
+<p>1.打开文件夹，通过<strong>文件夹路径</strong>打开cmd</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403212001738.png" alt="image-20240321200138695" loading="lazy"></p>
+<p>2.上传a.png，然后通过文件包含运行图片，就成功了</p>
+<hr>
+<h3 id="upload-16图片马绕过"><a href="#upload-16图片马绕过" class="headerlink" title="upload-16图片马绕过"></a>upload-16图片马绕过</h3><p>跟15关流程一模一样</p>
+<hr>
+<h3 id="upload-17-图片的二次渲染"><a href="#upload-17-图片的二次渲染" class="headerlink" title="upload-17 图片的二次渲染"></a>upload-17 图片的二次渲染</h3><p>这一关对上传图片进行了判断了<code>后缀名</code>、<code>content-type</code>，以及利用<code>imagecreatefromgif</code>判断是否为<code>gif</code>图片，最后再做了一次二次渲染，但是后端二次渲染需要找到渲染后的图片里面没有发生变化的Hex地方，添加一句话，通过文件包含漏洞执行一句话，使用蚁剑进行连接</p>
+<p>上传正常的<code>GIF</code>图片下载回显的图片，用<code>010Editor</code>编辑器进行对比两个GIF图片内容，找到<code>相同</code>的地方（指的是上传前和上传后，两张图片的部分<code>Hex</code>仍然保持不变的位置）并插入PHP一句话，上传带有<code>PHP一句话木马</code>的GIF图片</p>
+<hr>
+<h3 id="upload-18-条件竞争"><a href="#upload-18-条件竞争" class="headerlink" title="upload-18 条件竞争"></a>upload-18 条件竞争</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403222022491.png" alt="image-20240322202250368" loading="lazy"></p>
+<p>从源码来看，服务器先是将上传的文件保存下来，然后将文件的后缀名同白名单对比，如果是jpg、png、gif中的一种，就将文件进行重命名。如果不符合的话，unlink()函数就会删除该文件。</p>
+<p>这么看来如果我们还是上传一个图片马的话，网站依旧存在文件包含漏洞我们还是可以进行利用。但是如果没有文件包含漏洞的话，我们就只能上传一个php木马来解析运行了。</p>
+<p>那还怎么搞？上传上去就被删除了，我还怎么去访问啊。</p>
+<p>不慌不慌，要知道代码执行的过程是需要耗费时间的。如果我们能在上传的一句话被删除之前访问不就成了。这个也就叫做条件竞争上传绕过。</p>
+<p>我们可以利用burp多线程发包，然后不断在浏览器访问我们的webshell，会有一瞬间的访问成功。</p>
+<p>为了更好的演示效果，把一句话木马换一下改为：</p>
+<?php fputs(fopen('Tony.php','w'),'<?php @eval($_POST["Tony"])?><p>‘);?&gt;</p>
+<p>把这个php文件通过burp一直不停的重放，然后再写python脚本去不停的访问我们上传的这个文件，总会有那么一瞬间是还没来得及删除就可以被访问到的，一旦访问到该文件就会在当前目录下生成一个Tony.php的一句话。在正常的渗透测试中这也是个好办法。因为单纯的去访问带有phpinfo()的文件并没有什么效果。一旦删除了还是无法利用。但是这个办法生成的Tony.php服务器是不会删除的，我们就可以通过蚁剑去链接了。</p>
+<p>首先，我们上传PHP文件，用BP拦截<br><img src="https://img-blog.csdnimg.cn/20210321170454498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>进行下一步操作前，这里有个小细节，就是<code>不要</code>把BP的<code>拦截功能</code>关闭了，要一直保持拦截状态以达到测试更好的效果</p>
+<p>然后选择<code>Clear$</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20210321170626734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>最后建议这里把线程设置高一点</p>
+<p><img src="https://img-blog.csdnimg.cn/20210321170639692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>然后我们写一个python脚本，通过它来不停的访问我们上传上去的PHP文件(即如上图显示的zoe.php文件) 由于隐私原因，IP地址不能放出来，下面的脚本的url地址XXX都是代表IP地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url = &quot;http://xxx.xxx.xxx.xxx/upload-labs/upload/zoe.php&quot;</span><br><span class="line">while True:</span><br><span class="line">    html = requests.get(url)</span><br><span class="line">    if html.status_code == 200:</span><br><span class="line">        print(&quot;OK&quot;)</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们可以在BP点击开始攻击，</p>
+<p>可以看到上传该文件的数据包不停地在进行重放。</p>
+<p>在BP攻击的<code>同时</code>我们也要运行python脚本，目的就是不停地访问<code>zoe.php</code>知道成功访问到为止。当出现<code>OK</code>说明访问到了该文件，那么<code>Tony.php</code>应该也创建成功了，用蚁剑连一下试试。</p>
+<hr>
+<h3 id="upload-19-apache解析漏洞-条件竞争"><a href="#upload-19-apache解析漏洞-条件竞争" class="headerlink" title="upload-19 apache解析漏洞+条件竞争"></a>upload-19 apache解析漏洞+条件竞争</h3><p>方法1：用文件包含</p>
+<p>方法2： apache解析漏洞+条件竞争</p>
+<p>原理：apache解析不了.7z的后缀名，把1.php.7z的文件解析为1.php，因此可通过.7z实现绕过，但在文件夹中生成后会自动重命名，因此需要进行条件竞争，在php文件生成的一瞬间访问它</p>
+<p>1.抓包修改</p>
+<p>上传2.php（生成小马的文件），在burp上2.php后面加7z</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403232015432.png" alt="image-20240323201506355" loading="lazy"></p>
+<p>2.攻击</p>
+<p>跟上一关一样</p>
+<hr>
+<h3 id="upload-后缀绕过"><a href="#upload-后缀绕过" class="headerlink" title="upload 后缀绕过"></a>upload 后缀绕过</h3><p>点绕过</p>
+<p>上传php文件，在保存名称处将.jpg改为php.，就能进行上传</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202403241418612.png" alt="image-20240324141842529" loading="lazy"></p>
+<p>空格绕过&#x2F;点空格绕过&#x2F;点空格点绕过是一样的操作，都是修改保存名称的后缀</p>
+<hr>
+<h3 id="upload-21审计-数组后缀绕过"><a href="#upload-21审计-数组后缀绕过" class="headerlink" title="upload-21审计+数组后缀绕过"></a>upload-21审计+数组后缀绕过</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">这一关白名单</span><br><span class="line">验证过程：</span><br><span class="line">--&gt; 验证上传路径是否存在</span><br><span class="line">--&gt; 验证[&#x27;upload_file&#x27;]的content-type是否合法（可以抓包修改）</span><br><span class="line">--&gt; 判断POST参数是否为空定义$file变量（关键：构造数组绕过下一步的判断）</span><br><span class="line">--&gt;判断file不是数组则使用explode(&#x27;.&#x27;, strtolower($file))对file进行切割，将file变为一个数组</span><br><span class="line">--&gt; 判断数组最后一个元素是否合法</span><br><span class="line">--&gt; 数组第一位和$file[count($file) - 1]进行拼接，产生保存文件名file_name</span><br><span class="line">--&gt; 上传文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">补充知识：</span><br><span class="line">explode(separator,string[,limit]) 函数，使用一个字符串分割另一个字符串，并返回由字符串组成的数组。</span><br><span class="line">end(array)函数，输出数组中的当前元素和最后一个元素的值。</span><br><span class="line">reset(array)函数，把数组的内部指针指向第一个元素，并返回这个元素的值</span><br><span class="line">count(array)函数，计算数组中的单元数目，或对象中的属性个数</span><br></pre></td></tr></table></figure>
+
+<p>首先准备PHP一句话木马</p>
+<p><img src="https://img-blog.csdnimg.cn/2021032117224664.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p>然后上传用BP来拦截并改包（效果如下面图二）</p>
+<p><img src="https://img-blog.csdnimg.cn/20210321172305338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我们要改的就是下面的要求</span><br><span class="line"></span><br><span class="line">修改content-type</span><br><span class="line">修改POST参数为数组类型，索引[0]为`upload-20.php`，索引[2]为`jpg|png|gif`。</span><br><span class="line">只要第二个索引`不为1`，$file[count($file) - 1]就等价于$file[2-1]，值为空</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20210321172610126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>然后就点击放包</p>
+<p>复制图片地址，用蚁剑进行连接</p>
+<p><img src="https://img-blog.csdnimg.cn/2021032117270367.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NzU5ODQwOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.yunyoujun.cn/img/donate/alipay-qrcode.jpg"><img loading="lazy" src="https://cdn.yunyoujun.cn/img/donate/alipay-qrcode.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.yunyoujun.cn/img/donate/qqpay-qrcode.png"><img loading="lazy" src="https://cdn.yunyoujun.cn/img/donate/qqpay-qrcode.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.yunyoujun.cn/img/donate/wechatpay-qrcode.jpg"><img loading="lazy" src="https://cdn.yunyoujun.cn/img/donate/wechatpay-qrcode.jpg" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://github.com/kinsey973/2024/03/31/upload/" title="upload">https://github.com/kinsey973/2024/03/31/upload/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/kinsey973/2024/04/27/md5/" rel="prev" title="md5"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">md5</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/kinsey973/2024/03/31/python/" rel="next" title="python"><span class="post-nav-text">python</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/kinsey973/2024/03/31/upload/"</script><div class="js-Pjax"><script src="/kinsey973/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2016 – 2024 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://sponsors.yunyoujun.cn" title="云游君的赞助者们"><span class="icon iconify" data-icon="ri:cloud-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/kinsey973/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div></body></html>
