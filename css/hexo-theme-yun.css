@@ -124,7 +124,7 @@ html.dark {
   --hty-secondary-text-color: #555;
   --post-block-bg-color: #fff;
   --smc-link-color: #0078e7;
-  --yun-bg-image: url("/images/infinity-6772980.jpg");
+  --yun-bg-image: url("https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409241626185.jpeg");
   --banner-line-color: #000;
   --banner-char-color: #000;
 }
@@ -295,6 +295,7 @@ body::before {
   animation-name: bgFadeIn;
   animation-duration: 2s;
   opacity: 0.8;
+  filter: blur(0px);
 }
 @-moz-keyframes bgFadeIn {
   from {
@@ -695,7 +696,7 @@ input {
 .with-love {
   display: inline-block;
   margin: 5px 5px 0 5px;
-  color: #0078E7;
+  color: #FFE448;
 }
 .moe-text {
   margin: 0 5px;
