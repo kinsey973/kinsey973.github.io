@@ -6,7 +6,7 @@
   <link href="https://kinsey973.github.io/atom.xml" rel="self"/>
   
   <link href="https://kinsey973.github.io/"/>
-  <updated>2024-10-23T13:17:00.116Z</updated>
+  <updated>2024-10-23T14:35:36.636Z</updated>
   <id>https://kinsey973.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hellow</title>
+    <link href="https://kinsey973.github.io/2024/10/23/hellow/"/>
+    <id>https://kinsey973.github.io/2024/10/23/hellow/</id>
+    <published>2024-10-23T14:35:36.000Z</published>
+    <updated>2024-10-23T14:35:36.636Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>[CISCN2019 华东北赛区]Web2</title>
@@ -459,34 +472,6 @@
     <category term="rce" scheme="https://kinsey973.github.io/tags/rce/"/>
     
     <category term="ctfshow" scheme="https://kinsey973.github.io/tags/ctfshow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ctfshow 信息搜集</title>
-    <link href="https://kinsey973.github.io/2024/10/08/ctfshow-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    <id>https://kinsey973.github.io/2024/10/08/ctfshow-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/</id>
-    <published>2024-10-08T12:10:37.000Z</published>
-    <updated>2024-10-08T12:14:52.481Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="web-1"><a href="#web-1" class="headerlink" title="web-1"></a>web-1</h3><p>打开页面，发现页面上显示 where is flag?</p><p>F12打开</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404031339174.png" alt="image-20240403133955143" loading="lazy"></p><p>发现一段base64编码，拿去解码得到flag</p><p>ctfshow{9b7e1c33-2521-474b-8801-dcead605aee7}</p><hr><h3 id="web-2"><a href="#web-2" class="headerlink" title="web-2"></a>web-2</h3><p>用f12和右键查看不了源代码（js代码限制）</p><p>使用ctrl+u 打开源代码 或者ctrl+shift+i ，或者用开发者工具</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404031451669.png" alt="image-20240403145141607" loading="lazy"></p><hr><h3 id="web-3"><a href="#web-3" class="headerlink" title="web-3"></a>web-3</h3><p>对页面进行抓包，再发包到重发器中，flag在请求头里</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404071911451.png" alt="image-20240407191146214" loading="lazy"></p><p>ctfshow{f549ee24-8620-45f2-943b-79f90cc6c81d}</p><hr><h3 id="web-4"><a href="#web-4" class="headerlink" title="web-4"></a>web-4</h3><p>题目提示robots.txt可能泄露信息，我们就访问它，得到一个新的文件</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404072114625.png" loading="lazy"></p><p>再次访问这个新文件就能得到flag</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404072114729.png" alt="image-20240407211446703" loading="lazy"></p><p>ctfshow{fc472283-6e2c-44e1-9c2b-a46fdd11d1fb}</p><p>框架特性 -robots.txt文件：robots.txt 一个非常重要的文件，通常情况下，主要用于指定搜索引擎蜘蛛spider在网站里的抓取范围,用于声明蜘蛛不可以抓取哪些网站资源及可以抓取哪些网站资源。</p><p>参考链接：<a href="https://blog.csdn.net/m0_51683653/article/details/127252676?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-5-127252676-blog-7918528.235%5Ev43%5Epc_blog_bottom_relevance_base7&spm=1001.2101.3001.4242.4&utm_relevant_index=8">【每天学习一点新知识】robots.txt详解-CSDN博客</a></p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404141601198.png" alt="image-20240414160116149" loading="lazy"></p><hr><h3 id="web-5"><a href="#web-5" class="headerlink" title="web-5"></a>web-5</h3><p>根据提示，该题为phps代码泄露，所以访问index.phps,会弹出一个下载链接，flag就在里面</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404072141613.png" alt="image-20240407214128588" loading="lazy"></p><p>保留就行</p><hr><h3 id="web-6"><a href="#web-6" class="headerlink" title="web-6"></a>web-6</h3><p><a href="https://blog.csdn.net/qq_53079406/article/details/125582887?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171249839616800211582922%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171249839616800211582922&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-125582887-null-null.142%5Ev100%5Econtrol&utm_term=%E4%BB%A3%E7%A0%81%E6%B3%84%E9%9C%B2&spm=1018.2226.3001.4187">代码泄露</a></p><p>先手测robots.txt，index.phps,<a href="http://www.zip,.git,.index.php.swp试试哪个正确/">www.zip，.git，.index.php.swp试试哪个正确</a></p><p>或者用扫描工具扫出来个<a href="http://www.zip或者凭感觉得出,访问它,会弹出一个链接,再下载下来/">www.zip或者凭感觉得出，访问它，会弹出一个链接，再下载下来</a></p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404072155411.png" alt="image-20240407215532335" loading="lazy"></p><p>发现有两个文件，访问fl000g.txt就行了</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404072156965.png" alt="image-20240407215603927" loading="lazy"></p><hr><h3 id="web-7"><a href="#web-7" class="headerlink" title="web-7"></a>web-7</h3><p>跟上一题类似，访问.git就能拿到flag</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404082112362.png" alt="image-20240408211247236" loading="lazy"></p><hr><h3 id="web-8"><a href="#web-8" class="headerlink" title="web-8"></a>web-8</h3><p>跟上题一样，用dirsearch扫一下（就是久了点），发现目录下有个svn文件，访问它就能拿到flag</p><p><img src="https://img-blog.csdnimg.cn/58e9704ef38142b48c5ab9fe4cdc84b3.png" alt="在这里插入图片描述" loading="lazy"></p><hr><h3 id="web-9"><a href="#web-9" class="headerlink" title="web-9"></a>web-9</h3><p>vim缓存导致信息泄露</p><p>在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容</p><p>以 index.php 为例：</p><p>第一次产生的交换文件名为 .index.php.swp</p><p>再次意外退出后，将会产生名为 .index.php.swo 的交换文件</p><p>第三次产生的交换文件则为 .index.php.swn</p><p>解：</p><p>根据提示，可能是vim缓存信息泄露，直接访问url&#x2F;index.php.swp 即可获取flag</p><hr><h3 id="web-10"><a href="#web-10" class="headerlink" title="web-10"></a>web-10</h3><p>根据提示flag在cookie（需要解码）里</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092124043.png" alt="image-20240409212420910" loading="lazy"></p><hr><h3 id="web-11"><a href="#web-11" class="headerlink" title="web-11"></a>web-11</h3><p>题目说ctf.show隐藏了一条信息，我们打开dbcha.com（可以查到域名的所有解析信息）</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404141914920.png" alt="image-20240414191353792" loading="lazy"></p><p>然后就能得到flag了</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404141914989.png" alt="image-20240414191420961" loading="lazy"></p><hr><h3 id="web-12"><a href="#web-12" class="headerlink" title="web-12"></a>web-12</h3><p>访问robots.txt，得到后台目录</p><p><img src="https://img-blog.csdnimg.cn/img_convert/9c2d489f1656cb9cf1ae704061e4bf58.png" alt="image-20211008174122936" loading="lazy"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/72cd1a7593065205d32e469f75061d98.png" alt="image-20211008174152704" loading="lazy"></p><p>猜测用户名为admin，根据提示网页上公开信息为管理员常用密码，猜测密码为372619038</p><p><img src="https://img-blog.csdnimg.cn/img_convert/6fbe1b5636c69f5d1902f040dc1ca764.png" alt="image-20211008174249748" loading="lazy"></p><p>进入后台拿到flag</p><p><img src="https://img-blog.csdnimg.cn/img_convert/0ea0207049ce62ea42843003e4f36b88.png" alt="image-20211008174324632" loading="lazy"></p><hr><h3 id="web-13"><a href="#web-13" class="headerlink" title="web-13"></a>web-13</h3><p>往最下面翻，发现有个藏在一堆文字里的链接可以点</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142038099.png" alt="image-20240414203803035" loading="lazy"></p><p>点开是个文档</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142038347.png" alt="image-20240414203832253" loading="lazy"></p><p>打开链接，发现打不开，我们仔细观察这个链接，发现要把your-domain替换成之前的那个网页</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142040306.png" alt="image-20240414204013275" loading="lazy"></p><p>输入用户名和密码就得到flag了</p><p>ctfshow{d7e34ce6-6abc-4260-917e-1e6e11a8c3e3}</p><hr><h3 id="web-14"><a href="#web-14" class="headerlink" title="web-14"></a>web-14</h3><p>根据提示访问&#x2F;editor，在图片里打开图片空间</p><p><img src="https://img-blog.csdnimg.cn/img_convert/453a87260599775fe82a249d93a8a82c.png" alt="image-20211008175648807" loading="lazy"></p><p>在&#x2F;var&#x2F;www&#x2F;html&#x2F;nothinghere 中找到一个fl000g.txt</p><p>URL访问&#x2F;nothinghere&#x2F;fl000g.txt即可获取flag</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142100478.png" alt="image-20240414210025444" loading="lazy"></p><hr><h3 id="web-15"><a href="#web-15" class="headerlink" title="web-15"></a>web-15</h3><p>在网页最下方发现一个邮箱<a href="mailto:&#49;&#49;&#x35;&#x36;&#x36;&#x33;&#x31;&#57;&#x36;&#49;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#49;&#49;&#x35;&#x36;&#x36;&#x33;&#x31;&#57;&#x36;&#49;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a>，先记下来，访问&#x2F;admin进入后台登录</p><p><img src="https://img-blog.csdnimg.cn/img_convert/0459d3e1f98017f0f5340995e404ea8d.png" alt="image-20211008180251517" loading="lazy"></p><p>忘记密码——密保问题</p><p><img src="https://img-blog.csdnimg.cn/img_convert/56a85b0aa3b7b1c25b6d3ecbdde29c70.png" alt="image-20211008180356297" loading="lazy"></p><p>通过搜索qq号发现</p><p><img src="https://img-blog.csdnimg.cn/img_convert/b60c6379225ebf9aaffd4c689c1f9397.png" alt="image-20211008180456763" loading="lazy"></p><p>重置密码成功</p><p>重新登陆拿到flag</p><hr><h3 id="web-16"><a href="#web-16" class="headerlink" title="web-16"></a>web-16</h3><p>提示探针，访问雅黑，tz.php，查看phpinfo</p><p>传入?action&#x3D;phpinfo</p><p><img src="https://img-blog.csdnimg.cn/img_convert/fe0ad07a1ce8648f485181f1012700fc.png" alt="image-20211008180803604" loading="lazy"></p><p>在页面搜索flag</p><p><img src="https://img-blog.csdnimg.cn/img_convert/7ad797d16f8583b371132b87519a8107.png" alt="image-20211008180832641" loading="lazy"></p><p><a href="https://blog.csdn.net/weixin_43790779/article/details/108834213?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171310161416800185843688%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171310161416800185843688&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-108834213-null-null.142%5Ev100%5Econtrol&utm_term=PHP%E6%8E%A2%E9%92%88&spm=1018.2226.3001.4187"><strong>php</strong>探针</a></p><hr><h3 id="web-17"><a href="#web-17" class="headerlink" title="web-17"></a>web-17</h3><hr><h3 id="web-18"><a href="#web-18" class="headerlink" title="web-18"></a>web-18</h3><p>正常游玩铁定玩不过的<img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142151621.png" alt="image-20240414215104553" loading="lazy"></p><p>这题也没啥别的信息，我们检查源码和js，在js里发现了一个unicode编码</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142151314.png" alt="image-20240414215146287" loading="lazy"></p><p>我们解码看看，它让我们去110.php看看，那我们就去看看</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142205722.png" alt="image-20240414220537691" loading="lazy"></p><p>也是成功找到flag了好吧</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404142206884.png" alt="image-20240414220631863" loading="lazy"></p><hr><h3 id="web-19"><a href="#web-19" class="headerlink" title="web-19"></a>web-19</h3><p>嗯，题目说密钥不要放在前端，说明，密钥就在前端呢。</p><p>f12启动！！！</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152133529.png" alt="image-20240415213305391" loading="lazy"></p><p>发现一串注释，嗯，post传参吧</p><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152133198.png" alt="image-20240415213331012" loading="lazy"></p><p>成功得到flag</p><hr><h3 id="web-20"><a href="#web-20" class="headerlink" title="web-20"></a>web-20</h3><p>mdb文件是早期asp+access构架的数据库文件 直接查看url路径添加&#x2F;db&#x2F;db.mdb 下载文件通过txt打开或者notepad或者通过EasyAccess.exe打开搜索flag flag{ctfshow_old_database}</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">得到一个IP地址或网址时</span><br><span class="line">第一步：查看源码</span><br><span class="line">第二步：网页上查找是否有有效信息</span><br><span class="line">第三步：查看是否存在说明文件rotobs.txt</span><br><span class="line">第四步：通过御剑或dirsearch扫描探测是否存在其它页面</span><br><span class="line">第五步：按照网页的框架信息查看是否存在测试文件或备份文件</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;web-1&quot;&gt;&lt;a href=&quot;#web-1&quot; class=&quot;headerlink&quot; title=&quot;web-1&quot;&gt;&lt;/a&gt;web-1&lt;/h3&gt;&lt;p&gt;打开页面，发现页面上显示 where is flag?&lt;/p&gt;
-&lt;p&gt;F12打开&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://kinsey973.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="ctfshow" scheme="https://kinsey973.github.io/tags/ctfshow/"/>
-    
-    <category term="信息搜集" scheme="https://kinsey973.github.io/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
