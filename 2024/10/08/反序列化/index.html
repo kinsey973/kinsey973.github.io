@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>反序列化 | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"appID":"LWKPDLFKV6","apiKey":"6f230e5e2cdf36415bd02b48c1138c08","indexName":"my-hexo-blog","hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="序列化序列化是将对象的状态信息（属性）转换为可以存储或传输的过程 将对象或者数组转化为可储存&#x2F;传输的字符串 在php中使用函数serialize()来将对象或者数组进行序列化，并返回一个包含字节流的字符串来表示 例子： 12345&lt;?php$a&#x3D;null;echo serialize($a);  所有格式的第一位都是数据类型的英文字母简写， ；是必要的，这才是完整的序列化  数组序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="反序列化">
+<meta property="og:url" content="https://kinsey973.github.io/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="序列化序列化是将对象的状态信息（属性）转换为可以存储或传输的过程 将对象或者数组转化为可储存&#x2F;传输的字符串 在php中使用函数serialize()来将对象或者数组进行序列化，并返回一个包含字节流的字符串来表示 例子： 12345&lt;?php$a&#x3D;null;echo serialize($a);  所有格式的第一位都是数据类型的英文字母简写， ；是必要的，这才是完整的序列化  数组序">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404162201456.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404162204217.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171856131.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171901974.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171910714.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171914248.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171925903.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404172044728.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404172158470.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181901711.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181906800.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181914809.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181916415.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181930026.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181934861.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181937785.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006734.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006152.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006628.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182127486.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191921371.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191927461.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404192004150.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191941969.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191943596.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191953463.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211421112.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211443689.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211444537.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211513170.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211525306.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211601855.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211602234.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211604258.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211605452.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211606544.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211609639.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211645764.png">
+<meta property="article:published_time" content="2024-10-08T12:13:40.000Z">
+<meta property="article:modified_time" content="2024-10-08T12:14:02.180Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="rce">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404162201456.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">193</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">5</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">94</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">1.0.1.</span> <span class="toc-text">数组序列化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%AF%BB"><span class="toc-number">1.0.2.</span> <span class="toc-text">解读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">1.0.3.</span> <span class="toc-text">对象序列化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">魔术方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#construct-%E5%92%8C-destruct"><span class="toc-number">3.1.</span> <span class="toc-text">__construct()和__destruct()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sleep-%E5%92%8C-weakup"><span class="toc-number">3.2.</span> <span class="toc-text">__sleep()和__weakup()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toString-%E5%92%8C-invoke"><span class="toc-number">3.3.</span> <span class="toc-text">__toString()和__invoke()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#call"><span class="toc-number">3.4.</span> <span class="toc-text">__call()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#get"><span class="toc-number">3.5.</span> <span class="toc-text">__get()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#isset"><span class="toc-number">3.6.</span> <span class="toc-text">__isset()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unset"><span class="toc-number">3.7.</span> <span class="toc-text">__unset()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop%E9%93%BE"><span class="toc-number">4.</span> <span class="toc-text">pop链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#poc%E7%BC%96%E5%86%99"><span class="toc-number">4.1.</span> <span class="toc-text">poc编写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%80%83%E9%80%B8%E5%9F%BA%E7%A1%80"><span class="toc-number">5.</span> <span class="toc-text">字符串逃逸基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#weakup%E7%BB%95%E8%BF%87"><span class="toc-number">6.</span> <span class="toc-text">weakup绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="toc-number">8.</span> <span class="toc-text">session反序列化漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phar-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86"><span class="toc-number">9.</span> <span class="toc-text">phar 反序列化原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFphar"><span class="toc-number">9.1.</span> <span class="toc-text">什么是phar</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phar%E7%BB%93%E6%9E%84"><span class="toc-number">9.2.</span> <span class="toc-text">phar结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phar%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-number">9.3.</span> <span class="toc-text">phar漏洞原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phar%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6"><span class="toc-number">9.4.</span> <span class="toc-text">phar使用条件</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">反序列化<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/反序列化.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-10-08 20:13:40" itemprop="dateCreated datePublished" datetime="2024-10-08T20:13:40+08:00">2024-10-08</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">2.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">9m</span></span></span><span class="leancloud_visitors" id="/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" data-flag-title="反序列化"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">学习笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/rce/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">rce</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>序列化是将对象的状态信息（属性）转换为可以存储或传输的过程</p>
+<p>将对象或者数组转化为可储存&#x2F;传输的字符串</p>
+<p>在php中使用函数serialize()来将对象或者数组进行序列化，并返回一个包含字节流的字符串来表示</p>
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$a=null;</span><br><span class="line"></span><br><span class="line">echo serialize($a);</span><br></pre></td></tr></table></figure>
+
+<p>所有格式的第一位都是数据类型的英文字母简写，</p>
+<p><strong>；</strong>是必要的，这才是完整的序列化</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404162201456.png" alt="image-20240416220054349" loading="lazy"></p>
+<h5 id="数组序列化"><a href="#数组序列化" class="headerlink" title="数组序列化"></a><strong>数组序列化</strong></h5><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404162204217.png" alt="image-20240416220406165" loading="lazy"></p>
+<p>a对应array，3对应参数数量</p>
+<p>s:6:”benben”,s代表string，6代表有6个字符，“benben”代表内容</p>
+<hr>
+<h5 id="解读"><a href="#解读" class="headerlink" title="解读"></a>解读</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$user-&gt;name = &quot;carlos&quot;;</span><br><span class="line">$user-&gt;isLoggedIn = true;</span><br><span class="line"></span><br><span class="line">序列化后，该对象类似如下：</span><br><span class="line">O:4:&quot;User&quot;:2:&#123;s:4:&quot;name&quot;;s:6:&quot;carlos&quot;;s:10:&quot;isLoggedIn&quot;;b:1;&#125;（pop链）</span><br><span class="line"></span><br><span class="line">解释如下：</span><br><span class="line"></span><br><span class="line">O:4:&quot;User&quot; -具有4个字符的类名称的对象 &quot;User&quot;</span><br><span class="line">2 -对象具有2个属性</span><br><span class="line">s:4:&quot;name&quot; -第一个属性的键是4个字符的字符串 &quot;name&quot;</span><br><span class="line">s:6:&quot;carlos&quot; -第一个属性的值是6个字符的字符串 &quot;carlos&quot;</span><br><span class="line">s:10:&quot;isLoggedIn&quot; -第二个属性的键是10个字符的字符串 &quot;isLoggedIn&quot;</span><br><span class="line">b:1 -第二个属性的值是布尔值 true</span><br><span class="line">PHP序列化的本机方法是serialize()和unserialize()。如果您具有源代码访问权限，则应从unserialize()代码中的任意位置开始并进行进一步调查。</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h5 id="对象序列化"><a href="#对象序列化" class="headerlink" title="对象序列化"></a>对象序列化</h5><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171856131.png" alt="image-20240417185613989" loading="lazy"></p>
+<p><strong>不能序列化类，可以序列化对象，只序列化成员变量，不序列化成员函数</strong></p>
+<hr>
+<p><strong>在private私有属性序列化</strong>时，会在变量名加‘’%00类名%00‘’，%00为url编码，它的ascii编码为空<img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171901974.png" alt="image-20240417190104919" loading="lazy"></p>
+<p>一般来说，输出序列化格式要先转换成url编码（便于查看）</p>
+<p>例如 echo urlencode(serialize($a))</p>
+<hr>
+<p><em><em>protected受保护属性序列化是，在变量名前加“%00</em>%00”</em>*</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171910714.png" alt="image-20240417191011645" loading="lazy"></p>
+<hr>
+<p><strong>对象调用对象的序列化</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171914248.png" alt="image-20240417191455159" loading="lazy"></p>
+<hr>
+<h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><p><strong>1.反序列化之后的内容为一个对象</strong></p>
+<p><strong>2.反序列化生成的对象的值，由反序列化里的值提供；与原有类预定义的值无关</strong></p>
+<p><strong>3.反序列化不触发类的成员方法；需要调用方法后才能触发</strong></p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>将序列化后的参数还原成实例化的对象</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404171925903.png" alt="image-20240417192512872" loading="lazy"></p>
+<p><strong>反序列化漏洞的成因</strong>：反序列化过程中，unserialize（）接收的值（字符串）可控的，通过更改这个值（字符串），得到所需要的代码，即生成的对象的属性值</p>
+<hr>
+<h3 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h3><p><strong>一个预定义好的，在特点情况下自动触发的行为方法</strong></p>
+<p>作用：<strong>魔术方法在特定条件下自动调用相关方法，最终导致触发代码执行</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404172044728.png" alt="image-20240417204453584" loading="lazy"></p>
+<p>使用魔术方法时，要知道触发时机是什么，因为动作不同，触发的魔术方法也不同</p>
+<p>部分魔术方法需要参数</p>
+<hr>
+<h4 id="construct-和-destruct"><a href="#construct-和-destruct" class="headerlink" title="__construct()和__destruct()"></a>__construct()和__destruct()</h4><p><strong>__construct()</strong></p>
+<p>构造函数，在实例化一个对象时，首先回去自动执行的一个方法</p>
+<p>触发时机:	实例化对象</p>
+<p>功能:			提前清理不必要的内容</p>
+<hr>
+<p><strong>__destruct()</strong></p>
+<p>析构函数，在对象的所有引用被删除或者当对象被显式销毁时执行的魔术方法，在方法调用时会触发一次，在反序列化时会触发一次</p>
+<p>触发时机:对象引用完成或对象被销毁</p>
+<hr>
+<h4 id="sleep-和-weakup"><a href="#sleep-和-weakup" class="headerlink" title="__sleep()和__weakup()"></a>__sleep()和__weakup()</h4><p><strong>__sleep</strong></p>
+<p>序列化serialize()函数会检查类中是否存在一个魔术方法__sleep().如果存在，该方法会被先调用，然后才执行序列化操作。此功能用于清理对象，并返回一个包含对象中所有应被序列化的变量，如果该方法未返回内容，则NULL被序列化，并产生一个E_NOTICE级别的错误</p>
+<p>触发时机：序列化serialize()之前</p>
+<p>功能：对象被序列化之前触发，返回需要被序列化存储的成员，删除不必要的属性</p>
+<p>参数：成员属性</p>
+<p>返回值：需要被序列化存储的成员属性</p>
+<hr>
+<p><strong>__weakup</strong></p>
+<p>unserialize() 会检查是否存在一个wakeup()方法。如果存在，则会先调用_wakeup() 方法，预先准备对象需要的资源预先准备对象资源，返回void，常用于反序列化操作中重新建立数据库连接或执行其他初始化操作。</p>
+<p>触发时机: 反序列化unserialize()之前</p>
+<p>__weakup()在反序列化之前</p>
+<p>__destruct()在反序列化之后</p>
+<hr>
+<h4 id="toString-和-invoke"><a href="#toString-和-invoke" class="headerlink" title="__toString()和__invoke()"></a>__toString()和__invoke()</h4><p><strong>__toString()</strong></p>
+<p>表达方式错误导致魔术方法触发</p>
+<p>触发时机：把对象被当做<strong>字符串</strong>调用</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404172158470.png" alt="image-20240417215833414" loading="lazy"></p>
+<p>把类User实体化并赋值给$test,此时$test是个对象，调用对象可以使用print_r或者var_dump</p>
+<hr>
+<p><strong>__invoke()</strong></p>
+<p>格式表达错误导致魔术方法触发</p>
+<p>触发时机：把对象当成函数调用</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181901711.png" alt="image-20240418190115539" loading="lazy"></p>
+<hr>
+<h4 id="call"><a href="#call" class="headerlink" title="__call()"></a>__call()</h4><p>触发时机：调用一个不存在的方法</p>
+<p>参数：2个参数传参$arg1,$arg2</p>
+<p>返回值：调用的不存在的方法的名称和参数</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181906800.png" alt="image-20240418190647710" loading="lazy"></p>
+<hr>
+<p>__callStatic()</p>
+<p>触发时机：<strong>静态</strong>调用或调用成员常量时使用的方法不存在</p>
+<p>参数：2个参数传参$arg1,$arg2</p>
+<p>返回值：调用的不存在的方法的名称和参数</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181914809.png" alt="image-20240418191435744" loading="lazy"></p>
+<hr>
+<h4 id="get"><a href="#get" class="headerlink" title="__get()"></a>__get()</h4><p>触发时机：调用的成员属性不存在</p>
+<p>参数：传参$arg1</p>
+<p>返回值：不存在的成员属性的名称</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181916415.png" alt="image-20240418191634321" loading="lazy"></p>
+<hr>
+<p>__set()</p>
+<p>触发时机：给不存在的成员属性赋值</p>
+<p>参数：传参$arg1,$arg2</p>
+<p>返回值:不存在的成员属性的名称和赋的值</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181930026.png" alt="image-20240418193018916" loading="lazy"></p>
+<hr>
+<h4 id="isset"><a href="#isset" class="headerlink" title="__isset()"></a>__isset()</h4><p>触发时机：对不可访问属性使用isset()或empty()时，__isset()会被调用</p>
+<p>参数:传参$arg1-</p>
+<p>返回值：不存在的成员属性的名称</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181934861.png" alt="image-20240418193446778" loading="lazy"></p>
+<hr>
+<h4 id="unset"><a href="#unset" class="headerlink" title="__unset()"></a>__unset()</h4><p>触发时机：对不可访问属性使用unset()时</p>
+<p>参数：传参$arg1</p>
+<p>返回值：不存在的成员属性的名称</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404181937785.png" alt="image-20240418193725716" loading="lazy"></p>
+<hr>
+<p>__clone()</p>
+<p>触发时机：当使用clone关键字拷贝完成一个对象后，新对象会自动调用定义的魔术方法__clone()</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006734.png" alt="image-20240418200613653" loading="lazy"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006152.png" alt="image-20240418200631047" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182006628.png" alt="image-20240418200640512" loading="lazy"></p>
+<hr>
+<h3 id="pop链"><a href="#pop链" class="headerlink" title="pop链"></a>pop链</h3><p>在反序列化中，我们能控制的数据就是对象中的属性值(成员变量所以在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96&spm=1001.2101.3001.7020">PHP反序列化</a>中有一种漏洞利用方法叫”面向属性编程”POP( Property Oriented Programming).<br>POP链就是利用<strong>魔法方法</strong>在里面进行<strong>多次跳转</strong>然后获取<strong>敏感数据</strong>的-种payload。</p>
+<p>魔术方法触发前提：魔术方法所在类（或对象）被调用</p>
+<h4 id="poc编写"><a href="#poc编写" class="headerlink" title="poc编写"></a>poc编写</h4><p>PoC (全称: Proof of concept) 中文译作概念验证在安全界可以理解成漏洞验证程序。Poc 是一段不完整的程序，仅仅是为了证明提出者的观点的一段代码。</p>
+<p>编写一段不完整的程序，获取所需要的序列化字符串</p>
+<p>反推法：从得到flag开始反推过程，推完后再正推构造pop链</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404182127486.png" alt="image-20240418212751236" loading="lazy"></p>
+<hr>
+<h3 id="字符串逃逸基础"><a href="#字符串逃逸基础" class="headerlink" title="字符串逃逸基础"></a>字符串逃逸基础</h3><p><strong>反序列化分隔符</strong></p>
+<p>在前面字符串没有问题的情况下，反序列化以;}结束，后面的字符串不影响正常的反序列化</p>
+<p>没有问题是指：成员属性数量一致，成员属性名称长度一致，内容长度一致</p>
+<p>“是字符还是格式符号，是由字符串长度3来判断的</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191921371.png" alt="image-20240419192125270" loading="lazy"></p>
+<p><strong>属性逃逸</strong></p>
+<p>一般在数据先经过一次serialize再经过unserialize，在这个中间反序列化的字符串变多或者变少的时候有可能存在反序列化属性逃逸</p>
+<p><strong>字符串减少逃逸</strong></p>
+<p>反序列化字符串减少逃逸：多逃逸出一个成员属性</p>
+<p>第一个字符串减少，吃掉有效代码，在第二个字符串构造代码</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191927461.png" alt="image-20240419192740377" loading="lazy"></p>
+<p><strong>字符串减少逃逸例题</strong></p>
+<p> <img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404192004150.png" alt="image-20240419200451984" loading="lazy"></p>
+<hr>
+<p><strong>字符串增多逃逸</strong></p>
+<p>反序列化字符串增多逃逸：构造出一个逃逸成员属性，</p>
+<p>第一个字符串增多，突出多余代码，把多余位代码构造成逃逸的成员属性</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191941969.png" alt="image-20240419194125878" loading="lazy"></p>
+<p>思路：把吐出来的字符构造成功能性代码</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191943596.png" alt="image-20240419194321542" loading="lazy"></p>
+<p><strong>字符串增多逃逸例题</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404191953463.png" alt="image-20240419195315320" loading="lazy"></p>
+<hr>
+<h3 id="weakup绕过"><a href="#weakup绕过" class="headerlink" title="weakup绕过"></a>weakup绕过</h3><p>漏洞产生的原因：如果存在__wakeup方法，调用unserialize()前则先调用__weakup方法，但是序列化字符串中表示对象属性个数的值大于真实的属性个数时，会跳过__weakup()执行</p>
+<p>有版本限制，php在5<del>5.625,    7</del>7.010</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211421112.png" alt="image-20240421142133990" loading="lazy"></p>
+<hr>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>&amp;的使用</p>
+<p>假设$a&#x3D;1;</p>
+<p>$b&#x3D;&amp;$a</p>
+<p>就相当于$b&#x3D;1;</p>
+<p>引用常在某个符号被替换，但你又需要这个符号的时候使用，或者想要一个值跟另一个值相等</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211443689.png" alt="image-20240421144346553" loading="lazy"></p>
+<p>结果：</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211444537.png" alt="image-20240421144425476" loading="lazy"></p>
+<hr>
+<h3 id="session反序列化漏洞"><a href="#session反序列化漏洞" class="headerlink" title="session反序列化漏洞"></a>session反序列化漏洞</h3><p>当session_start()被调用或者php.ini中session.auto_start为1时，php内部调用会话管理器，访问用户session被序列化以后，存储到指定目录（默认为&#x2F;tmp）</p>
+<blockquote>
+<p>存储数据的格式有多种，常用的有三种</p>
+<p>漏洞产生：写入格式和读取格式不同</p>
+</blockquote>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211513170.png" alt="image-20240421151355094" loading="lazy"></p>
+<p>当网站序列化并存储session.与反序列化并读取session的方式不同</p>
+<p>就可能导致session反序列化漏洞的产生</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211525306.png" alt="image-20240421152521147" loading="lazy"></p>
+<hr>
+<h3 id="phar-反序列化原理"><a href="#phar-反序列化原理" class="headerlink" title="phar 反序列化原理"></a>phar 反序列化原理</h3><h4 id="什么是phar"><a href="#什么是phar" class="headerlink" title="什么是phar"></a>什么是phar</h4><p>jar是开发java程序一个应用，包括所有的可执行。可访问的文件，都打包进了一个jar文件，使得部署过程十分简单</p>
+<p>phar(“Php ARchive”)是php里类似jar的一种打包文件</p>
+<p>对于php 5.3或更高版本，Phar后缀文件是默认开启支持的，可以直接使用它</p>
+<p><strong>读取pha</strong>r<strong>文件：</strong></p>
+<p>文件包含：phar伪协议，可读取.phar文件</p>
+<hr>
+<h4 id="phar结构"><a href="#phar结构" class="headerlink" title="phar结构"></a>phar结构</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211601855.png" alt="image-20240421160107797" loading="lazy"></p>
+<p>第二个部分重要</p>
+<hr>
+<p>stub phar文件标识，格式为xxx<?php xxx;__HALT_COMLILER(); ?>(头部信息)</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211602234.png" alt="image-20240421160244118" loading="lazy"></p>
+<hr>
+<p><strong>manifest压缩文件的属性等信息，以序列化存储</strong></p>
+<p>phar存储的meta-data信息以序列化方式存储，当文件操作函数通过phar:&#x2F;&#x2F;伪协议解析phar文件时就会将数据反序列化，可以通过此漏洞利用的函数：</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211604258.png" alt="image-20240421160446190" loading="lazy"></p>
+<hr>
+<p>content 压缩文件的信息</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211605452.png" alt="image-20240421160557313" loading="lazy"></p>
+<hr>
+<p>signature签名，放在文件末尾</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211606544.png" alt="image-20240421160628490" loading="lazy"></p>
+<hr>
+<h4 id="phar漏洞原理"><a href="#phar漏洞原理" class="headerlink" title="phar漏洞原理"></a>phar漏洞原理</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211609639.png" alt="image-20240421160904541" loading="lazy"></p>
+<p><strong>构造phar</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    class A &#123;</span><br><span class="line">    所需代码；</span><br><span class="line">    &#125;</span><br><span class="line">    $phar = new Phar(&quot;phar.phar&quot;); //后缀名必须为phar</span><br><span class="line">    $phar-&gt;startBuffering();</span><br><span class="line">    $phar-&gt;setStub(&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;); //设置stub</span><br><span class="line">    $o = new TestObject();</span><br><span class="line">    $o -&gt; data=&#x27;N1Xx&#x27;;</span><br><span class="line">    $phar-&gt;setMetadata($o); //将自定义的meta-data存入manifest</span><br><span class="line">    $phar-&gt;addFromString(&quot;1.txt&quot;, &quot;nlxx&quot;); //添加要压缩的文件</span><br><span class="line">    //签名自动计算</span><br><span class="line">    $phar-&gt;stopBuffering();</span><br></pre></td></tr></table></figure>
+
+<p>再用?xxx&#x3D;phar:&#x2F;&#x2F;phar.phar&amp;a&#x3D;xxx</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404211645764.png" alt="image-20240421164527639" loading="lazy"></p>
+<h4 id="phar使用条件"><a href="#phar使用条件" class="headerlink" title="phar使用条件"></a>phar使用条件</h4><p>phar文件能上传到服务器端（没有被过滤，有上传的地方）</p>
+<p>要有可用反序列化魔术方法作为跳板</p>
+<p>要有文件操作函数，如file_exists(),fopen(),file_get_contents()</p>
+<p>文件操作函数参数可控，且:、&#x2F;、phar等特殊字符没有被过滤</p>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045089.png" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045492.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png"><img loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406212045283.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="反序列化">https://kinsey973.github.io/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/10/CISCN2019-%E6%80%BB%E5%86%B3%E8%B5%9B-Day1-Web4-Laravel1/" rel="prev" title="[CISCN2019 总决赛 Day1 Web4]Laravel1"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">[CISCN2019 总决赛 Day1 Web4]Laravel1</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/10/08/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" rel="next" title="命令执行"><span class="post-nav-text">命令执行</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2024/10/08/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2025 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>
