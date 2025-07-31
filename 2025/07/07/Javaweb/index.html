@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>Javaweb | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...undefined?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"appID":"LWKPDLFKV6","apiKey":"6f230e5e2cdf36415bd02b48c1138c08","indexName":"my-hexo-blog","hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="JsJs用来负责网页行为  引入方式内部脚本：将JS代码定义在html界面 javascript必须在&lt;script&gt;&lt;&#x2F;script&gt;之间 在html文档中，可以在任意地方，放置任意数量的&lt;script&gt;，一般放在&lt;body&gt;元素的地步，可改善显示速度 外部脚本：将js代码定义在外部js文件，然后引入到html中 1&lt;script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaweb">
+<meta property="og:url" content="https://kinsey973.github.io/2025/07/07/Javaweb/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="JsJs用来负责网页行为  引入方式内部脚本：将JS代码定义在html界面 javascript必须在&lt;script&gt;&lt;&#x2F;script&gt;之间 在html文档中，可以在任意地方，放置任意数量的&lt;script&gt;，一般放在&lt;body&gt;元素的地步，可改善显示速度 外部脚本：将js代码定义在外部js文件，然后引入到html中 1&lt;script">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241703616.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241713291.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250928695.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250939801.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250949620.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250951389.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251022607.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251024821.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251042121.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251048846.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251053321.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251120694.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251125544.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280856720.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280917315.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281005134.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281010589.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281013180.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281015223.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281029904.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281043178.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290815068.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290842566.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290917685.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290947923.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300853293.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300942274.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300923146.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507301053867.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310928083.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310937280.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311002568.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311038807.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311041784.png">
+<meta property="article:published_time" content="2025-07-07T09:54:56.000Z">
+<meta property="article:modified_time" content="2025-07-31T02:51:19.018Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="北歌">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="https:&#x2F;&#x2F;kinsey973.github.io&#x2F;">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">230</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">7</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">103</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Js"><span class="toc-number">1.</span> <span class="toc-text">Js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">引入方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">变量&amp;数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#js%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.</span> <span class="toc-text">js对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#array%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.1.</span> <span class="toc-text">array对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#string"><span class="toc-number">1.6.2.</span> <span class="toc-text">string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#json"><span class="toc-number">1.6.3.</span> <span class="toc-text">json</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BOM"><span class="toc-number">1.6.4.</span> <span class="toc-text">BOM</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DOM%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.5.</span> <span class="toc-text">DOM对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#js%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC"><span class="toc-number">1.7.</span> <span class="toc-text">js事件监听</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue"><span class="toc-number">2.</span> <span class="toc-text">Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-number">2.1.</span> <span class="toc-text">vue模块的引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">vue常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#v-for"><span class="toc-number">2.2.1.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-bind"><span class="toc-number">2.2.2.</span> <span class="toc-text">v-bind</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-if-v-show"><span class="toc-number">2.2.3.</span> <span class="toc-text">v-if&amp;v-show</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-model"><span class="toc-number">2.2.4.</span> <span class="toc-text">v-model</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-on"><span class="toc-number">2.2.5.</span> <span class="toc-text">v-on</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax"><span class="toc-number">3.</span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5"><span class="toc-number">3.1.</span> <span class="toc-text">同步与异步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Axios"><span class="toc-number">3.2.</span> <span class="toc-text">Axios</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%88%AB%E5%90%8D"><span class="toc-number">3.3.</span> <span class="toc-text">请求方式别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#async-await"><span class="toc-number">3.4.</span> <span class="toc-text">async&amp;await</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">3.5.</span> <span class="toc-text">生命周期</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven"><span class="toc-number">4.</span> <span class="toc-text">Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#maven%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%89%93%E5%8C%85"><span class="toc-number">4.2.</span> <span class="toc-text">maven的编译和打包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven%E5%9D%90%E6%A0%87"><span class="toc-number">4.3.</span> <span class="toc-text">Maven坐标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.4.</span> <span class="toc-text">导入Maven项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">4.5.</span> <span class="toc-text">依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96"><span class="toc-number">4.6.</span> <span class="toc-text">排除依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-1"><span class="toc-number">4.7.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-number">4.8.</span> <span class="toc-text">单元测试</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2025/07/07/Javaweb/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Javaweb<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/Javaweb.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2025-07-07 17:54:56" itemprop="dateCreated datePublished" datetime="2025-07-07T17:54:56+08:00">2025-07-07</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2025-07-31 10:51:19" itemprop="dateModified" datetime="2025-07-31T10:51:19+08:00">2025-07-31</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">12m</span></span></span><span class="leancloud_visitors" id="/2025/07/07/Javaweb/" data-flag-title="Javaweb"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2025/07/07/Javaweb/"></span></span></a><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="Js"><a href="#Js" class="headerlink" title="Js"></a>Js</h3><p>Js用来负责网页行为</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png" alt="image-20250607180345208" loading="lazy"></p>
+<h4 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h4><p>内部脚本：将JS代码定义在html界面</p>
+<p>javascript必须在&lt;script&gt;&lt;&#x2F;script&gt;之间</p>
+<p>在html文档中，可以在任意地方，放置任意数量的&lt;script&gt;，一般放在&lt;body&gt;元素的地步，可改善显示速度</p>
+<p>外部脚本：将js代码定义在外部js文件，然后引入到html中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;js/demo .js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="变量-数据类型"><a href="#变量-数据类型" class="headerlink" title="变量&amp;数据类型"></a>变量&amp;数据类型</h4><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>js用let声明变量（弱类型语言）</p>
+<p>js用关键字来声明变量</p>
+<p>输出变量有三种方式：</p>
+<p>1.alert()弹出框形式</p>
+<p>2.console.log()输出到控制台</p>
+<p>3.document.write()输出到body区域</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241703616.png" alt="image-20250624170312534" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241713291.png" alt="image-20250624171351241" loading="lazy"></p>
+<p>字符串反引号用于模版字符串</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p><strong>定义方法一：</strong></p>
+<p>function functionName(参数1，参数2){</p>
+<p>要执行的代码</p>
+<p>}</p>
+<p>注意：形式参数不需要类型，因为javascript是弱类型语言</p>
+<p>返回值也不需要定义类型，可以在函数内部直接是使用return返回即可</p>
+<p>调用：函数名称(实际参数列表)</p>
+<p><strong>定义方法二：</strong></p>
+<p>var functionName&#x3D;function(参数1，参数2){</p>
+<p>&#x2F;&#x2F;执行的代码</p>
+<p>}</p>
+<h4 id="js对象"><a href="#js对象" class="headerlink" title="js对象"></a>js对象</h4><h5 id="array对象"><a href="#array对象" class="headerlink" title="array对象"></a>array对象</h5><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250928695.png" alt="image-20250725092755610" loading="lazy"></p>
+<p>js中的数组相当于java中的集合，数组长度可变，二js是弱类型，所以可以存储任意类型的数据</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250939801.png" alt="image-20250725093903765" loading="lazy"></p>
+<p>forEach数组遍历：</p>
+<p>arr.forEach(function(e){</p>
+<p>console.log(e);})</p>
+<p>ES6箭头函数遍历 （。。。）&#x3D;&gt;(…)</p>
+<p>arr.forEach(e)&#x3D;&gt;{</p>
+<p>console.log(e);</p>
+<p>}</p>
+<h5 id="string"><a href="#string" class="headerlink" title="string"></a>string</h5><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250949620.png" alt="image-20250725094948553" loading="lazy"></p>
+<h5 id="json"><a href="#json" class="headerlink" title="json"></a>json</h5><p><strong>js自定义对象</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250951389.png" alt="image-20250725095143347" loading="lazy"></p>
+<p><strong>JSON介绍</strong></p>
+<p>由于其语法简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传递</p>
+<p>格式：{“key”:”value”}</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png" alt="image-20250725101013985" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png" loading="lazy"></p>
+<h5 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h5><p>概念：BOM是浏览器对象模型，允许js与浏览器对话，js将浏览器的各个组成部分分封装为对象</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251022607.png" alt="image-20250725102254563" loading="lazy"></p>
+<p>Window对象</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251024821.png" alt="image-20250725102434780" loading="lazy"></p>
+<p>Location对象</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251042121.png" alt="image-20250725104228083" loading="lazy"></p>
+<h5 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h5><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251048846.png" alt="image-20250725104826799" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251053321.png" alt="image-20250725105304286" loading="lazy"></p>
+<p>html中Element对象可以通过Document对象获取，二Document对象时通过windows对象获取的</p>
+<p>Document对象中提供了下面获取Element元素对象的函数：</p>
+<p>1.根据id属性值获取，返回単个Element对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var h1=document.getElementById(&#x27;h1&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>2.根据标签名获取，返回Element对象数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var divs=document.getElementsByTagName(&#x27;div&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>3.根据name属性值获取，返回Element对象数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hobbys=document.getElementsByName(&#x27;hobby&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>4.根据class属性值获取，返回Element对象数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.var class=document.getElementsByClassName(&#x27;cls&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="js事件监听"><a href="#js事件监听" class="headerlink" title="js事件监听"></a>js事件监听</h4><p>事件：html事件时发生在html上元素的“事情”</p>
+<p>例如：按钮被点击。。。</p>
+<p>事件监听：js可以在事件被侦测到时执行指定的代码</p>
+<p>事件绑定</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251120694.png" alt="image-20250725112026653" loading="lazy"></p>
+<p>常见事件</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251125544.png" alt="image-20250725112555509" loading="lazy"></p>
+<h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h3><p>Vue是一个用于构建用户界面的渐进式js框架</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280856720.png" alt="image-20250728085647555" loading="lazy"></p>
+<p>框架:就是一套完整的项目解决方案，用于快速构建项目</p>
+<p>优点：提高前端项目的开发效率</p>
+<p>缺点：要理解记忆框架使用规则</p>
+<h4 id="vue模块的引入"><a href="#vue模块的引入" class="headerlink" title="vue模块的引入"></a>vue模块的引入</h4><p>准备</p>
+<ul>
+<li>引入Vue模块</li>
+<li>创建Vue程序的应用实例，控制视图的元素</li>
+<li>准备元素(div)被Vue控制</li>
+</ul>
+<p>创建驱动视图</p>
+<ul>
+<li>准备数据</li>
+<li>通过插值表达式渲染页面</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span>&#123;createApp&#125; <span class="keyword">from</span> <span class="string">&#x27;https://unpkg.com/vue@3/dist/vue.esm-browser.js&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"><span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">message</span>:<span class="string">&quot;Hello Vue&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>);</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="vue常用指令"><a href="#vue常用指令" class="headerlink" title="vue常用指令"></a>vue常用指令</h4><p>指令：HTML标签上带有v-前缀的特殊属性，不同的指令具有不同的含义，可以实现不同的功能。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-xxx=&quot;...&quot;&gt;...&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>常用指令</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280917315.png" alt="image-20250728091713271" loading="lazy"></p>
+<p>插值表达式不能出现在标签内部</p>
+<h5 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h5><p>作用：列表渲染，遍历容器的元素或者对象的属性</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;tr v-for=&quot;(item,index) in items&quot;:key=&quot;item.id&quot;&gt; &#123;&#123;item&#125;&#125;&lt;/tr&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明：</strong></p>
+<p>items为遍历的数组</p>
+<p>item为遍历出来的元素</p>
+<p>index为索引&#x2F;下标，从o开始；可以省略，省略index语法:v-for&#x3D;”item in items</p>
+<p><strong>key:</strong></p>
+<p>作用：给元素添加的唯一标识，便于vue进行列表项的正确排序复用，提升渲染性能</p>
+<p>推荐使用id作为key(唯一)，不推荐使用index作为key(会变化)</p>
+<p>注意：遍历的数组，必须在data中定义;要想让哪个标签循环展示多次，就在哪个标签上使用v-for指令。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>员工列表<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(emp, index) in employees&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;emp.id&quot;</span>&gt;</span></span><br><span class="line">            &#123;&#123; index + 1 &#125;&#125;. 姓名：&#123;&#123; emp.name &#125;&#125; | 职位：&#123;&#123; emp.position &#125;&#125; | 年龄：&#123;&#123; emp.age &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span>&#123;createApp&#125; <span class="keyword">from</span> <span class="string">&#x27;https://unpkg.com/vue@3/dist/vue.esm-browser.js&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">               <span class="attr">employees</span>:[</span></span><br><span class="line"><span class="language-javascript">                   &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">position</span>: <span class="string">&#x27;前端工程师&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">                   &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">&#x27;李四&#x27;</span>, <span class="attr">position</span>: <span class="string">&#x27;后端工程师&#x27;</span>, <span class="attr">age</span>: <span class="number">28</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">                   &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">&#x27;王五&#x27;</span>, <span class="attr">position</span>: <span class="string">&#x27;产品经理&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">                   &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">name</span>: <span class="string">&#x27;赵六&#x27;</span>, <span class="attr">position</span>: <span class="string">&#x27;测试工程师&#x27;</span>, <span class="attr">age</span>: <span class="number">24</span> &#125;</span></span><br><span class="line"><span class="language-javascript">               ]</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h5><p>作用：动态为HTML标签绑定属性值，如设置href，src，style样式等</p>
+<p>语法:v-bind:属性名&#x3D;”属性值” </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-bind:src=&quot;item.image&quot; width=&quot;30px&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>简化：属性名&#x3D;“属性值”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img :src=&quot;item.image&quot; width=&quot;30px&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：动态的为标签的属性绑定值，不能使用插值表达式，得使用v-bind指令。且绑定的数据，必须在data中定义。</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281005134.png" alt="image-20250728100519100" loading="lazy"></p>
+<h5 id="v-if-v-show"><a href="#v-if-v-show" class="headerlink" title="v-if&amp;v-show"></a>v-if&amp;v-show</h5><p>作用：这两类指令都是用来控制元素的显示与隐藏的</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281010589.png" alt="image-20250728101035543" loading="lazy"></p>
+<p>注意：v-else-if必须出现在v-if之后，可以出现多个；v-else 必须出现在v-if&#x2F;v-else-if之后。</p>
+<p>v-if</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281013180.png" alt="image-20250728101340145" loading="lazy"></p>
+<p>v-show</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281015223.png" alt="image-20250728101536195" loading="lazy"></p>
+<h5 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h5><p>作用：在表单元素上使用，双向数据绑定。可以方便的获取或设置表单项数据</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281029904.png" alt="image-20250728102907861" loading="lazy"></p>
+<h5 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h5><p>作用：为html标签绑定事件(添加事件监听)</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281043178.png" alt="image-20250728104312131" loading="lazy"></p>
+<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><p>作用：数据交换：通过ajax可以给服务器发送请求，并获取服务器响应的数据</p>
+<p>异步交互：可以在不重新加载整个页面的情况下，与服务器交换数据表格更新部分网页的技术，如搜索联想、用户名是否可用的校验等等</p>
+<h4 id="同步与异步"><a href="#同步与异步" class="headerlink" title="同步与异步"></a>同步与异步</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290815068.png" alt="image-20250729081519966" loading="lazy"></p>
+<h4 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h4><p>介绍：Axios对原生的Ajax进行了封装，简化书写，快速开发</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://www.axios-http.cn/">https://www.axios-http.cn/</a></p>
+<p>步骤：</p>
+<p>引入Axios的js文件（参考官网）</p>
+<p>使用Axios发送请求，并获取响应结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">     method:&#x27;GET&#x27;,</span><br><span class="line">     url:&#x27;https://web-server.itheima.net/emps/list&#x27;</span><br><span class="line"> &#125;).then((result)=&gt;&#123;</span><br><span class="line">     console.log(result.data); </span><br><span class="line"> &#125;).catch((err)=&gt;&#123;</span><br><span class="line"> alert(err);</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>method:请求方式   url：请求路径  data：请求数据(POST) </p>
+<p>params:发送请求时携带的url参数 如：…?key&#x3D;val</p>
+<p>then({})成功回调函数   catch({})失败回调函数</p>
+<h4 id="请求方式别名"><a href="#请求方式别名" class="headerlink" title="请求方式别名"></a>请求方式别名</h4><p>格式：axios.请求方式(url[,data[,config]])</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290842566.png" alt="image-20250729084235513" loading="lazy"></p>
+<h4 id="async-await"><a href="#async-await" class="headerlink" title="async&amp;await"></a>async&amp;await</h4><p>可以通过async、await可以让异步变为同步操作。async就是来声明一个异步方法，await是用来等待异步任务执行</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290917685.png" alt="image-20250729091729614" loading="lazy"></p>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>指一个对象从创建到销毁的整个过程</p>
+<p>生命周期的八个阶段：每触发一个生命周期事件，会自动执行一个生命周期方法(钩子)，也就是说可以在特定时机执行自己的逻辑代码</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290947923.png" alt="image-20250729094714875" loading="lazy"></p>
+<p>典型的应用场景：</p>
+<p>在页面加载完毕时，发起异步请求，加载数据，渲染页面</p>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><p>Maven是一款用于管理和构建Java项目的工具，是apache旗下的一个开源项目</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300853293.png" alt="image-20250730085255162" loading="lazy"></p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300942274.png" alt="image-20250730094219221" loading="lazy"></p>
+<p>仓库：用于存储资源，管理各种jar包</p>
+<p>本地仓库：自己计算机上的一个目录</p>
+<p>远程仓库：一般由公司团队搭建的私有仓库</p>
+<p>中央仓库：有Maven团队维护的全球唯一性，仓库地址：<a target="_blank" rel="noopener" href="https://repol.maven.org/maven2/">https://repol.maven.org/maven2/</a></p>
+<h4 id="maven的编译和打包"><a href="#maven的编译和打包" class="headerlink" title="maven的编译和打包"></a>maven的编译和打包</h4><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300923146.png" alt="image-20250730092347029" loading="lazy"></p>
+<p>compile会编译整个项目，把源代码编译成可以被 JVM 执行的中间格式（字节码）。</p>
+<p>package会打包整个项目，<strong>将项目编译、打包成可执行的 <code>.jar</code> 或 <code>.war</code> 文件</strong>，通常位于 <code>target/</code> 目录下。</p>
+<h4 id="Maven坐标"><a href="#Maven坐标" class="headerlink" title="Maven坐标"></a>Maven坐标</h4><p>Maven中的坐标是资源(jar)的唯一标识，通过该坐标可以唯一定位资源位置</p>
+<p>使用坐标来定义项目或引入项目中需要的依赖</p>
+<p><strong>Maven坐标主要组成</strong></p>
+<p>groupId：定义当前Maven项目隶属组织名称(通常是域名反写，例如：com.iteima)</p>
+<p>artifactId:定义当前Maven项目名称(通常是模块名称，例如order-sercive、goods-service)</p>
+<p>version：定义当前项目版本号</p>
+<p>Maven项目版本分类</p>
+<ul>
+<li>​	SNAPSHOT：功能不稳定，尚处于开发中的版本，即快照版本</li>
+<li>​	RELEASE：功能趋于稳定，当前更新停止，可以用于发行的版本</li>
+</ul>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507301053867.png" alt="image-20250730105334773" loading="lazy"></p>
+<h4 id="导入Maven项目"><a href="#导入Maven项目" class="headerlink" title="导入Maven项目"></a>导入Maven项目</h4><p>建议选择Maven项目的pom.xml文件进行导入</p>
+<h4 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h4><p>依赖：指当前项目运行所需要的jar包，应该项目中可以引入多个依赖</p>
+<p>配置：</p>
+<p>1.在pom.xml中编写&lt;dependencies&gt;标签</p>
+<p>2.在&lt;dependencies&gt;标签中使用&lt;dependency&gt;引入标签</p>
+<p>3.定义坐标的groupId,artifactId,version</p>
+<p>4.点击刷新按钮，引入最新加入的坐标</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310928083.png" alt="image-20250731092812942" loading="lazy"></p>
+<p>如果不知道依赖的坐标信息，可以到<a target="_blank" rel="noopener" href="https://mvnrepository.com/%E4%B8%AD%E6%90%9C%E7%B4%A2">https://mvnrepository.com/中搜索</a></p>
+<h4 id="排除依赖"><a href="#排除依赖" class="headerlink" title="排除依赖"></a>排除依赖</h4><p>指主动断开依赖的资源，被排除的资源无需指定版本</p>
+<p>用&lt;exclusion&gt;&lt;&#x2F;exclusion&gt;来排除依赖</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310937280.png" alt="image-20250731093708228" loading="lazy"></p>
+<p>具体作用</p>
+<ol>
+<li><strong>解决依赖冲突</strong><br> 当多个依赖引入了同一个库的不同版本，可能导致运行时错误或编译错误。通过排除其中一个依赖的传递依赖，可以避免版本冲突。</li>
+<li><strong>减小最终包大小</strong><br> 如果某个传递依赖你用不上，可以排除它，减少项目的依赖体积，提升启动速度和构建速度。</li>
+<li><strong>避免重复引入</strong><br> 某些库可能被多次引入不同版本，排除可以避免重复依赖。</li>
+</ol>
+<p>注意：一旦依赖配置变更了，记得重新加载</p>
+<p>引入的依赖本地仓库不存在记得联网</p>
+<h4 id="生命周期-1"><a href="#生命周期-1" class="headerlink" title="生命周期"></a>生命周期</h4><p>Maven的生命周期就是为了对所有的maven项目构建过程进行抽象和统一</p>
+<p>Maven中有三套相互独立的生命周期</p>
+<ul>
+<li>clean:清理工作</li>
+<li>default:核心工作，如：编译、测试、打包、安装、部署</li>
+<li>site：生成报告、发布站点</li>
+</ul>
+<p>执行指定生命周期的两种方式:</p>
+<p>在idea中，右侧的maven工具栏，选中对应的生命周期，双击执行</p>
+<p>在命令行中，通过命令执行</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311002568.png" alt="image-20250731100241499" loading="lazy"></p>
+<p>生命周期阶段</p>
+<ul>
+<li>clean:溢出上一次构建生成的文件</li>
+<li>compile:编译项目源代码</li>
+<li>test:使用合适的单元测试框架进行测试(junit)</li>
+<li>package:将编译后的文件打包，如jar、war</li>
+<li>install：安装项目到本地仓库</li>
+</ul>
+<p>注意：在同一套生命周期中，当运行后面的阶段时，前面的阶段都会运行</p>
+<h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><p>测试：用来促进鉴定软件的正确性、完整性、安全性和质量的过程</p>
+<p>阶段划分：单元测试（白盒）、集成测试（灰盒）、系统测试（黑盒）、验收测试（黑盒）</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311038807.png" alt="image-20250731103827736" loading="lazy"></p>
+<p>测试方法：白盒测试，黑盒测试及灰盒测试</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311041784.png" alt="image-20250731104128739" loading="lazy"></p>
+<p>单元测试：针对最小的功能单元，编写测试代码对其正确的进行测试</p>
+<p>JUnit：最流行的Java测试框架只有，提供了一些功能，方便程序进行单元测试</p>
+<p><strong>引入依赖</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;5.9&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2025/07/07/Javaweb/" title="Javaweb">https://kinsey973.github.io/2025/07/07/Javaweb/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2025/06/26/java-sec-code/" rel="next" title="java-sec-code"><span class="post-nav-text">java-sec-code</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2025/07/07/Javaweb/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2025 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>

