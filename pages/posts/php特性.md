@@ -469,7 +469,7 @@ highlight_file()可以识别php伪协议，而is_file()不能识别
 
 ctype_alpha([mixed](https://www.php.net/manual/zh/language.types.mixed.php) `$text`): [bool](https://www.php.net/manual/zh/language.types.boolean.php)
 
-检测提供的 [string](https://www.php.net/manual/zh/language.types.string.php) 类型的 `text` 里面的所有字符是否都是字母。在标准的 `C` 语言区域设置中，字母仅仅是指 `[A-Za-z]`，并且如果 `$text` 是单个字符，则 **ctype_alpha()** 等同于 `(ctype_upper($text) || ctype_lower($text))`，但是在其他语言中有些字母既不视为大写也不视为小写。
+检测提供的 [string](https://www.php.net/manual/zh/language.types.string.php) 类型的 `text` 里面的所有字符是否都是字母。在标准的 `C` 语言区域设置中，字母仅仅是指 `[A-Za-z]`，并且如果 $text 是单个字符，则 **ctype_alpha()** 等同于 `(ctype_upper($text) || ctype_lower($text))`，但是在其他语言中有些字母既不视为大写也不视为小写。
 
 用小数可以绕过
 
