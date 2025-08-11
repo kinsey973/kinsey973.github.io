@@ -4,8 +4,8 @@ export default defineSiteConfig({
   url: 'https://kinsey973.github.io/',  //你网站的URL
   favicon: "https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg",	// 网页图标链接
   lang: 'zh-CN',  //默认语言
-  title: "北沐长歌",  //网站标题
-  subtitle: '北沐长歌|北歌的技术分享',//网站副标题
+  title: "北沐城歌",  //网站标题
+  subtitle: '北沐城歌|北歌的技术分享',//网站副标题
   author: {
     name: '北歌',//博主名称
     avatar: "https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png",	//头像链接

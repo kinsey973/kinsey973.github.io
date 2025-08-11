@@ -10,7 +10,8 @@
     "dev": "valaxy",
     "rss": "valaxy rss",
     "new": "valaxy new",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint:md": "markdownlint '**/*.md' -f"
   },
   "dependencies": {
     "valaxy": "0.26.2",
@@ -20,6 +21,8 @@
     "valaxy-theme-yun": "0.26.2"
   },
   "devDependencies": {
+    "eslint": "^9.33.0",
+    "markdownlint-cli": "^0.45.0",
     "typescript": "^5.9.2"
   }
 }
