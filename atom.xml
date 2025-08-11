@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kinsey973.github.io/</id>
+    <title>北沐城歌</title>
+    <updated>2025-08-11T11:28:24.269Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>北歌</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://kinsey973.github.io/"/>
+    <link rel="self" href="https://kinsey973.github.io/atom.xml"/>
+    <subtitle>山行野宿，孤身万里</subtitle>
+    <logo>https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png</logo>
+    <icon>https://kinsey973.github.io/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2025 © 北歌</rights>
+    <entry>
+        <title type="html"><![CDATA[Java]]></title>
+        <id>https://kinsey973.github.io/posts/Java</id>
+        <link href="https://kinsey973.github.io/posts/Java"/>
+        <updated>2024-11-12T18:49:38.000Z</updated>
+        <content type="html"><![CDATA[<h3>Java</h3>
+<hr>
+<h3>注释</h3>
+<h4>単行注释</h4>
+<p>格式    //注释信息</p>
+<h4>多行注释</h4>
+<p>格式    /*注释信息*/</p>
+<h4>文档注释</h4>
+<p>格式    /</p>
+<br/><p>访问 <a href="https://kinsey973.github.io/posts/Java" target="_blank">https://kinsey973.github.io/posts/Java</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>北歌</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-08-11T11:27:29.170Z</published>
+    </entry>
+</feed>

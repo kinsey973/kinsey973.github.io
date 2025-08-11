@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>北沐城歌</title>
+        <link>https://kinsey973.github.io/</link>
+        <description>山行野宿，孤身万里</description>
+        <lastBuildDate>Mon, 11 Aug 2025 11:28:24 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>北沐城歌</title>
+            <url>https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png</url>
+            <link>https://kinsey973.github.io/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2025 © 北歌</copyright>
+        <atom:link href="https://kinsey973.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Java]]></title>
+            <link>https://kinsey973.github.io/posts/Java</link>
+            <guid isPermaLink="false">https://kinsey973.github.io/posts/Java</guid>
+            <pubDate>Mon, 11 Aug 2025 11:27:29 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>Java</h3>
+<hr>
+<h3>注释</h3>
+<h4>単行注释</h4>
+<p>格式    //注释信息</p>
+<h4>多行注释</h4>
+<p>格式    /*注释信息*/</p>
+<h4>文档注释</h4>
+<p>格式    /</p>
+<br/><p>访问 <a href="https://kinsey973.github.io/posts/Java" target="_blank">https://kinsey973.github.io/posts/Java</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (北歌)</author>
+        </item>
+    </channel>
+</rss>

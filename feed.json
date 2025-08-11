@@ -1,0 +1,26 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "北沐城歌",
+    "home_page_url": "https://kinsey973.github.io/",
+    "feed_url": "https://kinsey973.github.io/feed.json",
+    "description": "山行野宿，孤身万里",
+    "icon": "https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png",
+    "author": {
+        "name": "北歌",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://kinsey973.github.io/posts/Java",
+            "content_html": "<h3>Java</h3>\n<hr>\n<h3>注释</h3>\n<h4>単行注释</h4>\n<p>格式    //注释信息</p>\n<h4>多行注释</h4>\n<p>格式    /*注释信息*/</p>\n<h4>文档注释</h4>\n<p>格式    /</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/Java\" target=\"_blank\">https://kinsey973.github.io/posts/Java</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/Java",
+            "title": "Java",
+            "date_modified": "2024-11-12T18:49:38.000Z",
+            "date_published": "2025-08-11T11:27:29.170Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
