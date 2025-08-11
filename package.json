@@ -9,10 +9,12 @@
     "build:ssg": "valaxy build --ssg",
     "dev": "valaxy",
     "rss": "valaxy rss",
+    "new": "valaxy new",
     "serve": "vite preview"
   },
   "dependencies": {
     "valaxy": "0.26.2",
+    "valaxy-addon-meting": "^0.1.4",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-addon-waline": "^0.2.1",
     "valaxy-theme-yun": "0.26.2"

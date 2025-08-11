@@ -2,14 +2,14 @@
  * @Author: kinsey973 2409101203@qq.com
  * @Date: 2025-08-11 11:50:36
  * @LastEditors: kinsey973 2409101203@qq.com
- * @LastEditTime: 2025-08-11 15:17:15
+ * @LastEditTime: 2025-08-11 17:23:18
  * @FilePath: \blog\valaxy.config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import type { UserThemeConfig } from 'valaxy-theme-yun'
 import { defineValaxyConfig } from 'valaxy'
-import { addonWaline } from 'valaxy-addon-waline'
-//import { addonMeting } from 'valaxy-addon-meting'  //添加Meting音乐播放器
+import { addonTwikoo } from 'valaxy-addon-twikoo'
+import { addonMeting } from 'valaxy-addon-meting'//添加Meting音乐播放器
 // add icons what you will need
 
 const safelist = [
@@ -85,19 +85,20 @@ export default defineValaxyConfig<UserThemeConfig>({
     },
   },
   addons: [
-    addonWaline({
-      serverURL: 'https://waline-seven-green.vercel.app/',
-      comment: true,
-      emoji: [
-        'https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/bilibili/',
-        'https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/',
-        'https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/qq/'
-      ],
-      locale: {
-        placeholder: '填写邮箱，可以收到回复通知哦～',
-      },
-      requiredMeta: ['nick'],
+    addonTwikoo({
+      envId: 'https://twikooy.netlify.app/', 
+      lang: 'zh-CN',
+      path: '',
+      region: 'ap-shanghai',
     }),
+    addonMeting({
+      global: true,  // 是否全局开启播放器，true 表示每个页面都会显示播放器
+      props: {
+        id: '2049540645',    // 音乐资源的ID，比如网易云歌曲ID、歌单ID等
+        server: 'netease',   // 音乐平台，常用的有 'netease'（网易云）、'tencent'（腾讯）、'xiami'（虾米）
+        type: 'song',        // 资源类型，常见的有 'song'（单曲）、'playlist'（歌单）、'album'（专辑）、'artist'（歌手）
+      },
+    })
   ],
 
 })
