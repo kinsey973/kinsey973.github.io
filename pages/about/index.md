@@ -2,14 +2,21 @@
 title: 关于我
 ---
 
-I am developing [Valaxy](https://github.com/YunYouJun/valaxy) - Next Generation Static Blog Framework.
+北歌，在读大学生，搞安全的。
 
-If you like it, you can sponsor me in [GitHub](https://github.com/sponsors/YunYouJun) or [www.yunyoujun.cn/sponsors/](https://www.yunyoujun.cn/sponsors/).
+平时主要玩 CTF，方向偏 Web，顺带学点密码学和二进制。偶尔写点 PHP、Python、Java，最近在啃 Rust，虽然经常被所有权搞得头大。
+
+写博客的原因很简单——学过的东西不记下来，过两周就忘得差不多了。与其到处收藏吃灰，不如自己整理一遍，至少写的时候是真搞懂了。
+
+文章大部分是做题笔记和学习记录，不太讲究排版和文风，能看懂就行。有些概念我自己也没完全弄明白，会在文中标注出来，不装懂。
+
+博客之前用过 Hexo，现在换成了 Valaxy，折腾主题和配置也算是一种乐趣吧。
+
+如果你也是搞安全的或者正在学相关的东西，欢迎交流。遇到写错的地方也可以直接说，改了就是。
 
 ---
 
-我正在开发 [Valaxy](https://github.com/YunYouJun/valaxy) - 下一代静态博客框架。
+📮 联系方式
 
-如果你喜欢它，你可以在 [GitHub](https://github.com/sponsors/YunYouJun) 或 [www.yunyoujun.cn/sponsors/](https://www.yunyoujun.cn/sponsors/) 赞助我。
-
-Check out the [Valaxy | GitHub](https://github.com/YunYouJun/valaxy) for more details.
+- GitHub: [kinsey973](https://github.com/kinsey973)
+- QQ: 2409101203
