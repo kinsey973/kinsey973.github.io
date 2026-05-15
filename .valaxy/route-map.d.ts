@@ -101,9 +101,282 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/博客是如何搭建的': RouteRecordInfo<
+      '/posts/博客是如何搭建的',
+      '/posts/%E5%8D%9A%E5%AE%A2%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E7%9A%84',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/反序列化': RouteRecordInfo<
+      '/posts/反序列化',
+      '/posts/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/命令执行': RouteRecordInfo<
+      '/posts/命令执行',
+      '/posts/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/密码图形': RouteRecordInfo<
+      '/posts/密码图形',
+      '/posts/%E5%AF%86%E7%A0%81%E5%9B%BE%E5%BD%A2',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/正则表达式语法': RouteRecordInfo<
+      '/posts/正则表达式语法',
+      '/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/简单的登录界面': RouteRecordInfo<
+      '/posts/简单的登录界面',
+      '/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/解密网站': RouteRecordInfo<
+      '/posts/解密网站',
+      '/posts/%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto': RouteRecordInfo<
+      '/posts/crypto',
+      '/posts/crypto',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto-1': RouteRecordInfo<
+      '/posts/crypto-1',
+      '/posts/crypto-1',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto-AES-DES': RouteRecordInfo<
+      '/posts/crypto-AES-DES',
+      '/posts/crypto-AES-DES',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto-ECC加密': RouteRecordInfo<
+      '/posts/crypto-ECC加密',
+      '/posts/crypto-ECC%E5%8A%A0%E5%AF%86',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto-rsa': RouteRecordInfo<
+      '/posts/crypto-rsa',
+      '/posts/crypto-rsa',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/crypto-suanfa': RouteRecordInfo<
+      '/posts/crypto-suanfa',
+      '/posts/crypto-suanfa',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-信息搜集': RouteRecordInfo<
+      '/posts/ctfshow-信息搜集',
+      '/posts/ctfshow-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-命令执行': RouteRecordInfo<
+      '/posts/ctfshow-命令执行',
+      '/posts/ctfshow-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-常用姿势': RouteRecordInfo<
+      '/posts/ctfshow-常用姿势',
+      '/posts/ctfshow-%E5%B8%B8%E7%94%A8%E5%A7%BF%E5%8A%BF',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-文件上传': RouteRecordInfo<
+      '/posts/ctfshow-文件上传',
+      '/posts/ctfshow-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-java': RouteRecordInfo<
+      '/posts/ctfshow-java',
+      '/posts/ctfshow-java',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-php特性': RouteRecordInfo<
+      '/posts/ctfshow-php特性',
+      '/posts/ctfshow-php%E7%89%B9%E6%80%A7',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-ssrf': RouteRecordInfo<
+      '/posts/ctfshow-ssrf',
+      '/posts/ctfshow-ssrf',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-xss': RouteRecordInfo<
+      '/posts/ctfshow-xss',
+      '/posts/ctfshow-xss',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow-xxe': RouteRecordInfo<
+      '/posts/ctfshow-xxe',
+      '/posts/ctfshow-xxe',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/ctfshow文件包含': RouteRecordInfo<
+      '/posts/ctfshow文件包含',
+      '/posts/ctfshow%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/hello-valaxy': RouteRecordInfo<
       '/posts/hello-valaxy',
       '/posts/hello-valaxy',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/HTML学习篇': RouteRecordInfo<
+      '/posts/HTML学习篇',
+      '/posts/HTML%E5%AD%A6%E4%B9%A0%E7%AF%87',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Java': RouteRecordInfo<
+      '/posts/Java',
+      '/posts/Java',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/java-sec-code': RouteRecordInfo<
+      '/posts/java-sec-code',
+      '/posts/java-sec-code',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Javaweb': RouteRecordInfo<
+      '/posts/Javaweb',
+      '/posts/Javaweb',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/md5': RouteRecordInfo<
+      '/posts/md5',
+      '/posts/md5',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/misc': RouteRecordInfo<
+      '/posts/misc',
+      '/posts/misc',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/MySQL学习': RouteRecordInfo<
+      '/posts/MySQL学习',
+      '/posts/MySQL%E5%AD%A6%E4%B9%A0',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/php': RouteRecordInfo<
+      '/posts/php',
+      '/posts/php',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/php特性': RouteRecordInfo<
+      '/posts/php特性',
+      '/posts/php%E7%89%B9%E6%80%A7',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/python': RouteRecordInfo<
+      '/posts/python',
+      '/posts/python',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/re': RouteRecordInfo<
+      '/posts/re',
+      '/posts/re',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/rust学习': RouteRecordInfo<
+      '/posts/rust学习',
+      '/posts/rust%E5%AD%A6%E4%B9%A0',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/SageMath常用函数': RouteRecordInfo<
+      '/posts/SageMath常用函数',
+      '/posts/SageMath%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/sql注入总结': RouteRecordInfo<
+      '/posts/sql注入总结',
+      '/posts/sql%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/upload': RouteRecordInfo<
+      '/posts/upload',
+      '/posts/upload',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/vulhub': RouteRecordInfo<
+      '/posts/vulhub',
+      '/posts/vulhub',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -188,9 +461,243 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/posts/博客是如何搭建的.md': {
+      routes:
+        | '/posts/博客是如何搭建的'
+      views:
+        | never
+    }
+    'pages/posts/反序列化.md': {
+      routes:
+        | '/posts/反序列化'
+      views:
+        | never
+    }
+    'pages/posts/命令执行.md': {
+      routes:
+        | '/posts/命令执行'
+      views:
+        | never
+    }
+    'pages/posts/密码图形.md': {
+      routes:
+        | '/posts/密码图形'
+      views:
+        | never
+    }
+    'pages/posts/正则表达式语法.md': {
+      routes:
+        | '/posts/正则表达式语法'
+      views:
+        | never
+    }
+    'pages/posts/简单的登录界面.md': {
+      routes:
+        | '/posts/简单的登录界面'
+      views:
+        | never
+    }
+    'pages/posts/解密网站.md': {
+      routes:
+        | '/posts/解密网站'
+      views:
+        | never
+    }
+    'pages/posts/crypto.md': {
+      routes:
+        | '/posts/crypto'
+      views:
+        | never
+    }
+    'pages/posts/crypto-1.md': {
+      routes:
+        | '/posts/crypto-1'
+      views:
+        | never
+    }
+    'pages/posts/crypto-AES-DES.md': {
+      routes:
+        | '/posts/crypto-AES-DES'
+      views:
+        | never
+    }
+    'pages/posts/crypto-ECC加密.md': {
+      routes:
+        | '/posts/crypto-ECC加密'
+      views:
+        | never
+    }
+    'pages/posts/crypto-rsa.md': {
+      routes:
+        | '/posts/crypto-rsa'
+      views:
+        | never
+    }
+    'pages/posts/crypto-suanfa.md': {
+      routes:
+        | '/posts/crypto-suanfa'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-信息搜集.md': {
+      routes:
+        | '/posts/ctfshow-信息搜集'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-命令执行.md': {
+      routes:
+        | '/posts/ctfshow-命令执行'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-常用姿势.md': {
+      routes:
+        | '/posts/ctfshow-常用姿势'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-文件上传.md': {
+      routes:
+        | '/posts/ctfshow-文件上传'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-java.md': {
+      routes:
+        | '/posts/ctfshow-java'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-php特性.md': {
+      routes:
+        | '/posts/ctfshow-php特性'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-ssrf.md': {
+      routes:
+        | '/posts/ctfshow-ssrf'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-xss.md': {
+      routes:
+        | '/posts/ctfshow-xss'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow-xxe.md': {
+      routes:
+        | '/posts/ctfshow-xxe'
+      views:
+        | never
+    }
+    'pages/posts/ctfshow文件包含.md': {
+      routes:
+        | '/posts/ctfshow文件包含'
+      views:
+        | never
+    }
     'pages/posts/hello-valaxy.md': {
       routes:
         | '/posts/hello-valaxy'
+      views:
+        | never
+    }
+    'pages/posts/HTML学习篇.md': {
+      routes:
+        | '/posts/HTML学习篇'
+      views:
+        | never
+    }
+    'pages/posts/Java.md': {
+      routes:
+        | '/posts/Java'
+      views:
+        | never
+    }
+    'pages/posts/java-sec-code.md': {
+      routes:
+        | '/posts/java-sec-code'
+      views:
+        | never
+    }
+    'pages/posts/Javaweb.md': {
+      routes:
+        | '/posts/Javaweb'
+      views:
+        | never
+    }
+    'pages/posts/md5.md': {
+      routes:
+        | '/posts/md5'
+      views:
+        | never
+    }
+    'pages/posts/misc.md': {
+      routes:
+        | '/posts/misc'
+      views:
+        | never
+    }
+    'pages/posts/MySQL学习.md': {
+      routes:
+        | '/posts/MySQL学习'
+      views:
+        | never
+    }
+    'pages/posts/php.md': {
+      routes:
+        | '/posts/php'
+      views:
+        | never
+    }
+    'pages/posts/php特性.md': {
+      routes:
+        | '/posts/php特性'
+      views:
+        | never
+    }
+    'pages/posts/python.md': {
+      routes:
+        | '/posts/python'
+      views:
+        | never
+    }
+    'pages/posts/re.md': {
+      routes:
+        | '/posts/re'
+      views:
+        | never
+    }
+    'pages/posts/rust学习.md': {
+      routes:
+        | '/posts/rust学习'
+      views:
+        | never
+    }
+    'pages/posts/SageMath常用函数.md': {
+      routes:
+        | '/posts/SageMath常用函数'
+      views:
+        | never
+    }
+    'pages/posts/sql注入总结.md': {
+      routes:
+        | '/posts/sql注入总结'
+      views:
+        | never
+    }
+    'pages/posts/upload.md': {
+      routes:
+        | '/posts/upload'
+      views:
+        | never
+    }
+    'pages/posts/vulhub.md': {
+      routes:
+        | '/posts/vulhub'
       views:
         | never
     }
