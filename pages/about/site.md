@@ -2,6 +2,10 @@
 title: 关于站点
 ---
 
-Valaxy + valaxy-theme-yun Demo Site
+这里就是我的个人博客，主要用来记东西。
 
-- Default Theme: [valaxy-theme-yun](https://github.com/YunYouJun/valaxy/blob/main/packages/valaxy-theme-yun/)
+内容比较杂，CTF writeup 占了大头，还有一些密码学、编程语言的学习笔记。写的时候没想太多，基本就是学到哪写到哪，所以文章质量参差不齐，有的写得很详细，有的可能就几行。
+
+没什么固定更新频率，有东西想记了就写一篇。大部分文章是给自己看的，方便以后翻，但如果你刚好也对这些内容感兴趣，那更好。
+
+博客基于 [Valaxy](https://github.com/YunYouJun/valaxy) 搭建，用的 yun 主题。
