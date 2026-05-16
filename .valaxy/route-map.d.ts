@@ -129,6 +129,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/我的旧博客': RouteRecordInfo<
+      '/posts/我的旧博客',
+      '/posts/%E6%88%91%E7%9A%84%E6%97%A7%E5%8D%9A%E5%AE%A2',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/正则表达式语法': RouteRecordInfo<
       '/posts/正则表达式语法',
       '/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95',
@@ -407,7 +414,7 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'node_modules/.pnpm/valaxy@0.28.7_@babel+parser_668c8e78245907d9cfbec3a9ce8ebcf5/node_modules/valaxy/client/pages/[...path].vue': {
+    'node_modules/.pnpm/valaxy@0.28.7_@babel+parser_960bebb14b7ec01077ff4b56c17bd8df/node_modules/valaxy/client/pages/[...path].vue': {
       routes:
         | '/[...path]'
       views:
@@ -482,6 +489,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/密码图形.md': {
       routes:
         | '/posts/密码图形'
+      views:
+        | never
+    }
+    'pages/posts/我的旧博客.md': {
+      routes:
+        | '/posts/我的旧博客'
       views:
         | never
     }
