@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/Javaweb.Dgo0-dHB.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javaweb - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="Javaweb">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">Javaweb</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-07-07 17:54:56"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-07-07</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">5.1k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">20m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=java" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>java</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：Js Js用来负责网页行为 引入方式 内部脚本：将JS代码定义在html界面 javascript必须在&lt;script&lt;/script之间 在html文档中，可以在任意地方，放置任意数量的&lt;script，一般放在&lt;body元素的地步，可改善显示速度 外部脚本：将js代码定义在外部js文件，然。</p><p>&lt;!-- more --&gt;</p><h3 id="js" tabindex="-1">Js <a class="header-anchor" href="#js" aria-label="Permalink to &quot;Js&quot;">​</a></h3><p>Js用来负责网页行为</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png" alt="image-20250607180345208" loading="lazy" decoding="async"></figure><h4 id="引入方式" tabindex="-1">引入方式 <a class="header-anchor" href="#引入方式" aria-label="Permalink to &quot;引入方式&quot;">​</a></h4><p>内部脚本：将JS代码定义在html界面</p><p>javascript必须在&lt;script&gt;&lt;/script&gt;之间</p><p>在html文档中，可以在任意地方，放置任意数量的&lt;script&gt;，一般放在&lt;body&gt;元素的地步，可改善显示速度</p><p>外部脚本：将js代码定义在外部js文件，然后引入到html中</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;script src=&quot;js/demo .js&quot;&gt;&lt;/script&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="变量-数据类型" tabindex="-1">变量&amp;数据类型 <a class="header-anchor" href="#变量-数据类型" aria-label="Permalink to &quot;变量&amp;数据类型&quot;">​</a></h4><h4 id="变量" tabindex="-1">变量 <a class="header-anchor" href="#变量" aria-label="Permalink to &quot;变量&quot;">​</a></h4><p>js用let声明变量（弱类型语言）</p><p>js用关键字来声明变量</p><p>输出变量有三种方式：</p><p>1.alert()弹出框形式</p><p>2.console.log()输出到控制台</p><p>3.document.write()输出到body区域</p><h4 id="数据类型" tabindex="-1">数据类型 <a class="header-anchor" href="#数据类型" aria-label="Permalink to &quot;数据类型&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241703616.png" alt="image-20250624170312534" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506241713291.png" alt="image-20250624171351241" loading="lazy" decoding="async"></figure><p>字符串反引号用于模版字符串</p><h4 id="函数" tabindex="-1">函数 <a class="header-anchor" href="#函数" aria-label="Permalink to &quot;函数&quot;">​</a></h4><p><strong>定义方法一：</strong></p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">function functionName(参数1，参数2){
+
+要执行的代码
+
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>注意：形式参数不需要类型，因为javascript是弱类型语言</p><p>返回值也不需要定义类型，可以在函数内部直接是使用return返回即可</p><p>调用：函数名称(实际参数列表)</p><p><strong>定义方法二：</strong></p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">var functionName=function(参数1，参数2){
+
+//执行的代码
+
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="js对象" tabindex="-1">js对象 <a class="header-anchor" href="#js对象" aria-label="Permalink to &quot;js对象&quot;">​</a></h4><h5 id="array对象" tabindex="-1">array对象 <a class="header-anchor" href="#array对象" aria-label="Permalink to &quot;array对象&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250928695.png" alt="image-20250725092755610" loading="lazy" decoding="async"></figure><p>js中的数组相当于java中的集合，数组长度可变，二js是弱类型，所以可以存储任意类型的数据</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250939801.png" alt="image-20250725093903765" loading="lazy" decoding="async"></figure><p>forEach数组遍历：</p><p>arr.forEach(function(e){</p><p>console.log(e);})</p><p>ES6箭头函数遍历 （。。。）=&gt;(…)</p><p>arr.forEach(e)=&gt;{</p><p>console.log(e);</p><p>}</p><h5 id="string" tabindex="-1">string <a class="header-anchor" href="#string" aria-label="Permalink to &quot;string&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250949620.png" alt="image-20250725094948553" loading="lazy" decoding="async"></figure><h5 id="json" tabindex="-1">json <a class="header-anchor" href="#json" aria-label="Permalink to &quot;json&quot;">​</a></h5><p><strong>js自定义对象</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507250951389.png" alt="image-20250725095143347" loading="lazy" decoding="async"></figure><p><strong>JSON介绍</strong></p><p>由于其语法简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传递</p><p “key”:value="">格式：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png" alt="image-20250725101013985" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251010047.png" alt="" loading="lazy" decoding="async"></figure><h5 id="bom" tabindex="-1">BOM <a class="header-anchor" href="#bom" aria-label="Permalink to &quot;BOM&quot;">​</a></h5><p>概念：BOM是浏览器对象模型，允许js与浏览器对话，js将浏览器的各个组成部分分封装为对象</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251022607.png" alt="image-20250725102254563" loading="lazy" decoding="async"></figure><p>Window对象</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251024821.png" alt="image-20250725102434780" loading="lazy" decoding="async"></figure><p>Location对象</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251042121.png" alt="image-20250725104228083" loading="lazy" decoding="async"></figure><h5 id="dom对象" tabindex="-1">DOM对象 <a class="header-anchor" href="#dom对象" aria-label="Permalink to &quot;DOM对象&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251048846.png" alt="image-20250725104826799" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251053321.png" alt="image-20250725105304286" loading="lazy" decoding="async"></figure><p>html中Element对象可以通过Document对象获取，二Document对象时通过windows对象获取的</p><p>Document对象中提供了下面获取Element元素对象的函数：</p><p>1.根据id属性值获取，返回単个Element对象</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">var h1=document.getElementById(&#39;h1&#39;);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>2.根据标签名获取，返回Element对象数组</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">var divs=document.getElementsByTagName(&#39;div&#39;);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>3.根据name属性值获取，返回Element对象数组</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">var hobbys=document.getElementsByName(&#39;hobby&#39;);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>4.根据class属性值获取，返回Element对象数组</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">.var class=document.getElementsByClassName(&#39;cls&#39;);
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="js事件监听" tabindex="-1">js事件监听 <a class="header-anchor" href="#js事件监听" aria-label="Permalink to &quot;js事件监听&quot;">​</a></h4><p>事件：html事件时发生在html上元素的“事情”</p><p>例如：按钮被点击。。。</p><p>事件监听：js可以在事件被侦测到时执行指定的代码</p><p>事件绑定</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251120694.png" alt="image-20250725112026653" loading="lazy" decoding="async"></figure><p>常见事件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251125544.png" alt="image-20250725112555509" loading="lazy" decoding="async"></figure><h3 id="vue" tabindex="-1">Vue <a class="header-anchor" href="#vue" aria-label="Permalink to &quot;Vue&quot;">​</a></h3><p>Vue是一个用于构建用户界面的渐进式js框架</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280856720.png" alt="image-20250728085647555" loading="lazy" decoding="async"></figure><p>框架:就是一套完整的项目解决方案，用于快速构建项目</p><p>优点：提高前端项目的开发效率</p><p>缺点：要理解记忆框架使用规则</p><h4 id="vue模块的引入" tabindex="-1">vue模块的引入 <a class="header-anchor" href="#vue模块的引入" aria-label="Permalink to &quot;vue模块的引入&quot;">​</a></h4><p>准备</p><ul><li>引入Vue模块</li><li>创建Vue程序的应用实例，控制视图的元素</li><li>准备元素(div)被Vue控制</li></ul><p>创建驱动视图</p><ul><li>准备数据</li><li>通过插值表达式渲染页面</li></ul><div class="language-html"><button title="Copy code" class="copy"></button><span class="lang">html</span><pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;{{message}}&lt;/h1&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot;&gt;
+import{createApp} from &#39;https://unpkg.com/vue@3/dist/vue.esm-browser.js&#39;;
+createApp({
+    data(){
+        return{
+            message:&quot;Hello Vue&quot;
+        }
+    }
+}).mount(&quot;#app&quot;);
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="vue常用指令" tabindex="-1">vue常用指令 <a class="header-anchor" href="#vue常用指令" aria-label="Permalink to &quot;vue常用指令&quot;">​</a></h4><p>指令：HTML标签上带有v-前缀的特殊属性，不同的指令具有不同的含义，可以实现不同的功能。</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;p v-xxx=&quot;...&quot;&gt;...&lt;/p&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>常用指令</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507280917315.png" alt="image-20250728091713271" loading="lazy" decoding="async"></figure><p>插值表达式不能出现在标签内部</p><h5 id="v-for" tabindex="-1">v-for <a class="header-anchor" href="#v-for" aria-label="Permalink to &quot;v-for&quot;">​</a></h5><p>作用：列表渲染，遍历容器的元素或者对象的属性</p><p>语法：</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;tr v-for=&quot;(item,index) in items&quot;:key=&quot;item.id&quot;&gt; {{item}}&lt;/tr&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>参数说明：</strong></p><p>items为遍历的数组</p><p>item为遍历出来的元素</p><p>index为索引/下标，从o开始；可以省略，省略index语法:v-for=&quot;item in items</p><p><strong>key:</strong></p><p>作用：给元素添加的唯一标识，便于vue进行列表项的正确排序复用，提升渲染性能</p><p>推荐使用id作为key(唯一)，不推荐使用index作为key(会变化)</p><p>注意：遍历的数组，必须在data中定义;要想让哪个标签循环展示多次，就在哪个标签上使用v-for指令。</p><div class="language-html"><button title="Copy code" class="copy"></button><span class="lang">html</span><pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;h2&gt;员工列表&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;(emp, index) in employees&quot; :key=&quot;emp.id&quot;&gt;
+            {{ index + 1 }}. 姓名：{{ emp.name }} | 职位：{{ emp.position }} | 年龄：{{ emp.age }}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot;&gt;
+    import{createApp} from &#39;https://unpkg.com/vue@3/dist/vue.esm-browser.js&#39;;
+    createApp({
+        data(){
+            return{
+               employees:[
+                   { id: 1, name: &#39;张三&#39;, position: &#39;前端工程师&#39;, age: 25 },
+                   { id: 2, name: &#39;李四&#39;, position: &#39;后端工程师&#39;, age: 28 },
+                   { id: 3, name: &#39;王五&#39;, position: &#39;产品经理&#39;, age: 30 },
+                   { id: 4, name: &#39;赵六&#39;, position: &#39;测试工程师&#39;, age: 24 }
+               ]
+            }
+        }
+    }).mount(&quot;#app&quot;);
+
+&lt;/script&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="v-bind" tabindex="-1">v-bind <a class="header-anchor" href="#v-bind" aria-label="Permalink to &quot;v-bind&quot;">​</a></h5><p>作用：动态为HTML标签绑定属性值，如设置href，src，style样式等</p><p>语法:v-bind:属性名=“属性值”</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;img v-bind:src=&quot;item.image&quot; width=&quot;30px&quot;&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>简化：属性名=“属性值”</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;img :src=&quot;item.image&quot; width=&quot;30px&quot;&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>注意：动态的为标签的属性绑定值，不能使用插值表达式，得使用v-bind指令。且绑定的数据，必须在data中定义。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281005134.png" alt="image-20250728100519100" loading="lazy" decoding="async"></figure><h5 id="v-if-v-show" tabindex="-1">v-if&amp;v-show <a class="header-anchor" href="#v-if-v-show" aria-label="Permalink to &quot;v-if&amp;v-show&quot;">​</a></h5><p>作用：这两类指令都是用来控制元素的显示与隐藏的</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281010589.png" alt="image-20250728101035543" loading="lazy" decoding="async"></figure><p>注意：v-else-if必须出现在v-if之后，可以出现多个；v-else 必须出现在v-if/v-else-if之后。</p><p>v-if</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281013180.png" alt="image-20250728101340145" loading="lazy" decoding="async"></figure><p>v-show</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281015223.png" alt="image-20250728101536195" loading="lazy" decoding="async"></figure><h5 id="v-model" tabindex="-1">v-model <a class="header-anchor" href="#v-model" aria-label="Permalink to &quot;v-model&quot;">​</a></h5><p>作用：在表单元素上使用，双向数据绑定。可以方便的获取或设置表单项数据</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281029904.png" alt="image-20250728102907861" loading="lazy" decoding="async"></figure><h5 id="v-on" tabindex="-1">v-on <a class="header-anchor" href="#v-on" aria-label="Permalink to &quot;v-on&quot;">​</a></h5><p>作用：为html标签绑定事件(添加事件监听)</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281043178.png" alt="image-20250728104312131" loading="lazy" decoding="async"></figure><h3 id="ajax" tabindex="-1">Ajax <a class="header-anchor" href="#ajax" aria-label="Permalink to &quot;Ajax&quot;">​</a></h3><p>作用：数据交换：通过ajax可以给服务器发送请求，并获取服务器响应的数据</p><p>异步交互：可以在不重新加载整个页面的情况下，与服务器交换数据表格更新部分网页的技术，如搜索联想、用户名是否可用的校验等等</p><h4 id="同步与异步" tabindex="-1">同步与异步 <a class="header-anchor" href="#同步与异步" aria-label="Permalink to &quot;同步与异步&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290815068.png" alt="image-20250729081519966" loading="lazy" decoding="async"></figure><h4 id="axios" tabindex="-1">Axios <a class="header-anchor" href="#axios" aria-label="Permalink to &quot;Axios&quot;">​</a></h4><p>介绍：Axios对原生的Ajax进行了封装，简化书写，快速开发</p><p>官网：<a href="https://www.axios-http.cn/" target="_blank" rel="noreferrer">https://www.axios-http.cn/</a></p><p>步骤：</p><p>引入Axios的js文件（参考官网）</p><p>使用Axios发送请求，并获取响应结果</p><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-js"><button title="Copy code" class="copy"></button><span class="lang">js</span><pre><code class="language-js">axios({
+     method:&#39;GET&#39;,
+     url:&#39;https://web-server.itheima.net/emps/list&#39;
+ }).then((result)=&gt;{
+     console.log(result.data); 
+ }).catch((err)=&gt;{
+ alert(err);
+ })
+</code></pre><button class="code-block-unfold-btn"></button></div><p>method:请求方式 url：请求路径 data：请求数据(POST)</p><p>params:发送请求时携带的url参数 如：…?key=val</p><p>then({})成功回调函数 catch({})失败回调函数</p><h4 id="请求方式别名" tabindex="-1">请求方式别名 <a class="header-anchor" href="#请求方式别名" aria-label="Permalink to &quot;请求方式别名&quot;">​</a></h4><p>格式：axios.请求方式(url[,data[,config]])</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290842566.png" alt="image-20250729084235513" loading="lazy" decoding="async"></figure><h4 id="async-await" tabindex="-1">async&amp;await <a class="header-anchor" href="#async-await" aria-label="Permalink to &quot;async&amp;await&quot;">​</a></h4><p>可以通过async、await可以让异步变为同步操作。async就是来声明一个异步方法，await是用来等待异步任务执行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290917685.png" alt="image-20250729091729614" loading="lazy" decoding="async"></figure><h4 id="生命周期" tabindex="-1">生命周期 <a class="header-anchor" href="#生命周期" aria-label="Permalink to &quot;生命周期&quot;">​</a></h4><p>指一个对象从创建到销毁的整个过程</p><p>生命周期的八个阶段：每触发一个生命周期事件，会自动执行一个生命周期方法(钩子)，也就是说可以在特定时机执行自己的逻辑代码</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507290947923.png" alt="image-20250729094714875" loading="lazy" decoding="async"></figure><p>典型的应用场景：</p><p>在页面加载完毕时，发起异步请求，加载数据，渲染页面</p><h3 id="maven" tabindex="-1">Maven <a class="header-anchor" href="#maven" aria-label="Permalink to &quot;Maven&quot;">​</a></h3><p>Maven是一款用于管理和构建Java项目的工具，是apache旗下的一个开源项目</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300853293.png" alt="image-20250730085255162" loading="lazy" decoding="async"></figure><h4 id="介绍" tabindex="-1">介绍 <a class="header-anchor" href="#介绍" aria-label="Permalink to &quot;介绍&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300942274.png" alt="image-20250730094219221" loading="lazy" decoding="async"></figure><p>仓库：用于存储资源，管理各种jar包</p><p>本地仓库：自己计算机上的一个目录</p><p>远程仓库：一般由公司团队搭建的私有仓库</p><p>中央仓库：有Maven团队维护的全球唯一性，仓库地址：<a href="https://repol.maven.org/maven2/" target="_blank" rel="noreferrer">https://repol.maven.org/maven2/</a></p><h4 id="maven的编译和打包" tabindex="-1">maven的编译和打包 <a class="header-anchor" href="#maven的编译和打包" aria-label="Permalink to &quot;maven的编译和打包&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507300923146.png" alt="image-20250730092347029" loading="lazy" decoding="async"></figure><p>compile会编译整个项目，把源代码编译成可以被 JVM 执行的中间格式（字节码）。</p><p>package会打包整个项目，<strong>将项目编译、打包成可执行的 <code>.jar</code> 或 <code>.war</code> 文件</strong>，通常位于 <code>target/</code> 目录下。</p><h4 id="maven坐标" tabindex="-1">Maven坐标 <a class="header-anchor" href="#maven坐标" aria-label="Permalink to &quot;Maven坐标&quot;">​</a></h4><p>Maven中的坐标是资源(jar)的唯一标识，通过该坐标可以唯一定位资源位置</p><p>使用坐标来定义项目或引入项目中需要的依赖</p><p><strong>Maven坐标主要组成</strong></p><p>groupId：定义当前Maven项目隶属组织名称(通常是域名反写，例如：com.iteima)</p><p>artifactId:定义当前Maven项目名称(通常是模块名称，例如order-sercive、goods-service)</p><p>version：定义当前项目版本号</p><p>Maven项目版本分类</p><ul><li>​ SNAPSHOT：功能不稳定，尚处于开发中的版本，即快照版本</li><li>​ RELEASE：功能趋于稳定，当前更新停止，可以用于发行的版本</li></ul><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507301053867.png" alt="image-20250730105334773" loading="lazy" decoding="async"></figure><h4 id="导入maven项目" tabindex="-1">导入Maven项目 <a class="header-anchor" href="#导入maven项目" aria-label="Permalink to &quot;导入Maven项目&quot;">​</a></h4><p>建议选择Maven项目的pom.xml文件进行导入</p><h4 id="依赖管理" tabindex="-1">依赖管理 <a class="header-anchor" href="#依赖管理" aria-label="Permalink to &quot;依赖管理&quot;">​</a></h4><p>依赖：指当前项目运行所需要的jar包，应该项目中可以引入多个依赖</p><p>配置：</p><p>1.在pom.xml中编写&lt;dependencies&gt;标签</p><p>2.在&lt;dependencies&gt;标签中使用&lt;dependency&gt;引入标签</p><p>3.定义坐标的groupId,artifactId,version</p><p>4.点击刷新按钮，引入最新加入的坐标</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310928083.png" alt="image-20250731092812942" loading="lazy" decoding="async"></figure><p>如果不知道依赖的坐标信息，可以到<a href="https://mvnrepository.com/%E4%B8%AD%E6%90%9C%E7%B4%A2" target="_blank" rel="noreferrer">https://mvnrepository.com/中搜索</a></p><h4 id="排除依赖" tabindex="-1">排除依赖 <a class="header-anchor" href="#排除依赖" aria-label="Permalink to &quot;排除依赖&quot;">​</a></h4><p>指主动断开依赖的资源，被排除的资源无需指定版本</p><p>用&lt;exclusion&gt;&lt;/exclusion&gt;来排除依赖</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507310937280.png" alt="image-20250731093708228" loading="lazy" decoding="async"></figure><p>具体作用</p><ol><li><strong>解决依赖冲突</strong> 当多个依赖引入了同一个库的不同版本，可能导致运行时错误或编译错误。通过排除其中一个依赖的传递依赖，可以避免版本冲突。</li><li><strong>减小最终包大小</strong> 如果某个传递依赖你用不上，可以排除它，减少项目的依赖体积，提升启动速度和构建速度。</li><li><strong>避免重复引入</strong> 某些库可能被多次引入不同版本，排除可以避免重复依赖。</li></ol><p>注意：一旦依赖配置变更了，记得重新加载</p><p>引入的依赖本地仓库不存在记得联网</p><h4 id="生命周期-1" tabindex="-1">生命周期 <a class="header-anchor" href="#生命周期-1" aria-label="Permalink to &quot;生命周期&quot;">​</a></h4><p>Maven的生命周期就是为了对所有的maven项目构建过程进行抽象和统一</p><p>Maven中有三套相互独立的生命周期</p><ul><li>clean:清理工作</li><li>default:核心工作，如：编译、测试、打包、安装、部署</li><li>site：生成报告、发布站点</li></ul><p>执行指定生命周期的两种方式:</p><p>在idea中，右侧的maven工具栏，选中对应的生命周期，双击执行</p><p>在命令行中，通过命令执行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311002568.png" alt="image-20250731100241499" loading="lazy" decoding="async"></figure><p>生命周期阶段</p><ul><li>clean:溢出上一次构建生成的文件</li><li>compile:编译项目源代码</li><li>test:使用合适的单元测试框架进行测试(junit)</li><li>package:将编译后的文件打包，如jar、war</li><li>install：安装项目到本地仓库</li></ul><p>注意：在同一套生命周期中，当运行后面的阶段时，前面的阶段都会运行</p><h4 id="单元测试" tabindex="-1">单元测试 <a class="header-anchor" href="#单元测试" aria-label="Permalink to &quot;单元测试&quot;">​</a></h4><p>测试：用来促进鉴定软件的正确性、完整性、安全性和质量的过程</p><p>阶段划分：单元测试（白盒）、集成测试（灰盒）、系统测试（黑盒）、验收测试（黑盒）</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311038807.png" alt="image-20250731103827736" loading="lazy" decoding="async"></figure><p>测试方法：白盒测试，黑盒测试及灰盒测试</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507311041784.png" alt="image-20250731104128739" loading="lazy" decoding="async"></figure><p>单元测试：针对最小的功能单元，编写测试代码对其正确的进行测试</p><p>JUnit：最流行的Java测试框架只有，提供了一些功能，方便程序进行单元测试</p><h5 id="引入依赖" tabindex="-1"><strong>引入依赖</strong> <a class="header-anchor" href="#引入依赖" aria-label="Permalink to &quot;**引入依赖**&quot;">​</a></h5><p>1.在pox.xml中引入JUnit的依赖</p><p>2.在test/java目录下创建测试类，并编写对应的测试方法，并在方法上声明@Test注解</p><p>3.运行单元测试(测试通过：绿色，不通过：红色)</p><p>pom.xml</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;version&gt;5.9.1&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>JUnit单元测试类名命名规范为：XxxxxTest【规范】。JUnit单元测试的方法，必须声明为public void【规定】。</p><h5 id="断言" tabindex="-1">断言 <a class="header-anchor" href="#断言" aria-label="Permalink to &quot;断言&quot;">​</a></h5><p>JUnit提供了一些辅助方法，用来帮助我们确定被测试的犯法是否按照预期的效果正常工作，这种方式称为断言</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508041028351.png" alt="image-20250804102819237" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package com.itheima;
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+public class UserServiceTest {
+    
+    @Test
+    public void testGetAge2(){
+        Integer age = new UserService().getAge(&quot;110002200505091218&quot;);
+        Assertions.assertNotEquals(18, age, &quot;两个值相等&quot;);
+//        String s1 = new String(&quot;Hello&quot;);
+//        String s2 = &quot;Hello&quot;;
+//        Assertions.assertSame(s1, s2, &quot;不是同一个对象引用&quot;);
+    }
+
+    @Test
+    public void testGetGender2(){
+        String gender = new UserService().getGender(&quot;612429198904201611&quot;);
+        Assertions.assertEquals(&quot;男&quot;, gender);
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="常见注解" tabindex="-1">常见注解 <a class="header-anchor" href="#常见注解" aria-label="Permalink to &quot;常见注解&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508041037122.png" alt="image-20250804103733076" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">
+import org.junit.jupiter.api.*;
+
+public class UserServiceTest {
+
+    @BeforeEach
+    public void testBefore(){
+        System.out.println(&quot;before...&quot;);
+    }
+
+    @AfterEach
+    public void testAfter(){
+        System.out.println(&quot;after...&quot;);
+    }
+
+    @BeforeAll //该方法必须被static修饰
+    public static void testBeforeAll(){
+        System.out.println(&quot;before all ...&quot;);
+    }
+
+    @AfterAll //该方法必须被static修饰
+    public static void testAfterAll(){
+        System.out.println(&quot;after all...&quot;);
+    }
+
+    @Test
+    public void testGetAge(){
+        Integer age = new UserService().getAge(&quot;110002200505091218&quot;);
+        System.out.println(age);
+    }
+
+    @Test
+    public void testGetGender(){
+        String gender = new UserService().getGender(&quot;612429198904201611&quot;);
+        System.out.println(gender);
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="依赖范围" tabindex="-1">依赖范围 <a class="header-anchor" href="#依赖范围" aria-label="Permalink to &quot;依赖范围&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508041103661.png" alt="image-20250804110357603" loading="lazy" decoding="async"></figure><h3 id="web基础" tabindex="-1">web基础 <a class="header-anchor" href="#web基础" aria-label="Permalink to &quot;web基础&quot;">​</a></h3><p>那在前面讲解Web前端开发的时候，我们学习了前端网页开发的三剑客HTML、CSS、JS，通过这三项技术，我们就可以制作前端页面了。 那最终，这些个页面资料，我们就可以部署在服务器上，然后打开浏览器就可以直接访问服务器上部署的前端页面了。</p><figure><img src="https://heuqqdmbyk.feishu.cn/space/api/box/stream/download/asynccode/?code=OWNlZWQ0MTg0NTY5ZjhhY2RkYmQ5MDUzMWJlN2UwNDJfUGVFSVI0U2ZXMDE0SlRsVmdiZmtuYVk2Nk5wMkM3WGhfVG9rZW46R0N1U2J1dVhZb3A4TWR4aVBIOGM1aDBZbjNnXzE3NTQyNzczMDE6MTc1NDI4MDkwMV9WNA" alt="img" loading="lazy" decoding="async"></figure><p>而像HTML、CSS、JS 以及图片、音频、视频等这些资源，我们都称为<strong>静态资源</strong>。 所谓静态资源，就是指在服务器上存储的不会改变的数据，通常不会根据用户的请求而变化。</p><p>那与静态资源对应的还有一类资源，就是动态资源。那所谓<strong>动态资源</strong>，就是指在服务器端上存储的，会根据用户请求和其他数据动态生成的，内容可能会在每次请求时都发生变化。比如：Servlet、JSP等(负责逻辑处理)。而Servlet、JSP这些技术现在早都被企业淘汰了，现在在企业项目开发中，都是直接基于Spring框架来构建动态资源。</p><p><strong>BS架构</strong>。</p><ul><li><p>BS架构：Browser/Server，浏览器/服务器架构模式。客户端只需要浏览器，应用程序的逻辑和数据都存储在服务端。</p><p>优点：维护方便</p><p>缺点：体验一般</p></li><li><p>CS架构：Client/Server，客户端/服务器架构模式。需要单独开发维护客户端。</p><p>优点：体验不错</p><p>缺点：开发维护麻烦</p></li></ul><h4 id="springboot-web" tabindex="-1">SpringBoot Web <a class="header-anchor" href="#springboot-web" aria-label="Permalink to &quot;SpringBoot Web&quot;">​</a></h4><p><strong>Spring Boot 可以帮助我们非常快速的构建应用程序、简化开发、提高效率 。</strong></p><p><strong>而直接基于SpringBoot进行项目构建和开发，不仅是Spring官方推荐的方式，也是现在企业开发的主流。</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508051019338.png" alt="image-20250805101916166" loading="lazy" decoding="async"></figure><h4 id="http协议" tabindex="-1">HTTP协议 <a class="header-anchor" href="#http协议" aria-label="Permalink to &quot;HTTP协议&quot;">​</a></h4><p>http协议规定了浏览器和服务器之间数据传输的规则</p><p>特点：</p><p>1.基于TCP协议：面向连接，安全</p><p>2.基于请求-响应模型的：因此请求对应因此响应</p><p>3.http协议是无状态的协议：对于事务处理没有记忆能力。每次请求-响应都是独立的</p><ul><li>缺点：多次请求间不能各项数据</li><li>优点：速度快</li></ul><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508051038045.png" alt="image-20250805103806999" loading="lazy" decoding="async"></figure><h5 id="请求协议" tabindex="-1">请求协议 <a class="header-anchor" href="#请求协议" aria-label="Permalink to &quot;请求协议&quot;">​</a></h5><p>请求数据</p><p>由请求行：请求数据第一行（请求方式、资源路径、协议）</p><p>请求头：第二行开始，格式key:value</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508051037914.png" alt="image-20250805103740867" loading="lazy" decoding="async"></figure><p>请求体：POST请求，存放请求参数（GET部分没有）</p><p>Web服务器(Tomcat)对HTTP协议的请求数据进行解析，并进行了封装(HttpServletRequest)，在调用Controller方法的时候传递给了该方法。这样，就使得程序员不必直接对协议进行操作，让Web开发更加便捷。</p><h5 id="请求数据获取" tabindex="-1">请求数据获取 <a class="header-anchor" href="#请求数据获取" aria-label="Permalink to &quot;请求数据获取&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508071046180.png" alt="image-20250807104555029" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package com.kinsey.demo;
+
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //标记这个类用来处理浏览器发送过来的网络请求
+public class RequestController {
+
+    @RequestMapping(&quot;/request&quot;)
+    public String request(HttpServletRequest request){
+        //1.获取请求方式
+        String method = request.getMethod();
+        //2.获取请求的url地址
+        String url = request.getRequestURL().toString();
+        System.out.println(&quot;请求url地址: &quot;+url);
+
+        String uri=request.getRequestURI();
+        System.out.println(&quot;请求uri地址: &quot;+uri);
+
+        //3.获取请求协议
+        String protocol = request.getProtocol();
+        System.out.println(&quot;请求协议: &quot;+protocol);
+        //4.获取请求参数 -name
+        String name = request.getParameter(&quot;name&quot;);
+        System.out.println(&quot;请求参数-name: &quot;+name);
+
+        //5.获取请求头 -Accept
+        String header = request.getHeader(&quot;Accept&quot;);
+        System.out.println(&quot;请求头-Accept: &quot;+header);
+
+        return &quot;OK&quot;;
+
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="响应协议" tabindex="-1">响应协议 <a class="header-anchor" href="#响应协议" aria-label="Permalink to &quot;响应协议&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508071136946.png" alt="image-20250807113637867" loading="lazy" decoding="async"></figure><h5 id="响应数据设置" tabindex="-1">响应数据设置 <a class="header-anchor" href="#响应数据设置" aria-label="Permalink to &quot;响应数据设置&quot;">​</a></h5><p>Web服务器对HTTP协议的响应数据进行了封装(HttpServletResponse)，并在调用Controller方法的时候传递给 了该方法。这样，就使得程序员不必直接对协议进行操作，让Web开发更加便捷。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508071146869.png" alt="image-20250807114612816" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package com.kinsey.demo;
+
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+
+@RestController
+public class ResponseController {
+    /**
+     * 响应 方式一：HttpServletResponse设置响应数据
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping(&quot;/response&quot;)
+    public  void response(HttpServletResponse response) throws IOException {
+        //1.设置响应状态码
+        response.setStatus(401);
+
+        //2.设置响应头
+        response.setHeader(&quot;name&quot;,&quot;kinsey&quot;);
+
+        //3.设置响应体
+        response.getWriter().write(&quot;&lt;h1&gt;hello response&lt;/h1&gt;&quot;);
+
+    }
+
+    /**
+     * 响应方式二：ResponseEntity Spring提供的方法
+     * @return
+     */
+
+    @RequestMapping(&quot;response2&quot;)
+    public ResponseEntity&lt;String&gt; response2(){
+
+        return ResponseEntity
+                .status(401)
+                .header(&quot;name&quot;,&quot;kinsey&quot;)
+                .body(&quot;&lt;h1&gt;hello response2&lt;/h1&gt;&quot;);
+    }
+
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="分层解耦" tabindex="-1">分层解耦 <a class="header-anchor" href="#分层解耦" aria-label="Permalink to &quot;分层解耦&quot;">​</a></h3><h4 id="三层架构" tabindex="-1">三层架构 <a class="header-anchor" href="#三层架构" aria-label="Permalink to &quot;三层架构&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508151009125.png" alt="image-20250815100908024" loading="lazy" decoding="async"></figure><h4 id="分层解耦-1" tabindex="-1">分层解耦 <a class="header-anchor" href="#分层解耦-1" aria-label="Permalink to &quot;分层解耦&quot;">​</a></h4><p>耦合:衡量软件中各个层/各个模块的依赖关联程度</p><p>内聚：软件中各个功能模块内部的功能联系</p><p>软件设计原则：高内聚，低耦合</p><ul><li><strong>高内聚</strong>，指的是一个模块或类的内部功能要尽可能相关、集中，围绕一个明确的目标来组织</li><li><strong>低耦合</strong>，指的是模块之间的依赖关系要尽量减少和简化</li></ul><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508190949745.png" alt="image-20250819094931621" loading="lazy" decoding="async"></figure><p>实现分层解耦的思路：将项目中的类交给IOC容器管理(IOC,控制反转)</p><p>应用程序运行时需要什么对象，直接依赖容器为其提供(DI，依赖注入)</p><h4 id="ioc和di" tabindex="-1">IOC和DI <a class="header-anchor" href="#ioc和di" aria-label="Permalink to &quot;IOC和DI&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202508191000790.png" alt="image-20250819100043731" loading="lazy" decoding="async"></figure><p>使用注解@Autowired，程序在运行时会自动找到这个类型的bean对象并赋值给成员变量</p><p>使用注解@Comment，将当前类交给IOC容器管理</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/Javaweb" target="_blank" title="本文链接">https://kinsey973.github.io/posts/Javaweb</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/vulhub" class="post-nav-prev" title="vulhub"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">vulhub</span></a></div><div class="post-nav-item"><a href="/posts/java-sec-code" class="post-nav-next" title="java-sec-code"><span class="title truncate" text="sm">java-sec-code</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-07-07T17:54:56.000Z","datePublished":"2025-07-07T17:54:56.000Z","inLanguage":"zh-CN","name":"Javaweb","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-07-07T17:54:56.000Z","datePublished":"2025-07-07T17:54:56.000Z","description":"山行野宿，孤身万里","name":"Javaweb","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-07-07T17:54:56.000Z","datePublished":"2025-07-07T17:54:56.000Z","description":"山行野宿，孤身万里","headline":"Javaweb","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202506071803327.png"}]}</script>
+  
+</body>
+</html>

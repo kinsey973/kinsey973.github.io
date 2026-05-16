@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/crypto-ECC加密.CqczpsUU.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>crypto ECC加密 - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="crypto ECC加密">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271922078.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">crypto ECC加密</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-11-27 19:14:22"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-11-27</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">1.9k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">8m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AF%86%E7%A0%81%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>密码笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=crypto" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>crypto</span></a><a href="/tags/?tag=ECC" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ECC</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：椭圆曲线加密 椭圆曲线是一条由方程$y^2=x^3+ax+b$给定的曲线，说白了只要满足以上形式的方程都是椭圆曲线，其中a、b为常数，并满足$4a^3+27b^2!=0$（确保曲线上没有奇点，即曲线上任意一个点都有切线，确保每个点都有切线是十分重要的） 原理 椭圆曲线上的两个点P和Q，k为整。</p><p>&lt;!-- more --&gt;</p><h3 id="椭圆曲线加密" tabindex="-1">椭圆曲线加密 <a class="header-anchor" href="#椭圆曲线加密" aria-label="Permalink to &quot;椭圆曲线加密&quot;">​</a></h3><p>椭圆曲线是一条由方程$y^2=x^3+ax+b$给定的曲线，说白了只要满足以上形式的方程都是椭圆曲线，其中a、b为常数，并满足$4a^3+27b^2!=0$（确保曲线上没有奇点，即曲线上任意一个点都有切线，确保每个点都有切线是十分重要的）</p><h3 id="原理" tabindex="-1">原理 <a class="header-anchor" href="#原理" aria-label="Permalink to &quot;原理&quot;">​</a></h3><p>椭圆曲线上的两个点P和Q，k为整数</p><p>Q=KP</p><p>点P称为基点；K为私钥；Q为公钥</p><p>给定k和P，根据加法法则，计算Q很容易</p><p>但给定P和Q求k非常困难（实际应用ECC，质数p取非常大，穷举出k非常困难）</p><h3 id="加法法则" tabindex="-1"><strong>加法法则</strong> <a class="header-anchor" href="#加法法则" aria-label="Permalink to &quot;**加法法则**&quot;">​</a></h3><p>在椭圆曲线上取两点A、B，画一条过A、B的直线，该直线与椭圆曲线交于一点，记该交点关于x轴对称位置的点为点C，定义为A+B，即为加法A + B = C。如下图所示：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271922078.png" alt="image-20241127192159966" loading="lazy" decoding="async"></figure><p>如果是A+A，那么就是过A点的切线与椭圆曲线的交点关于X轴对称的位置</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271923485.png" alt="image-20241127192335447" loading="lazy" decoding="async"></figure><p>此外，在椭圆曲线中只有“加法”，没有减法，所以我们只能写为+（-x）的形式，B=C+(-A), 再用一次以上的“加法运算，”显然A与-A关于x轴对称，而A+（-A）通过下图显然是与椭圆曲线是没有交点的，所以A+（-A）=0，所以除了坐标系上曲线的点，椭圆曲线额外定义一个点（无穷远处），记为 0（因为群的封闭性）。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411272015024.png" alt="image-20241127201514890" loading="lazy" decoding="async"></figure><h3 id="有限域" tabindex="-1">有限域 <a class="header-anchor" href="#有限域" aria-label="Permalink to &quot;有限域&quot;">​</a></h3><p>椭圆曲线是连续的，容易被找到规律，并不适合用于加密；所以必须把椭圆曲线变成离散的点，要把椭圆曲线定义在有限域上。</p><p>实际上，域是一个可以在其上进行加法、减法、乘法和除法运算而结果不会超出域的集合。如有理数集合、实数集合、复数集合都是域，但整数集合不是（很明显，使用除法得到的分数或小数已超出整数集合）。 如果域F只包含有限个元素，则称其为有限域。有限域中元素的个数称为有限域的阶。尽管存在有无限个元素的无限域，但只有有限域在密码编码学中得到了广泛的应用。每个有限域的阶必为素数的幂，即有限域的阶可表示为pⁿ（p是素数、n是正整数），该有限域通常称为Galois域(Galois Fields)，记为GF(pⁿ)。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271928900.png" alt="image-20241127192800827" loading="lazy" decoding="async"></figure><h3 id="有限域上的椭圆曲线" tabindex="-1">有限域上的椭圆曲线 <a class="header-anchor" href="#有限域上的椭圆曲线" aria-label="Permalink to &quot;有限域上的椭圆曲线&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271932955.png" alt="image-20241127193246850" loading="lazy" decoding="async"></figure><h3 id="加密过程" tabindex="-1">加密过程 <a class="header-anchor" href="#加密过程" aria-label="Permalink to &quot;加密过程&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271929564.png" alt="image-20241127192925473" loading="lazy" decoding="async"></figure><p>1、用户A选定一条椭圆曲线Ep(a,b)，并取椭圆曲线上一点，作为基点P。</p><p>2、用户A选择一个私有密钥k，并生成公开密钥Q=kG。</p><p>3、用户A将Ep(a,b)和点Q，P传给用户B。</p><p>4、用户B接到信息后 ，将待传输的明文编码到Ep(a,b)上一点M（编码方法很多，这里不作讨论），并产生一个随机整数r。</p><p>5、用户B计算点C1=M+rK；C2=rP。</p><p>6、用户B将C1、C2传给用户A。</p><p>7、用户A接到信息后，计算C1-kC2，结果就是点M。因为 C1-kC2=M+rK-k(rP)=M+rK-r(kP)=M 再对点M进行解码就可以得到明文。</p><h3 id="例题" tabindex="-1">例题 <a class="header-anchor" href="#例题" aria-label="Permalink to &quot;例题&quot;">​</a></h3><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">from Crypto.Util.number import *
+from gmpy2 import *
+from random import *
+from secret import flag
+
+p=getPrime(600)
+a=bytes_to_long(flag)
+b=randrange(2,p-1)
+E=EllipticCurve(GF(p),[a,b])
+G=E.random_element()
+
+x1,y1,_=G
+G=2*G 
+x2,y2,_=G
+
+print(f&quot;p = {p}&quot;)
+print(f&quot;b = {b}&quot;)
+print(f&quot;x1 = {x1}&quot;)
+print(f&quot;x2 = {x2}&quot;)
+
+&#39;&#39;&#39;
+p = 2978504498661002629091299071582436290465904673149953768927904567383228838983804727503168770704927560352042485566736762649409218645007506958368851729754839447148084715613471942096737
+b = 203155971939366413053854572390533580854014345966175709774130058801484693709794880904842038444407635302410301870035839686400041986234396869946957773156780151597585571207840328547492
+x1 = 2961746450301081157772024536903602376932457486781631924575753810982866784201238112170620297100938460251128698788082874030972104190128685218417680444326891343632886092532386859114448
+x2 = 890136530671131957244004062733232817452520380339736536303621498985673475366221669385748542093619285319261702354866398531524362067791067563428973366865229056520602220404939306258451
+
+&#39;&#39;&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这是一道很简单的ECC，首先看椭圆曲线：</p><p>y^2=x^3+a*x+b</p><p>并且在本题中还有modp为条件，不妨令A(x1,y1),B(x2,y2)，B=2A</p><p>然后再说明一下公式：</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mn>3</mn><mo>≡</mo><msup><mi>k</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mn>1</mn><mo>−</mo><mi>x</mi><mn>2</mn><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">x3\equiv k^2-x1-x2(modp) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">x</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mord">2</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span></span></p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mn>3</mn><mo>≡</mo><mi>k</mi><mo stretchy="false">(</mo><mi>x</mi><mn>1</mn><mo>−</mo><mi>x</mi><mn>3</mn><mo stretchy="false">)</mo><mo>−</mo><mi>y</mi><mn>1</mn><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">y3\equiv k(x1-x3)-y1(modp) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mord">1</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span></span></p><p>当两个点相同时,k=（3x1^2+a)/2y1(modp),所以</p><p>x2=k^2-2x1(modp)------------------------------1</p><p>k=（3*x1^2+a)/(x^3+ax+b)(modp)-------------2</p><p>由式1：</p><p>k^2=x2+2x1(modp)</p><p>将2式代入</p><p>x2+2x1=（3x1^2+a)^2/(x^3+ax+b)^2(modp)</p><p>然后只要解方程就可以了</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">from Crypto.Util.number import *
+from gmpy2 import *
+p = 2978504498661002629091299071582436290465904673149953768927904567383228838983804727503168770704927560352042485566736762649409218645007506958368851729754839447148084715613471942096737
+b = 203155971939366413053854572390533580854014345966175709774130058801484693709794880904842038444407635302410301870035839686400041986234396869946957773156780151597585571207840328547492
+x1 = 2961746450301081157772024536903602376932457486781631924575753810982866784201238112170620297100938460251128698788082874030972104190128685218417680444326891343632886092532386859114448
+x2 = 890136530671131957244004062733232817452520380339736536303621498985673475366221669385748542093619285319261702354866398531524362067791067563428973366865229056520602220404939306258451
+k_2 = (x2 + 2 * x1)
+PR.&lt;a&gt; = PolynomialRing(Zmod(p))
+f = 4 * k_2 * (x1 ^ 3 + a * x1 + b) - (3 * x1 ^ 2 + a) ^ 2
+a = f.roots()
+for i in range(len(a)):
+    m=a[i][0]
+    flag = long_to_bytes(m)
+    print(flag)
+ b&#39;flag{1s_1t_r3@lly_Easy?}&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="watevrctf-2019-ecc-rsa" tabindex="-1">[watevrCTF 2019]ECC-RSA <a class="header-anchor" href="#watevrctf-2019-ecc-rsa" aria-label="Permalink to &quot;[watevrCTF 2019]ECC-RSA&quot;">​</a></h3><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from fastecdsa.curve import P521 as Curve
+from fastecdsa.point import Point
+from Crypto.Util.number import bytes_to_long, isPrime
+from os import urandom
+from random import getrandbits
+
+def gen_rsa_primes(G):
+	urand = bytes_to_long(urandom(521//8))
+	while True:
+		s = getrandbits(521) ^ urand
+
+		Q = s*G
+		if isPrime(Q.x) and isPrime(Q.y):
+			print(&quot;ECC Private key:&quot;, hex(s))
+			print(&quot;RSA primes:&quot;, hex(Q.x), hex(Q.y))
+			print(&quot;Modulo:&quot;, hex(Q.x * Q.y))
+			return (Q.x, Q.y)
+
+flag = int.from_bytes(input(), byteorder=&quot;big&quot;)
+
+ecc_p = Curve.p
+a = Curve.a
+b = Curve.b
+
+Gx = Curve.gx
+Gy = Curve.gy
+G = Point(Gx, Gy, curve=Curve)
+
+e = 0x10001
+p, q = gen_rsa_primes(G)
+n = p*q
+
+file_out = open(&quot;downloads/ecc-rsa.txt&quot;, &quot;w&quot;)
+
+file_out.write(&quot;ECC Curve Prime: &quot; + hex(ecc_p) + &quot;\n&quot;)
+file_out.write(&quot;Curve a: &quot; + hex(a) + &quot;\n&quot;)
+file_out.write(&quot;Curve b: &quot; + hex(b) + &quot;\n&quot;)
+file_out.write(&quot;Gx: &quot; + hex(Gx) + &quot;\n&quot;)
+file_out.write(&quot;Gy: &quot; + hex(Gy) + &quot;\n&quot;)
+
+file_out.write(&quot;e: &quot; + hex(e) + &quot;\n&quot;)
+file_out.write(&quot;p * q: &quot; + hex(n) + &quot;\n&quot;)
+
+c = pow(flag, e, n)
+file_out.write(&quot;ciphertext: &quot; + hex(c) + &quot;\n&quot;)
+
+&#39;&#39;&#39;
+ECC Curve Prime: 0x1ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+Curve a: -0x3
+Curve b: 0x51953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00
+Gx: 0xc6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66
+Gy: 0x11839296a789a3bc0045c8a5fb42c7d1bd998f54449579b446817afbd17273e662c97ee72995ef42640c550b9013fad0761353c7086a272c24088be94769fd16650
+e: 0x10001
+p * q: 0x118aaa1add80bdd0a1788b375e6b04426c50bb3f9cae0b173b382e3723fc858ce7932fb499cd92f5f675d4a2b05d2c575fc685f6cf08a490d6c6a8a6741e8be4572adfcba233da791ccc0aee033677b72788d57004a776909f6d699a0164af514728431b5aed704b289719f09d591f5c1f9d2ed36a58448a9d57567bd232702e9b28f
+ciphertext: 0x3862c872480bdd067c0c68cfee4527a063166620c97cca4c99baff6eb0cf5d42421b8f8d8300df5f8c7663adb5d21b47c8cb4ca5aab892006d7d44a1c5b5f5242d88c6e325064adf9b969c7dfc52a034495fe67b5424e1678ca4332d59225855b7a9cb42db2b1db95a90ab6834395397e305078c5baff78c4b7252d7966365afed9e
+&#39;&#39;&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们先分析下面这个函数</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>def gen_rsa_primes(G):
+	urand = bytes_to_long(urandom(521//8))
+	while True:
+		s = getrandbits(521) ^ urand
+
+		Q = s*G
+		if isPrime(Q.x) and isPrime(Q.y):
+			print(&quot;ECC Private key:&quot;, hex(s))
+			print(&quot;RSA primes:&quot;, hex(Q.x), hex(Q.y))
+			print(&quot;Modulo:&quot;, hex(Q.x * Q.y))
+			return (Q.x, Q.y)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>利用随机出来的私钥s生成一个点Q,并使该点的x和y都是素数，且满足y^2^=x^3^+a*x+b</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">flag = int.from_bytes(input(), byteorder=&quot;big&quot;)
+ 
+ecc_p = Curve.p
+a = Curve.a
+b = Curve.b
+ 
+Gx = Curve.gx
+Gy = Curve.gy
+G = Point(Gx, Gy, curve=Curve)
+//初始化 ECC 曲线
+ 
+e = 0x10001
+p, q = gen_rsa_primes(G)
+n = p*q
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们发现p和q的产生源于返回的Q.x和Q.y</p><p>由此我们得到q^2^=p^3^+a*p+b</p><p>如果我们两边同时乘以p^2^，那么我们就能把q消掉，再解方程得到p</p><p>我们用sagemath求解</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>n=0x118aaa1add80bdd0a1788b375e6b04426c50bb3f9cae0b173b382e3723fc858ce7932fb499cd92f5f675d4a2b05d2c575fc685f6cf08a490d6c6a8a6741e8be4572adfcba233da791ccc0aee033677b72788d57004a776909f6d699a0164af514728431b5aed704b289719f09d591f5c1f9d2ed36a58448a9d57567bd232702e9b28f
+a=-0x3
+b=0x51953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00
+pr=0x1ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+PR.&lt;x&gt;=PolynomialRing(Zmod(pr))
+f=n**2-x**5-a*x**3-b*x**2
+f.roots()
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502092024264.png" alt="image-20250209202451210" loading="lazy" decoding="async"></figure><p>结果有三个，但其中有两个不是素数，由此我们得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>p=4573744216059593260686660411936793507327994800883645562370166075007970317346237399760397301505506131100113886281839847419425482918932436139080837246914736557
+</code></pre><button class="code-block-unfold-btn"></button></div><p>既然我们得到了p，那通过简单的rsa求解就能得到flag了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>from Crypto.Util.number import long_to_bytes
+from gmpy2 import invert
+c=0x3862c872480bdd067c0c68cfee4527a063166620c97cca4c99baff6eb0cf5d42421b8f8d8300df5f8c7663adb5d21b47c8cb4ca5aab892006d7d44a1c5b5f5242d88c6e325064adf9b969c7dfc52a034495fe67b5424e1678ca4332d59225855b7a9cb42db2b1db95a90ab6834395397e305078c5baff78c4b7252d7966365afed9e
+n=0x118aaa1add80bdd0a1788b375e6b04426c50bb3f9cae0b173b382e3723fc858ce7932fb499cd92f5f675d4a2b05d2c575fc685f6cf08a490d6c6a8a6741e8be4572adfcba233da791ccc0aee033677b72788d57004a776909f6d699a0164af514728431b5aed704b289719f09d591f5c1f9d2ed36a58448a9d57567bd232702e9b28f
+p=4573744216059593260686660411936793507327994800883645562370166075007970317346237399760397301505506131100113886281839847419425482918932436139080837246914736557
+q=n//p
+phi=(p-1)*(q-1)
+e=0x10001
+d=invert(e,phi)
+m=pow(c,d,n)
+print(long_to_bytes(m))
+</code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/crypto-ECC%25E5%258A%25A0%25E5%25AF%2586" target="_blank" title="本文链接">https://kinsey973.github.io/posts/crypto-ECC%E5%8A%A0%E5%AF%86</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/ctfshow-%25E5%25B8%25B8%25E7%2594%25A8%25E5%25A7%25BF%25E5%258A%25BF" class="post-nav-prev" title="ctfshow-常用姿势"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">ctfshow-常用姿势</span></a></div><div class="post-nav-item"><a href="/posts/crypto-AES-DES" class="post-nav-next" title="crypto AES&amp;DES"><span class="title truncate" text="sm">crypto AES&amp;DES</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-11-27T19:14:22.000Z","datePublished":"2024-11-27T19:14:22.000Z","inLanguage":"zh-CN","name":"crypto ECC加密","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-11-27T19:14:22.000Z","datePublished":"2024-11-27T19:14:22.000Z","description":"山行野宿，孤身万里","name":"crypto ECC加密","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-11-27T19:14:22.000Z","datePublished":"2024-11-27T19:14:22.000Z","description":"山行野宿，孤身万里","headline":"crypto ECC加密","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271922078.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271922078.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411271922078.png"}]}</script>
+  
+</body>
+</html>

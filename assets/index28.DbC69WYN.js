@@ -1,0 +1,1 @@
+import{Z as e}from"./theme.DMgGaAyl.js";var t=e({defaults:{"@type":`PostalAddress`}});export{t as addressResolver};

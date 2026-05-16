@@ -1,0 +1,506 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "北沐城歌",
+    "home_page_url": "https://kinsey973.github.io/",
+    "feed_url": "https://kinsey973.github.io/feed.json",
+    "description": "山行野宿，孤身万里",
+    "icon": "https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png",
+    "author": {
+        "name": "北歌",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://kinsey973.github.io/posts/我的旧博客",
+            "content_html": "<p>我的博客已到达到新站点，后续内容将在新博客持续更新。</p>\n<p>旧博客地址（仍可访问）：<br>\n<a href=\"https://kinseyy.github.io/\">https://kinseyy.github.io/</a></p>\n<p>部分早期文章仍保留在旧站，后续将逐步整理并迁移至新站。</p>\n<p>感</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/我的旧博客\" target=\"_blank\">https://kinsey973.github.io/posts/我的旧博客</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/我的旧博客",
+            "title": "我的旧博客",
+            "date_modified": "2026-05-15T12:00:00.000Z",
+            "date_published": "2026-05-15T12:00:00.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/Java",
+            "content_html": "<p>摘要：Java ------ 注释 単行注释 格式 //注释信息 多行注释 格式 /注释信息/ 文档注释 格式 /\\注释信息/ 关键字 class关键字 用于（创建/定义）一个类，类是Java最基本的组成单元 字面量 制表符 \\t 在打印时，把前面字符串长度补齐到8或者8的整数倍，最少一个空格，最多8</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/Java\" target=\"_blank\">https://kinsey973.github.io/posts/Java</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/Java",
+            "title": "Java",
+            "date_modified": "2025-11-12T18:49:38.000Z",
+            "date_published": "2025-11-12T18:49:38.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/vulhub",
+            "content_html": "<p>摘要：zabbix 简介 Zabbix是一种由Alexei Vladishev开发的网络监视和管理系统，采用Server-Client架构，用于监控各种网络服务、服务器和网络设备的状态。它提供了实时监控、报警机制、性能统计和数据可视化等广泛功能。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/vulhub\" target=\"_blank\">https://kinsey973.github.io/posts/vulhub</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/vulhub",
+            "title": "vulhub",
+            "date_modified": "2025-08-06T08:43:48.000Z",
+            "date_published": "2025-08-06T08:43:48.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/Javaweb",
+            "content_html": "<p>摘要：Js Js用来负责网页行为 引入方式 内部脚本：将JS代码定义在html界面 javascript必须在&lt;script&lt;/script之间 在html文档中，可以在任意地方，放置任意数量的&lt;script，一般放在&lt;body元素的地步，可改善显示速度 外部脚本：将js代码定义在外部js文件，然。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/Javaweb\" target=\"_blank\">https://kinsey973.github.io/posts/Javaweb</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/Javaweb",
+            "title": "Javaweb",
+            "date_modified": "2025-07-07T17:54:56.000Z",
+            "date_published": "2025-07-07T17:54:56.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/java-sec-code",
+            "content_html": "<p>摘要：靶场需访问<a href=\"http://localhost:8080/index\">http://localhost:8080/index</a> 默认账号密码为admin admin123 题目在源码里（亏我找半天） 由于后面环境是docker开的，计算器可能弹不出来 RCE 1. /rce/runtime/exec 命令执行：通过调用 Runtime.getRuntime.e。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/java-sec-code\" target=\"_blank\">https://kinsey973.github.io/posts/java-sec-code</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/java-sec-code",
+            "title": "java-sec-code",
+            "date_modified": "2025-06-26T20:58:52.000Z",
+            "date_published": "2025-06-26T20:58:52.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-文件上传",
+            "content_html": "<p>摘要：web151（前端认证） 题目提示是前端认证，我们直接上传一句话木马图片，然后把图片后缀改为php 上传成功后连蚁剑， 得到flag web152 跟上题做法一样，上传一句话木马图片，修改后缀为php，然后连蚁剑就可以了。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-文件上传\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-文件上传</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-文件上传",
+            "title": "ctfshow-文件上传",
+            "date_modified": "2025-06-24T16:18:32.000Z",
+            "date_published": "2025-06-24T16:18:32.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-xxe",
+            "content_html": "<p>摘要：XML语法 1.是树形结构，必须具有根元素 例如 2.声明：&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;? 3.在标签中，大小写敏感 4.属性的值必须加引号 5.实体引用 一些字符拥有特殊含义，所以使用实体引用代替特殊字符 DTD 作用 在XML文档中加入DTD声明可以。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-xxe\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-xxe</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-xxe",
+            "title": "ctfshow-xxe",
+            "date_modified": "2025-05-19T19:02:05.000Z",
+            "date_published": "2025-05-19T19:02:05.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto-1",
+            "content_html": "<p>摘要：Zer0pts2020ROR 这道题重点是看ror 我们知道了每次以bit为单元移动且题目告诉了我们所有位的pow结果 也就是题目想要我们逆向计算binm的每一位来反推m 注意到n为偶数。而奇数mod偶数末位为1 偶数mod偶数末位为0。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto-1\" target=\"_blank\">https://kinsey973.github.io/posts/crypto-1</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto-1",
+            "title": "crypto-",
+            "date_modified": "2025-05-11T14:33:47.000Z",
+            "date_published": "2025-05-11T14:33:47.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto-suanfa",
+            "content_html": "<p>摘要：网鼎杯 2020 青龙组youraisemeup（大步小步算法） 首先，我们审计题目，可以发现题目中给予了我们m、c和n的值，其中n=2\\512,m则是在（2，m）之间的值，c是m^flag = c mod n 可以看出，这是一道求指标的题目，我们可以通过以下方法进行计算，已知的条件为： 2^e =。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto-suanfa\" target=\"_blank\">https://kinsey973.github.io/posts/crypto-suanfa</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto-suanfa",
+            "title": "crypto-suanfa",
+            "date_modified": "2025-05-06T20:37:35.000Z",
+            "date_published": "2025-05-06T20:37:35.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-xss",
+            "content_html": "<p>摘要：反射型非持久化 （1）原理 反射型xss又称非持久型xss，是目前最普遍的类型，这种攻击方式往往具有一次性。发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-xss\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-xss</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-xss",
+            "title": "ctfshow xss",
+            "date_modified": "2025-04-22T20:35:07.000Z",
+            "date_published": "2025-04-22T20:35:07.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/re",
+            "content_html": "<p>摘要：新年快乐 我们先进行查壳 发现存在一个UPX壳 如果我们直接放到ida中分析 此处就只有两个函数 我们使用软件进行脱壳 把脱壳后的文件放入ida进行分析 Shif+F12查看字符串（找到关键词） 再用ctrl+f查找flag 我们双击该字符串找到它对应的位置 双击引用该字符串的位置，进入到流程图 直。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/re\" target=\"_blank\">https://kinsey973.github.io/posts/re</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/re",
+            "title": "re",
+            "date_modified": "2025-04-20T14:19:03.000Z",
+            "date_published": "2025-04-20T14:19:03.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/misc",
+            "content_html": "<p>摘要：二维码 打开我们发现是个二维码，我们用QRReasearch进行扫描 提示这个图片里有秘密 由于附件中只有一张二维码，而且刚才的提示信息secret is here 表明flag确实在这里，于是想到可能在图片中可能隐藏了其他文件。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/misc\" target=\"_blank\">https://kinsey973.github.io/posts/misc</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/misc",
+            "title": "misc",
+            "date_modified": "2025-04-18T19:27:01.000Z",
+            "date_published": "2025-04-18T19:27:01.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/sql注入总结",
+            "content_html": "<p>摘要：原理 sql注入发生原理： 用户对传入的参数未进行严格过滤处理，导致构造形成sql语句，直接输入数据库执行，从而获取和修改数据库 注入类型 常见的注入方式有：字符型注入、布尔型注入、报错注入、文件读写注入、布尔盲注、时间盲注、堆叠注入、二次注入...... 基本操作 1.判断显示位 2.爆数据库的名。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/sql注入总结\" target=\"_blank\">https://kinsey973.github.io/posts/sql注入总结</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/sql注入总结",
+            "title": "sql注入总结",
+            "date_modified": "2025-04-02T19:11:45.000Z",
+            "date_published": "2025-04-02T19:11:45.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/rust学习",
+            "content_html": "<p>摘要：本文详细介绍了rust学习的核心概念与实践方法，涵盖关键技术要点与应用场景。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/rust学习\" target=\"_blank\">https://kinsey973.github.io/posts/rust学习</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/rust学习",
+            "title": "rust学习",
+            "date_modified": "2025-03-26T19:07:14.000Z",
+            "date_published": "2025-03-26T19:07:14.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/密码图形",
+            "content_html": "<p>摘要：1.传统猪圈密码 猪圈密码又称为亦称朱高密码、共济会暗号、共济会密码或共济会员密码；是一种以特定符号来替换字母的加密方式 在线解密网址：<a href=\"http://moersima.00cha.net/zhuquan.asp\">http://moersima.00cha.net/zhuquan.asp</a> 该密码由于多数出现于一些规模较小的比赛签到题上。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/密码图形\" target=\"_blank\">https://kinsey973.github.io/posts/密码图形</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/密码图形",
+            "title": "密码图形",
+            "date_modified": "2025-02-09T21:29:09.000Z",
+            "date_published": "2025-02-09T21:29:09.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-常用姿势",
+            "content_html": "<p>摘要：flask算PIN web801 先获取mac地址 先把冒号去了，然后十六进制再转十进制 得到 我们找个flask算pin的脚本 这里我们需要机器码，我们先访问/proc/self/cgroup 得到 然后再访问/etc/machine-id或者/proc/sys/kernel/random/boo。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-常用姿势\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-常用姿势</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-常用姿势",
+            "title": "ctfshow-常用姿势",
+            "date_modified": "2024-12-01T19:48:14.000Z",
+            "date_published": "2024-12-01T19:48:14.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto-ECC加密",
+            "content_html": "<p>摘要：椭圆曲线加密 椭圆曲线是一条由方程$$y^2=x^3+ax+b$$给定的曲线，说白了只要满足以上形式的方程都是椭圆曲线，其中a、b为常数，并满足$$4a^3+27b^2!=0$$（确保曲线上没有奇点，即曲线上任意一个点都有切线，确保每个点都有切线是十分重要的） 原理 椭圆曲线上的两个点P和Q，k为整。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto-ECC加密\" target=\"_blank\">https://kinsey973.github.io/posts/crypto-ECC加密</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto-ECC加密",
+            "title": "crypto ECC加密",
+            "date_modified": "2024-11-27T19:14:22.000Z",
+            "date_published": "2024-11-27T19:14:22.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto-AES-DES",
+            "content_html": "<p>摘要：DES 属于对称密码算法中的分组加密算法 密钥：8个字节共64位的工作密钥，但只有56位参与运算，其余8位为校验位8,16,24,32,40,48,56,64不参与运算，且最后生成的密钥为48位 明文：8个字节共64位的需要被加密的数据。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto-AES-DES\" target=\"_blank\">https://kinsey973.github.io/posts/crypto-AES-DES</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto-AES-DES",
+            "title": "crypto AES&DES",
+            "date_modified": "2024-11-27T19:10:36.000Z",
+            "date_published": "2024-11-27T19:10:36.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto-rsa",
+            "content_html": "<p>摘要：RSA加密算法 rsa基本组成 在RSA加密算法中，以下是常用的符号和对应的含义： e：公钥指数（exponent），用于加密操作。通常为一个较小的固定值，例如65537。p和q：两个不同的大素数，用于生成RSA密钥对。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto-rsa\" target=\"_blank\">https://kinsey973.github.io/posts/crypto-rsa</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto-rsa",
+            "title": "crypto rsa",
+            "date_modified": "2024-11-27T19:08:34.000Z",
+            "date_published": "2024-11-27T19:08:34.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-java",
+            "content_html": "<p>摘要：看wp说好像ctfshow全是java的Struts2的框架漏洞 Struts2是用Java语言编写的一个基于MVC设计模式的Web应用框架 判断网站是否基于Struts2的方法 - 通过页面回显的错误消息来判断，页面不回显错误消息时则无效 - 通过网页后缀来判断，<a href=\"http://xn--bvs.do\">如.do</a> .action，有可能不。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-java\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-java</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-java",
+            "title": "ctfshow-java",
+            "date_modified": "2024-11-15T19:47:20.000Z",
+            "date_published": "2024-11-15T19:47:20.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/反序列化",
+            "content_html": "<p>摘要：序列化 序列化是将对象的状态信息（属性）转换为可以存储或传输的过程 将对象或者数组转化为可储存/传输的字符串 在php中使用函数serialize来将对象或者数组进行序列化，并返回一个包含字节流的字符串来表示 例子： 所有格式的第一位都是数据类型的英文字母简写， ；是必要的，这才是完整的序列化 数组。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/反序列化\" target=\"_blank\">https://kinsey973.github.io/posts/反序列化</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/反序列化",
+            "title": "反序列化",
+            "date_modified": "2024-10-08T20:13:40.000Z",
+            "date_published": "2024-10-08T20:13:40.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/命令执行",
+            "content_html": "<p>摘要：命令执行 命令执行函数 system systemstring $command,int &amp;$returnval=? 常用参数：command：执行command参数所指定2的命令，并且输出执行结果 ​ 如果提供returnvar参数，则外部命令执行后的返回状态将会被设置到此变量中 ------。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/命令执行\" target=\"_blank\">https://kinsey973.github.io/posts/命令执行</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/命令执行",
+            "title": "命令执行",
+            "date_modified": "2024-10-08T20:12:51.000Z",
+            "date_published": "2024-10-08T20:12:51.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-命令执行",
+            "content_html": "<p>摘要：本文详细介绍了ctfshow 命令执行的核心概念与实践方法，涵盖关键技术要点与应用场景。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-命令执行\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-命令执行</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-命令执行",
+            "title": "ctfshow 命令执行",
+            "date_modified": "2024-10-08T20:11:50.000Z",
+            "date_published": "2024-10-08T20:11:50.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-信息搜集",
+            "content_html": "<p>摘要：web-1 打开页面，发现页面上显示 where is flag? F12打开 发现一段base64编码，拿去解码得到flag ctfshow{9b7e1c33-2521-474b-8801-dcead605aee7} ------ web-2 用f12和右键查看不了源代码（js代码限制） 使用ct。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-信息搜集\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-信息搜集</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-信息搜集",
+            "title": "ctfshow 信息搜集",
+            "date_modified": "2024-10-08T20:10:37.000Z",
+            "date_published": "2024-10-08T20:10:37.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-php特性",
+            "content_html": "<p>摘要：web-php特性 url传入的数值都默认为字符串 web-89 重点在于绕过pregmatch函数，且num是个int类型的数字 我们可以通过数组进行绕过，就得到了flag ------ web-90 这题考察intval函数和强比较 强比较 在php中，三个等号“===”是全等比较运算符，用于比。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-php特性\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-php特性</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-php特性",
+            "title": "ctfshow php特性",
+            "date_modified": "2024-10-08T20:08:38.000Z",
+            "date_published": "2024-10-08T20:08:38.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/php特性",
+            "content_html": "<p>摘要：php特性 pregmatch 数组绕过 pregmatch只能处理字符串，当传入的subject是数组时，会返回false payload： num=1 最大回溯次数绕过 PHP 为了防止正则表达式的拒绝服务攻击（reDOS），给 pcre 设定了一个回溯次数上限 pcre.backtrackli。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/php特性\" target=\"_blank\">https://kinsey973.github.io/posts/php特性</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/php特性",
+            "title": "php特性",
+            "date_modified": "2024-09-18T21:41:46.000Z",
+            "date_published": "2024-09-18T21:41:46.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow文件包含",
+            "content_html": "<p>摘要：web-78 有个include，我们使用filter协议 得到flag.php的base64编码，进行解码得到flag web-79 这题过滤了php，所以我们就不能用php伪协议了，我们用data伪协议 payload 在查看页面源码就得到flag了 web-80-81日志包含 这题php和da。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow文件包含\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow文件包含</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow文件包含",
+            "title": "ctfshow文件包含",
+            "date_modified": "2024-09-09T14:32:44.000Z",
+            "date_published": "2024-09-09T14:32:44.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/解密网站",
+            "content_html": "<p>摘要：<a href=\"https://wtool.com.cn/ciphers\">https://wtool.com.cn/ciphers</a> 公钥解析 <a href=\"http://www.hiencode.com/pubasys.html\">http://www.hiencode.com/pubasys.html</a> 分解质因数 <a href=\"https://zh.numberempire.com/numberfactorizer.php\">https://zh.numberempire.com/numberfactorizer.php</a> <a href=\"http://www.factordb.com/%E3%80%82\">http://www.factordb.com/。</a></p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/解密网站\" target=\"_blank\">https://kinsey973.github.io/posts/解密网站</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/解密网站",
+            "title": "crypto-解密网站",
+            "date_modified": "2024-09-05T21:28:59.000Z",
+            "date_published": "2024-09-05T21:28:59.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/ctfshow-ssrf",
+            "content_html": "<p>摘要：<a href=\"http://t.csdnimg.cn/21MYs\">http://t.csdnimg.cn/21MYs</a> web351 存在一个flag.php页面，访问会返回不是本地用户的消息，那肯定是要让我们以本地用户去访问127.0.0.1/flag.php 得到flag web352 parseurl 解析 URL 并返回关联数组，包含在 URL 中出现的各种。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/ctfshow-ssrf\" target=\"_blank\">https://kinsey973.github.io/posts/ctfshow-ssrf</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/ctfshow-ssrf",
+            "title": "ctfshow ssrf",
+            "date_modified": "2024-09-03T15:32:45.000Z",
+            "date_published": "2024-09-03T15:32:45.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/crypto",
+            "content_html": "<p>摘要：丢失的md5暴力求解 将代码修改 得到flag Alice and Bob（质因数分离） <a href=\"https://zh.numberempire.com/numberfactorizer.php\">https://zh.numberempire.com/numberfactorizer.php</a> 大帝的密码武器（凯撒密码） <a href=\"https://www.lddgo.net/encrypt/caesar-ciphe%E3%80%82\">https://www.lddgo.net/encrypt/caesar-ciphe。</a></p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/crypto\" target=\"_blank\">https://kinsey973.github.io/posts/crypto</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/crypto",
+            "title": "crypto",
+            "date_modified": "2024-06-08T17:00:57.000Z",
+            "date_published": "2024-06-08T17:00:57.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/正则表达式语法",
+            "content_html": "<p>摘要：正则表达式 限定符 ? 表示?前面的字符出现一次或0次，意思是?前的字符可有可无 例如：used? 表示d可以出现0次或1次 ------ \\ 可以匹配0个或多个字符 例如：abc 表示b可以出现0次或多次 ------ + 可以匹配出现一次或一次以上的字符 例如：ab+c 表示b可以出现1次或1次。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/正则表达式语法\" target=\"_blank\">https://kinsey973.github.io/posts/正则表达式语法</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/正则表达式语法",
+            "title": "正则表达式语法",
+            "date_modified": "2024-04-27T20:57:19.000Z",
+            "date_published": "2024-04-27T20:57:19.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/md5",
+            "content_html": "<p>摘要：md5 用途 1.校验文件完整性 2.存储密码改为存储md5，就算得到md5也无法知道密码（但是单纯密码的话，还是存在固定md5，这个时候我们应该给md5加盐） 加盐：就是在密码后边随机加随机数，然后将随机数存储，每次输入密码后边再加上随机数填充计算MD5 3.无法破解原始数据，因为md5是不可逆的。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/md5\" target=\"_blank\">https://kinsey973.github.io/posts/md5</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/md5",
+            "title": "md5",
+            "date_modified": "2024-04-27T20:56:34.000Z",
+            "date_published": "2024-04-27T20:56:34.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/upload",
+            "content_html": "<p>摘要：upload1-js绕过 1.验证合法性 当我们上传文件时，如果文件是php格式，就会被拦截，抓包抓不到任何东西 2.绕过拦截 为了绕过拦截，我们可以修改文件格式，把php格式修改成jpg格式，此时就成功上传了文件（文件内部是一句话木马，可以创建一个后门，进而就可以操控服务器），通过了前端认证 3.</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/upload\" target=\"_blank\">https://kinsey973.github.io/posts/upload</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/upload",
+            "title": "upload",
+            "date_modified": "2024-03-31T19:54:18.000Z",
+            "date_published": "2024-03-31T19:54:18.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/python",
+            "content_html": "<p>摘要：本文详细介绍了python的核心概念与实践方法，涵盖关键技术要点与应用场景。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/python\" target=\"_blank\">https://kinsey973.github.io/posts/python</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/python",
+            "title": "python",
+            "date_modified": "2024-03-31T19:50:12.000Z",
+            "date_published": "2024-03-31T19:50:12.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/简单的登录界面",
+            "content_html": "<p>摘要：1.编写一个登录界面 2.与mysql建立联系 line 5：要先在mysql中创建一个名为db随便的表，不然会报错 die 输出一条信息，并退出当前脚本 connecterror 返回上一次连接错误的错误描述报个错 3.注册 $result-numrows 返回结果集中行的数量 $result-f。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/简单的登录界面\" target=\"_blank\">https://kinsey973.github.io/posts/简单的登录界面</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/简单的登录界面",
+            "title": "简单的登录界面",
+            "date_modified": "2024-02-02T21:07:32.000Z",
+            "date_published": "2024-02-02T21:07:32.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/MySQL学习",
+            "content_html": "<p>摘要：Mysql 数据库 打开：mysql -u root -p 关系型数据库 ​ 概念：建立在关系模型基础上，由多张相互连接的二维表组成的数据库 ​ 特点： 1. 使用表存储数据，格式统一，便于维护。1. 使用SQL语言操作，标准统一，使用方便。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/MySQL学习\" target=\"_blank\">https://kinsey973.github.io/posts/MySQL学习</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/MySQL学习",
+            "title": "MySQL学习",
+            "date_modified": "2023-12-20T21:22:58.000Z",
+            "date_published": "2023-12-20T21:22:58.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/php",
+            "content_html": "<p>摘要：php格式： &lt;?php ... ? 变量 ------ 定义变量： $+变量名。赋值变量,变量前一定要带着$; 变量名不能以数字开头，不建议使用汉字 ------ 打印变量 echo相当于printf。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/php\" target=\"_blank\">https://kinsey973.github.io/posts/php</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/php",
+            "title": "php",
+            "date_modified": "2023-12-17T13:59:53.000Z",
+            "date_published": "2023-12-17T13:59:53.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/HTML学习篇",
+            "content_html": "<p>摘要：HTML是什么 HTML 不是一门编程语言，而是一种用于定义内容结构的标记语言。HTML 由一系列的组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/HTML学习篇\" target=\"_blank\">https://kinsey973.github.io/posts/HTML学习篇</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/HTML学习篇",
+            "title": "HTML学习篇",
+            "date_modified": "2023-12-09T18:12:26.000Z",
+            "date_published": "2023-12-09T18:12:26.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/博客是如何搭建的",
+            "content_html": "<p>摘要：第一步：准备环境 node 环境 git环境 安装过程一路next，安装的位置最好不要是c盘。两者安装好后，需检查是否修改了环境变量。具体方法：cmd命令（win+r后输入cmd）查看两者版本。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/博客是如何搭建的\" target=\"_blank\">https://kinsey973.github.io/posts/博客是如何搭建的</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/博客是如何搭建的",
+            "title": "博客是如何搭建的",
+            "date_modified": "2023-12-08T15:50:21.000Z",
+            "date_published": "2023-12-08T15:50:21.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/hello-valaxy",
+            "content_html": "<h2>Valaxy</h2>\n<p>Next Generation Static Blog Framework.</p>\n<p>Write your first post!</p>\n<h2>Usage</h2>\n<p>Modify `valaxy</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/hello-valaxy\" target=\"_blank\">https://kinsey973.github.io/posts/hello-valaxy</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/hello-valaxy",
+            "title": "Hello, Valaxy!",
+            "date_modified": "2022-04-01T00:00:00.000Z",
+            "date_published": "2022-04-01T00:00:00.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://kinsey973.github.io/posts/SageMath常用函数",
+            "content_html": "<p>摘要：SageMath常用函数 panfengblog 于 2020-04-05 00:26:43 发布 阅读量2.6w 收藏 255 点赞数 46 文章链接：<a href=\"https://blog.csdn.net/weixin44338712/article/details/105320810\">https://blog.csdn.net/weixin44338712/article/details/105320810</a> SageMath常用。</p>\n<br/><p>访问 <a href=\"https://kinsey973.github.io/posts/SageMath常用函数\" target=\"_blank\">https://kinsey973.github.io/posts/SageMath常用函数</a> 阅读全文。</p>",
+            "url": "https://kinsey973.github.io/posts/SageMath常用函数",
+            "title": "SageMath常用函数",
+            "date_modified": "2020-04-05T00:26:43.000Z",
+            "date_published": "2020-04-05T00:26:43.000Z",
+            "author": {
+                "name": "北歌",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}

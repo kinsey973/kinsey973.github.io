@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/crypto.Dgwxdfj2.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>crypto - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="crypto">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021445451.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">crypto</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-06-08 17:00:57"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-06-08</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">16.1k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">66m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AF%86%E7%A0%81%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>密码笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=crypto" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>crypto</span></a><a href="/tags/?tag=%E9%A2%98%E8%A7%A3" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>题解</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：丢失的md5暴力求解 将代码修改 得到flag Alice and Bob（质因数分离） <a href="https://zh.numberempire.com/numberfactorizer.php" target="_blank" rel="noreferrer">https://zh.numberempire.com/numberfactorizer.php</a> 大帝的密码武器（凯撒密码） <a href="https://www.lddgo.net/encrypt/caesar-ciphe%E3%80%82" target="_blank" rel="noreferrer">https://www.lddgo.net/encrypt/caesar-ciphe。</a></p><p>&lt;!-- more --&gt;</p><h3 id="丢失的md5-暴力求解" tabindex="-1">丢失的md5(暴力求解) <a class="header-anchor" href="#丢失的md5-暴力求解" aria-label="Permalink to &quot;丢失的md5(暴力求解)&quot;">​</a></h3><p>将代码修改</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import hashlib
+
+# 迭代指定范围内的ASCII字符
+for i in range(32, 127):
+    for j in range(32, 127):
+        for k in range(32, 127):
+            # 创建要进行哈希运算的字符串
+            test_string = &#39;TASC&#39; + chr(i) + &#39;O3RJMV&#39; + chr(j) + &#39;WDJKX&#39; + chr(k) + &#39;ZM&#39;
+            m = hashlib.md5()
+            # 将字符串编码为字节并更新哈希对象
+            hashlib 模块中的 update 方法用于将数据传递给哈希对象，以便生成哈希值。在使用 update 方法时，需要传入一个字             节类型的数据。
+            m.update(test_string.encode(&#39;utf-8&#39;))
+            des = m.hexdigest()
+            # 检查哈希值是否包含指定的子字符串
+            if &#39;e9032&#39; in des and &#39;da&#39; in des and &#39;911513&#39; in des:
+                print(des)
+
+//e9032994dabac08080091151380478a2
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><h3 id="alice-and-bob-质因数分离" tabindex="-1">Alice and Bob（质因数分离） <a class="header-anchor" href="#alice-and-bob-质因数分离" aria-label="Permalink to &quot;Alice and Bob（质因数分离）&quot;">​</a></h3><p><a href="https://zh.numberempire.com/numberfactorizer.php" target="_blank" rel="noreferrer">https://zh.numberempire.com/numberfactorizer.php</a></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import hashlib
+def prime_factors(n):
+    &quot;&quot;&quot;
+    分解给定整数n的质因数。
+    返回一个列表，其中包含n的所有质因数。
+    &quot;&quot;&quot;
+    # 初始化一个空列表来存储质因数
+    factors = []
+
+    # 从2开始，逐个检查每个数是否是n的因数
+    for i in range(2, int(n ** 0.5) + 1):
+        # 如果i是n的因数，将其添加到质因数列表中
+        if n % i == 0:
+            factors.append(i)
+            # 如果i不是质数，则n/i也是一个因数，将其也添加到质因数列表中
+            if i != n // i:
+                factors.append(n // i)
+
+                # 如果n是偶数且大于2，则它本身不是质数，需要特别处理
+    if n &gt; 2 and n % 2 == 0:
+        factors.append(2)
+
+    return factors
+# 测试函数
+print(prime_factors(98554799767))  # 输出: [101999, 966233]
+
+a=hashlib.md5()
+a.update(&quot;101999966233&quot;.encode(&#39;utf-8&#39;))
+print(a.hexdigest().lower())
+
+//d450209323a847c8d01c6be47c81811a
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="大帝的密码武器-凯撒密码" tabindex="-1">大帝的密码武器（凯撒密码） <a class="header-anchor" href="#大帝的密码武器-凯撒密码" aria-label="Permalink to &quot;大帝的密码武器（凯撒密码）&quot;">​</a></h3><p><a href="https://www.lddgo.net/encrypt/caesar-cipher" target="_blank" rel="noreferrer">https://www.lddgo.net/encrypt/caesar-cipher</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021445451.png" alt="image-20240602144536344" loading="lazy" decoding="async"></figure><p>下载下来的文件长这样，我们给它加上.zip后缀就能打开文件了</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021446943.png" alt="image-20240602144656911" loading="lazy" decoding="async"></figure><p>从已知信息可知为凯撒密码，我们用工具进行移位</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021447735.png" alt="image-20240602144735700" loading="lazy" decoding="async"></figure><p>第13位出现单词，我们把附件的字符串也移位</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021448012.png" alt="image-20240602144809987" loading="lazy" decoding="async"></figure><p PbzrPuvan="">得到flag</p><h3 id="windows系统密码-md5解密" tabindex="-1">Windows系统密码（md5解密） <a class="header-anchor" href="#windows系统密码-md5解密" aria-label="Permalink to &quot;Windows系统密码（md5解密）&quot;">​</a></h3><p><a href="https://www.cmd5.com/" target="_blank" rel="noreferrer">https://www.cmd5.com/</a></p><p>将下载的附件解压后，发现文件的后缀为hash，即原文本使用了哈希加密，众所周知，哈希密码的加密的过程被认为是不可逆的，</p><p>也就是说，人们认为从哈希串中是不可能还原出原口令的。这里我们使用记事本打开文件，得到以下内容：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021501603.png" alt="image-20240602150144576" loading="lazy" decoding="async"></figure><p>解题思路</p><p>由于哈希密码的不可逆性，我们只能借用一些工具来进行操作，这里我使用的工具网址是：<a href="https://www.cmd5.com/" target="_blank" rel="noreferrer">MD5解密</a>。分别对第二行的三段文字进行</p><p>求解，便可得到答案为：good-luck</p><h3 id="信息化时代的步伐-中文电码" tabindex="-1">信息化时代的步伐（中文电码） <a class="header-anchor" href="#信息化时代的步伐-中文电码" aria-label="Permalink to &quot;信息化时代的步伐（中文电码）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021506854.png" alt="image-20240602150614823" loading="lazy" decoding="async"></figure><p>这是一串中文代码（别问我为什么知道）</p><p>找个网站解密</p><p><a href="https://dianma.bmcx.com/" target="_blank" rel="noreferrer">https://dianma.bmcx.com/</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021507539.png" alt="image-20240602150712490" loading="lazy" decoding="async"></figure><p>flag出来了</p><h3 id="凯撒-替换-呵呵-凯撒密码爆破" tabindex="-1">凯撒？替换？呵呵!（凯撒密码爆破） <a class="header-anchor" href="#凯撒-替换-呵呵-凯撒密码爆破" aria-label="Permalink to &quot;凯撒？替换？呵呵!（凯撒密码爆破）&quot;">​</a></h3><p>凯撒密码一般就是26个字母经过单纯的按字母顺序来位移的<a href="https://so.csdn.net/so/search?q=%E5%8A%A0%E5%AF%86&amp;spm=1001.2101.3001.7020" target="_blank" rel="noreferrer">加密</a>方法（一般）</p><p>如：abc=def</p><p>进阶版的凯撒就不按照字母顺序的加密</p><p>如：abc=dhj</p><p>所以就要经过暴力破解出每一种可能的对应加密</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021519410.png" alt="image-20240602151935377" loading="lazy" decoding="async"></figure><p>前面的MTHJ和字符串中间的{}是明显的flag{}的格式，所以就推断这里的</p><p>MTHJ对应的明文就是flag</p><p>然后就对字符串中的其他20个字母进行爆破对比，可以写脚本（不会哈哈哈）</p><p>用工具吧</p><p><a href="https://quipqiup.com/" target="_blank" rel="noreferrer">quipqiup</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021519431.png" alt="image-20240602151946218" loading="lazy" decoding="async"></figure><p>flag要去空格，在两边加{}</p><h3 id="萌萌哒的八戒-猪圈密码" tabindex="-1">萌萌哒的八戒（猪圈密码） <a class="header-anchor" href="#萌萌哒的八戒-猪圈密码" aria-label="Permalink to &quot;萌萌哒的八戒（猪圈密码）&quot;">​</a></h3><p>打开图片，在下面发现一些图案</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021525612.png" alt="image-20240602152506490" loading="lazy" decoding="async"></figure><p>经过查询，为猪圈密码</p><figure><img src="https://img-blog.csdnimg.cn/direct/593bc400d2a443dfba463301484e8dfd.png" alt="img" loading="lazy" decoding="async"></figure><p whenthepigwanttoeat="">对照密码表依次代入即可，得到答案为：flag</p><h3 id="权限获得第一步-md5解密" tabindex="-1">权限获得第一步(md5解密) <a class="header-anchor" href="#权限获得第一步-md5解密" aria-label="Permalink to &quot;权限获得第一步(md5解密)&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021528603.png" alt="image-20240602152801553" loading="lazy" decoding="async"></figure><p>拿去md5解密就能得到flag了</p><h3 id="传统知识-古典密码" tabindex="-1">传统知识+古典密码 <a class="header-anchor" href="#传统知识-古典密码" aria-label="Permalink to &quot;传统知识+古典密码&quot;">​</a></h3><p>小明某一天收到一封密信，信中写了几个不同的年份 辛卯，癸巳，丙戌，辛未，庚辰，癸酉，己卯，癸巳。 信的背面还写有“+甲子”，请解出这段密文。</p><p XXX="">key值：CTF</p><figure><img src="https://img-blog.csdnimg.cn/direct/a7d8b2c8225442e38d6647c772e921e2.png" alt="img" loading="lazy" decoding="async"></figure><p>查表可得序号：28，30，23，8，17，10，16，30</p><p>且一甲子为60，所以每个加上60</p><p>88，90，83，68，77，70，76，90</p><p>对应ascii字符为</p><p>XZSDMFLZ</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>a=[88,90,83,68,77,70,76,90]
+b=&#39;&#39;
+for i in a:
+    b+=chr(i)
+print(b)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>由于古典密码只有栅栏密码和凯撒密码</p><p>我们先进行凯撒密码，移动5位进行解密得到SUNYHAGU</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021554935.png" alt="image-20240602155404900" loading="lazy" decoding="async"></figure><p>再将SUNYHAGU进行栅栏密码解密</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021554791.png" alt="image-20240602155448691" loading="lazy" decoding="async"></figure><p SHUANGYU="">得到flag</p><h3 id="世上无难事-暴力破解" tabindex="-1">世上无难事(暴力破解) <a class="header-anchor" href="#世上无难事-暴力破解" aria-label="Permalink to &quot;世上无难事(暴力破解)&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021715173.png" alt="image-20240602171546125" loading="lazy" decoding="async"></figure><p>打开页面发现一大堆字母，我们直接暴力破解</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021716473.png" alt="image-20240602171617317" loading="lazy" decoding="async"></figure><p>flag记得把字母改为小写</p><h3 id="afctf2018-morse-摩斯密码-16进制解码" tabindex="-1">[AFCTF2018]Morse（摩斯密码&amp;16进制解码） <a class="header-anchor" href="#afctf2018-morse-摩斯密码-16进制解码" aria-label="Permalink to &quot;[AFCTF2018]Morse（摩斯密码&amp;16进制解码）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406032155281.png" alt="image-20240603215538129" loading="lazy" decoding="async"></figure><p>压缩包里一看就是摩斯密码，但要把/改为空格</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406032156144.png" alt="image-20240603215630058" loading="lazy" decoding="async"></figure><p>解码后还需16进制解码才能得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406032157003.png" alt="image-20240603215659800" loading="lazy" decoding="async"></figure><h3 id="还原大师-md5爆破" tabindex="-1">还原大师(md5爆破). <a class="header-anchor" href="#还原大师-md5爆破" aria-label="Permalink to &quot;还原大师(md5爆破).&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import hashlib
+
+mystery_md5 = &quot;E903???4DAB????08?????51?80??8A?&quot;
+for i in range(65, 91):
+    for j in range(65, 91):
+        for k in range(65, 91):
+            # print(f&quot;TASC{chr(i)}O3RJMV{chr(j)}WDJKX{chr(k)}ZMd&quot;, end=&quot;;&quot;)
+            # 计算候选字符串的MD5哈希值
+            plaintext = f&quot;TASC{chr(i)}O3RJMV{chr(j)}WDJKX{chr(k)}ZM&quot;
+            md5_hash = hashlib.md5(plaintext.encode(&#39;utf8&#39;)).hexdigest().upper()  # 注意大小写
+            # print(md5_hash[:4])
+            # 比较MD5码的部分
+            if md5_hash[:4] == mystery_md5[:4]:
+                print(plaintext)
+                print(md5_hash)
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="异性相吸-二进制异或" tabindex="-1">异性相吸(二进制异或) <a class="header-anchor" href="#异性相吸-二进制异或" aria-label="Permalink to &quot;异性相吸(二进制异或)&quot;">​</a></h3><p>提起异性我们可以想到01，也就是二进制，我们用010把文件内容转化成二进制再异或</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>a = &#39;0110000101110011011000010110010001110011011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011000010111001101100100011100010111011101100101011100110111000101100110&#39;
+b = &#39;0000011100011111000000000000001100001000000001000001001001010101000000110001000001010100010110000100101101011100010110000100101001010110010100110100010001010010000000110100010000000010010110000100011000000110010101000100011100000101010101100100011101010111010001000001001001011101010010100001010000011011&#39;
+c = &#39;&#39;
+
+for i in range(len(a)):
+    if a[i] == b[i]:
+        c += &#39;0&#39;
+    else:
+        c += &#39;1&#39;
+print(c)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>0110011001101100011000010110011101111011011001010110000100110001011000100110001100110000001110010011100000111000001110010011100100110010001100100011011100110110011000100011011101100110001110010011010101100010001101010011010001100001001101110011010000110011001101010110010100111000001110010110010101111101
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们再解码得到flag</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>flag{ea1bc0988992276b7f95b54a7435e89e}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="gxyctf2019-checkin-rot-n加密" tabindex="-1">[GXYCTF2019]CheckIn（ROT-N加密） <a class="header-anchor" href="#gxyctf2019-checkin-rot-n加密" aria-label="Permalink to &quot;[GXYCTF2019]CheckIn（ROT-N加密）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406111703465.png" alt="image-20240611170339389" loading="lazy" decoding="async"></figure><p>出现了两个等号，我们先base64解密</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406111704759.png" alt="image-20240611170402562" loading="lazy" decoding="async"></figure><p>里面没有{}可以知道不是凯撒加密，没有=不是base64</p><p>但可以发现这里的每一个字符的ASCII在33-126</p><p>可以发现是ROT-N加密</p><p><a href="https://www.qqxiuzi.cn/bianma/ROT5-13-18-47.php" target="_blank" rel="noreferrer">ROT-N在线加密</a></p><p>得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406111705390.png" alt="image-20240611170522341" loading="lazy" decoding="async"></figure><h3 id="cipher-playfair解密" tabindex="-1">Cipher（playfair解密） <a class="header-anchor" href="#cipher-playfair解密" aria-label="Permalink to &quot;Cipher（playfair解密）&quot;">​</a></h3><p>题目提示：公平的玩吧，也就是playfair，正好有这一种加密为普莱菲尔密码，以playfair为密钥进行普莱菲尔密码解密（要不是我看了wp，鬼知道这玩意）</p><p><a href="https://www.metools.info/code/playfair_186.html" target="_blank" rel="noreferrer">playfair解密</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406111718297.png" alt="image-20240611171809161" loading="lazy" decoding="async"></figure><p itisnotaproblemhavefun="">用flag{}包裹住，得到flag</p><h3 id="bjdctf2020-这是base-字符替换" tabindex="-1">[BJDCTF2020]这是base??（字符替换） <a class="header-anchor" href="#bjdctf2020-这是base-字符替换" aria-label="Permalink to &quot;[BJDCTF2020]这是base??（字符替换）&quot;">​</a></h3><p>这题的题目是base，我们可以想到base64，但txt文档给出了2个数据，不难想到字符替代</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406162124459.png" alt="image-20240616212448415" loading="lazy" decoding="async"></figure><p>我们将chipertext的字符与dict的字符一一对应，得到每一个字符在dict中的下标</p><p>我们查找base64的标准字典</p><figure><img src="https://img-blog.csdnimg.cn/20200319220730248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNzgzOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><p>将每一个字符在dict中的下标与标准字典的字符相对应</p><p>写脚本</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import base64
+
+a={0: &#39;J&#39;, 1: &#39;K&#39;, 2: &#39;L&#39;, 3: &#39;M&#39;, 4: &#39;N&#39;, 5: &#39;O&#39;, 6: &#39;x&#39;, 7: &#39;y&#39;, 8: &#39;U&#39;, 9: &#39;V&#39;, 10: &#39;z&#39;, 11: &#39;A&#39;, 12: &#39;B&#39;, 13: &#39;C&#39;, 14: &#39;D&#39;, 15: &#39;E&#39;, 16: &#39;F&#39;, 17: &#39;G&#39;, 18: &#39;H&#39;, 19: &#39;7&#39;, 20: &#39;8&#39;, 21: &#39;9&#39;, 22: &#39;P&#39;, 23: &#39;Q&#39;, 24: &#39;I&#39;, 25: &#39;a&#39;, 26: &#39;b&#39;, 27: &#39;c&#39;, 28: &#39;d&#39;, 29: &#39;e&#39;, 30: &#39;f&#39;, 31: &#39;g&#39;, 32: &#39;h&#39;, 33: &#39;i&#39;, 34: &#39;j&#39;, 35: &#39;k&#39;, 36: &#39;l&#39;, 37: &#39;m&#39;, 38: &#39;W&#39;, 39: &#39;X&#39;, 40: &#39;Y&#39;, 41: &#39;Z&#39;, 42: &#39;0&#39;, 43: &#39;1&#39;, 44: &#39;2&#39;, 45: &#39;3&#39;, 46: &#39;4&#39;, 47: &#39;5&#39;, 48: &#39;6&#39;, 49: &#39;R&#39;, 50: &#39;S&#39;, 51: &#39;T&#39;, 52: &#39;n&#39;, 53: &#39;o&#39;, 54: &#39;p&#39;, 55: &#39;q&#39;, 56: &#39;r&#39;, 57: &#39;s&#39;, 58: &#39;t&#39;, 59: &#39;u&#39;, 60: &#39;v&#39;, 61: &#39;w&#39;, 62: &#39;+&#39;, 63: &#39;/&#39;, 64: &#39;=&#39;}
+b=&quot;FlZNfnF6Qol6e9w17WwQQoGYBQCgIkGTa9w3IQKw&quot;
+base64_list = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;,&#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,&#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;,&#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;+&#39;, &#39;/&#39;]
+flag=&#39;&#39;
+
+for i in b:
+    for j in a:
+        if i == a[j]:
+            flag+=base64_list[j]
+
+print(base64.b64decode(flag))
+
+//b&#39;BJD{D0_Y0u_kNoW_Th1s_b4se_map}&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="robomunication-音频摩斯密码" tabindex="-1">robomunication（音频摩斯密码） <a class="header-anchor" href="#robomunication-音频摩斯密码" aria-label="Permalink to &quot;robomunication（音频摩斯密码）&quot;">​</a></h3><p>下载文件后，发现是个音频，用<a href="https://www.audacityteam.org/" target="_blank" rel="noreferrer">Audacity</a>打开，发现它在哔哔哔哔 哔 哔波哔哔。。。原来是摩斯密码</p><p>整理后得到：… . .-… .-… — .-- … .- - … … - … . -.- . -.-- … - … … -… — — .–. -… . . .–.</p><p>解码得</p><p>密码是：HELLOWHATISTHEKEYITISBOOPBEEP</p><p>最终解得flag为BOOPBEEP</p><h3 id="wustctf2020-佛说-只能四天-解密大礼包" tabindex="-1">[WUSTCTF2020]佛说：只能四天（解密大礼包） <a class="header-anchor" href="#wustctf2020-佛说-只能四天-解密大礼包" aria-label="Permalink to &quot;[WUSTCTF2020]佛说：只能四天（解密大礼包）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182022154.png" alt="image-20240818202237098" loading="lazy" decoding="async"></figure><p>佛曰加密网站解密——<a href="http://hi.pcmoe.net/buddha.html%EF%BC%8C%E5%BE%97%E5%88%B0" target="_blank" rel="noreferrer">http://hi.pcmoe.net/buddha.html，得到</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182023444.png" alt="image-20240818202346306" loading="lazy" decoding="async"></figure><p>马上去核心价值观解密——<a href="http://www.hiencode.com/cvencode.html%E5%BE%97%E5%88%B0" target="_blank" rel="noreferrer">http://www.hiencode.com/cvencode.html得到</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182025210.png" alt="image-20240818202511160" loading="lazy" decoding="async"></figure><p>解密内容提示栅栏密码，我们用栅栏密码解密</p><p>要去掉后面的__doyouknowfence</p><p><a href="http://www.metools.info/code/fence154.html" target="_blank" rel="noreferrer">栅栏密码_栅栏密码在线加密解密【W型】-ME2在线工具 (metools.info)</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182040649.png" alt="image-20240818204034605" loading="lazy" decoding="async"></figure><p>我们用<a href="https://ctf.bugku.com/tool/caesar" target="_blank" rel="noreferrer">凯撒密码解密</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182045961.png" alt="image-20240818204511820" loading="lazy" decoding="async"></figure><p>我们观察枚举后的结果都没有小写字母，我们考虑base32</p><p>在偏移为3是得到flag</p><figure><img src="https://img2022.cnblogs.com/blog/2656364/202207/2656364-20220703183310796-1688771401.png" alt="img" loading="lazy" decoding="async"></figure><h3 id="达芬奇密码-脑洞题" tabindex="-1">达芬奇密码（脑洞题） <a class="header-anchor" href="#达芬奇密码-脑洞题" aria-label="Permalink to &quot;达芬奇密码（脑洞题）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182054283.png" alt="image-20240818205419252" loading="lazy" decoding="async"></figure><p>我们观察数字列发现跟斐波那契数列的数字一样但是位置不一样</p><p>我们对比来看看</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>def fib_loop_for(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+for i in range(1,33):
+    print(fib_loop_for(i))
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269 2178309
+
+1 233 3 2584 1346269 144 5 196418 21 1597 610 377 10946 89 514229 987 8 55 6765 2178309 121393 317811 46368 4181 1 832040 2 28657 75025 34 13 17711  
+
+c=&quot;36968853882116725547342176952286&quot;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们发现数字列和神秘数字串的个数一样，所以我们猜测要通过比对斐波那契数列，来将c进行排序</p><p>例如：1在斐波那契数列中排第一位，那3就在第一位</p><p>​ 233在斐波那契数列中排第12位，那6在12位上</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>a = &quot;0 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269 2178309&quot;
+b = &quot;0 233 3 2584 1346269 144 5 196418 21 1597 610 377 10946 89 514229 987 8 55 6765 2178309 121393 317811 46368 4181 1 832040 2 28657 75025 34 13 17711&quot;
+a = a.split(&quot; &quot;)
+b = b.split(&quot; &quot;)
+flag = []
+m = &quot;36968853882116725547342176952286&quot;
+for i in range(len(a)):
+    for j in range(len(a)):    
+        if a[i] == b[j]:        #a[i]中的值在b中的索引为j
+            #print(j)
+            flag.append(m[j])   #将m[j]中的值添加到flag中
+print(len(flag))
+print(&#39;&#39;.join(flag))
+#37995588256861228614165223347687
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="mrctf2020-古典密码知多少-古典密码图形" tabindex="-1">[MRCTF2020]古典密码知多少（古典密码图形） <a class="header-anchor" href="#mrctf2020-古典密码知多少-古典密码图形" aria-label="Permalink to &quot;[MRCTF2020]古典密码知多少（古典密码图形）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182059429.png" alt="image-20240818205933301" loading="lazy" decoding="async"></figure><p>观察图中信息，可以发现用到了CTF中的图形密码，包括<a href="https://blog.csdn.net/weixin_47869330/article/details/111396033" target="_blank" rel="noreferrer">猪圈密码的变形</a>、标准银河字母的加密、和圣堂武士密码。</p><p>标准银河字母的加密</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/e1a77fd993f1103879e0ddfdc430cb52.png" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><p>圣堂武士密码</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/6ae09e8d538efed8f9ce7dcbb49b7bcd.png" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><p>解密出来得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>FGCPFLIRTUASYON
+</code></pre><button class="code-block-unfold-btn"></button></div><p>题目信息还提到了fence，我们考虑栅栏密码</p><figure><img src="https://img-blog.csdnimg.cn/direct/85bce167029b493ab498df32a8c47706.png" alt="img" loading="lazy" decoding="async"></figure><p>可得到有用信息：FLAGISCRYPTOFUN，去掉前面信息得最终结果为：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>flag{CRYPTOFUN}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="rot-rot原理" tabindex="-1">rot(rot原理) <a class="header-anchor" href="#rot-rot原理" aria-label="Permalink to &quot;rot(rot原理)&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>破解下面的密文：
+
+83 89 78 84 45 86 96 45 115 121 110 116 136 132 132 132 108 128 117 118 134 110 123 111 110 127 108 112 124 122 108 118 128 108 131 114 127 134 108 116 124 124 113 108 76 76 76 76 138 23 90 81 66 71 64 69 114 65 112 64 66 63 69 61 70 114 62 66 61 62 69 67 70 63 61 110 110 112 64 68 62 70 61 112 111 112
+
+flag格式flag{}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>看着像是 ascii 码。</p><p>但是有大于 127 的数字存在，所以要先处理。</p><p>题目名称为 rot，</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ROT5、ROT13、ROT18、ROT47 编码是一种简单的码元位置顺序替换暗码。此类编码具有可逆性，可以自我解密，主要用于应对快速浏览，或者是机器的读取，而不让其理解其意。
+ 
+ROT5 是 rotate by 5 places 的简写，意思是旋转5个位置，其它皆同。下面分别说说它们的编码方式：
+ROT5：只对数字进行编码，用当前数字往前数的第5个数字替换当前数字，例如当前为0，编码后变成5，当前为1，编码后变成6，以此类推顺序循环。
+ROT13：只对字母进行编码，用当前字母往前数的第13个字母替换当前字母，例如当前为A，编码后变成N，当前为B，编码后变成O，以此类推顺序循环。
+ROT18：这是一个异类，本来没有，它是将ROT5和ROT13组合在一起，为了好称呼，将其命名为ROT18。
+ROT47：对数字、字母、常用符号进行编码，按照它们的ASCII值进行位置替换，用当前字符ASCII值往前数的第47位对应字符替换当前字符，例如当前为小写字母z，编码后变成大写字母K，当前为数字0，编码后变成符号_。用于ROT47编码的字符其ASCII值范围是33－126，具体可参考ASCII编码。
+</code></pre><button class="code-block-unfold-btn"></button></div><p>参考rot原理，将所有数字减13，再转ascii码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>s=&#39;83 89 78 84 45 86 96 45 115 121 110 116 136 132 132 132 108 128 117 118 134 110 123 111 110 127 108 112 124 122 108 118 128 108 131 114 127 134 108 116 124 124 113 108 76 76 76 76 138 23 90 81 66 71 64 69 114 65 112 64 66 63 69 61 70 114 62 66 61 62 69 67 70 63 61 110 110 112 64 68 62 70 61 112 111 112&#39;
+l = s.split(&quot; &quot;)
+for i in l:
+    print(chr(int(i) - 13), end=&#39;&#39;)
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>FLAG IS flag{www_shiyanbar_com_is_very_good_????}
+MD5:38e4c352809e150186920aac37190cbc
+</code></pre><button class="code-block-unfold-btn"></button></div><p>看样子我们需要对flag的最后4位进行爆破</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">demo=&#39;flag{www_shiyanbar_com_is_very_good_&#39;
+check = &#39;38e4c352809e150186920aac37190cbc&#39;
+ 
+for i in range(32,126):
+    for j in range(32,126):
+        for k in range(32,126):
+            for m in range(32,126):
+                tmp = demo + chr(i) + chr(j) + chr(k) + chr(m) + &#39;}&#39;
+                hash = hashlib.md5(tmp.encode(&#39;utf8&#39;)).hexdigest()
+                if check == hash:
+                    print(tmp)
+                    exit()
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><h3 id="这是什么-jsfuck" tabindex="-1">这是什么(jsfuck) <a class="header-anchor" href="#这是什么-jsfuck" aria-label="Permalink to &quot;这是什么(jsfuck)&quot;">​</a></h3><p>我们将apk文件修改为txt文件</p><p>我们在文件中发现</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182124165.png" alt="image-20240818212431110" loading="lazy" decoding="async"></figure><p>我们考虑jsfuck解密</p><p>我们f12打开控制台，将括号复制进去</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202408182125216.png" alt="image-20240818212531846" loading="lazy" decoding="async"></figure><p>得到flag</p><h3 id="mrctf2020-天干地支-甲子-天干地支" tabindex="-1">[MRCTF2020]天干地支+甲子（天干地支） <a class="header-anchor" href="#mrctf2020-天干地支-甲子-天干地支" aria-label="Permalink to &quot;[MRCTF2020]天干地支+甲子（天干地支）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409022050164.png" alt="image-20240902205011081" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>六十年甲子（干支表）
+1	      2	     3	      4	     5	     6	     7	     8	     9	     10
+甲子	乙丑	丙寅	丁卯	戊辰	己巳	庚午	辛未	壬申	癸酉
+11	     12  	 13	     14 	 15 	 16	     17	     18	     19	     20
+甲戌	乙亥	丙子	丁丑	戊寅	己卯	庚辰	辛巳	壬午	癸未
+21	     22    	 23	     24	     25	     26      27	     28	     29	     30
+甲申	乙酉	丙戌	丁亥	戊子	己丑	庚寅	辛卯	壬辰	癸巳
+31	     32	     33	     34	     35	     36	     37	     38	     39      40
+甲午	乙未	丙申	丁酉	戊戌	己亥	庚子	辛丑	壬寅	癸卯
+41	     42	     43	     44	     45	     46	     47	     48	     49      50
+甲辰	乙巳	丙午	丁未	戊申	己酉	庚戌	辛亥	壬子	癸丑
+51	     52	     53	     54	     55	     56	     57	     58	     59      60
+甲寅	乙卯	丙辰	丁巳	戊午	己未	庚申	辛酉	壬戌	癸亥
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们对照得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>11  51  51  40  46  51  38
+</code></pre><button class="code-block-unfold-btn"></button></div><p>都加一个甲子(60)得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>71 111 111 100 106 111 98
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们对照ascii表得到</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/ed5595d40998e6bd7aff7e6c286dd338.png" alt="ASCII码表" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>Goodjob
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>flag{Goodjob}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="nctf2019-keyboard-脑洞" tabindex="-1">[NCTF2019]Keyboard(脑洞) <a class="header-anchor" href="#nctf2019-keyboard-脑洞" aria-label="Permalink to &quot;[NCTF2019]Keyboard(脑洞)&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409022101648.png" alt="image-20240902210112608" loading="lazy" decoding="async"></figure><p>题目提示键盘，我们发现每一个字母都对应上面的一个数字，我们猜测9键盘，而字母个数就是对应的9键盘上的对应的字母</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>youaresosmartthatthisisjustapieceofcake
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">cipher=&quot;ooo yyy ii w uuu ee uuuu yyy uuuu y w uuu i i rr w i i rr rrr uuuu rrr uuuu t ii uuuu i w u rrr ee www ee yyy eee www w tt ee&quot;
+base=&quot; qwertyuiop&quot;
+a=[&quot; &quot;,&quot; &quot;,&quot;abc&quot;,&quot;def&quot;,&quot;ghi&quot;,&quot;jkl&quot;,&quot;mno&quot;,&quot;pqrs&quot;,&quot;tuv&quot;,&quot;wxyz&quot;]
+for part in cipher.split(&quot; &quot;):
+    s=base.index(part[0])
+    count=len(part)
+    print(a[s][count-1],end=&quot;&quot;)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="bjdctf2020-signin" tabindex="-1">[BJDCTF2020]signin <a class="header-anchor" href="#bjdctf2020-signin" aria-label="Permalink to &quot;[BJDCTF2020]signin&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409022149533.png" alt="image-20240902214954471" loading="lazy" decoding="async"></figure><p>我们观察，密文为16进制，我们将其转换为字符</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">from Crypto.Util.number import *
+a=0x424a447b57653163306d655f74345f424a444354467d
+c=long_to_bytes((a))
+print(c.decode(&quot;utf-8&quot;))
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到flag</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>BJD{We1c0me_t4_BJDCTF}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="mrctf2020-vigenere-维吉尼亚解密" tabindex="-1">[MRCTF2020]vigenere（维吉尼亚解密） <a class="header-anchor" href="#mrctf2020-vigenere-维吉尼亚解密" aria-label="Permalink to &quot;[MRCTF2020]vigenere（维吉尼亚解密）&quot;">​</a></h3><p>我们找一个在线网站</p><p><a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="noreferrer">https://www.guballa.de/vigenere-solver</a></p><p>把文本放上去，直接破解，flag是最后一行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409052126846.png" alt="image-20240905212644646" loading="lazy" decoding="async"></figure><h3 id="actf新生赛2020-crypto-rsa0-zip伪加密" tabindex="-1">[ACTF新生赛2020]crypto-rsa0(zip伪加密) <a class="header-anchor" href="#actf新生赛2020-crypto-rsa0-zip伪加密" aria-label="Permalink to &quot;[ACTF新生赛2020]crypto-rsa0(zip伪加密)&quot;">​</a></h3><p>我们把文件下下来后，在hint.txt提示，文件进行了zip伪加密</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409052154418.png" alt="image-20240905215448375" loading="lazy" decoding="async"></figure><p>一个ZIP文件由三个部分组成：</p><p>压缩源文件数据区+压缩源文件目录区+压缩源文件目录结束标志。</p><p>伪加密原理：zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包。 一般来说，文件各个区域开头就是50 4B，然后后面两个字节是版本，再后面两个就是判断是否有加密的关键了</p><p>伪加密：</p><p>压缩源文件数据区的全局加密应当为 00 00</p><p>且压缩文件目录区的全局方式标记应当为 09 00</p><h4 id="原理" tabindex="-1">原理 <a class="header-anchor" href="#原理" aria-label="Permalink to &quot;原理&quot;">​</a></h4><p>ZIP伪加密是在文件头的加密标志位做修改，进而再打开文件时识别为加密压缩包。 在参考了网上多数文章无果后，在西普的一个小题找到了可以复现的方法。 给出西普的某个示例：</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">压缩源文件数据区 
+50 4B 03 04：这是头文件标记（0x04034b50）
+14 00：解压文件所需 pkware 版本 
+00 00：全局方式位标记（有无加密） 
+08 00：压缩方式 
+5A 7E：最后修改文件时间 
+F7 46：最后修改文件日期 
+16 B5 80 14：CRC-32校验（1480B516）
+19 00 00 00：压缩后尺寸（25）
+17 00 00 00：未压缩尺寸（23）
+07 00：文件名长度 
+00 00：扩展记录长度 
+6B65792E7478740BCECC750E71ABCE48CDC9C95728CECC2DC849AD284DAD0500  
+压缩源文件目录区 
+50 4B 01 02：目录中文件文件头标记(0x02014b50)  
+3F 00：压缩使用的 pkware 版本 
+14 00：解压文件所需 pkware 版本 
+00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了） 
+08 00：压缩方式 
+5A 7E：最后修改文件时间 
+F7 46：最后修改文件日期 
+16 B5 80 14：CRC-32校验（1480B516）
+19 00 00 00：压缩后尺寸（25）
+17 00 00 00：未压缩尺寸（23）
+07 00：文件名长度 
+24 00：扩展字段长度 
+00 00：文件注释长度 
+00 00：磁盘开始号 
+00 00：内部文件属性 
+20 00 00 00：外部文件属性 
+00 00 00 00：局部头部偏移量 
+6B65792E7478740A00200000000000010018006558F04A1CC5D001BDEBDD3B1CC5D001BDEBDD3B1CC5D001  
+压缩源文件目录结束标志 
+50 4B 05 06：目录结束标记 
+00 00：当前磁盘编号 
+00 00：目录区开始磁盘编号 
+01 00：本磁盘上纪录总数 
+01 00：目录区中纪录总数 
+59 00 00 00：目录区尺寸大小 
+3E 00 00 00：目录区对第一张磁盘的偏移量 
+00 00：ZIP 文件注释长度
+		我们用010打开zip文件，把所有的50 4B后的09 00都改成00 00
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409052156325.png" alt="image-20240905215619133" loading="lazy" decoding="async"></figure><p>保存之后打开压缩包，发发现就可以顺利打开rsa.py文件了</p><p>然后就是个rsa解密了</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import binascii
+import gmpy2
+import binascii
+
+p = 9018588066434206377240277162476739271386240173088676526295315163990968347022922841299128274551482926490908399237153883494964743436193853978459947060210411
+q = 7547005673877738257835729760037765213340036696350766324229143613179932145122130685778504062410137043635958208805698698169847293520149572605026492751740223
+c = 50996206925961019415256003394743594106061473865032792073035954925875056079762626648452348856255575840166640519334862690063949316515750256545937498213476286637455803452890781264446030732369871044870359838568618176586206041055000297981733272816089806014400846392307742065559331874972274844992047849472203390350
+e = 65537
+
+n = p * q
+phi_n = (q - 1) * (p - 1)
+d = gmpy2.invert(e, phi_n)
+m = gmpy2.powmod(c, d, n)
+
+print(binascii.unhexlify(hex(m)[10:]))
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="传感器-曼彻斯特编码" tabindex="-1">传感器（曼彻斯特编码） <a class="header-anchor" href="#传感器-曼彻斯特编码" aria-label="Permalink to &quot;传感器（曼彻斯特编码）&quot;">​</a></h3><h6 id="wiki" tabindex="-1">Wiki <a class="header-anchor" href="#wiki" aria-label="Permalink to &quot;Wiki&quot;">​</a></h6><p>曼彻斯特编码（Manchester Encoding），也叫做相位编码（ Phase Encode，简写PE），是一个同步时钟编码技术，被物理层使用来编码一个同步位流的时钟和数据。它在以太网媒介系统中的应用属于数据通信中的两种位同步方法里的自同步法（另一种是外同步法），即接收方利用包含有同步信号的特殊编码从信号自身提取同步信号来锁定自己的时钟脉冲频率，达到同步目的。</p><h6 id="encode-and-decode" tabindex="-1">Encode and Decode <a class="header-anchor" href="#encode-and-decode" aria-label="Permalink to &quot;Encode and Decode&quot;">​</a></h6><p>IEEE 802.4（令牌总线）和低速版的IEEE 802.3（以太网）中规定, 按照这样的说法, 01电平跳变表示1, 10的电平跳变表示0。</p><h6 id="ideas" tabindex="-1">Ideas <a class="header-anchor" href="#ideas" aria-label="Permalink to &quot;Ideas&quot;">​</a></h6><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">5555555595555A65556AA696AA6666666955`转为二进制，根据01-&gt;1,10-&gt;0。可得到
+0101-&gt;11
+0110-&gt;10
+1010-&gt;00
+1001-&gt;01
+decode得到
+`11111111 11111111 01111111 11001011 11111000 00100110 00001010 10101010 10011111`
+bin-&gt;hex，对比ID并不重合，根据八位倒序传输协议将二进制每八位reverse，转hex即可
+flag：`FFFFFED31F645055F9
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">cipher=&#39;5555555595555A65556AA696AA6666666955&#39;
+def iee(cipher):
+    tmp=&#39;&#39;
+    for i in range(len(cipher)):
+        a=bin(eval(&#39;0x&#39;+cipher[i]))[2:].zfill(4)
+        tmp=tmp+a[1]+a[3]
+        print(tmp)
+    plain=[hex(int(tmp[i:i+8][::-1],2))[2:] for i in range(0,len(tmp),8)]
+    print(&#39;&#39;.join(plain).upper())
+
+iee(cipher)
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="npuctf2020-这是什么觅🐎-观察" tabindex="-1">[NPUCTF2020]这是什么觅🐎（观察） <a class="header-anchor" href="#npuctf2020-这是什么觅🐎-观察" aria-label="Permalink to &quot;[NPUCTF2020]这是什么觅🐎（观察）&quot;">​</a></h3><p>用记事本打开是个乱码·</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409091518136.png" alt="image-20240909151824355" loading="lazy" decoding="async"></figure><p>但我们看到开头那个pk，我们想到zip文件，我们将后缀改为zip，成功打开文件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409091519299.png" alt="image-20240909151910551" loading="lazy" decoding="async"></figure><p>看到有一个字条和日历，猜测是类似矩阵的原理,</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>F1 W1 S22 S21 T12 S11 W1 S13
+</code></pre><button class="code-block-unfold-btn"></button></div><p>两个s应该是s1对应周六，s2对应周日</p><p>字母最后的数字对应所在的行数</p><p>例如F1，第一行的星期五</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> 3 1 12 5 14 4 1 18
+</code></pre><button class="code-block-unfold-btn"></button></div><p calendar="">对照字母表 calendar，flag</p><h3 id="浪里淘沙-脑洞" tabindex="-1">浪里淘沙（脑洞） <a class="header-anchor" href="#浪里淘沙-脑洞" aria-label="Permalink to &quot;浪里淘沙（脑洞）&quot;">​</a></h3><p>打开txt文档发现大量的单词，再结合题目给到的一串数字4、8、11、15、16可以考虑到是跟字频有关</p><p>我们打开万能的wps进行查询</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409141505435.png" alt="image-20240914150507182" loading="lazy" decoding="async"></figure><p>然后放到excel进行排序</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409141505231.png" alt="image-20240914150532083" loading="lazy" decoding="async"></figure><p>标注起题目要求的编号组合起字符串即可得到flag</p><p weshouldlearnthecrypto="">flag</p><h3 id="wustctf2020-b-se-base64变表-排列组合" tabindex="-1">[WUSTCTF2020]B@se（base64变表&amp;排列组合） <a class="header-anchor" href="#wustctf2020-b-se-base64变表-排列组合" aria-label="Permalink to &quot;[WUSTCTF2020]B@se（base64变表&amp;排列组合）&quot;">​</a></h3><p>题目附件内容：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410221914034.png" alt="image-20241022191416972" loading="lazy" decoding="async"></figure><p>首先通过观察题目字符特征很明显是base64编码，第一行的密文是通过下面给的base64的变表，但是仔细观察缺少了四个字符，因此我们需要写脚本把缺少的字符给还原出来</p><p>爆破脚本：</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import string
+c = &#39;JASGBWcQPRXEFLbCDIlmnHUVKTYZdMovwipatNOefghq56rs****kxyz012789+/&#39;
+for i in string.ascii_letters + string.digits:  # string.ascii_letters所有字母  string.digits所有数字
+    if(i not in c):
+        print(i,end=&#39;&#39;)
+# ju34
+
+很明显爆破出来的是“ju34”，但是我们还不知道他的原始排列的顺序是什么？，因此需要我们对着四个字符与密文进行一个排列组合，并可以解出明文。
+代码如下（这里是参考了一些大佬的脚本）：
+import binascii
+import itertools
+cipher = &#39;MyLkTaP3FaA7KOWjTmKkVjWjVzKjdeNvTnAjoH9iZOIvTeHbvD&#39; # 全排列组合
+s = [&#39;j&#39;,&#39;u&#39;,&#39;3&#39;,&#39;4&#39;]
+for i in itertools.permutations(s,4): # 4就是把s列表里的字母4个为一组排列
+    k = &quot;JASGBWcQPRXEFLbCDIlmnHUVKTYZdMovwipatNOefghq56rs&quot;+ &quot;&quot;.join(i) + &quot;kxyz012789+/&quot;  # &quot;&quot;.join(i)排列的结果（join() 方法用于将序列中的元素以指定的字符连接生成一个新的字符串）
+    a = &quot;&quot;
+    for j in cipher:
+        a += bin(k.index(j))[2:].zfill(6)
+    print(binascii.a2b_hex(hex(eval(&quot;0b&quot;+a))[2:-1]))  # a2b_hex和binascii.unhexlify可以为16进制的 bytes 类型，也可以为十六进制 str 类型
+                                                      # 举例：这里转为16进制后会出现0x471L，所以只有去掉0x和L就有了[2:-1]
+
+运行结果：
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://img2023.cnblogs.com/blog/3039513/202212/3039513-20221204153422960-573637136.png" alt="img" loading="lazy" decoding="async"></figure><p>很明显图中框出来的地方就是最后的flag值</p><p>总结：此题考察了缺损的base64变表，需要使用爆破脚本破解出明文。</p><h3 id="afctf2018-single-爆破" tabindex="-1">[AFCTF2018]Single（爆破） <a class="header-anchor" href="#afctf2018-single-爆破" aria-label="Permalink to &quot;[AFCTF2018]Single（爆破）&quot;">​</a></h3><p>我们下载附件，发现里面有个c语言程序和一个文件</p><p>通过代码分析，我们发现Cipher.txt是一个加密后的文件，仔细观察，很明显示是一个无规律替换加密，我们使用词频分析</p><p>网站：<a href="http://quipqiup.com/" target="_blank" rel="noreferrer">http://quipqiup.com/</a></p><p>得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202409261926862.png" alt="image-20240926192619737" loading="lazy" decoding="async"></figure><p>或者我们逆向输出</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+{
+	freopen(&quot;Cipher.txt&quot;,&quot;r&quot;,stdin);//输入输出换一下
+	freopen(&quot;Plain.txt&quot;,&quot;w&quot;,stdout);//输入输出换一下
+	map&lt;char, char&gt; f;
+	int arr[26];
+	for(int i=0;i&lt;26;++i){
+		arr[i]=i;
+	}
+	random_shuffle(arr,arr+26);
+	for(int i=0;i&lt;26;++i){
+		f[&#39;a&#39;+i]=&#39;a&#39;+arr[i];
+		f[&#39;A&#39;+i]=&#39;A&#39;+arr[i];
+	}
+	char ch;
+	while((ch=getchar())!=EOF){
+		if(f.count(ch)){
+            //反向转换一下，通过value&gt;&gt;key
+			for(map&lt;char,char&gt;::iterator it = f.begin();it!=f.end();it++)
+			{
+				if(it-&gt;second == ch)
+				{
+				  putchar(it-&gt;first);
+				  break;
+				}
+			}
+		}else{
+			putchar(ch);
+		}
+	}
+	return 0;
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到加密前的文件，找到flag</p><h3 id="鸡藕椒盐味-海明校验码" tabindex="-1">鸡藕椒盐味（海明校验码） <a class="header-anchor" href="#鸡藕椒盐味-海明校验码" aria-label="Permalink to &quot;鸡藕椒盐味（海明校验码）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410092110584.png" alt="image-20241009211038399" loading="lazy" decoding="async"></figure><p>1.分析校验位数</p><p>从题目可知验证码为110010100000共12位，校验位一般都是在2^n的位置，所以共有4位校验码在1，2，4，8位置</p><p>拓展：海明验证码公式：2^r≥k+r+1 （r为校验位 ，k为信息位），如本验证码本来有8位信息码，带入公式可得r=4，所以在1，2，4，8位置添加相应校验码</p><p>2.画表</p><p>题目中提到打印的时候倒了一下，所以将信息位倒着填入表中</p><table><thead><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>位数</th></tr></thead><tbody><tr><td></td><td></td><td>0</td><td></td><td>0</td><td>1</td><td>0</td><td></td><td>0</td><td>0</td><td>1</td><td>1</td><td>信息位（D）</td></tr><tr><td>R1</td><td>R2</td><td></td><td>R3</td><td></td><td></td><td></td><td>R4</td><td></td><td></td><td></td><td></td><td>校验位（R）</td></tr></tbody></table><p>3.求校验位的值</p><p>例如：1由第一位R1来校验；2由第二位R2来校验；由于3=1+2（1和2指的是位数，都是2的n次方）所以3由第一位R1和第二位R2校验，4由第四位R3校验，5和3道理是一样的，5=1+4（2^0+2^2）;6=2+4;7=1+2+4，依次类推。得出下表：</p><table><thead><tr><th>海明码位号</th><th>占用的校验位号</th><th>校验位</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>R1</td></tr><tr><td>2</td><td>2</td><td>R2</td></tr><tr><td>3</td><td>1、2</td><td>R1、R2</td></tr><tr><td>4</td><td>4</td><td>R3</td></tr><tr><td>5</td><td>1、4</td><td>R1、R3</td></tr><tr><td>6</td><td>2、4</td><td>R2、R3</td></tr><tr><td>7</td><td>1、2、4</td><td>R1、R2、R3</td></tr><tr><td>8</td><td>8</td><td>R4</td></tr><tr><td>9</td><td>1、8</td><td>R1、R4</td></tr><tr><td>10</td><td>2、8</td><td>R2、R4</td></tr><tr><td>11</td><td>1、2、8</td><td>R1、R2、R4</td></tr><tr><td>12</td><td>4、8</td><td>R3、R4</td></tr></tbody></table><p>进行汇总，看每个校验位都确定了哪一位。</p><p>R1：1、3、5、7、9、11</p><p>R2：2、3、6、7、10、11</p><p>R3：4、5、6、7、12</p><p>R4：9、10、11、12</p><p>最后用异或运算求出R1、R2、R3、R4、R5的值（以R1为例）：</p><p>R1=D1⊕D3⊕D5⊕D7⊕D9⊕D11=1</p><p>以此类推：R1=1,R2=0,R3=0,R4=0</p><p>可以看到P1P2P3P4=0001,R1R2R3R4=1000</p><p>可以求得监督位（异或）：</p><table><thead><tr><th>0</th><th>0</th><th>0</th><th>1</th><th>验证码中的校验码</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>求得的校验码</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>监督位</td></tr></tbody></table><p>监督位不为0000，说明接收方生成的校验位和收到的校验位不同，错误的位数是监督位的十进制即9，所以把D9就是题目中提到的错误，得到正确验证码110110100000，然后根据提示MD5hash一下就出来了。</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">1 import hashlib
+2 c=&quot;110110100000&quot;
+3 md=hashlib.md5()
+4 md.update(c.encode(&quot;utf8&quot;))
+5 flag = md.hexdigest()
+6 print(flag)
+7 
+8 #d14084c7ceca6359eaac6df3c234dd3b
+</code></pre><button class="code-block-unfold-btn"></button></div><p d14084c7ceca6359eaac6df3c234dd3b="">套入flag{}即可得到答案flag</p><h3 id="afctf2018-base-base16-32-64解密" tabindex="-1">[AFCTF2018]BASE(base16,32,64解密) <a class="header-anchor" href="#afctf2018-base-base16-32-64解密" aria-label="Permalink to &quot;[AFCTF2018]BASE(base16,32,64解密)&quot;">​</a></h3><p>我们随便截取文件的一段内容，发现能进行多段base64解密</p><p>我们找个脚本</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import re
+import base64
+s=open(&#39;flag_encode.txt&#39;,&#39;rb&#39;).read()
+base16_dic = r&#39;^[A-F0-9=]*<div id="app"></div>#39;
+base32_dic = r&#39;^[A-Z2-7=]*<div id="app"></div>#39;
+base64_dic = r&#39;^[A-Za-z0-9/+=]*<div id="app"></div>#39;
+n= 0
+while True:
+    n += 1
+    t = s.decode()
+    if &#39;{&#39; in t:
+        print(t)
+        break
+    elif re.match(base16_dic, t):
+        s = base64.b16decode(s)
+        print(str(n) + &#39; base16&#39;)
+    elif re.match(base32_dic, t):
+        s = base64.b32decode(s)
+        print(str(n) + &#39; base32&#39;)
+    elif re.match(base64_dic, t):
+        s = base64.b64decode(s)
+        print(str(n) + &#39; base64&#39;)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="bjdctf2020-polybius-波利比奥斯方阵密码" tabindex="-1">[BJDCTF2020]Polybius(波利比奥斯方阵密码) <a class="header-anchor" href="#bjdctf2020-polybius-波利比奥斯方阵密码" aria-label="Permalink to &quot;[BJDCTF2020]Polybius(波利比奥斯方阵密码)&quot;">​</a></h3><p>由题目我们知道这个题目的考点是波利比奥斯方阵</p><p>Polybius校验表如下</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411062127974.png" alt="image-20241106212727853" loading="lazy" decoding="async"></figure><blockquote><p>(2,4)这个坐标既可以表示i 也可以表示 j因此破解的时候这里又会多两种情况</p></blockquote><hr><p>我们来康个例子</p><p>假设明文序列为attack at once，使用一套秘密混杂的字母表填满波利比奥斯方阵</p><p>如下</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411062130236.png" alt="image-20241106213011152" loading="lazy" decoding="async"></figure><blockquote><ol><li>i 和 j视为同一格</li><li>选择这五个字母，是因为它们译成摩斯密码时不容易混淆，可以降低传输错误的机率</li></ol></blockquote><p>根据上面的Polybius方阵将对应的明文进行加密。其中，A,D,F,G,X也可以用数字1,2,3,4,5来代替，这样密文就成了：</p><table><thead><tr><th style="text-align:left;">明文</th><th style="text-align:left;">A</th><th style="text-align:left;">T</th><th style="text-align:left;">T</th><th style="text-align:left;">A</th><th style="text-align:left;">C</th><th style="text-align:left;">K</th><th style="text-align:left;">A</th><th style="text-align:left;">T</th><th style="text-align:left;">O</th><th style="text-align:left;">N</th><th style="text-align:left;">C</th><th style="text-align:left;">E</th></tr></thead><tbody><tr><td style="text-align:left;">密文</td><td style="text-align:left;">AF</td><td style="text-align:left;">AD</td><td style="text-align:left;">AD</td><td style="text-align:left;">AF</td><td style="text-align:left;">GF</td><td style="text-align:left;">DX</td><td style="text-align:left;">AF</td><td style="text-align:left;">AD</td><td style="text-align:left;">DF</td><td style="text-align:left;">FX</td><td style="text-align:left;">GF</td><td style="text-align:left;">XF</td></tr><tr><td style="text-align:left;"></td><td style="text-align:left;">13</td><td style="text-align:left;">12</td><td style="text-align:left;">12</td><td style="text-align:left;">13</td><td style="text-align:left;">43</td><td style="text-align:left;">25</td><td style="text-align:left;">13</td><td style="text-align:left;">12</td><td style="text-align:left;">23</td><td style="text-align:left;">35</td><td style="text-align:left;">43</td><td style="text-align:left;">53</td></tr></tbody></table><hr><p>我们来分析题目</p><blockquote><p>密文：ouauuuoooeeaaiaeauieuooeeiea</p><p>hint: VGhlIGxlbmd0aCBvZiB0aGlzIHBsYWludGV4dDogMTQ=</p></blockquote><p>基本的解题方阵如下</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411062139543.png" alt="image-20241106213917475" loading="lazy" decoding="async"></figure><p>base64解密后信息为<code>The length of this plaintext: 14</code>，提示长度为14，但是a,e,o,i,u这五个字符的代表顺序却不知道,因此可能有5<em>4</em>3<em>2</em>1种情况,在结合刚才所说的i,j同时占一个位置,所以情况数要再乘上2,将这些情况全部都打印出来,然后去找有真实语义的句子就可以了.所以密文为14×2位，可以推测为波利比奥斯方阵密码</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import itertools
+ciper = &#39;ouauuuoooeeaaiaeauieuooeeiea&#39;
+head = &#39;aeoiu&#39;
+headlist = []
+num_headlist = []
+
+# 先列举处aeiou五种的不同排序
+x = itertools.permutations(head,5)
+for i in x:
+    temp = &quot;&quot;.join(i)
+    headlist.append(temp)
+print(headlist)
+
+# 根据aeiou对应的12345修改ciper的对应值，便于后续的遍历得到结果
+for i in headlist:
+    temp = &#39;&#39;
+    for j in ciper:
+        temp += str(i.index(j) + 1)        
+    num_headlist.append(temp)
+print(num_headlist)
+
+# 将ciper对应的数字乘上比例加上96再转为ASCII码，即 可得到对应的字母
+for i in num_headlist:
+    temp = &#39;&#39;
+    for j in range(0,len(i),2):
+        xx = (int(i[j]) - 1)*5 + int(i[j+1]) + 96   # 前一个为乘上5加上后一个就正好对应了表格中的字母
+        if xx&gt;ord(&#39;i&#39;):
+            xx+=1
+        temp += chr(xx)
+    print(temp)
+</code></pre><button class="code-block-unfold-btn"></button></div><p><a href="https://www.cnblogs.com/labster/p/13842837.html" target="_blank" rel="noreferrer">https://www.cnblogs.com/labster/p/13842837.html</a></p><h3 id="四面八方-四方密码" tabindex="-1">四面八方（四方密码） <a class="header-anchor" href="#四面八方-四方密码" aria-label="Permalink to &quot;四面八方（四方密码）&quot;">​</a></h3><p>根据题目提示，该题考的是四方密码</p><p>四方密码用4个5×5的矩阵来加密。每个矩阵都有25个字母（通常会取消Q或将I,J视作同一样，或改进为6×6的矩阵，加入10个数字）。</p><p>加密原理：</p><p>首先选择两个英文字作密匙，例如example和keyword。对于每一个密匙，将重复出现的字母去除，即example要转成exampl，然后将每个字母顺序放入矩阵，再将余下的字母顺序放入矩阵，便得出加密矩阵。</p><p>将这两个加密矩阵放在右上角和左下角，余下的两个角放a到z顺序的矩阵： [1]</p><p>加密的步骤：</p><p>两个字母一组地分开讯息：（例如hello world变成he ll ow or ld）；</p><p>找出第一个字母在左上角矩阵的位置；</p><p>同样道理，找第二个字母在右下角矩阵的位置；</p><p>找右上角矩阵中，和第一个字母同行，第二个字母同列的字母；</p><p>找左下角矩阵中，和第一个字母同列，第二个字母同行的字母；</p><p>得到的这两个字母就是加密过的讯息。</p><p>he lp me ob iw an ke no bi的加密结果：FY NF NE HW BX AF FO KH MD</p><p>引用大佬博客中的一张图片：</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/62d1f04915b57dc33e106c3f32afd1a8.png" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><p>再回到本题</p><p>由key1:security和 key2:information可以确认阵图</p><p>abcde SECUR</p><p>fghij ITYAB</p><p>klmno DFGHJ</p><p>prstu KLMNO</p><p>vwxyz PVWXZ</p><p>INFOR abcde</p><p>MATBC fghij</p><p>DEGHJ klmno</p><p>KLPSU prstu</p><p>VWXYZ vwxyz</p><p>要解密的密文为zh nj in ho op cf cu kt lj</p><p>按照刚才的方法解密为：yo un ga nd su cc es sf ul</p><p youngandsuccessful="">flag</p><p>也可以用脚本</p><p>我们引用大佬脚本</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import collections
+import re
+ 
+matrix = &#39;ABCDEFGHIJKLMNOPRSTUVWXYZ&#39;
+pla = &#39;abcdefghijklmnoprstuvwxyz&#39;
+key1 = &#39;[SECURITY]&#39;
+key2 = &#39;[INFORMATION]&#39;
+key1 = &#39;&#39;.join(collections.OrderedDict.fromkeys(key1))
+key2 = &#39;&#39;.join(collections.OrderedDict.fromkeys(key2))
+ 
+matrix1 = re.sub(&#39;[\[\]]&#39;,&#39;&#39;,key1) + re.sub(key1,&#39;&#39;,matrix)
+matrix2 = re.sub(&#39;[\[\]]&#39;,&#39;&#39;,key2) + re.sub(key2,&#39;&#39;,matrix)
+ 
+matrix_list1 = []
+matrix_list2 = []
+pla_list = []
+for i in range(0,len(matrix1),5):
+matrix_list1.append(list(matrix1[i:i+5]))
+#print matrix_list1
+ 
+for i in range(0,len(matrix2),5):
+matrix_list2.append(list(matrix2[i:i+5]))
+#print matrix_list2
+ 
+for i in range(0,len(pla),5):
+pla_list.append(list(pla[i:i+5]))
+#print pla_list
+ 
+#查询两个密文字母位置
+def find_index1(x):
+for i in range(len(matrix_list1)):
+for j in range(len(matrix_list1[i])):
+if matrix_list1[i][j] == x:
+return i,j
+def find_index2(y):
+for k in range(len(matrix_list2)):
+for l in range(len(matrix_list2[k])):
+if matrix_list2[k][l] == y:
+return k,l
+ 
+def gen_pla(letter):
+ 
+#两个子母中第一个字母位置
+first = find_index1(letter[0])
+ 
+#两个子母中第二个字母位置
+second = find_index2(letter[1])
+ 
+pla = &#39;&#39;
+pla += pla_list[first[0]][second[1]]
+pla += pla_list[second[0]][first[1]]
+ 
+return pla
+ 
+def main():
+cip = &#39;ZHNJINHOOPCFCUKTLJ&#39;
+pla = &#39;&#39;
+for i in range(0,len(cip),2):
+pla += gen_pla(cip[i:i+2])
+print (pla)
+ 
+if __name__ == &#39;__main__&#39;:
+main()import collections
+import re
+
+matrix = &#39;ABCDEFGHIJKLMNOPRSTUVWXYZ&#39;
+pla = &#39;abcdefghijklmnoprstuvwxyz&#39;
+key1 = &#39;[SECURITY]&#39;
+key2 = &#39;[INFORMATION]&#39;
+key1 = &#39;&#39;.join(collections.OrderedDict.fromkeys(key1))
+key2 = &#39;&#39;.join(collections.OrderedDict.fromkeys(key2))
+
+matrix1 = re.sub(&#39;[\[\]]&#39;, &#39;&#39;, key1) + re.sub(key1, &#39;&#39;, matrix)
+matrix2 = re.sub(&#39;[\[\]]&#39;, &#39;&#39;, key2) + re.sub(key2, &#39;&#39;, matrix)
+
+matrix_list1 = []
+matrix_list2 = []
+pla_list = []
+for i in range(0, len(matrix1), 5):
+    matrix_list1.append(list(matrix1[i:i + 5]))
+# print matrix_list1
+
+for i in range(0, len(matrix2), 5):
+    matrix_list2.append(list(matrix2[i:i + 5]))
+# print matrix_list2
+
+for i in range(0, len(pla), 5):
+    pla_list.append(list(pla[i:i + 5]))
+
+# print pla_list
+
+# 查询两个密文字母位置
+def find_index1(x):
+    for i in range(len(matrix_list1)):
+        for j in range(len(matrix_list1[i])):
+            if matrix_list1[i][j] == x:
+                return i, j
+
+def find_index2(y):
+    for k in range(len(matrix_list2)):
+        for l in range(len(matrix_list2[k])):
+            if matrix_list2[k][l] == y:
+                return k, l
+
+def gen_pla(letter):
+
+# 两个子母中第一个字母位置
+    first = find_index1(letter[0])
+
+    # 两个子母中第二个字母位置
+    second = find_index2(letter[1])
+
+    pla = &#39;&#39;
+    pla += pla_list[first[0]][second[1]]
+    pla += pla_list[second[0]][first[1]]
+
+    return pla
+
+def main():
+    cip = &#39;ZHNJINHOOPCFCUKTLJ&#39; //密文
+
+    pla = &#39;&#39;
+    for i in range(0, len(cip), 2):
+        pla += gen_pla(cip[i:i + 2])
+    print(pla)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="actf新生赛2020-crypto-classic1-键盘包围密码-维吉尼亚" tabindex="-1">[ACTF新生赛2020]crypto-classic1(键盘包围密码&amp;维吉尼亚) <a class="header-anchor" href="#actf新生赛2020-crypto-classic1-键盘包围密码-维吉尼亚" aria-label="Permalink to &quot;[ACTF新生赛2020]crypto-classic1(键盘包围密码&amp;维吉尼亚)&quot;">​</a></h3><p>首先是个26键键盘包围密码解密，得到压缩包密码circle</p><p>解压，得到维吉尼亚密码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>SRLU{LZPL_S_UASHKXUPD_NXYTFTJT}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>再利用<a href="https://blog.csdn.net/hengdonghui/article/details/142381747?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-142381747-blog-108207138.235%5Ev43%5Epc_blog_bottom_relevance_base6&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3" target="_blank" rel="noreferrer">脚本</a></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code># coding=utf-8
+
+# 通过前4个字母，计算出key:
+s1 = &#39;SRLU&#39;
+s2 = &#39;ACTF&#39;
+key = &#39;&#39;
+for i in range(4):
+    key += chr((ord(s1[i])-ord(s2[i]))%26 + ord(&#39;A&#39;))
+print(key)
+l = len(key)
+print(l)
+# key=&#39;SPSP&#39;
+# 4
+
+c = &#39;SRLU{LZPL_S_UASHKXUPD_NXYTFTJT}&#39;
+m = []
+l_c = len(c)
+for i in range(l_c):
+    if &#39;A&#39;&lt;=c[i]&lt;=&#39;Z&#39;:
+        if ord(c[i]) &lt; ord(key[i % l]):
+            m.append(chr(ord(c[i]) - ord(key[i % l]) + ord(&#39;A&#39;) + 26))
+        else:
+            m.append(chr(ord(c[i]) - ord(key[i % l]) + ord(&#39;A&#39;)))
+    else:
+        m.append(c[i])
+print(m)
+
+l = len(m)
+flag = &#39;&#39;
+for i in range(l):
+    flag += m[i]
+print(flag.lower())
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="easyprogram-伪代码" tabindex="-1">EasyProgram（伪代码） <a class="header-anchor" href="#easyprogram-伪代码" aria-label="Permalink to &quot;EasyProgram（伪代码）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411192157656.png" alt="image-20241119215705588" loading="lazy" decoding="async"></figure><p>看了下，没看懂啥语言，应该是伪代码吧，这道题的flag的加密其实就一句话</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    set flag[m]:flag[m]^s[x]
+</code></pre><button class="code-block-unfold-btn"></button></div><p>要逆向很简单</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">#读文件方法一：
+def filehex(file):
+    fhex=[]
+    f = open(file,&#39;rb&#39;)
+    ff = f.read().hex()
+ 
+    for i in range(0,len(str(ff)),2):
+        fhex.append(int(str(ff)[i:i+2],16))
+    return fhex
+ 
+flagx2=filehex(&#39;file.txt&#39;)
+print(flagx2)
+ 
+#读文件方法二：使用010edit 读取&#39;file.txt&#39;文件16进制
+flagx=[0x00,0xBA,0x8F,0x11,0x2B,0x22,0x9F,0x51,0xA1,0x2F,0xAB,0xB7,0x4B,0xD7,0x3F,0xEF,0xE1,0xB5,0x13,0xBE,0xC4,0xD4,0x5D,0x03,0xD9,0x00,0x7A,0xCA,0x1D,0x51,0xA4,0x73,0xB5,0xEF,0x3D,0x9B,0x31,0xB3]
+ 
+s=[]
+t=[]
+key=&#39;whoami&#39;
+j=0
+for i in range(0,256):
+    s.append(i)
+ 
+for i in range(0,256):
+    t.append(key[i % len(key)])
+ 
+for i in range(0,256):
+     j=(j+int(s[i])+int(ord(t[i])))%256
+     s[i], s[j] = s[j], s[i]
+ 
+i=0;j=0;x=0
+for m in range(0,38):
+    i=(i + 1)%(256)
+    j=(j + s[i])%(256)
+    s[i],s[j] = s[j],s[i]
+    x=(s[i] + (s[j]%(256)))%(256)
+    flagx[m] = flagx[m] ^ s[x]
+    flagx2[m]=flagx2[m]^s[x]
+ 
+print(&#39;&#39;.join(chr(flagx[i]) for i in range(0,38)))
+print(&#39;&#39;.join(chr(flagx2[i]) for i in range(0,38)))
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="guet-ctf2019-no-sos-凯撒密码-培根密码" tabindex="-1">[GUET-CTF2019]NO SOS(凯撒密码，培根密码) <a class="header-anchor" href="#guet-ctf2019-no-sos-凯撒密码-培根密码" aria-label="Permalink to &quot;[GUET-CTF2019]NO SOS(凯撒密码，培根密码)&quot;">​</a></h3><p>一眼看去是摩斯密码，但有点错误</p><p>我们先修正，得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>..-.-.-.--.......--..-...-..-...--.-.-....-..-..--.-.-..-.-..----
+</code></pre><button class="code-block-unfold-btn"></button></div><p>解码后得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>aababababbaaaaaaabbaabaaabaabaaabbababaaaabaabaabbababaababaabbbb
+</code></pre><button class="code-block-unfold-btn"></button></div><p>看到字符串里只含有ab，我们想到培根密码</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/0c26baebb6b942b12a001daf9a318dec.png" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><p>解密得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412022100603.png" alt="image-20241202210024381" loading="lazy" decoding="async"></figure><h3 id="utctf2020-hill-希尔密码" tabindex="-1">[UTCTF2020]hill(希尔密码) <a class="header-anchor" href="#utctf2020-hill-希尔密码" aria-label="Permalink to &quot;[UTCTF2020]hill(希尔密码)&quot;">​</a></h3><p><a href="https://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81/2250150?fromtitle=Hill%E5%AF%86%E7%A0%81&amp;fromid=1435959&amp;fr=aladdin" target="_blank" rel="noreferrer">希尔密码</a></p><p>每个字母当作26进制数字：A=0, B=1, C=2… 一串字母当成n维向量，跟一个n×n的矩阵相乘，再将得出的结果模26。</p><p>注意用作加密的矩阵（即密匙）在</p><figure><img src="https://img-blog.csdnimg.cn/c755e38ef92d4424bb27046d40d05d3b.png" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-35afbMB0-1627306365129)(https://bkimg.cdn.bcebos.com/formula/1af1cfeb705030c3fd09342022a87f9d.svg)]" loading="lazy" decoding="async"></figure><p>必须是可逆的，否则就不可能解码。只有矩阵的行列式和26互质，才是可逆的。</p><p>这题就是个二阶希尔密码加密。知道密文前6位wznqca和明文前6位utflag，等于4个未知数6个一阶方程，居然还有解，那就是二阶跑不了了。</p><p>然后根据 wznqca = utflag 解出ABCD (是mod26意义下的！)</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from string import *
+s = &quot;duqopfkqnwofdbzgeu&quot;
+
+def Find(a1,a2,a3,a4,a5,a6,b1,b2,b3,b4,b5,b6):
+    for c1 in range(26):
+        for c2 in range(26):
+            for c3 in range(26):
+                for c4 in range(26):
+                    if(((c1*a1+c2*a4)%26 == b1) and ((c1*a2+c2*a5)%26 == b2) and ((c1*a3+c2*a6)%26 == b3) \
+                    and((c3*a1+c4*a4)%26 == b4) and ((c3*a2+c4*a5)%26 == b5) and ((c3*a3+c3*a6)%26 == b6)):
+                        return (c1,c2,c3,c4)
+
+c = Find(22,13,2,25,16,0,20,5,0,19,11,6)
+A,C,B,D = c[0],c[1],c[2],c[3]
+flag = &quot;&quot;
+for i in range(0,len(s),2):
+    flag += ascii_letters[(A*ascii_letters.index(s[i])+C*ascii_letters.index(s[i+1]))%26]
+    flag += ascii_letters[(B*ascii_letters.index(s[i])+D*ascii_letters.index(s[i+1]))%26]
+
+print(flag)
+# d4nger0us_c1pherText_qq
+# d4uqop0fk_q1nwofDbzg_eu
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="afctf2018-你听过一次一密么-一次一密加密" tabindex="-1">[AFCTF2018]你听过一次一密么？(一次一密加密) <a class="header-anchor" href="#afctf2018-你听过一次一密么-一次一密加密" aria-label="Permalink to &quot;[AFCTF2018]你听过一次一密么？(一次一密加密)&quot;">​</a></h3><p>转载<a href="https://www.ruanx.net/many-time-pad/" target="_blank" rel="noreferrer">https://www.ruanx.net/many-time-pad/</a></p><p>buu附件有问题，应该为</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>25030206463d3d393131555f7f1d061d4052111a19544e2e5d54
+0f020606150f203f307f5c0a7f24070747130e16545000035d54
+1203075429152a7020365c167f390f1013170b1006481e13144e
+0f4610170e1e2235787f7853372c0f065752111b15454e0e0901
+081543000e1e6f3f3a3348533a270d064a02111a1b5f4e0a1855
+0909075412132e247436425332281a1c561f04071d520f0b1158
+4116111b101e2170203011113a69001b47520601155205021901
+041006064612297020375453342c17545a01451811411a470e44
+021311114a5b0335207f7c167f22001b44520c15544801125d40
+06140611460c26243c7f5c167f3d015446010053005907145d44
+0f05110d160f263f3a7f4210372c03111313090415481d49530f
+</code></pre><button class="code-block-unfold-btn"></button></div><p>本文讨论的加密方式是最简单的一种：简单异或。准备一个 <code>key</code> 字符串，然后利用 <code>key</code> 去异或相同长度的明文，即得到密文。如果每个密文都利用新的 <code>key</code> 去加密，那么这种方式称为**“一次一密”（One-Time-Pad）**。OTP是无条件安全的：即使攻击者拥有无限的计算资源，都不可能破译OTP加密的密文。</p><p>然而，一次一密的密钥分发是比较困难的。首先，Alice 想要 给 Bob 发送长度为 n 的信息，则必须在这之前传送长度为 n 的密钥，相当于传输的数据总量翻了倍。其次，尽管密文是无条件安全的，但密钥的传输信道未必是安全的，攻击者一旦窃听了密钥，则可以解密密文。</p><p>那么马上就可以想到一个投机取巧的方法—— Alice 造一个比较长的密钥，然后用非常秘密的方式告诉 Bob. 接下来，Alice 每次向 Bob 发送信息，都把明文异或上这个约定好的字符串；Bob 收到信息之后，把密文异或上 <code>key</code>, 于是就可以拿到明文。整个过程只需要传送一次密钥，这是很方便的。这种方式称为 Many-Time-Pad (MTP).</p><p>很遗憾，上述的 MTP 办法是不安全的。攻击者如果截获了足够多的密文，就有可能推断出明文、进而拿到密钥。这个缺陷是异或运算的性质带来的。</p><p>上述的每一个字符串 Ci，都是某个 <code>key</code> 异或上明文 Mi 得到的。我们的目标是获取这个 <code>key</code>. <strong>已知明文是英文句子</strong>。</p><p>回顾异或运算的性质：结合律、交换律、逆元为其自身。这是非常好的性质，然而也为攻击者提供了方便。因为：</p><p>C1⊕C2=(M1⊕key)⊕(M2⊕key)=M1⊕M2</p><p>这表明，两个密文的异或，就等于对应明文的异或。这是很危险的性质，高明的攻击者可以通过频率分析，来破译这些密文。我们来看字符串 C1 异或上其他密文会得到什么东西。以下只保留了英文字符，其余字符以 “.” 代替。</p><p>这表明，两个密文的异或，就等于对应明文的异或。这是很危险的性质，高明的攻击者可以通过频率分析，来破译这些密文。我们来看字符串 C1 异或上其他密文会得到什么东西。以下只保留了英文字符，其余字符以 “.” 代替。</p><div class="language-shell"><button title="Copy code" class="copy"></button><span class="lang">shell</span><pre><code class="language-shell">....S....N.U.....A..M.N...
+...Ro..I...I....SE....P.I.
+.E..H...IN..H...........TU
+..A.H.R.....E....P......E.
+...RT...E...M....M....A.L.
+d...V..I..DNEt........K.DU
+.......I....K..I.ST...TiS.
+.....f...N.I........M.O...
+.........N.I...I.S.I..I...
+....P....N.OH...SA....Sg..
+</code></pre><button class="code-block-unfold-btn"></button></div><p>可以观察到，有些列上有大量的英文字符，有些列一个英文字符都没有。这是偶然现象吗？</p><h4 id="ascii表" tabindex="-1">ascii表 <a class="header-anchor" href="#ascii表" aria-label="Permalink to &quot;ascii表&quot;">​</a></h4><p>ascii 码表在 Linux 下可以通过 <code>man ascii</code> 指令查看。它的性质有：</p><ul><li><code>0x20</code> 是空格。 低于 <code>0x20</code> 的，全部是起特殊用途的字符； <code>0x20~0x7E</code> 的，是可打印字符。</li><li><code>0x30~0x39</code> 是数字 <code>0,1,2...9</code>。</li><li><code>0x41~0x5A</code> 是大写字母 <code>A-Z</code>； <code>0x61~0x7A</code> 是小写字母 <code>a-z</code>.</li></ul><p>我们可以注意到一个至关重要的规律：小写字母 xor 空格，会得到对应的大写字母；大写字母 xor 空格，会得到小写字母！所以，如果 x⊕y 得到一个英文字母，那么 x,y 中的某一个有很大概率是空格。再来回头看上面 C1 xor 其他密文——也就等于 M1 xor 其他明文的表，如果第 col 列存在大量的英文字母，我们可以猜测 M1[col] 是一个空格。那一列英文字母越多，把握越大。</p><p>知道 M1 的 col 位是空格有什么用呢？别忘了异或运算下，x 的逆元是其自身。所以Mi[col]=M1[col]⊕Mi[col]⊕M1[col]=M1[col]⊕Mi[col]⊕0x20</p><p>于是，只要知道某个字符串的某一位是空格，我们就可以恢复出所有明文在这一列的值。</p><h4 id="攻击" tabindex="-1">攻击 <a class="header-anchor" href="#攻击" aria-label="Permalink to &quot;攻击&quot;">​</a></h4><p>攻击过程显而易见：对于每一条密文Ci，拿去异或其他所有密文。然后去数每一列有多少个英文字符，作为“Mi在这一位是空格”的评分。</p><p>上面的事情做完时候，依据评分从大到小排序，依次利用 “某个明文的某一位是空格” 这种信息恢复出所有明文的那一列。如果产生冲突，则舍弃掉评分小的。不难写出代码：</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import Crypto.Util.strxor as xo
+import libnum, codecs, numpy as np
+
+def isChr(x):
+    if ord(&#39;a&#39;) &lt;= x and x &lt;= ord(&#39;z&#39;): return True
+    if ord(&#39;A&#39;) &lt;= x and x &lt;= ord(&#39;Z&#39;): return True
+    return False
+
+def infer(index, pos):
+    if msg[index, pos] != 0:
+        return
+    msg[index, pos] = ord(&#39; &#39;)
+    for x in range(len(c)):
+        if x != index:
+            msg[x][pos] = xo.strxor(c[x], c[index])[pos] ^ ord(&#39; &#39;)
+
+dat = []
+
+def getSpace():
+    for index, x in enumerate(c):
+        res = [xo.strxor(x, y) for y in c if x!=y]
+        f = lambda pos: len(list(filter(isChr, [s[pos] for s in res])))
+        cnt = [f(pos) for pos in range(len(x))]
+        for pos in range(len(x)):
+            dat.append((f(pos), index, pos))
+
+c = [codecs.decode(x.strip().encode(), &#39;hex&#39;) for x in open(&#39;Problem.txt&#39;, &#39;r&#39;).readlines()]
+
+msg = np.zeros([len(c), len(c[0])], dtype=int)
+
+getSpace()
+
+dat = sorted(dat)[::-1]
+for w, index, pos in dat:
+    infer(index, pos)
+
+print(&#39;\n&#39;.join([&#39;&#39;.join([chr(c) for c in x]) for x in msg]))
+</code></pre><button class="code-block-unfold-btn"></button></div><p>执行代码，得到的结果是：</p><div class="language-shell"><button title="Copy code" class="copy"></button><span class="lang">shell</span><pre><code class="language-shell">Dear Friend, T%is tim&lt; I u
+nderstood my m$stake 8nd u
+sed One time p,d encr ptio
+n scheme, I he,rd tha- it 
+is the only en.ryptio7 met
+hod that is ma9hemati:ally
+ proven to be #ot cra:ked 
+ever if the ke4 is ke)t se
+cure, Let Me k#ow if  ou a
+gree with me t&quot; use t1is e
+ncryption sche e alwa s...
+</code></pre><button class="code-block-unfold-btn"></button></div><p>显然这不是最终结果，我们得修正几项。把 “k#now” 修复成 “know”，把 “alwa s” 修复成 “always”. 代码如下：</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">def know(index, pos, ch):
+    msg[index, pos] = ord(ch)
+    for x in range(len(c)):
+        if x != index:
+            msg[x][pos] = xo.strxor(c[x], c[index])[pos] ^ ord(ch)
+
+know(10, 21, &#39;y&#39;)
+know(8, 14, &#39;n&#39;)
+
+print(&#39;\n&#39;.join([&#39;&#39;.join([chr(c) for c in x]) for x in msg]))
+</code></pre><button class="code-block-unfold-btn"></button></div><p>结果得到：</p><div class="language-shell"><button title="Copy code" class="copy"></button><span class="lang">shell</span><pre><code class="language-shell">Dear Friend, This time I u
+nderstood my mistake and u
+sed One time pad encryptio
+n scheme, I heard that it 
+is the only encryption met
+hod that is mathematically
+ proven to be not cracked 
+ever if the key is kept se
+cure, Let Me know if you a
+gree with me to use this e
+ncryption scheme always...
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们成功恢复了明文！那么 <code>key</code> 也很好取得了：把 C1 异或上 M1 即可。</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">key = xo.strxor(c[0], &#39;&#39;.join([chr(c) for c in msg[0]]).encode())
+print(key)
+
+# b&#39;afctf{OPT_1s_Int3rest1ng}!&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="结论" tabindex="-1">结论 <a class="header-anchor" href="#结论" aria-label="Permalink to &quot;结论&quot;">​</a></h4><p>Many-Time-Pad 是不安全的。我们这一次的攻击，条件稍微有点苛刻：明文必须是英文句子、截获到的密文必须足够多。但是只要攻击者有足够的耐心进行词频分析、监听大量密文，还是能够发起极具威胁性的攻击。如果铁了心要用直接xor来加密信息，应当采用一次一密(One-Time-Pad).</p><p>完整的解题脚本如下：</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import Crypto.Util.strxor as xo
+import libnum, codecs, numpy as np
+
+def isChr(x):
+    if ord(&#39;a&#39;) &lt;= x and x &lt;= ord(&#39;z&#39;): return True
+    if ord(&#39;A&#39;) &lt;= x and x &lt;= ord(&#39;Z&#39;): return True
+    return False
+
+def infer(index, pos):
+    if msg[index, pos] != 0:
+        return
+    msg[index, pos] = ord(&#39; &#39;)
+    for x in range(len(c)):
+        if x != index:
+            msg[x][pos] = xo.strxor(c[x], c[index])[pos] ^ ord(&#39; &#39;)
+
+def know(index, pos, ch):
+    msg[index, pos] = ord(ch)
+    for x in range(len(c)):
+        if x != index:
+            msg[x][pos] = xo.strxor(c[x], c[index])[pos] ^ ord(ch)
+
+dat = []
+
+def getSpace():
+    for index, x in enumerate(c):
+        res = [xo.strxor(x, y) for y in c if x!=y]
+        f = lambda pos: len(list(filter(isChr, [s[pos] for s in res])))
+        cnt = [f(pos) for pos in range(len(x))]
+        for pos in range(len(x)):
+            dat.append((f(pos), index, pos))
+
+c = [codecs.decode(x.strip().encode(), &#39;hex&#39;) for x in open(&#39;Problem.txt&#39;, &#39;r&#39;).readlines()]
+
+msg = np.zeros([len(c), len(c[0])], dtype=int)
+
+getSpace()
+
+dat = sorted(dat)[::-1]
+for w, index, pos in dat:
+    infer(index, pos)
+
+know(10, 21, &#39;y&#39;)
+know(8, 14, &#39;n&#39;)
+
+print(&#39;\n&#39;.join([&#39;&#39;.join([chr(c) for c in x]) for x in msg]))
+
+key = xo.strxor(c[0], &#39;&#39;.join([chr(c) for c in msg[0]]).encode())
+print(key)
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="bjdctf2020-伏羲六十四卦" tabindex="-1">[BJDCTF2020]伏羲六十四卦 <a class="header-anchor" href="#bjdctf2020-伏羲六十四卦" aria-label="Permalink to &quot;[BJDCTF2020]伏羲六十四卦&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>这是什么，怎么看起来像是再算64卦！！！
+
+密文:升随临损巽睽颐萃小过讼艮颐小过震蛊屯未济中孚艮困恒晋升损蛊萃蛊未济巽解艮贲未济观豫损蛊晋噬嗑晋旅解大畜困未济随蒙升解睽未济井困未济旅萃未济震蒙未济师涣归妹大有
+嗯？为什么还有个b呢?
+b=7
+flag：请按照格式BJD{}
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code># -- coding:UTF-8 --
+from secret import flag
+
+def encrpyt5():
+    enc=&#39;&#39;
+    for i in flag:
+        enc+=chr((a*(ord(i)-97)+b)%26+97)
+    return(enc)
+
+def encrypt4():
+    temp=&#39;&#39;
+    offset=5
+    for i in range(len(enc)):
+        temp+=chr(ord(enc[i])-offset-i)
+    return(temp)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>脑洞挺逆天的题</p><p>我们需要将密文中出现的卦象按照顺序转化为6位的二进制数，然后再利用字典将密文转化为二进制字符串</p><p>字典（不清楚咋排的）</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>dic={&#39;坤&#39;: &#39;000000&#39;, &#39;剥&#39;: &#39;000001&#39;, &#39;比&#39;: &#39;000010&#39;, &#39;观&#39;: &#39;000011&#39;, &#39;豫&#39;: &#39;000100&#39;, &#39;晋&#39;: &#39;000101&#39;, &#39;萃&#39;: &#39;000110&#39;, &#39;否&#39;: &#39;000111&#39;, &#39;谦&#39;: &#39;001000&#39;, &#39;艮&#39;: &#39;001001&#39;, &#39;蹇&#39;: &#39;001010&#39;, &#39;渐&#39;: &#39;001011&#39;, &#39;小过&#39;: &#39;001100&#39;, &#39;旅&#39;: &#39;001101&#39;, &#39;咸&#39;: &#39;001110&#39;, &#39;遁&#39;: &#39;001111&#39;, &#39;师&#39;: &#39;010000&#39;, &#39;蒙&#39;: &#39;010001&#39;, &#39;坎&#39;: &#39;010010&#39;, &#39;涣&#39;: &#39;010011&#39;, &#39;解&#39;: &#39;010100&#39;, &#39;未济&#39;: &#39;010101&#39;, &#39;困&#39;: &#39;010110&#39;, &#39;讼&#39;: &#39;010111&#39;, &#39;升&#39;: &#39;011000&#39;, &#39;蛊&#39;: &#39;011001&#39;, &#39;井&#39;: &#39;011010&#39;, &#39;巽&#39;: &#39;011011&#39;, &#39;恒&#39;: &#39;011100&#39;, &#39;鼎&#39;: &#39;011101&#39;, &#39;大过&#39;: &#39;011110&#39;, &#39;姤&#39;: &#39;011111&#39;, &#39;复&#39;: &#39;100000&#39;, &#39;颐&#39;: &#39;100001&#39;, &#39;屯&#39;: &#39;100010&#39;, &#39;益&#39;: &#39;100011&#39;, &#39;震&#39;: &#39;100100&#39;, &#39;噬嗑&#39;: &#39;100101&#39;, &#39;随&#39;: &#39;100110&#39;, &#39;无妄&#39;: &#39;100111&#39;, &#39;明夷&#39;: &#39;101000&#39;, &#39;贲&#39;: &#39;101001&#39;, &#39;既济&#39;: &#39;101010&#39;, &#39;家人&#39;: &#39;101011&#39;, &#39;丰&#39;: &#39;101100&#39;, &#39;离&#39;: &#39;101101&#39;, &#39;革&#39;: &#39;101110&#39;, &#39;同人&#39;: &#39;101111&#39;, &#39;临&#39;: &#39;110000&#39;, &#39;损&#39;: &#39;110001&#39;, &#39;节&#39;: &#39;110010&#39;, &#39;中孚&#39;: &#39;110011&#39;, &#39;归妹&#39;: &#39;110100&#39;, &#39;睽&#39;: &#39;110101&#39;, &#39;兑&#39;: &#39;110110&#39;, &#39;履&#39;: &#39;110111&#39;, &#39;泰&#39;: &#39;111000&#39;, &#39;大畜&#39;: &#39;111001&#39;, &#39;需&#39;: &#39;111010&#39;, &#39;小畜&#39;: &#39;111011&#39;, &#39;大壮&#39;: &#39;111100&#39;, &#39;大有&#39;: &#39;111101&#39;, &#39;夬&#39;: &#39;111110&#39;, &#39;乾&#39;: &#39;111111&#39;}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>然后根据字典将密文转化为二进制字符串</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">a = &#39;升随临损巽睽颐萃小过讼艮颐小过震蛊屯未济中孚艮困恒晋升损蛊萃蛊未济巽解艮贲未济观豫损蛊晋噬嗑晋旅解大畜困未济随蒙升解睽未济井困未济旅萃未济震蒙未济师涣归妹大有&#39;
+dic={&#39;坤&#39;: &#39;000000&#39;, &#39;剥&#39;: &#39;000001&#39;, &#39;比&#39;: &#39;000010&#39;, &#39;观&#39;: &#39;000011&#39;, &#39;豫&#39;: &#39;000100&#39;, &#39;晋&#39;: &#39;000101&#39;, &#39;萃&#39;: &#39;000110&#39;, &#39;否&#39;: &#39;000111&#39;, &#39;谦&#39;: &#39;001000&#39;, &#39;艮&#39;: &#39;001001&#39;, &#39;蹇&#39;: &#39;001010&#39;, &#39;渐&#39;: &#39;001011&#39;, &#39;小过&#39;: &#39;001100&#39;, &#39;旅&#39;: &#39;001101&#39;, &#39;咸&#39;: &#39;001110&#39;, &#39;遁&#39;: &#39;001111&#39;, &#39;师&#39;: &#39;010000&#39;, &#39;蒙&#39;: &#39;010001&#39;, &#39;坎&#39;: &#39;010010&#39;, &#39;涣&#39;: &#39;010011&#39;, &#39;解&#39;: &#39;010100&#39;, &#39;未济&#39;: &#39;010101&#39;, &#39;困&#39;: &#39;010110&#39;, &#39;讼&#39;: &#39;010111&#39;, &#39;升&#39;: &#39;011000&#39;, &#39;蛊&#39;: &#39;011001&#39;, &#39;井&#39;: &#39;011010&#39;, &#39;巽&#39;: &#39;011011&#39;, &#39;恒&#39;: &#39;011100&#39;, &#39;鼎&#39;: &#39;011101&#39;, &#39;大过&#39;: &#39;011110&#39;, &#39;姤&#39;: &#39;011111&#39;, &#39;复&#39;: &#39;100000&#39;, &#39;颐&#39;: &#39;100001&#39;, &#39;屯&#39;: &#39;100010&#39;, &#39;益&#39;: &#39;100011&#39;, &#39;震&#39;: &#39;100100&#39;, &#39;噬嗑&#39;: &#39;100101&#39;, &#39;随&#39;: &#39;100110&#39;, &#39;无妄&#39;: &#39;100111&#39;, &#39;明夷&#39;: &#39;101000&#39;, &#39;贲&#39;: &#39;101001&#39;, &#39;既济&#39;: &#39;101010&#39;, &#39;家人&#39;: &#39;101011&#39;, &#39;丰&#39;: &#39;101100&#39;, &#39;离&#39;: &#39;101101&#39;, &#39;革&#39;: &#39;101110&#39;, &#39;同人&#39;: &#39;101111&#39;, &#39;临&#39;: &#39;110000&#39;, &#39;损&#39;: &#39;110001&#39;, &#39;节&#39;: &#39;110010&#39;, &#39;中孚&#39;: &#39;110011&#39;, &#39;归妹&#39;: &#39;110100&#39;, &#39;睽&#39;: &#39;110101&#39;, &#39;兑&#39;: &#39;110110&#39;, &#39;履&#39;: &#39;110111&#39;, &#39;泰&#39;: &#39;111000&#39;, &#39;大畜&#39;: &#39;111001&#39;, &#39;需&#39;: &#39;111010&#39;, &#39;小畜&#39;: &#39;111011&#39;, &#39;大壮&#39;: &#39;111100&#39;, &#39;大有&#39;: &#39;111101&#39;, &#39;夬&#39;: &#39;111110&#39;, &#39;乾&#39;: &#39;111111&#39;}
+s = &#39;&#39;
+i = 0
+while i &lt; len(a):
+    try:
+        s += dic[a[i]]
+    except:
+        s += dic[a[i] + a[i + 1]]
+        i += 1
+    i += 1
+print(s)
+ 
+#011000100110110000110001011011110101100001000110001100010111001001100001001100100100011001100010010101110011001001010110011100000101011000110001011001000110011001010101011011010100001001101001010101000011000100110001011001000101100101000101001101010100111001010110010101100110010001011000010100110101010101011010010110010101001101000110010101100100010001010101010000010011110100111101
+</code></pre><button class="code-block-unfold-btn"></button></div><p>然后8个一组转化为可见字符</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">s = &#39;011000100110110000110001011011110101100001000110001100010111001001100001001100100100011001100010010101110011001001010110011100000101011000110001011001000110011001010101011011010100001001101001010101000011000100110001011001000101100101000101001101010100111001010110010101100110010001011000010100110101010101011010010110010101001101000110010101100100010001010101010000010011110100111101&#39;
+b = &#39;&#39;
+for i in range(0, len(s), 8):
+    b += chr(int(s[i:i + 8], 2))
+print(b)
+ 
+#bl1oXF1ra2FbW2VpV1dfUmBiT11dYE5NVVdXSUZYSFVDUA==
+</code></pre><button class="code-block-unfold-btn"></button></div><p>将得到的结果进行base64解密</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>结果：n]h\]kka[[eiWW_R`bO]]`NMUWWIFXHUCP
+</code></pre><button class="code-block-unfold-btn"></button></div><p>然后根据所给的两次加密代码进行逆向</p><p>decrypto4</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py"> 
+s = &#39;n]h\\]kka[[eiWW_R`bO]]`NMUWWIFXHUCP&#39;
+c = &#39;&#39;
+for j in range(len(s)):
+    c += chr(ord(s[j]) + 5 + j)
+print(&#39;c = &#39; + c)
+ 
+#c = scodfuvmhityhirfuxfuvziiruvigzkyhv
+</code></pre><button class="code-block-unfold-btn"></button></div><p>decrypto5:</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import gmpy2
+ 
+c = &#39;scodfuvmhityhirfuxfuvziiruvigzkyhv&#39;
+for i in range(1, 27):
+    b = &#39;&#39;
+    try:
+        for j in range(len(c)):
+            n = ((ord(c[j]) - 97) - 7) * gmpy2.invert(i, 26) % 26 + 97
+            b += chr(n)
+        if &#39;flag&#39; in b:
+            print(b)
+    except:
+        pass
+ 
+#bjdcongratulationsongettingtheflag
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="afctf2018-magicnum-计算机内存储存" tabindex="-1">[AFCTF2018]MagicNum（计算机内存储存） <a class="header-anchor" href="#afctf2018-magicnum-计算机内存储存" aria-label="Permalink to &quot;[AFCTF2018]MagicNum（计算机内存储存）&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>72065910510177138000000000000000.000000
+71863209670811371000000.000000
+18489682625412760000000000000000.000000
+72723257588050687000000.000000
+4674659167469766200000000.000000
+19061698837499292000000000000000000000.000000
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这个题目考的是数据在计算机内存中的存储，需要将上面的数据转换为内部存储模式 再转换为二进制数据，再转成字节，就能得到flag了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>from libnum import*
+import struct
+
+s = [72065910510177138000000000000000.000000,71863209670811371000000.000000,18489682625412760000000000000000.000000,72723257588050687000000.000000,4674659167469766200000000.000000,19061698837499292000000000000000000000.000000]
+a = &#39;&#39;
+b = &#39;&#39;
+for i in s:
+    i = float(i)
+    a += struct.pack(&#39;&lt;f&#39;,i).hex()        #小端
+print(a)
+
+for j in s:
+    i = float(i)
+    b += struct.pack(&#39;&gt;f&#39;,i).hex()        #大端
+print(b)
+a = 0x61666374667b7365635f69735f657665727977686572657d
+b = 0x7d6572657d6572657d6572657d6572657d6572657d657265
+print(n2s(a))
+print(n2s(b))
+</code></pre><button class="code-block-unfold-btn"></button></div><p>​</p><h3 id="nctf2019-sore-变种维吉尼亚解密" tabindex="-1">[NCTF2019]Sore(变种维吉尼亚解密) <a class="header-anchor" href="#nctf2019-sore-变种维吉尼亚解密" aria-label="Permalink to &quot;[NCTF2019]Sore(变种维吉尼亚解密)&quot;">​</a></h3><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from string import ascii_letters
+from flag import flag
+
+ctoi = lambda x: ascii_letters.index(x)
+itoc = lambda x: ascii_letters[x]
+
+key = flag.strip(&#39;NCTF{}&#39;)
+len_key = len(key)
+
+plaintext = open(&#39;plaintext.txt&#39;, &#39;r&#39;).read()
+
+plain = &#39;&#39;.join(p for p in plaintext if p in ascii_letters)
+cipher = &#39;&#39;.join( itoc( ( ctoi(p) + ctoi( key[i % len_key] ) ) % 52 )  for i,p in enumerate(plain) )
+
+open(&#39;ciphertext.txt&#39;, &#39;w&#39;).write(cipher)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们得到的只有ciphertext的信息 然而想要获得作为key的flag肯定是需要plaintext</p><p>这里可以采用 词频分析 其实也就是类似维吉尼亚加密的方法</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503092125109.png" alt="image-20250309212510815" loading="lazy" decoding="async"></figure><p>这里还顺带给了我们key，只是要注意 这里大小写是不符合实际的</p><p>应该改为</p><p>Shewouldntwalkrightnext</p><p>所以重新计算key:</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>from string import ascii_letters
+
+ctoi = lambda x: ascii_letters.index(x)
+itoc = lambda x: ascii_letters[x]
+
+with open(r&#39;\ciphertext.txt&#39;,&#39;r+&#39;) as f:
+    cipher = f.read()
+with open(r&#39;\plaintext.txt&#39;,&#39;r+&#39;) as f:
+    plaintext = f.read()
+plaintext = &quot;Shewouldntwalkrightnext&quot;
+cipher    = &quot;nsfAIHFrMuLynuCApeEstxJ&quot;
+plain = &#39;&#39;.join(p for p in plaintext if p in ascii_letters)
+flag = &quot;&quot;
+for i in range(len(cipher)):
+    c = cipher[i]
+    p = plaintext[i]
+    for key in ascii_letters:
+        cc = itoc( ( ctoi(p) +  ctoi(key)  ) % 52 )
+        if(cc == c):
+            flag += key
+            break
+    print(flag)
+# VlbEUNUoZbPyckLSjXLfpaQ
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="inshack2018-crypt0r-part-1-字母替换" tabindex="-1">[INSHack2018]Crypt0r part 1（字母替换） <a class="header-anchor" href="#inshack2018-crypt0r-part-1-字母替换" aria-label="Permalink to &quot;[INSHack2018]Crypt0r part 1（字母替换）&quot;">​</a></h3><p>我们追踪TCP流能得到密文</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503092203874.png" alt="image-20250309220313665" loading="lazy" decoding="async"></figure><p>通过观察我们发现字母都被替换了，而第二行蓝色的部分刚好有26个字母，我们使用maketrans来翻译</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">s = &#39;PMSFADNIJKBXQCGYWETOVHRULZpmsfadnijkbxqcgywetovhrulz&#39;
+m = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#39;
+# print(len(s))
+import string
+x = string.ascii_letters.maketrans(s,m)
+
+Cipher = &#39;&#39;&#39;
+CRYPT0R_SEED:58
+CRYPT0R:PMSFADNIJKBXQCGYWETOVHRULZSELYO0E_PSB
+SELYO0E:PXX_NGGFSELYO0E:NAO_HJSOJQ_JF&gt;{A2FS3118-0399-48S7-857S-43D9528DD98F}
+SELYO0E:HJSOJQ_JF_JT&gt;....SELYO0E:NAO_DJCPX_QTN
+SELYO0E:DJCPX_QTN_JT&gt;!!! PXX LGVE DJXAT IPHA MAAC ACSELYOAF !!!
+
+Selyo0e toegba mpsb pcf lgv ngo dvsb*f mvffl. Lgv spccgo faselyo lgve fpop ausayo jd lgv ypl qa $500. #TIGRQAOIAQGCAL pcf J rjxx njha lgv mpsb lgve fpop.
+
+Dgxxgr oiata jctoevsojgct:
+- Jctopxx oia oge megrtae, pcf ng og gve yplqaco yxpodgeq: iooy://bu4ifi2zg5etosvk.gcjgc (YSJ-FTT pyyeghaf gds meg).
+- Acoae lgve yaetgcpx bal: JCTP{mW9CLVlPjpUtbZFdccPioVV01jdaUeGv}
+
+Oipcbt dge vtjcn ql epctgqrpea.
+
+Rjoi xgha,
+Selyo0qpc
+&#39;&#39;&#39;
+print(Cipher.translate(x))
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>解密得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>NWPAS0W_CRRF:58
+NWPAS0W:ABCDEFGHIJKLMNOPQRSTUVWXYZCRYPT0R_ACK
+CRYPT0R:ALL_GOODCRYPT0R:GET_VICTIM_ID&gt;{E2DC3118-0399-48C7-857C-43F9528FF98D}
+CRYPT0R:VICTIM_ID_IS&gt;....CRYPT0R:GET_FINAL_MSG
+CRYPT0R:FINAL_MSG_IS&gt;!!! ALL YOUR FILES HAVE BEEN ENCRYPTED !!!
+
+Crypt0r stroke back and you got fuck*d buddy. You cannot decrypt your data except if you pay me $500. #SHOWMETHEMONEY and I will give you back your data.
+
+Follow these instructions:
+- Install the tor browser, and go to our payment platform: http://kx4hdh2zo5rstcuj.onion (PCI-DSS approved ofc bro).
+- Enter your personal key: INSA{bQ9NYUyAiaXskZDfnnAhtUU01ifeXrOu}
+
+Thanks for using my ransomware.
+
+With love,
+Crypt0man
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="xnuca2018-baby-crypto-手动词频分析" tabindex="-1">[XNUCA2018]baby_crypto（手动词频分析） <a class="header-anchor" href="#xnuca2018-baby-crypto-手动词频分析" aria-label="Permalink to &quot;[XNUCA2018]baby_crypto（手动词频分析）&quot;">​</a></h3><p>题目给了个伪代码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>The 26 letters a, b, c, ..., y, z correspond to the integers 0, 1, 2, ..., 25
+len(key_a) = m
+len(key_k) = n
+c[i] = (p[i] * key_a[i % m] + key_k[i % n]) % 26
+
+p is plain text, only lowercase letters are refered to.
+c is encrypted text
+
+I have appended the flag at the end of plain text, the format of which is like &#39;flagis......&#39;
+Now you have the encrypted text, Good luck!
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这个伪代码挺好理解的，大概就是26个字母分别用0到25表示，有两串密钥，长度位置，然后一个作为乘数，应该用作加数对明文进行加密。然后在另一个文件中给出了密文</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503122115649.png" alt="image-20250312211552469" loading="lazy" decoding="async"></figure><p>28kb的密文，看上去是一个文章，但我们用不了词频分析，因为这道题的加密方式并不是简单的单表或多表查询.</p><h4 id="爆破密钥长度" tabindex="-1">爆破密钥长度 <a class="header-anchor" href="#爆破密钥长度" aria-label="Permalink to &quot;爆破密钥长度&quot;">​</a></h4><p>密钥长度题目没有给，但是这么长的文章里不免有相同的单词，两个密钥是循环重复加密的，假若是加密了两个密钥长度的最小公倍数个字母就是完成了一轮加密了，而每一轮之中对应位置用于加密的密钥就是相同的，我们可以找一找有没有在密文中多次出现的字串（最好长度为3-4，短了没法说明是同样密钥加密的，长了算法跑步动），这些字符串之间的间距便是一轮加密长度的整数倍，求出多个间距，其最大公因数便是一轮的长度。 代码如下：</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">s=&quot;ojqdocpsnyumybdbnrlzfrdpxndsxzvlswdbkizubxaknlruifrclzvlbrqkmnmvruifdljpxeybqaqjtvldnnlbrrplpuniiydcqfysnerwvnqvkpxeybqbgwuasilqwempmjjvldbddsvhhmiwkdkjqdruifieddmnwzddejflxzvlswdzxxruxrlirduvnjqdmrhgtukkhgrlszjlqwjrhjqdnzhgrssnhhdcobqytybggxwekdpjqdiwiwrduvnjqdoxknqybgdlienghgrjqbkfdrsqpjqdoxknquciqfrdocpdkwbdppjbocpjqdscgmbbiildpcrzqedsocmnybonkeoycdhtelqgakpydgkwuyepgwfknzolusaukwuybgmgrlszjlqwjrhmiwddmjblohugyrykenbvvhhniwoqpjbebxqsrtcdieflenmlrvbdoffvmpoqvvadomrjjpynybihugysaniioyxqkztwbkctfhqqgwlaskndvvduymisschgrcpuiyrexigsrlibgbqemknjyuofhgrcpuiyrybgkiwzsainqjlvhgtucavjlsqchftefdohfvlrxprvldyfdmrzelflruineympslqubxydvybghgraiqlejeyigarubpvlaorpuydubzbfdljhjdqvldgwoubrhlbbiqidoybrxsflskifryocpnqsagvldssnkvyeruipfyuknlflxrxnywkdkjqdoilhnjngojewvhhzeyscodococptkebfyfieddqwwmicwliyfdgqrwbfkersykinyaonmgrlofkwdcgdppralzkyrmihhgrpsqomybihugyexxqepykpxjqiqihgrpsqompedgqslejbkfdsocmlpwddbivvrdvnqimpxerjscuinlerxzxjqphtewkphgnokpxeybihojqdadkybrqaqyrvldoldybghgrascpnqvldbdewkkujswynmdedkcqhiemjkwpwqyjyrckknldlcriwyexgkvbubhohfvlzxijvldodvljnqsnodvifywdgkvbvldokiubyokngqzxijebjijqdruifkbscffdujpuydubzbfdljrojuwkdvmdljpplbwdkgfdidpgwnpkpxedljcqhwwrhojwzvdonwwbkkzdubrnldjjknlbxlrxoaorrpnulikawuwdnhjqdnzxzuujrlnrubknluokkqsriawhffzqchjqdyckhdjqzbmiwkdkfnlkknlqvldotqioeiprrsqhgdljrvdbwocphdzgdptkebknlayblodovldxnwwkrxzflebgmivldpjjcocpeewofgwlasknmiwbrugycocpwnaruifvlruvlddkhjdqsqbgmiyruqtbybgblrvrukmfsovlnryepgwflruievcrzbllmpkdtyrquqiuyupvarzocpjeujgllybqeiyjcychgdvephgrjqgelxybcqmbkokhlesqnhnwzqqixyyurkwucyqidopizhenumplbvxichgrrocsfnpruiwfzqqiprsvqkwxwsnksnjuzbprwrrxzoedximooncifbukpbdesiabyrwjzehrsqpotewrreldkczveflekqmiwuztltwbkqsxeychircknawbybghgrmudkfvjqkgprraigmyzqfkxiubdonqvldgywurkllkeclimblibhlwzudndpkihlepwqeiytwqkkmybqnkprxnpwldljknlbyudhntwkwkxrukcqmbxojiqrvmdiwybqdkyybocpmiwkhxmnebdmgnzizsfuemcbynsruihfljzmfnpruipfzgvmjjbyfkwfvarojeufdvdozsxnmeobcgwlpdzemiwqyimrjbrhvyeqkiyqurvpdqerknlbxsqgmbalzphrznrxmiwqknlewbeypdllrokdubzxpjaovhdybquqijkskyntwrpxdybqqjnwidrejqdspobrdlrenbvlronqdqdpmiwmpymnvldndwmcrhvdljuifdujaqiwemfijqdazahfznqijxbruignzajgmjubppjjybgkwfilkkwuuxzlinaqgnntybgmlpynlietybvpjjcocppdlacgzivkvimpwjrpwnvddkxivldndwmcrhvdljbnjyaonhdtmkhvkeukdnlawcpeldleqyhfvlfiqrkoholiwlpppfcndpprsoliprelxqeybqwvljexknlwuiciyrmihejzwruiydrvrhpjxddydqwupywnvddkxivldpjplkptlamruikdvlzbmiwbrugysauqtbwkpyfyeudpdqeriijswudbdebqqiepwniovnodwkfyybghgrjippfdmkkqprkifijqdxzlinaudbdeuofydvjxhhtewocpnbyakqqnvlfygnokdkwuvldvdddsukarliwkfyliqnjswspbtyoddgsfcrpygrjqknlewsnkznubxgwtmkkkvflepxefpsxqmiwddgfdcrpynqiscevlescudqzaiqarybgpldvlbgiwklpxzrynihgflenndpkocgincqaknybschgrnynhnxwialnowmuiwybqgvldskzbmiekdmgncndikvxicbldvldvfdjqcqmtedddldorrbtwvlpxmiwjqijtciahgncqbndbzqdjtkebknlrydknfyjoculybqgiffjqaqyxwdkknqxndkfvjqngfdxoqhdosawknqcqeiwyuudogdhqrplbxsnietmkzaiybqagybvrrelpbqcgfdaldvqrubxelrgrukmbbqfgzivokhjflldgzivruifrkicpmfsqbnlqukpmgrjnrekflemisnjqknlxjswjirdruimiudghntwmuiwbbqbkflufdxmnklzqfrrqkmlrlruigdjjpxeybqdkfjybgogrklzolybqdkfjvldbdvjruhntwmuiwbbqjqpturkiedadzxzdljjqpoedkieiwdniiovlphdybqqojwcijqpturbvdqiruisfpruhntwmuiwbbqaqyaeddbdeaqpswrckpxedvrqgqvvqgnlexokglqkqkqfyjqcumivldonmvlkgpraldxfiwjdokfcqghgroeigwrckzbjoycdkwugbdmwnvrukmfvmpodqwianleemcejbgkpxeybqniarlruhntwmuiwbbqnkwlykzxznppqknbwocperwudpnyyfrvmvwspenlliqkwyexpdfnzykimeorudtyuofnttrnddloeddevfibzvjqkqpxeybqqinqzsdopjbicqydljfyyraoqpmiwddgfdcppwlawrbilqsocontyerxjyuickwusocojyvorxprlrknjysovqwwmvdhydhqqoluraugfwebxgwlxoqkefcqromiwdddliubghgdvjzqyflruiwrtrqqdtrykggdhqiqfyvldsljxqqnjkcsukarebiypfcnpgefvazajewvigwuybggjtdqpbjqdjheqbendhtbvihwgiybgojqdycplecrpxeybqngzquxrwjqkqzbpdlsnxdyubbnjybqphmdubndtyjoknleubbnjybqiqwlcrzkmyyscodtwiaafdjqigbrublkwucifiifgqwkkrjocpnourbiyrlikbdevlddidkgcifbexnqprexhofnsqzbtbaihleawjheqdljrbnyaqqiwnvxzvmiwmugmrlqnodocifidooknqprexhohnongdlazscpzfhqfijqwoqkwuumrlilufdydvyfzgxreyqenqdsnkfkebxidvjldkyyukpomewofgffvbzhfyjoculybokedbviaafxbizolboclgwljoknlevlpxyvlbrxzpbqcydvzicusnjviifbubxomiyrvqttyacqmqyudkwualdxvnoeqglswgcqhflecqmybqjktbwruiwfljdiejeypvlljibgwlasknjwzrugwlcrukmljibkwujsngwlvibkyumihvzewokiybwnamgrlicinbddhxbpurukafcszxgrdqdefiukaknqvqyjyrckrqwnpskhgrhqqyhflqvqtujscshflqknjymihejjrqrxmntsjkmrdocpnujscsmiyrrhpdmkzdlesqavdtvlphdybqqmnqwmuiwtmchjnbwuwhvfjqngzqsaniiovirhfrspkgwrckmampbqcgmfclplsoonigyrcqchnyclplsooncifbvldvldzskydovldqmiwdwiybebrownvscmgdvldvlswoiomnmihdtyubbnjybqjkwqerqiarynkqvnoruiyrpiqinomihmdvzjhxerjkkkwubsflnbvqcxdyvibnjybqnkvbrykvjybqqhdpboknlueqnxdycovnjwpiamgdvsnkvfcudkwfleiifbrykgfdmskodybokhgreruiyiynaejjjqpwgjeypolqcqzbgvsihvnbykdxfrexwvdkedkgdqsaiqwrzscifbaonddelmuiwtwbwvjfcqgevyynlkmfhqaktwvkpxeazofietmkrllqvfrvmvwkbnlqzsaienwkcqmoubgkffledvmncscugrjldkyycldjyndyjifdxlrldbepuiyyekwijzbqqenqdokvtybsnhdawgcqhqynbkvbvimityvqqiebeudhntwkknlewoigwvcsnonwwbkhgryctanewjromdzgphnswruianucdqswuxdgwtwcpxwnvddkxivldijeexigsrubvqtaoriimvcrplbybokmltyacqmowqildqwnvmgrlrbqhnsqchjwgruivbyacqmiubxmgrlicihnsocokrygnogrjqeijwcoildozsaiseeenejjrqildpzihplevlpxqvznndtyvldyxdlbzheeyeknlkzihugflruisfwngxdyvyqxmiwmuilwexknlpubdjyrckpxenpruinecgrxfjeyjkwqerfkbrclzifnlnvhgrdyfdlqhaknlyynlkmfhqrbhflrdvfieyipfdmkwvnqisngwtmldkyyalzmdvzjmiifwfdmnqvqqiarjaniluukpldqiscufieyipvnoddkiwmiwiwjeyqivrcocpfrwazahnongdliengydvjsfkzrubplifsoxifdljnndvzjvqtnxqcydvjqpvfdljigfywbvqtpeyipgrydvqteemctdfkqrxjwzfzgxrcskhjzwkkmdnpynhduukjqarjrqamiebdhdvvrdvnyybgqwrvihxerjkkkwuurkndvilknlpyfdqspedgonbpiqiarjywqwvcadhdvjjdjmiukaqyrhqqonwwbkejqmogqxyjscinbzslijpubgqhkybdmlbwqkvtybruvdvilrhqvvskpnsujdotbpdzemeoruxdpzqkafkzovnnuwocpfrwgnndvzjvqtiujdgwtmldkyyurbqtwdbzhqrdsabnxonkhdoubgydvrykognongydvbsgiqrbscpvnodzmwbbqilmiwbrhhnongdlvcqiifbpiqkwjebdhdbwqlydvymzejqsovtlfzldvsdkqbgmiykfgirbibxdazqromiwkppgrydkmgnaihlebubxkunmihofnlebgminivqtbbqpvmbbqbndpeyiptqdqqomdljpmdtybzvefckdwmlwbrafnjkzlarvldevbvqqydocsiiwxwsnhgrhqqypdlmuqhnongmjzwxqqpdrqpamfpyipyryukqffvokkqewolbjbvrpdirumzaiuaoishfvlpliybinihiemplbfaihleqernhjqdkkgiwvibkmxbruikeecdoffebwkfbubxdvjeyzmlteddhgdlezleyelrehiekdvarcazazfhqugpnpazayiwoqhdecqqtliuuckvpwlptlqerigardsctjfllptlybqvxdyryrlmyemdvfnpihvqnlqnllyokcqmawppvmfkyikydljnixyuickiybqwqlycurxedljknlbkiqjnnlkkknwjsninqinzvvojifhgrcofildjruiarjagvjlebxgarcvrvmivipomlwiqulpbinljjcskhyrwkpvlkeqfomiyrknlrydknheurdotkebknlbgabisrznknltdibxjqdrhvwybqfgwyeppjlevlphhrsovvlxedgqtewuwhnqwknognongydvkoqimnadrhldljzxijvldojflrnswnamuyvnokuqtwdazapvcrciluclptlzliblluiqpxedjrpxetokrwmiwgcqhwwjxidovldetbuczbhnjjnhgrydkqsawscujevndofdljknltyerwdoziegwlmihvyryjdvfybqvpnkvldgykwbngwnoduijevkpxeybscsmiwapvlflkwgyrdkuqtwdokvlradrhlfvkpamnrszuydxlvgmpeyipwnvvdawwugdhgrbsnhdemiakydkqrbnpwddhdxbizolawrbilqvldjdpwdzbheurrxzdxidejqdruilxcrpovnpowqltobbvnyvqcghnongwgnekdhgrwcnhjbmskgfawrkiykeqkvvaorvqtdljplitmbdgziriqojljqdhgdvsplhdmkjndncqmkewmpzimemsnxdyybzjnquiciokjqnoluurrojbebxhgdvdrolbpdzejazqdpnqimzawuedpopfzscupnorumdedkpvlyuudllbcazafieyiptyvqqhgrsiqmyfvqknltasknjzliblluiqzbmiwsqhntwndofqwknkknwrrojuwruvdqwjlgwlcskhnqiofqwlvldkfiwkzbgfcppljxwrqynqirzbjbbszxjquupulnorzbmiwonnlbxidhyjukppldziazdjybgjjflocphnljdvhfvlppjbbiahgrdsjhnnloqynqhorxfiynikknwrnilzvldedybqqqsybqnqwlciannbbqpvmnlcdgfdujkqjkeqkmlbboilwnvgcqhjeyqmdevlhxmfzazaefwocpgrybnmlewjnkvflevifuwoknnbynbkvbvldvlswoiiydljrbnqdqdpvnomzaiugbzmpjaiqhgfvsnhgdvsukarsiqinqsauijevrukwvxicevyebxaldljfqyrubfyercsqimiybrxpjbocpnomihonqiiadldorvhgnoeukinlqrxmiwldkyyexknluwkdvmjeybgiwboeijqyygglqkqwqlyjarohfcjzemiyrdxxiybkomiwldkyyasnpdtukwqlyjaknjycscufflruipfljrbhrkihlerlcukwysocogrydkkwuyrknlbyudhntwkrxzfllropfljknlqubkvtybldmdvzjigarubknlbbogqhnpezpnqcprvjyuicmnwzoimjjckrxzflkwgydvszxhfznciarjqyjidubbidovqconqinhlidrsdomneyqwgfzjqiwybokmlnodniiswkfkvbzqdjjwzihvhnjjnkyrrykwyvsvnhgdvxpliuemcbynsruisrykkqsybqfgwuvlrxbflerojwaovomiwkkapazscufyebdhdkeqkvvdiddkmbubxiyfcldmgncscufnodngirlcdognacpxvnokrxzfpazayteyknqrpsilluasknsnejuqhbboilvnodukwurqqknbwjrxqwwkngwluxrhnbpsilluasknznzjknljcovhgrlsxnmflepllkuqqwlbbsnddbeubgmiyruqyqaldxgrcscufiukiqarcicufndibijwzlzmlwcqnndvzjbifflexiwfokroqvvoqqqflknqwlyrknlawerxwflezbjbzibokeubxiarlruipncrbgwlwjnjneurjkwqerdoxdxqwnvbucplwrkqnonymofketybrownvndofdsyngxfybknjqmihqytmkdlsnlnvhgrubnhyvsqchdqalrwgiwpikvbukplnyvndqtyexkawrvldodqirukmwuqnonwwbkgwybquijeviakpnvldvfflenaknlruiifxkzbgrjcugiuliiqwlubxvltyscotqpyibnwzqgggdhqciarjoxvlrdmrhgtmiknlecqibhieniymiwrqamiexknltyrkiybwqfomnzsddlyaqdxtbmihvdybqqolwpsnkipyanodejaaqyjeymamjeyqqmiwdniioidzmfnlkzvynakzkiwukbiiwvldvlfcbzomeoexllnpkzaidljmqejcoeinqvldenqdkzbmiekdmgncqnqtwcoqijbzqdjjqdmuqfrrigglbyddqtyexkawraldxvnoddkxivldnldjrzbifpqvqtbboilsfljmijvvarxjwzrugwlcqeiwflruiljwkknjyydddifljkqqryykyhrzseidqzakqefccztlerqpamjyniiibwsnksnjuzbhdurrxzbempolrdocpmiwqpvmiasilvfwngydvyxiqhrjjqijtmihveewofhdybqnsvdljrhhfznmvnqiazavnodmiinhqghgrdqegiuuqghgrhqqyedmazahrjqmqyqlibydvdicqmiyfdhdleruvdviluiiwvifilyybpxzrzupxvdaifkwaedqqhbyupxfiwoqharjaaihxeyipknckdoffvsaydvaihlekeknifbmihetbvbzhxwysfmgrlofkwbbocpmnocuifybqukwuexpmdtybknljriknmnocuhgrbqpvmnpqkiyqurvldswsnhgrhqrlqrvmdiwwefdvjqdnztlewfdvvtybiqarcrbqhnsqchgrebdgfybqjvldvszxdobsngpdisckmfebpxeybqzhgrjsnxdymqkddeludxhiejzxdypiqunswmzelqvldgywurklloyyihfpunixlswddxunmruineiddkmsudkalbzieimiyrgqlblikvlqwmrhfrzxdtlemjpyqrkififdbomgmdljrxmvjbpoidhqqyinhqqoltrdpwlybokmgfklroqrvmdiwybqfvjybqqhgdlqpwgnvldvinhqpxeueymhgdhqciarjvdiwnlkwijzubxhleskiqarukpmdedialnlbrbvnyvqcdvdbocpdozsxnmvxickkdiqzbifilkbyfwbgogfxsnkipyankfpwqkvlbxiconaunrhvqwfdvjqepwqyyobrhvfpazaenlikawuwdnhjqdazayojsdxevljdvjwzczxefvszxfjeybgiwlqeiyvljdvfyybgnntmihvpncrqkefybkujesqchnbexknlnvldvkrjkzxfpwoegwlmihedbvkptdemudkifcrukmpbsjnvnoqphjyvldqmiwdwiybebnhjazqvqtesinhxnsxzvmdrnddluukrxmiwiknlexqqodqclzafrlibhlwzudndpkocydvcqwkydvqvqtecqibseeuknlnvldvkrjkzxvnodfgwuybgeviwoqhhfznciarjoxvlrobkgijeyqenqdcdkfrcrzlnswscxttrqqojqduvnldjrrxmiwurompwkukiwlqeiyvljdvfyybgqwrybzhgrjychnwaqqievkqknlwybxajlwrzolswbbqyuclzmfiynieviwoqhqrobnijwwjhxirckrhqrrdzslqebiyzewokodejibqyljqphunmcpxyrhqplvnodkvtybsaydvaihleawddtldzqgydvsynhlfvldvedlcdxjzwjrxmiwkhxdekoqvvjeyqwyncknndvzjckmvjquilualphhrcovqsxebkiwysqchwnjseiypeyipfrwgknlbwopxeqemrxmrjmzaiuvyqxmncpqgwlclzaiucldnlrdoilhrcovqsybdrbmiemfkwjexhohnongdlajqphgfleknnbysqydvcqddtymihvfiyjzmhiwbvqtyodcydvjvpwbyeruifvlazajewxqilawxzvlybqnawnpruiedmocpsewqmisnjqknlbvoqodovldxnlbrpxejeypvlojqdmgrlruiyrukcqfvlocpwnsizxjqdbzomdjazajewqeiwojqdmgrlazaxwekdydvjqvifvxickiwvldvlfcvhhvnooqijbzoeimnbsfmgnsazainhqmixdokdydvzieigfsocpjbzoeimnbsfmgnzieifjeymixdokdnlwefdovnomdkyrynidllioqojyvldujywiahgrvqfjirybgijxbicidookqixrufdogfckukyrexknlaeychvnpruibflebnlqbqdxmrjkknlywuwlldljbnlqbqxqlbeykdtyaqpvldznoijweynqsnlqpxdybqqmgfklrojqeruiypyazbqrzskhifleknlzubxydvkocxdykicottwvdydqdazaydxpdhnywruidybqqnjwpiahgrzipbqrzicufyeruidybqqjlecickwuvldvlbbihleewupgwdzskhirrddkeoedknlxbocwlloqnhnourbiyrlikbdemihvzvwkkojwzlzafrcmzaiurqxvjswknknuyeqkxfeynmdwprzkffspiifiwqwmnwzazawnvlzxdeeyqndvcqbgmiyfronyybghgrcldikdlkbiyrdmdmdvzjukarrqdxgnliqieyefronymihvgnokdgsfvmdvlqerrxvnodnhdtycugfyepwietmehifyebknlybddognzjpxebysgxjjaswiwnvazayowqkkfjeydxmrjvhhjbmihudnorxiwrjingmjukcqmflertnqiudhgdvmugxiubdieteddhgdlazaenrykgmfcscunsubxelybokmgfklvqtqwqgedewrukwfdivqtdjqrxerwjjnjeurpdiraldxvnoertldljbnnwwertnqirhvwjeyqbjxwobkvberukmjeyfkvqernilybqnnvqwknqsybqqixrufdvmiwjrbsrjqcwlawrbilqvldvnxbqnhpdlocpmiwpzqyrcrroqvvogkvnplhxzrjocpjqbihvdovlrvfyaqzbmrlvzvynaxqqpnodkqpnjdzmfyeppydvjjddmbvizayjwkkiyuyangmneoftnburdpqjybxiibybgplsunndtyuedhyfdiahgrsmuiwfvsnkwdledlnkjovkwnzjwvjjwdpxeiwsnddewjbnlqurrojuwfrlnxeufgmdliipfflocpgrxonolbsqmyjovqqkiwvlronblikkqddpqgfnlvhhnuebzhifgqknnbaoilqrvmdiwtmcdlidljknlqwtkjyfciciybkqilvrvspofvjqvqtybokgenlikmnbbrzvlkjipwgybqbkyuwdcqmybqmanwdqqqsybqwvnbebkndbwmuqzfhqvqtdcqqjlqvmuiwjeypoboedpbnbbupygdhqcqmiubxdtycqqjlqvkkqzfhqrhnbvldxzrlqqqffvazxmiwsqjjevrqgxzwdvotxkqdpfbeudhntwkmamfvoimjjcczepfvknanxujdydvyddhyvzapbdeiseiypbqcydvpiqunswuhverjqqohiebdtlecprliazizpmiuqeifpbiciarjkkijwybglndjkbndvvrdvwnpoiolieignlpbijkwkorugfoubxiyvxichgdvmugxidsegercezqeojifiafzsnnlpbijkwyeyjnmiwfdvviwuzbmiwepvprlrzbzndsaydvjldkyyukptdwkocqgnakukiwmihiokwckbinaqqomnrnzqpflazayiybgojbvdpxzrpiqedocqibnqdyiulqkqknlewoqimfsqnmgrlsbqtwdvdmynledpjqdcuijywjknjyuupyidoeukmybqdfkrlkdqsybinihierugwzujzxdygbzmndsvdgwladzxzrdocpxiwokiepbokogdznrojjexugppbiromiwphvfvwdwljjubxhgrxoqhdovldjtecydpirvlrehiemrjlbbsnodfzqgnjqdkbgmimihvzdjudxmyygdydvjepvprlruipdmbdiefvoxknqcyqiijmihmdvzjcqmfvsnkkfvaknjysicivxboculeccpxwnvvdudndepverlqqokwwonienlikmgfvqbkfimihvnqbqqiwypohlmbasknvnodpwrvuddpafjrhiffaihleiyfdhgrpohlmbvldyjewnrsltubdqhqbibqsywbukaruokhyfrykieyeuvolwpcqgprcsukarlqeiyxeufgmywjnqmiyrknlnvldvkrjkzxpdmxdiixeuaqyyyviinqsawvlbwbjilswbknltyklodozsaijewupobbexgilkwdfyfywdvydvsovztuiqzhgrjkzxijycjqyuubxhdjeyqswnandpzrexvqtecqibmrznfiwnamuqjtebxaffcehgiymocphiesnawlosihvybqkvtwmzhomfcldmgnpqdlfiynautfzrvqsjeyqenbdqdpfnlnvkwfdszhjqdoxiwfokmvldgupxpddqikhbybghgrmoqimiwbdkyrcrkqmiwldkyyexxqefvsnqwwmmuiwjeypvlkodnaluvlphvnovdwdtwkbgsyulptlqeqcipfwkzudurykgsfyukqgdhqpxlqwuvllybsnomewbxhgawqtajwvifgwrvlphmeorukinlqfkvawruiafkrzvvnomrliawwhgmrpdriwuzabgmimihvlqwuvmgrlazaqnvlgglkwdukkbyupxpdmczepfvkhgxfdqrxfrzxgisrlkdldqioxqmiwddlnswjpejqalzmjbkdhwnouqgbderqrxzyeiiqaflepxeyeiiqadrndkwucrqkwlwrzvlwyrdgprvlremijsjivrcrdvedmruisfjkkhntwldmjbyklgwlypzlnxwupxwnvrzhjzwowvdbvskamrviwvnbebknlbwczxeyuudnlpykgvnqgscuhflqbgmiybzamxykkkwuvldhgfjjkgprbqbkfiyfrxzdpsnhsfilkmnybowvdterdvnqcsgijxbyqwgfpoilmiwankvnpezqedljdtnwaqqimeoqknlqsaigsrukmamnlqiqwlkdrelkurvgfaorukionynhnxwruidqzazxlpbiukfawqcawcokkhdtwsnhgrebdhdpbiniqeeruiyfboeiqrwbhxuvcrbnlqmiholryupxirdrzjyfcicojjubvqtebqpvmtyaukkiwsnifxyprxzojifkwdjdzmlexdrodqybgmgrlazafrwofkwujycslqcovgwjeyqnldjrfkviypuifnoeuhlbkowiseeunqprvlrxzbvsilpnjqhxqryykgsvziahlqvsfiffboeigdvqggwbwnaplowbniqvvsaghrjqnhynledvnpeyipwnvlptlvcqgotxbobijkebuqhbvywgefcldmgnaihlekyrjnmiwlphyrdscnnbwadohfvlknlbssiidobsnlnkciclvybiniqrlqphgtwcpxlqhazvgdvqfiniyfdxlswdmilqwbegluliqnjywjrkpdrieiwnebdqwwmruqfryvztltwcpxkeysniderqigmyzqfiniyfdxlswdmilqxdpgfrdbzvqrzskhirdspeqrzibxdnlqvqtecovgwlvifinuebzhtqdqqomdljvqtfcpqknbwvdydqduvmdevlpxedlscotwvazaenlikplbwdeignaudkwdssbnlqzsaizfhqnellengkwuuertljeyngiswdpxejwrrplrsuvolwpedxleeynmgrlazayrycuhgrbqpvmnpnrbljeybgiwpscpvnodniioliknnlbqqhgdlruisrzickwulikldpwdknjqvldjynxldhfyjoculybokydvclzaiuxskymiwkiqhoeikiedljcqmybqnldpsscpluybghgrrnrxermqgvjybqqhgdlruiqwubgnldjrdpnyukbgfrjxzvmiwnpelqerkqqewolnnbkdhhxiwkhjdqvldnlddiannbwbdeviemmlnqdsnnlpbixgarcazadvviannbxijslyvlphgrsovhjzwihhdomihvgrydklnowsnkkeecdoffebknlbzibqsoeikbnqdkrhmnekbgsyybgnlbvqwodvvocpmiwkbgsyexaqdypscpffvrzqfwempxeiwrzqfywpnqtyuxknlewsnotxboknnqiononqcifidookjqpturrhqdkgbkyupiildpubxqtepiqisdvldvfoeikomrxkpxebeudqsvcczepfvskbdeaoqpqjefdvyvzscudvjcugiujqchgrvdhlvleiggfiwmuqnbebdmnyboilmiekdmgnyddplrsqgdjuaqpvldznwvnbebdvfaornqprexhojewscwlwzkbgmiascpdpcocpfnsqbgmieykomeybximiyrbijwzjdblqdihvheebxohfvlfqyrhsxqyybocmlueihvyfilkofieyiphryniwdqpqnodvjkrxfyeicijqeruiypwmzaiuyniljvilphdqwocqmiwdaqynodikxzexzvnlubplnymkuqtwdmdkiwjqeijweyqtnevydohraihledzkzljvilaqyybqnkprkoholdlscpnsujhkifcomqarsocejuwnpmfvlrrlgrkifenycojvntwoxknqcrfkwtyjdwdqhqchnnlkpbmrjrukmiwsnxlfvldvjaefdkwjebdxdezibiyybockwjebdudswdcelqvsnkwdiddiprlrmimpwqcydvybgevbwnaydvybgevbwnakyrexkiwpjicuxeuudgfruruiydliknlelofidolqdpdeybpokrkrzbjuukdkfrukknlewoxvldvqqbjvzrknjqrqrxzxebnwnnokzbmiwiknlexqqodqcxpaiycsahgreruiykwdnqwwyyxnfdvazavnocpxkfvaugpaorrbvnonpaziyrugpjeyfkvqwfdvsnjertljeyqolwpsahgreruiykwdnqwflzhvlbmihydvsovbdeiqkhgruboayjrykgsjeyrxuvjqugpjeybgiwynbkvbjqfipawdrxmeoruhgreruiykwdnqwfcazaytekkolqcskgarcqibzfhqckwnvldvqndauqhiwqgllbcazajewmuiwjeybqtwdlptltwbalvpuruydvjmrxzbybgydvkocxdywfdxzfhqknltyxdkmiwdzxxryupxfdvokevaeoqpjqdokipjrddkedljgvjqguvmnqwocphrlrpmjjzohugflephprvldxgrkofijlyscbderddkedljbgwrybggfkodcieiuupxeybqpxzrzkiktlbqgkmtwlphlfcogijuvlrxzpbizbvnomzaiurqphdtrskgfybquqwnjiahgrsyqplewjknjybqrownvruipvjjdvlevldhyfrycidobyfkwfvaronqurnonwwbknldjrciarjskomdzgphnswurxeybqvplrsudejurqjktbwsbgiwlikolwzuvpjjcxzvznzjpxefdqdemiwufkeawcpafrvldymiublevuyannjswowvnxwruivbxddkeawxzvlvcruinejsjnlbexxqiuybgonwhqqqsfhiqyjqdqmqwjybgmlbxddkeawxzvlybqfqtebqpvmbybgqtecprvnycocpvrvruivuwqfhgrskdlarcruigncrnkwuokknlloqnhffaihleqermimiwndkfyyuzxztwbbgmidddkpbybghgrdqngyrviaaiounihgrsdphgrjrukwybqxvldvqnhhfvlcqeewofojqdbzplbuddomiwuzomkurrbtwyuzxztwbrogralzhtelkugfujqpefflrzonwhqqkwuiiiphryddkiwknreqflekqhdjjknlboufgmnpihvgrydkoercsqifieyipmiwiknleknreqrjkkijwmihvfdkgpxejeyqjtecqpxepytakmnlruidqwocpgryfvqwybqzhgrjazafieyipkfvaugpybqjlntrscuhfznmigdjjdvsnjlroswwkukwuvlddtedqcmnwzupsliukbkvwebxiydljnndvzjvqtflazaywwocxlbckdigfcxiifixyabnqiywmjedldlkiuupomrxskmnwzogpmnmihvfpuxkxlbcazaxdlbzhuvdedkwjsocdljebgydvjgcqhwwjxidobsfkwubibopdznrovnodlxdpzqgulfaihleqerigfywbkqjxebtaleedwvldklrxzyeruixnlwhiyrdruimeonvbyrwupxnbbqbndawoqomiwnzkenpruiqnljnljswpphnrlriyjybihojqdadkybyezevqwsxnqnjkpgeyeudggdvqigsrpiqgmfcbpazivvhhjybscudoxorxjqdadomrjjpynkyknieamojiprvqqyjqdkpmifpqgkwxubxaknllrozeyfdomeuxdgwqyrhvlfcvhhefciqplezicunqixzvdedqqodwurhplfcongirlrnhdesrukmajqpsfuemckiweyqplddvqkwxbqnylyurniwucihvifhscuynernplrxqqgwyeruiifhscugrydkqsybqigafledkyybicwlfcpzslnpruifryrzkqeeilkwuvlddynegkndvilkelaorpxntyerxjyufdiodiedvjyedpxenlcdgfkegdqsdrdzqbyeruifryocpmiwkdkmieyxnmtwvhhjuwpqixfyrrtluwxpelebibxjejibgfybqegffebknjywtplmbvlddtbmbdofnpruijqvomqarvldonqiscudovlduydckuqkkwdknliueuifyhsqhtrbqqipdmvdhgrzqpomflocqmiwdbqywdruierwppxeybqugziiikqmiwjdjmiedkqmiwldgzivsckfyjorugyzscidqzaknlbxojgdvccpxpnhqrxxfjciiffpskmlewbzhsnjihvxnlcdjmfebzbhrueuhfdljfijboddohraihlebvocpnqymdqsybqagyrpnvkfpwjzdloeddhgrcyckfxuqchnbvmrhgnorrejlubphnnlsnkqvvcuiypuruptwzgcgarcocpdvvmzvwbkoiifaorbnjyaihlejeyngwxwmdkyrlikkiwhqximdjspxfpbqcydvcscumiwlhxzemldkybmihmnyblrofyeupwguwoknnblikxldjqqhdybqpuluvlpxmnvldxlpriqxwruruiyfcnrblfpscplrdazapvcrmixdljrpqrkocpnurqpamfpyilvnvldvhfcqlilkcsiiwypiqhgrjqrojtybrxdvjbdgziriqndndmuqnbdarxztyaukkdpyciydzofqwlsqcgfdaqgpnqixdkfyyuzxzybqpxzrzkpbdeiikhlqjqplnymupyefwocpiryfdgwfvkbgiwcqeiwybihojqdojhtdzskglbybgbjxvkkqqrcpdxmflskosvlqqkidljknlaosipnqiiakmnsvrxmeorumlyynlqwwmrzqtecqitlbrykodtwrrelbaqkkizzihplqeyxnmiyrzhgrjkfkviwoqafybqzdafeyngfybokmgfklrowrhqqolrlychnwcifidqwqyjyrckdonycsfjijuxknltunlyhdmmdvlqerbgmiubfignakuqtwdsukarcqdxnyedlxdplskawwwkngjtypuyffkspxjtebxjgjcsjgjqcruivpeyipwnvvdlnrhqknjyuofkwdcrqqwnsqqjlebowomiwkdkfuwxrxnyuicqsdcldlifcruikrydijlebowomfsqnploubrhnnliawddzsnhgrdspedqdxpelfcruifiyjzmdoxononnlkkkwuubxgwybqigzivoqqdyukpbinaqqhgdvjroedubnbjtwruiyrukcinybqqvlwuerqwqednwnrlcddljebgdldorviarjaxvldvupxniyfdswnabukebeudhgflenejwzscnnbsolitkybggmpykknjycuplibeudhgflebnnxbpqiarlrdpnqyckgafvazvpddbdofnjkhgxfdqknlyjyiyzewokejqukuihiemzaiusonhlelizxldljbndpeyipqrsonhlewjmywnlqrmdvzjcqmawnriarvlphjtybroprdszwyrcsfjijrqjktbwldsnwzkknlxjsfgwdzkpxeybqwvdkbqkomnzqqkwxwsnldswkrwbpuruhgrcsjswrckzbgdoeuhnqwknmdeskbgiwvyqxqvvsngmqernhydledhgdvqeiwrzqwnjqvkbgiwmsdleddsnkzewqfiwysovdlybqnndevqnhxvvvdhhrwbkmdtubgondsruiswyudkwuuofhgrddvdtbbocpdqwppvmnpudwdqcyfifybqzhgrjppvmpwoqijwzkdibfleknlboufgmnpruignzafqtyyscdtyclpliqerzayeeogdlbbiqhleuxbixnlkrplevldjjbvojnjevocpwnvoxanuwmroenscdkfrcrzdlpukgqppbqcgmawczelbvizjynojkqhrwpkqdljoeimnzohugdljkqdbwnabtwvinilzeruiyybocgmbwnanjuuxrlirduvolwpmrhgdznknjymihswnamukmeeifognongggdhqaqydznknjymihpdqerlxdpulptlwwoqxlucsiiwxwxqqpybqkkizyrrtlyendvjyuicbynsruinqviiiydlrpxezubgxlbcxqqpybqhxbfljvimbvdpxzruofawljokisvzrzhgrcqkijxbqqojauezhnbykkqwrzqpbdeyrzvmiwkrllqkqzbmiwqctnnokromnebzgfjaldxvnoddkxivldiwuexbnjymihognongswnaazahfznmijyvlddllubcgwlexbnjymihognongolqcqpxlmyexiydvszxnbyrqamivlphgdcnzomfvkkipkwdrbvnocpxfrwiclvpboklnlbrqiarynnkwubqpvdqzabnjycihxedlbzawxwkknlqubkvtybazaenlikolrliqpdjeyuijeyxpwmfcokvtybycolmwjvqtxybcqmwyyxnjqdvdawzubgkmybqnkprvsfimiwbdkyrcrkqpjbqpvmdjqpsnqimrhgnorpsnqijzejqdowqdesocmgndidownvgcqhiemkqqrionnvoysiayrukcqqwwdknjqybrepndqnhfvkcdofuuepxvpbqqinqvldijevlpxejeybgiwpscpjyjqpotewiclvjeyfafydsxmnybruisduruqsdxqpojqvkpgedbychlupiybdwzibieamrbiwymlzvfrsqckwuyppwbnprbiwymlzawuciawdvjkdhgrmmrlizunielaoruqhkeiqkwubibomvxsghgrmuhomawkhvlwmskmdvzjcqmawmzvmialrlloedkmlqvaaqorcdrpnqiichhrlrvkfbwkpxedkczekdlsdpqjvmdxmjaiitlbvijnjbwocpbfznzxltybrhnbvldenqdscafybokynrzjnhdybqikhbsogiqjokmamqwfdvmiwkwgyfvscafdvdptlwwdpendljpxjsuephdeybgiarjagkvfdsnwdswdpxlpjqxgdqasknnqsanqtwymzejqxdzhlbvqgojjubxqsxeyqolfvmpojeueuhlnokbkytmkzxsrznrxnyukpgeyenrblfaihleiwoqpldvlnjldgocpifpqqknbwjuiysesjijwurklliueuiydljnknumihnldjlrewnamuiwjeyukarciitluynihgrsanhleuqnqswuxdydvzicusnjjdkmipiqgmfcvhhjqeruiytmkkiyjexigsrrsqhgdljgijyboqimiwrbqwnrndomrtpqifbuicodordptlemuvbyfwbgydvybggfiynivltyscomeybxiybobkqifpqpxevlrzqwrybzhgrjocpldklhxmnbsfolwpychnwvldpjjaldxvnokukiwcpdkbdljrogdznigfywbgiltubxydvjfzgxrsazmwsesjijqdmuiwfclplibvocpqrpiqivnorugwzubxevbwnaomdljrxzawxzvldssqvdevldyfdmrzelbbihlejeylxdpmihvfrzxvqtpeyipbqemplitwbpxefcovqwwmmuiwfcqdsjwzudxfiynigbqemfyfrzxfkwfcrbqprlicinbympslfljpvbqwknhgreruiyfconllrxsclnlbrpnlesskgfnlqbndewbzawxwkknlpedipdopdpuprlrnhgdvldejjwboqvybqbqywdmuqiwmocphfvlzamflrdvyvxrrqwybqqiifwkpuyrwbaglwdvdhhrwbknlbklzljeybghgrxidhfieyipmiwkjndwydjvdbcsknlawczelbymroltybnndvzjknlkeqkwynckrhgrrqjqprcowvdkbqkylbvqqiarukpmkiunzodkbqqonqvldejegqkjidkqjkyemscumiwsqnlddkrxqdcgdhfdljjvvflepldvdmroensmroensxzvfdzqwqdexlrldbepuiybvldypvcrciluckdliybqrvgryjnhdowqghgruduijevknknuypuginciwnlevipomewqkohrwpdvnkurvydvmihvffcoukyuybgpnevakkfzybghgrcrqilycmdikrjkpgeybocsvnokrvqvvrdlitwmukmfcazayyyklkwuvldjgfzinqkiwdpxfpwddpfdmscunbvygypdlkfgwubsnplrdkpxeiukgiffjqnhgrlruifyjqdhfpwqwiypwbkqwpurunnbcmdikflepxebysgmnybonenwwswgmjmihhdnbqbndwukkiwbvikvtybsnxdyzqnomiybuihieykhlecrqamilifkwxybgvjpvldlnqwvdhhrwbcixrckrhnrcocpivtyqglbebiymiwoculwccpxenvlphjqdruijqiqiojewmroldljbgfypyijlebowomiwoculwcoqidvjvdhmrjruqtlbrrxfkycdnlfcruimeoqwvnqkqbndoubgogfcruvdqwschgrbqpvmnpruierjfroglwbdvdburvgflufrxzteddhgdlazaxdlocpkeujdgfyygrxzwwknhgdlazawrwjrxmeoruydvemdxjvilkhddlafkwjeyzmldznkqjwzudxjwzruqfralznjswnrtluubknlkykklnswmrhgvcbzmfvjqiywnlqzbtbaihleawocawljojgdvclzomiwmuqinlenhgrsinhifhqnhgrziculbvruivbyakqpryvrveflruigdljrohnjruhlqubknlaokudtyukpyjaudgkwuyxdkmiwdrxmiwvhogfcmzvmisiqimiybkiwaudgonqvldnjqdazaybwqlgwlyxkiyybokbldvldvnbzsaihfvlbgwlwjailylovgmfcnrblfvkdlsybqqijewiclvyaidlltwbkogrjqmijvvapxeyjyknqryykynqvldnldjrnqswefdvfdljkvtybschgrydfodovldhnwzqqodovldodfzeqijyrqpamjkowhtewkfiqvvomijvvanhnwzeqijywdavlrcudiarlxqqpfvkdlsawohhvbbscifajsxnmrjschgrbqpvmnplrehienzxzbpiqgmybocgwybqdylbexugppbinilburrketuddnntalzvlswoiogfcurxeyeudggnliqnntalzawswsiogfcjqijtcvhhhimofgfimocplswbplnyvndkfiyudpqrpiqigfsmuqfrjfdoprvldunovqgmlewicwlkjihpnqcqqtnqipqgwxwkcqhybqvwiduuuqwnjscolehscukdopdvfybqpxzrzklxdpvlphmneupxvkjojhnxynfiwryrknlfjvqijuasknmiwkbijyexknlujqpelecvqqhpurrodovqckpdcgrbvnoczaiuvqpvnymihmdvzjagwuwsknleyedxnvcsqvnyyrdpdekndtlelqnouvieigwlvldawuwdnhjqdscujyvdrdtywkkqprobgiybvocpnqiocpmiwjhliuonixlbcsknnqgruivdjqmqmijsxnmnlnvhgncqbgmicqjvlycschgruduijevkjqtwdjrtnqwruifrkddhfflihvgrydkogralzmdvzjnnjewazaykzqpotewvhhwnvazaykyscogdzniqfrvldsljvizxlnpruifrhqcujywkzbkdjoggfrmqnhgrjqrojqudekwdbskgfflndkeflevqtecldikyeoxvlrlppomvjqpxeflphhmflevqteklrleyekiilkybggwpjskgwlvldljbvnrxlnpazaykeqfmlxbizolnodoqvbybgqteciqvdpcnzxzawxzvlpwqyjleuqcwlybqfojulqnonbrykkhdznmimpwqchhnioqplqcmuiwruruiyjeyqzdjedvqteciqvdprqjqprceqijyvldmdezjmixnsqnopdzngiffjqrogdzxzbifpqrpnopqqiwxwsnnjwpiapldvlknlaurkiyrcrknnqiscqtevigkvbciqvdpukknltwuzvvnpihvvrcrdvedmkoqvybqvojjvifivnouhomqwqgoxieiniqrvmdiwybqwlldcyqifnprugfpedipjqdruikrycdqsybqcioyaiqledljrojjviknltulptlxbiniwaeruhgrdqigzivkzbmiukbqywdocpmiwpdkxrexknlqwtkbdeugcqhfluvnldjrknjyvldotkjqfiknwrbvdywvhhdqwpzipdljrhfxybnjlepqjhijybggmdzkzvgjsqnjlepqjhijporhgfcocqjbukrxmiwldkyyalrwgpunixlswdmiyrycuieamruixdjoekwnprugwzubxmgrlazayrycuydvjldgzivazafiyniplbudddtyebiysnjjdonewocpvnokukiwbyculepiqntqiqqkwumihogdznknnecraqyljqphlevlrvfyuxvqtewfdkijeyqolxjqkomnvldmnqdazafieyipwnvvikprvldmnqdxzvyrhqplnqiruipyeruimewqnhgrpnzmleciaokeubxkyraschlecjqijtcddljywjphmiwvqijzponhmdrndqsybqpxzrzknknuyklawzviphtawdzolbwquqhbasahijudhxhiundydvkocxdyaoiswnjqeiwxjqdjfdujknlyovdvdbwrzhgrcghxbnbuzomqeviifpuxkvtqlqqjirykdvtqcmrbmwmrhvmwwkjkwywniedewomqtyjippfybocnjewknhydledhgdvcqijyoddohfvlzamayclddqwkukarvldnjedqnhfiwniomiwuzomyynlkmfhqromiwndkfyubkiiwuedxmdljknlewsnnjednvkefpxdvlqkqmimpwqckwnjokqydljpxjvkrrqwrwdmizeyrdbtwvlphvnojzxdyboeimnzseienabknlewbzmwnpoakmiwdcqyybqbijwvlzbjqobjllaorpddswoilqridphloonknjylizxlpuninjswrzlnswjzmwruruiyjeyqvlqemcqyjeyqmldzruqwwmmuiwdnyxuirjurofrccphxiubxnnbroilenwkuijkxqplmnsqknlrlfrqtbxdpgfrcudawzlibgwlzaiqwlaqqivnoogvldsscydvjuzhgrjknllrxocpmiwbnnlpegdhdlufdydvrsqhgybqxiytexknleycdgfflazayteruiybzicunqiuvbjybqqkwusiknledqngyrdojnnwdocpmiwamiznvudkwuumpxmrdofqmiwdpxedpoknleybggqriikxnlbrpxeybqnijbeudqsnodjnnwdddxjewihvuvcrrbnxyrrqwbybgodtwoqiqvvihvyriddhfpbqcxnlbrjqprcocpvnorzqjewjpvbwuqgqhqybgdluydlmnybobgiwybgmgrluzvwflejqprcocpvnooqifyunipjegkkkwuoppxebyakqmiwjpyhfvlpmnwzspefyunipjegskgfbvywgeyepikvdjiiihfvlknlqueuhjqdruiedmruivpeyipqnvliktlbokydvvldedvlrpgwswsiiefluromfcbzhjiunikwnygkvlrubknleyscgfqerpmlrxscuhfznzmqrbiipgrjqrojkydppdmvldplrxocpgfilpvlqwoqiyyeicijqeruiyybochgrssgllswnkqlfvldvhiwbromnejpwirydfgyeedmisnjqvqtjeyxkcrdschdtwocpfdaazayfsoximiwbvqtbysgginhqvqtaorrxmeoruydvzieiejeyqolwpscelpbqcydvwboqvwefrxzjeyqxlfilmqyfvcdkfrcrzdldhsqhtrzieihiucugfqerplhdmknjyflerxzfcoimjjcjvgwlmihwjqliknjswazamiybghgrgbzmirdedqsfvokhgrcofimfsqaqyjeyknnbvizdtbmnrtnqirzswnaocpbqemiielwsnhdnrynyfrwgrxzfvkdlsyenrtljeyfkvburphvnodbgwuembkmxbscumiwppofrjkmyjqdmphxiubxydvsovolrybhxhdzgrxzyempvejeyqvnlbrukwuybgkkeekkgmvvqkqhdjjvqtezqahgdljpxejeyfkvbyarxvnodrxwnkqcwliemcqqwwsnhgrebdkwubibgzqeviinbvldqmiwdmambbihlejeyjldbwazayrmqnkwuzsnhlqymugirmihmdvzjuijeyfzgxralrokrjscunqvldimiwdzxlbwqloprubwvjjwdpxeybqzhgrjscjjflocpnqvldokfjskqsrycuhgrjqrojaemdvsnjuvokfjskqwxwqeiyjbycpyrdadkybnqnafnpbprjewruelrvkoifvciahgrklqgfyuocgwdioqplqyuzxzybqugiwciallaybzxjqdruivyynlldqiocpldklkgprnqnafnpbprjewruudrcobkvbyarxzyezdotbexknlxbdromfybfyseuqcpnowoqmlbboilwrhqqxlswdpuyrwupyzndxdieybqztleyvhxedlrpuyryrfkwiykkmdiwoqhfnlqmllrdkpxeybqzhgrjxzvqrydnognongqwrvqiljwuqbnnxbjzifqeruayymihxdeybvqwrwnnihimbzhfdmscydvjldkyyvlphmiwlzafrexugfoyckonbvizopdznaqyiukakwxuqnkwubqukeyendkaruraqywydxiybxojiqrbscplswdvwincqgpdnjsnkpjcrdvvbwoiiepuruolswbnijwcmpgmfleromiwlzqsbexkgpralphnovdzaqwwkuqtwdvdkwramrxenaschgrwonhlelmplinpazayieynivnoupysnjedhmiwicihfvlbndtmihnjswnpaziwjmamqwfdvmiwicihfvlbndtmihnjswmdjmybqqipvcrmifnsqknnqikkvjqiqiyfdkddpnqcoihnyukrxdvjrdkybybggwybqnijnodxqefllrozeycrqtbvlrvfyasileeublafdznknluwmgvdkybghgrvqpvvnooqiqvvoavjlsqchdomihvzfybkolwpofqtybrukmbwqloqewogkwuyvigwubocpmiyruqiucruixvxxzvjybsqomjsihhgfpazahnongvnbwvhhjxovrhjaefdvjxwocpxnobkvvdljniiomihmdvzjrxerwjmixnsqxqewugdgsfaqqivnosbqtwdbzhsfljaktwvmrhgybqnijdvnzmmfdqrhnbyezqebbswkwueyqwjkvorxnbyviinyukzxijmihvfyeupwgybokgffljrodedqqognongydvcskaknlojldvdazahnongxdycqdhgrrihxedjaigwrrqkmlrlicixnobkvvdljpxdybqqxdevldddvljpvvbviciqrvmdiwdpoqejqdoakyturrojkurvydvkocxdycskaknlojldvdkdtlqkqchteuqnkzncqeiwpbskienhqnvdbwxqqpddqdjadzndyswmscumnvldownamugmrcyfenyexknlteychjflicidovldolswbfiwpbibkmxbqghgrpnrugycorpnbwqpdidkgnjdyebknlpubxqsybqniarlrupdswrzpjjvldjlnxndgwyboktjwzqvhlwziaolswbmljxgjztlbalzbirarzhgrcyfenyexknlblibypnobkknqubknldorhewfioknlewjplitmkzvynakpxeaodrieybqfgwtmepverlocphiwbpjyfzddhtelqgkwucpqgwlkofimnaqghgrwoqhgybqqizewmrxpjioqplqrqpamfpyibinaqqotqzslijwziknlepnzmlecocppjlqrugaednwjtwrzdlienghgrsocpmiwaplibysghdtwmuiwdorhewxeudojlysckmbwqggwlvsfihfznvqtqerxgarokzbmiwkdiebexknlbwxiqhrjkknjyaqfkviyfdhgrsscqteioqplqcskgffljdietukdvvfpsnhyrvcukwrspkygdljkqprlocpyrkqrtlqerugwlrykgmfclzjlwwknxlbcsagfyjqkwgdpyilgdljpxeoubgxdqwrzvlxwseinwebxbdewrdvwfvamixdokdhgrjqrogdznfilysahxheurkiwkeqfojqduvawkyschluxsjhtewkpvmfconhlkpdzewdvyqimnaoqpmiwscbnqurdkhnjgzbjevsnkpfcrjkyswjrxmnybrejlwqeiwybqukwucrukmtygdwynabnqsybiqxfdjqmimywdknjqujiigdljnqtesinhfdkddpmrydnxlswdnilzeyqivrcqeiyjsocgfybqgifxwbgkwyexdtlemgrxzdljdtlemkikarvlphlswdigardsahgriddkmljocpsdvldvdonqnafiyjlxdplmukmpykugeuwbbgmiubugppeyipgrliknjswkkqduubpmlnplrefrzxbkfybqiqarexoaedcuzhgrjianlecicllbcrukwybqiqarexfkyjpiqzlbokknlewoqimijqdeneyciifnpihvqeeruiycwkhownvadhyrkiqpluubknlaeilhgrpsqomyboknlpykpejqzslivnoocpprvldolxebghgdvldnjuykdxfrexuapnodpxeybqknnedrukmiwgcihiwmpojxebtaleedkndviljqwhoqqiexjyjgsfwjzxljeypvlxjyjgsfwjhjdqsauijevocpmiwbpgibvlphkfwdjivnodukwucpriyxwruihdznnqstmldkyyybghdtedqqhpbqckfyjoculexonolbraknnbiiiudybouihfzncqmzlibhgdvrbqqwwjuiyrbqbgiwdqdenyvlddinejzbdqwupxvnoupygdhquijediahgrrndofrduzawyyscgmfcruigfildomteychjflscqteaiqlebbihlejeyqijxbruifvsurhvnomzaiuboeidqzazxluwkrvldljknjyvigifxwbgkwurqbgmivlzolpbigmlwzschgrdqdjlbvfplirmrukmfcmuynyukjkiwwjknlazqnolusihxmdubdtlemruqtlbrrnjswsfjyfcicieflqyjyrckrqwfsynhsewqmypjdqdpfozoxgfiwniqoqocpudndnhwb&quot;
+p=list(&quot;****&quot;)
+for i in range(26):
+    p[0] = chr(ord(&#39;a&#39;) + i)
+    for j in range(26):
+        p[1] = chr(ord(&#39;a&#39;) + j)
+        for k in range(26):
+            p[2] = chr(ord(&#39;a&#39;) + k)
+            for l in range(26):
+                p[3] = chr(ord(&#39;a&#39;) + l)
+                if (s.count(&quot;&quot;.join(p)) &gt;= 20): #这里的20是可以调的，得到合适数量的四位字符串即可
+                    print(&quot;&quot;.join(p)) #到此得到了几个在密文中重复了20次以上的串
+
+#接下来选其一把它们在明文中的位置记录下来
+def find_sub_n_index(str,substr,time):#自己写的算法，返回子字符串第n次出现时的下标
+    begin=0
+    while(str[begin:].find(substr)!=-1 and time&gt;0):
+        begin+=str[begin:].index(substr)+4#这里的4是因为选的子字符串长度为4
+        time-=1
+    return begin-4
+position=[]
+key=&quot;erui&quot;
+for i in range(1,20):
+    site = find_sub_n_index(s, key, i)
+    position.append(site)
+get_gcd=[]#开始求间距的最小公倍数
+for i in range(18):
+    get_gcd.append(position[i+1]-position[i])
+for i in range(2,min(get_gcd)):
+    flag=1
+    for j in range(18):
+        if(get_gcd[j]%i!=0):
+            flag=0
+            break
+        if(flag):
+            gcd=i
+print(&quot;一轮长度：&quot;,gcd)#一轮密钥长度为6
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>一轮的长度实际上是两个密钥长度的最大公倍数，但我们还是不知道具体两个密钥有多长，不过没关系，直接当6处理，其中重复的求出来了自然就知道有多长了</p><h4 id="爆破密钥" tabindex="-1">爆破密钥 <a class="header-anchor" href="#爆破密钥" aria-label="Permalink to &quot;爆破密钥&quot;">​</a></h4><p>首先需要一些关于英语词频的常数：大量英文中每个字母出现的频率是有统计意义上的平均值的，一篇单词数足够的文章，其重合指数接近0.065（重合指数的定义请问度娘），那么解密出来的明文应该是符合这个常数的。但是明文是由不同的6个不同密钥加密的，为了算法上好实现，建议先将原密文分成6组，分别解密后算重合指数，重合指数最靠近0.065的大概率就是真正的密钥。</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">best_index=0.065
+dic_index={&#39;a&#39;: 0.08167,&#39;b&#39;: 0.01492,&#39;c&#39;: 0.02782,&#39;d&#39;:0.04253,&#39;e&#39;: 0.12702,&#39;f&#39;:0.02228,&#39;g&#39;: 0.02015,&#39;h&#39;:0.06094,&#39;i&#39;:0.06966,&#39;j&#39;:0.00153,&#39;k&#39;:0.00772,&#39;l&#39;:0.04025,&#39;m&#39;:0.02406,&#39;n&#39;:0.06749,&#39;o&#39;:0.07507,&#39;p&#39;:0.01929,&#39;q&#39;:0.00095,&#39;r&#39;:0.05987,&#39;s&#39;:0.06327,&#39;t&#39;:0.09056,&#39;u&#39;:0.02758,&#39;v&#39;:0.00978,&#39;w&#39;:0.02360,&#39;x&#39;:0.00150,&#39;y&#39;:0.01974,&#39;z&#39;:0.00074}
+s=
+import gmpy2
+import math
+def index_of_conincidence(c,i,j):#解密➕算重合指数
+    fre=[0]*26
+    sum=0
+    for k in c:#解密➕算频率
+        if(ord(k)-ord(&#39;a&#39;)-j&gt;=0):
+            k=chr(gmpy2.invert(i,26)*(ord(k)-ord(&#39;a&#39;)-j)%26+97)#模运算求逆就要用到逆元了
+        else:
+            k=chr(gmpy2.invert(i,26)*(ord(k)-ord(&#39;a&#39;)-j+26)%26+97)
+        fre[ord(k)-ord(&#39;a&#39;)]+=1
+    for k in range(26):
+        sum+=(fre[k]/len(c))*dic_index[chr(ord(&#39;a&#39;)+k)]#这里和一般计算重合指数的方法不太相同，但实际上道理上是一样的。
+    return sum
+def find_key(c):
+    index=1
+    for i in range(26):#爆破乘数
+        if(i%13==0 or i%2==0):#有相同因子的求不出逆元，解密后明文不唯一，必须舍弃
+            continue
+        for j in range(26):#爆破加数
+             if(math.fabs(index_of_conincidence(c,i,j)-best_index)&lt;index):#谁最接近0.065？
+                 index=math.fabs(index_of_conincidence(c,i,j)-best_index)
+                 key1=i
+                 key2=j
+    return (key1,key2)
+t=[]
+key3=[0]*6
+key4=[0]*6
+for i in range(6):#还原密钥
+    temp=&quot;&quot;.join([&quot;&quot;.join(s[cycle*6+i]) for cycle in range(len(s)//6)])
+    t.append(temp)
+    key3[i]=find_key(temp)[0]
+    key4[i]=find_key(temp)[1]
+for k in range(len(s)):#解密
+        if(ord(s[k])-ord(&#39;a&#39;)-key4[k%6]&gt;=0):
+            k=chr(gmpy2.invert(key3[k%6],26)*(ord(s[k])-ord(&#39;a&#39;)-key4[k%6])%26+97)
+        else:
+            k=chr(gmpy2.invert(key3[k%6],26)*(ord(s[k])-ord(&#39;a&#39;)-key4[k%6]+26)%26+97)
+        print(k,end=&quot;&quot;)
+
+        
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="afctf2018-tiny-lfsr-python3的类型转换" tabindex="-1">[AFCTF2018]Tiny LFSR（python3的类型转换） <a class="header-anchor" href="#afctf2018-tiny-lfsr-python3的类型转换" aria-label="Permalink to &quot;[AFCTF2018]Tiny LFSR（python3的类型转换）&quot;">​</a></h3><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import sys
+from binascii import unhexlify
+
+if(len(sys.argv)&lt;4):
+	print(&quot;Usage: python Encrypt.py keyfile plaintext ciphername&quot;)
+	exit(1)
+
+def lfsr(R, mask):
+	output = (R &lt;&lt; 1) &amp; 0xffffffffffffffff
+	i=(R&amp;mask)&amp;0xffffffffffffffff
+	lastbit=0
+	while i!=0:
+		lastbit^=(i&amp;1)
+		i=i&gt;&gt;1
+	output^=lastbit
+	return (output,lastbit)
+
+R = 0
+key = &quot;&quot;
+with open(sys.argv[1],&quot;r&quot;) as f:
+	key = f.read()
+	R = int(key,16)
+	f.close
+	
+mask = 0b1101100000000000000000000000000000000000000000000000000000000000
+
+a = &#39;&#39;.join([chr(int(b, 16)) for b in [key[i:i+2] for i in range(0, len(key), 2)]])
+
+f=open(sys.argv[2],&quot;r&quot;)
+ff = open(sys.argv[3],&quot;wb&quot;)
+s = f.read()
+f.close()
+lent = len(s)
+
+for i in range(0, len(a)):
+	ff.write((ord(s[i])^ord(a[i])).to_bytes(1, byteorder=&#39;big&#39;))
+
+for i in range(len(a), lent):
+	tmp=0
+	for j in range(8):
+		(R,out)=lfsr(R,mask)
+		tmp=(tmp &lt;&lt; 1)^out
+	ff.write((tmp^ord(s[i])).to_bytes(1, byteorder=&#39;big&#39;))
+ff.close()
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>python Encrypt.py key.txt Plain.txt cipher.txt
+python Encrypt.py key.txt flag.txt flag_encode.txt
+rm flag.txt
+rm key.txt
+</code></pre><button class="code-block-unfold-btn"></button></div><p>通过已知信息，我们发现cipher.txt和flag_encode.txt都是由同一个key.txt和另一个文件异或而来</p><p>所以，关键是求出密钥</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">mask = 0b1101100000000000000000000000000000000000000000000000000000000000
+
+a = &#39;&#39;.join([chr(int(b, 16)) for b in [key[i:i+2] for i in range(0, len(key), 2)]])
+
+f=open(sys.argv[2],&quot;r&quot;)
+ff = open(sys.argv[3],&quot;wb&quot;)
+s = f.read()
+f.close()
+lent = len(s)
+
+for i in range(0, len(a)):
+	ff.write((ord(s[i])^ord(a[i])).to_bytes(1, byteorder=&#39;big&#39;))
+
+for i in range(len(a), lent):
+	tmp=0
+	for j in range(8):
+		(R,out)=lfsr(R,mask)
+		tmp=(tmp &lt;&lt; 1)^out
+	ff.write((tmp^ord(s[i])).to_bytes(1, byteorder=&#39;big&#39;))
+ff.close()
+</code></pre><button class="code-block-unfold-btn"></button></div><p>由上面那串代码我们可以发现，key的值与plain.txt的前几个字符进行了异或，那我们将cipher.txt与plain.txt异或，那它前几个字符不就是key的值了嘛</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import re
+from Crypto.Util.number import*
+
+#指定文件在相对路径
+import os, sys
+os.chdir(sys.path[0])
+
+cip = open(&#39;cipher.txt&#39;, &#39;rb&#39;).read()
+plain = open(&#39;Plain.txt&#39;, &#39;rb&#39;).read()
+cip = bytes_to_long(cip)
+plain = bytes_to_long(plain)
+key = hex(cip^plain)[2:]
+print(key)
+
+s = re.findall(r&#39;.{16}&#39;,key[::-1])
+print(s)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503122219909.png" alt="image-20250312221945673" loading="lazy" decoding="async"></figure><p>我们发现前16为缺了一位数据，应该补0，即密钥为&quot;0123456789abcdef&quot;</p><p><strong>由mask可知，密钥应该为16位16进制数据，即64bit，与mask长度一致。</strong></p><p>那为什么是前面补0</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503122226469.png" alt="image-20250312222606370" loading="lazy" decoding="async"></figure><p>我觉得很合理(赞同),int类型是4位，long类型是8位，因此异或后应该也是208位，但实际上去掉0x，异或后只有207位，所以我们需要在前补0</p><p>由于对flag的加密仅仅只用到了异或，而未进行其它加密，所以当我们有了key之后，只需再次与密文继续异或就能得到flag了</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import os,sys
+os.chdir(sys.path[0])
+
+key = &#39;0123456789abcdef&#39;
+R = int(key,16)
+mask = 0b1101100000000000000000000000000000000000000000000000000000000000
+
+def lfsr(R, mask):
+	output = (R &lt;&lt; 1) &amp; 0xffffffffffffffff
+	i=(R&amp;mask)&amp;0xffffffffffffffff
+	lastbit=0
+	while i!=0:
+		lastbit^=(i&amp;1)
+		i=i&gt;&gt;1
+	output^=lastbit
+	return (output,lastbit)
+
+cipher = open(&#39;flag_encode.txt&#39;,&#39;rb&#39;).read()
+a = &#39;&#39;.join([chr(int(b, 16)) for b in [key[i:i+2] for i in range(0, len(key), 2)]])
+ans = []
+lent = len(cipher)
+
+for i in range(0, len(a)):
+	ans.append(chr(cipher[i]^ord(a[i])))
+
+for i in range(len(a), lent):
+	tmp = 0
+	for j in range(8):
+		(R,out)=lfsr(R,mask)
+		tmp=(tmp &lt;&lt; 1)^out
+	ans.append(chr(tmp ^ cipher[i]))
+
+flag = &#39;&#39;.join(ans)
+print(flag)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="老文盲了-汉字拼音" tabindex="-1">老文盲了（汉字拼音） <a class="header-anchor" href="#老文盲了-汉字拼音" aria-label="Permalink to &quot;老文盲了（汉字拼音）&quot;">​</a></h3><p>打开页面</p><p>发现内容为</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>罼雧締眔擴灝淛匶襫黼瀬鎶軄鶛驕鳓哵眔鞹鰝
+</code></pre><button class="code-block-unfold-btn"></button></div><p>不知道是啥加密方式，我们转拼音看看<a href="https://pinyin.supfree.net/" target="_blank" rel="noreferrer">在线汉字转拼音</a></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>bì jí dì dà kuò hào zhè jiù shì fǔ lài gē zhí jiē jiāo lè bā dà kuò hào
+</code></pre><button class="code-block-unfold-btn"></button></div><p>6，flag出了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>flag{淛匶襫黼瀬鎶軄鶛驕鳓哵}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="leftorright-二叉树" tabindex="-1">LeftOrRight（二叉树） <a class="header-anchor" href="#leftorright-二叉树" aria-label="Permalink to &quot;LeftOrRight（二叉树）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503132005777.png" alt="image-20250313200511546" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503132005130.png" alt="image-20250313200524996" loading="lazy" decoding="async"></figure><p>我们在图片中找到了两串hex字符串</p><p>提示提到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>Left?Middle?No，I want right！（flag is right？！）
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里讲的一个是二叉树的前序、中序和后序，我们已知了前序和中序，要求后序</p><p>我们去网上找一个求后序的脚本</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py"># f09e54c1bad2x38mvyg7wzlsuhkijnop
+# 905e4c1fax328mdyvg7wbsuhklijznop
+
+def fromFMtoL(mid):
+    global las  # 全局后序遍历
+    global fir  # 先序遍历
+    root = fir[0]  # 取出当前树根
+    fir = fir[1:]  # 取出树根后 先序遍历把根拿出来 下面一个元素做树根
+    root_po = mid.find(root)  # 在中序遍历当中树根的位置
+    left = mid[0:root_po]  # 左子树
+    right = mid[root_po + 1:len(mid)]  # 右子树
+    &#39;&#39;&#39;
+    后序遍历： 左 右 根 
+    先左子树 再右子树 最后跟
+    &#39;&#39;&#39;
+    # 有左子树的时候
+    if len(left) &gt; 0:
+        fromFMtoL(left)
+    # 有右子树的时候
+    if len(right) &gt; 0:
+        fromFMtoL(right)
+    # 树根写进结果
+    las += root
+
+if __name__ == &quot;__main__&quot;:
+    # fir = input(&quot;请输入先序遍历：&quot;)   #前序遍历的结果
+    # mid = input(&quot;请输入中序遍历：&quot;)   #中序遍历的结果
+    fir = &quot;f09e54c1bad2x38mvyg7wzlsuhkijnop&quot;
+    mid = &quot;905e4c1fax328mdyvg7wbsuhklijznop&quot;
+    # fir = &quot;ABC&quot;
+    # mid = &quot;BAC&quot;
+    las = &quot;&quot;
+    fromFMtoL(mid)
+    print(las)
+   
+#951c4e03xm82yw7gvdakhusjilponzbf
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="gkctf2020-小学生的密码学-仿射变换" tabindex="-1">[GKCTF2020]小学生的密码学（仿射变换） <a class="header-anchor" href="#gkctf2020-小学生的密码学-仿射变换" aria-label="Permalink to &quot;[GKCTF2020]小学生的密码学（仿射变换）&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>e(x)=11x+6(mod26)
+
+密文：welcylk
+
+（flag为base64形式）
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这种形式的加密手法是仿射变换，其加解密分别是</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503181717396.png" alt="image-20250318171748271" loading="lazy" decoding="async"></figure><p>由题目可得，a=11，b=6，我们需要做的工作是根据密文c，密钥a/b得到明文m，这里a^-1^是 a在模 26 下的乘法逆元我们用invert进行计算</p><p>注意仿射变换26个字母按数字0~25记，因此在需要将密文ASCII对应的数值减去97，解密完恢复成字母即加上97</p><p>此外，题目要求最后的flag为base64形式，因此还需借助Python的base64库中b64encode函数。需要注意的是在Python3中，字符都为unicode编码，而b64encode函数的参数为byte类型，所以必须先转码。</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from gmpy2 import invert
+from base64 import b64encode
+
+c = &quot;welcylk&quot;
+a = 11
+b = 6
+n = 26
+
+in_a = invert(a, n)
+print(in_a)
+# in_a = 19
+
+m = []
+for i in c:
+    modified_c = ord(i)-97
+    m.append((modified_c-b)*in_a % 26)
+flag = &quot;&quot;
+for mi in m:
+    flag += chr(mi+97)
+print(b64encode(flag.encode()))
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="bjdctf-2nd-cat-flag-脑洞题" tabindex="-1">[BJDCTF 2nd]cat_flag（脑洞题） <a class="header-anchor" href="#bjdctf-2nd-cat-flag-脑洞题" aria-label="Permalink to &quot;[BJDCTF 2nd]cat_flag（脑洞题）&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504201915068.png" alt="image-20250420191526948" loading="lazy" decoding="async"></figure><p>我们观察图片，发现饭团很像0，鸡腿很像1</p><p>所以我们猜测每一行都是一个二进制</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>01000010
+01001010
+01000100
+01111011
+01001101
+00100001
+01100001
+00110000
+01111110
+01111101
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们将二进制转十进制然后转ASCILl码</p><p>最终得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>BJD{M!a0~}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="gkctf2020-汉字的秘密-当铺密码" tabindex="-1">[GKCTF2020]汉字的秘密（当铺密码） <a class="header-anchor" href="#gkctf2020-汉字的秘密-当铺密码" aria-label="Permalink to &quot;[GKCTF2020]汉字的秘密（当铺密码）&quot;">​</a></h3><p>我们下载下来，打开文件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504201942001.png" alt="image-20250420194215804" loading="lazy" decoding="async"></figure><p>很明显的当铺密码.</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">dh = &#39;田口由中人工大土士王夫井羊壮&#39;
+ds = &#39;00123455567899&#39;
+
+cip = &#39;王壮 夫工 王中 王夫 由由井 井人 夫中 夫夫 井王 土土 夫由 土夫 井中 士夫 王工 王人 土由 由口夫&#39;
+s = &#39;&#39;
+for i in cip:
+	if i in dh:
+		s += ds[dh.index(i)]
+	else:
+		s += &#39; &#39;
+#print(s)
+
+ll = s.split(&quot; &quot;)
+t = &#39;&#39;
+for i in range(0,len(ll)):
+	t += chr(int(ll[i])+i+1)
+print(&#39;t=&#39;, t, &#39;\t\tt.lower()=&#39;, t.lower())
+
+//t= FLAG{YOU_ARE_GOOD} 		t.lower()= flag{you_are_good}
+</code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/crypto" target="_blank" title="本文链接">https://kinsey973.github.io/posts/crypto</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/ctfshow-ssrf" class="post-nav-prev" title="ctfshow ssrf"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">ctfshow ssrf</span></a></div><div class="post-nav-item"><a href="/posts/%25E6%25AD%25A3%25E5%2588%2599%25E8%25A1%25A8%25E8%25BE%25BE%25E5%25BC%258F%25E8%25AF%25AD%25E6%25B3%2595" class="post-nav-next" title="正则表达式语法"><span class="title truncate" text="sm">正则表达式语法</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-06-08T17:00:57.000Z","datePublished":"2024-06-08T17:00:57.000Z","inLanguage":"zh-CN","name":"crypto","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-06-08T17:00:57.000Z","datePublished":"2024-06-08T17:00:57.000Z","description":"山行野宿，孤身万里","name":"crypto","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-06-08T17:00:57.000Z","datePublished":"2024-06-08T17:00:57.000Z","description":"山行野宿，孤身万里","headline":"crypto","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021445451.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021445451.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202406021445451.png"}]}</script>
+  
+</body>
+</html>

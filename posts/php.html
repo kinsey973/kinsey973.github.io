@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/php.HB2xE_Ck.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>php - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="php">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">php</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2023-12-17 13:59:53"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2023-12-17</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">3.7k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">14m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=%E9%A2%98%E8%A7%A3" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>题解</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：php格式： &lt;?php … ? 变量 ------ 定义变量： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mtext>变量名。赋值变量</mtext><mo separator="true">,</mo><mtext>变量前一定要带着</mtext></mrow><annotation encoding="application/x-tex">+变量名。赋值变量,变量前一定要带着</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">+</span><span class="mord cjk_fallback">变量名。赋值变量</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">变量前一定要带着</span></span></span></span>; 变量名不能以数字开头，不建议使用汉字 ------ 打印变量 echo相当于printf。</p><p>&lt;!-- more --&gt;</p><p>php格式：</p><p>&lt;?php</p><p>…</p><p>?&gt;</p><h2 id="变量" tabindex="-1">变量 <a class="header-anchor" href="#变量" aria-label="Permalink to &quot;变量&quot;">​</a></h2><hr><p>定义变量：</p><p>$+变量名。</p><p>赋值变量,变量前一定要带着$;</p><p><strong>变量名不能以数字开头，不建议使用汉字</strong></p><hr><p>打印变量</p><p>echo相当于printf。 echo $变量名，‘&lt;标签&gt;’；</p><hr><p>删除变量用 unset(变量名)</p><p>unset($var2);</p><hr><p>预定义变量：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png" alt="image-20231217141534425" loading="lazy" decoding="async"></figure><hr><p>可变变量</p><p>$a=‘b’;</p><p>$b=‘aa’;</p><p>那么$a=‘aa’;</p><hr><p>变量作用域</p><p>​ 跟c差不多；</p><p>​ 函数内部是局部变量，外部是全局变量，如果想在函数内用全局变量，得在变量前加global；</p><hr><p>static作用域</p><p>一般，函数用完后，其内部的局部变量就会被删除，要想不被删除，在变量前使用static。</p><hr><p>超级全局变量</p><p>$GLOBALS是一个包含当前文件全部全局变量的数组；</p><p>$_SERVER是一个包含诸多头信息、路径、以及脚本位置等等信息的数组</p><p>注意：要想获得信息，通过print_r(超级全局变量 )来寻找key</p><h2 id="php数据类型" tabindex="-1">php数据类型 <a class="header-anchor" href="#php数据类型" aria-label="Permalink to &quot;php数据类型&quot;">​</a></h2><p>基本类型：</p><pre><code>整型：int
+</code></pre><p>​ 浮点型：float/double</p><p>​ 字符串型: string</p><p>​ 布尔类型: bool/boolean</p><p>复合数据类型:</p><p>​ 对象类型：object,存放对象（面向对象）</p><p>​ 数组类型：array，存储多个数据（一次性）</p><p>特殊数据类型:</p><p>​ 资源类型：resource，存放资源数据（php外部数据，如数据库，文件）</p><p>​ 空类型：NULL</p><hr><p>类型转换：</p><p>1.自动转换：系统根据需求自己判定，自己转换</p><p>2.强制转换：认为根据需求手动转换 echo（类型）变量名；</p><p>说明：</p><p>1.布尔ture=1，false=0</p><p>2.以字母开头的字符串，永远为0；</p><p>3.以数字开头的字符串，取到碰到字符串为止（不会同时包含两个小数点）</p><hr><p>类型判断：</p><p>用一组类型判断函数来判断.</p><p>var_dump(is_xxx(变量名))： xxx为类型名,如果变量的类型为xxx，则返回 1，反之，返回0；</p><p>var_dump(变量名)： 直接返回类型；</p><p>Gettype(变量名): 得到该类型对应字符串；</p><p>Settype(变量名，类型) ：设定数据类型，与强制转换不同</p><p>​ 1.强制类型转换，是转换数据值；</p><p>​ 2.settype是改变数据本身类型；</p><hr><p>整数类型进制：</p><p>$a=120; //10进制</p><p>$a=0b110; //2… 数字前加0b</p><p>$a=0120; //8… 0</p><p>$a=0x120; //16… 0x</p><p>php默认转换10进制输出</p><p>decbin(): 10-&gt;2</p><p>decoct(): 10-&gt;8</p><p>dechex(): 10-&gt;16</p><p>bindec(): 2-&gt;10</p><p>dec: 十进制 bin：二进制 oct：八进制 hex：十六进制</p><hr><p>判断变量值是否存在：</p><p>empty（变量名）；</p><p>isset（变量名）；</p><p>区别：</p><p>empty 如果值为空或0；返回true</p><p>isset 只有值存在才返回true</p><hr><p>运算符：</p><p>比较运算符：</p><p>​ === 全等于，左边与右边相同：大小以及数据类型相同，返回true</p><p>​ !== 不全等于，只要大小或类型不同，就返回false；</p><hr><p>逻辑运算符：</p><p>​ 跟c一样；</p><hr><p>连接运算符：</p><p>​ . ：将两个字符串连起来；</p><p>​ .=：a.=b;=&gt;a=a.b;</p><hr><p>错误抑制符：</p><p>​ @：在可能出错的表达式前加@；</p><p>​ 错误运算符通常在生产环境（上线）会用到，在开发时不会用到</p><hr><p>三目运算符：</p><p>​ 跟c一样；</p><hr><p>自操作运算符：</p><p>​ ++；</p><p>​ --；</p><hr><p>php EOF定界符：</p><p>$a=&lt;&lt;&lt;EOF</p><p>…</p><p>EOF;</p><p>echo $a;</p><p>注意：EOF要顶格写，$a里的内容都会被解析。</p><hr><p>空合并运算符：？？</p><p>用于简化处理可能为null的变量或数组元素的情况。</p><p>它的作用是判断一个变量是否未定义或者为null，如果未定义或为null，则返回指定的默认值，否则返回该变量的值</p><p>$name=$username??10;</p><p>echo $name ；=&gt;10</p><hr><p>组合运算符</p><p>&lt;=&gt; 可比较整型，浮点型，字符串(比较ascll码)</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$s=$a&lt;=&gt;$b;
+如果$a&gt;$b;$s=1;
+......=.;....0;
+......&lt;.....-1;
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h2 id="循环" tabindex="-1">循环 <a class="header-anchor" href="#循环" aria-label="Permalink to &quot;循环&quot;">​</a></h2><p>if-else和swith-case</p><p>跟c差不多</p><hr><p>for循环</p><p>跟c差不多</p><p>PHP_EOF：回车换行；</p><p>break n（n=1，2，3…）；跳出n个循环；</p><hr><h2 id="数组" tabindex="-1">数组 <a class="header-anchor" href="#数组" aria-label="Permalink to &quot;数组&quot;">​</a></h2><p>数值数组定义:1.$var1=array(&quot; …“,”… “,”… &quot;);</p><p>​ 2.$var1=[“…”,“…‘’,”…&quot;];</p><p>​ 3.$var1=[];</p><p>​ $var1[3]=‘a’;</p><p>关联数组：</p><p>​ $var1=[</p><pre><code>   &quot;test&quot;=&gt;&quot;da&quot;,“0”=&gt;&quot;5&quot;,&quot;1&quot;,&quot;2&quot;
+</code></pre><p>​ ];</p><p>​ $var1[test]=da;</p><hr><p>数组长度：count($var1);</p><hr><p>数组遍历：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>1.foreach($var1 as  $value)  echo $value; 
+         2.foreach($var1 as $key =&gt;$value)  key:下标
+         注意：key和value可以自命名
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><p>多维数组：</p><p>$arr=[</p><p>“0”=&gt;[</p><p>​ “a”,&quot;b</p><p>​ ],</p><p>“1”=&gt;[</p><p>​ “c”,“d”;</p><p>​ ],</p><p>“3”=&gt;“f”</p><p>];</p><p>遍历跟c差不多，只不过用多个foreach遍历</p><hr><p>数组运算符：</p><p>1.+号运算符（合并两个数组）</p><p>注意：只会保留第一个数组中的键值对，而忽略后面数组中相同键名的元素，如果想要合并两个数组并覆盖相同键名的元素，可以使用array_merge()函数</p><p>2.== 只会判断数组有相同的建/值对</p><p>3.=== 判断数组有相同的建/值对，且顺序相同、类型相同</p><p>4.!=等同于&lt;&gt;</p><p>5.!==</p><h2 id="函数" tabindex="-1">函数 <a class="header-anchor" href="#函数" aria-label="Permalink to &quot;函数&quot;">​</a></h2><p>​ 内置函数：</p><p>​ date(“Y-m-d H:i:s”)</p><hr><p>定义函数：</p><p>function 名字（类型 变量名）{</p><p>…</p><p>return …；</p><p>}</p><p>严格模式 ：declare（strict_type=1）; 使用严格模式后，函数的变量类型要与定义时的类型一致</p><hr><h2 id="字符串" tabindex="-1">字符串 <a class="header-anchor" href="#字符串" aria-label="Permalink to &quot;字符串&quot;">​</a></h2><p>字符串函数：</p><p>​ strlen（）获取字符长度；</p><pre><code>stripos（）在字符串里查找一个字符或一段指定的文本，返回第一次出现的位置或false
+</code></pre><p>​ stripos（）同上，但不区分大小写</p><p>​ strrpos（）同上上，返回最后一次出现的位置或false</p><p>strripos（）同上，不区分大小写。</p><p>​ <img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312181731813.png" alt="image-20231218173119690"></p><h2 id="数组相关函数" tabindex="-1">数组相关函数 <a class="header-anchor" href="#数组相关函数" aria-label="Permalink to &quot;数组相关函数&quot;">​</a></h2><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312182136297.png" alt="image-20231218213641984" loading="lazy" decoding="async"></figure><p>数组后面插入元素还可使用 $arr[]=5;这样就在arr数组的末尾插入了一个5；</p><hr><h2 id="时间、日期相关知识" tabindex="-1">时间、日期相关知识 <a class="header-anchor" href="#时间、日期相关知识" aria-label="Permalink to &quot;时间、日期相关知识&quot;">​</a></h2><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>time（）获取当前的时间戳（10位）
+
+microtime（ture）返回一个浮点数的时间戳（秒数和微秒数的总和）
+
+date（&quot;Y-m-d H ：m：s&quot;,$time）日期格式化  ， 如果y是小写则只会输出年份后两个数字，h是小写则会变为12小时制。
+
+strtotime（string类型），可以把string类型转换成时间戳。例如：strtotime（&quot;next monday&quot;）;可以得到下个星期一的时间戳。此外$baseTime=strtotime(&quot;Y-m-d&quot;);  echo date(&quot;Y-m-d&quot;,$baseTime)可以把这个时间的时间戳设为基础时间,并输出来。
+
+mktime($hour,$minute,$secong,$moth,$day,$year);生成时间戳，mktime（）里可以使用数字。
+
+date_create()来创建一个日期时间对象
+
+date_format()将日期时间对象转换为字符串
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>date_diff() 计算两个日期之间的差。 
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312191420806.png" alt="image-20231219142013716" loading="lazy" decoding="async"></figure><p><strong>注意%R和%r有正负之分</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>
+</code></pre><button class="code-block-unfold-btn"></button></div><h2 id="常量" tabindex="-1">常量 <a class="header-anchor" href="#常量" aria-label="Permalink to &quot;常量&quot;">​</a></h2><p>定义：</p><p>1.define(‘常量名’，常量值)；</p><p>2.const 常量名=常量值；</p><p>常量定义不需要加$;</p><p>区别：</p><p>1.define定义的常量名可以是特殊符号，若是特殊符号，则需要用echo constant（’ 常量名’）来打印；const 不能用特殊符号；</p><p>2.const不能用于条件语句中</p><p>3.const用于类成员变量的定义，define不可用</p><hr><p>系统常量：</p><p>系统自带的常量，可直接用；</p><p>PHP_VERSION: php版本</p><p>PHP_INT_SIZE: int类型大小</p><p>PHP_INT_MAX: int可表示最大值</p><p>系统魔术常量: 双下划线开始+常量名+双下划线结束，可随环境变换而变换</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>__DIR__: 当前被执行的脚本所在电脑的绝对路径
+__FILE__:当前被执行的脚本所在电脑的绝对路径（带自己文件的名字）
+__LINE__:当前所属的行数
+__NAMESPACE__:当前所属的命名空间
+__CLASS__:当前所属的类
+__METHOD__:当前所属的方法
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h2 id="包含文件" tabindex="-1">包含文件 <a class="header-anchor" href="#包含文件" aria-label="Permalink to &quot;包含文件&quot;">​</a></h2><p>作用，在当前文件引用其他PHP文件、HTML文件或文本文件等。</p><hr><p>include语句和require语句</p><p><a href="https://blog.csdn.net/Young__Fan/article/details/80152501" target="_blank" rel="noreferrer">路径中“./”、“…/”、“/”代表的含义_文件路径符号-CSDN博客</a></p><p>区别：</p><p>如果出现错误，include如果生成一个警告，在错误发生后脚本会继续执行。</p><p>require会生成一个致命错误，然后停止脚本执行。</p><p><strong>推荐使用require</strong></p><p>include_once和require_once语句，和上面的一样，但只会调用一次</p><h2 id="面向对象-oo" tabindex="-1">面向对象(OO) <a class="header-anchor" href="#面向对象-oo" aria-label="Permalink to &quot;面向对象(OO)&quot;">​</a></h2><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312191708005.png" alt="image-20231219170830894" loading="lazy" decoding="async"></figure><h2 id="类" tabindex="-1">类 <a class="header-anchor" href="#类" aria-label="Permalink to &quot;类&quot;">​</a></h2><p>定义：定义了一系列事物的抽象特点。</p><p>类的定义包含了数据的形式以及对数据的操作</p><hr><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Animal{
+
+public $name=&quot;abc&quot;;
+public function eat(){
+echo&quot;sss&quot;;
+}
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><p>类的调用</p><p>new 实例化对象</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$lei= new Anmial;
+echo $lei-&gt;name;
+$lei-&gt;eat();
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><p>类的方法和属性</p><p>$this</p><p>如果想要调用class自身的变量(假如为$name)时，要定义为$this-&gt;$name;还可以通过这种方式来改自身的值。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312191914143.png" alt="image-20231219191459048" loading="lazy" decoding="async"></figure><hr><p>类的访问控制</p><p>关键词：public,privated,protected</p><p>public(公有)：公有的类成员可以再任何地方被访问。</p><p>protected（受保护）：受保护的类成员可以被其自身以及其子类和父类访问</p><p>private（私有）：私有的类成员则只能被其定义所在的类访问。</p><hr><p>php的构造函数和析构函数</p><p><a href="https://www.runoob.com/php/php-oop.html" target="_blank" rel="noreferrer">PHP 面向对象 | 菜鸟教程 (runoob.com)</a></p><p>__construct构造函数</p><ol><li>构造函数是一种特殊的方法，在创建一个新对象是，他会自动调用</li><li>他可以用来初始化对象的属性或执行的其他必要的操作</li><li>没有返回值</li></ol><hr><p>__destruct析构函数</p><ol><li>析构函数是一种特殊的方法，它在对象被销毁时自动调用</li><li>他可以用来执行一些清理操作，例如释放资源或关闭数据库连接</li><li>当对象不在被引用或脚本执行结束前，析构函数会被自动调用</li></ol><hr><p>static静态变量和self</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312192023433.png" alt="image-20231219202342347" loading="lazy" decoding="async"></figure><p>用static去定义，用self::去取。</p><p>静态变量在外部的修改： Animal::$cat=“熊猫”。</p><hr><p>类常量</p><p>用const去定义常量，调用方式和static类似，用self调用，唯一区别是类常量不可修改</p><hr><p>static静态方法</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312192046113.png" alt="image-20231219204625029" loading="lazy" decoding="async"></figure><hr><p>类的继承（extends）：</p><p>指可以创建一个新的类，该类继承（extends)了父类的属性和方法，并且可以添加自己的属性和方法。通过继承，可以避免重复编写相似的代码，并且可以实现代码的重用。</p><p>class 新的类的名字 extends 之前类的名字{</p><p>可以添加新的东西，也可不写</p><p>}</p><hr><p>类方法和属性的改写</p><p>如果从父类继承的方法或属性不能满足子类的需求，可以对其进行改写。</p><p>直接在子类内部改写方法或属性。</p><p>final关键字（在不想被改写的类或类的方法前加final）</p><ul><li>防止类被改写</li><li>防止类的方法被重写。</li></ul><p><strong>final不能用于属性</strong></p><hr><p>parent调用父类的方法和构造函数</p><p>在子类方法里写：parent::父类方法或parent::_construct();</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+class BaseClass {
+   function __construct() {
+       print &quot;BaseClass 类中构造方法&quot; . PHP_EOL;
+   }
+}
+class SubClass extends BaseClass {
+   function __construct() {
+       parent::__construct();  // 子类构造方法不能自动调用父类的构造方法
+       print &quot;SubClass 类中构造方法&quot; . PHP_EOL;
+   }
+}
+class OtherSubClass extends BaseClass {
+    // 继承 BaseClass 的构造方法
+}
+
+// 调用 BaseClass 构造方法
+$obj = new BaseClass();
+
+// 调用 BaseClass、SubClass 构造方法
+$obj = new SubClass();
+
+// 调用 BaseClass 构造方法
+$obj = new OtherSubClass();
+?&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><p>静态延迟绑定static</p><p>指在运行时根据实际调用的类来确定静态方法或属性的绑定</p><p>语法 static::$name</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312192142918.png" alt="image-20231219214227829" loading="lazy" decoding="async"></figure><p>输出小动物 在吃饭 小猫 在吃饭</p><hr><p>php类的多态和方法重载</p><p>类的多态：</p><ol><li>多态性允许不同类的对象对相同的消息作出不同的响应gI·多态性通过方</li><li>重写（覆盖）和方法重载来实现。</li><li>方法重写是指子类重写父类的方法，以改变方法的实现细节。</li><li>方法重载是指在同一个类中根据参数个数或类型不同来实现不同功能。</li><li>需要注意的是，多态性只适用于继承关系的类。子类必须重写父类的方法才能实现多态性。</li></ol><p>方法重载：</p><p>$args=func_get_args();</p><p>$numArgs=func_num_args();</p><h2 id="接口和抽象类" tabindex="-1">接口和抽象类 <a class="header-anchor" href="#接口和抽象类" aria-label="Permalink to &quot;接口和抽象类&quot;">​</a></h2><h3 id="接口" tabindex="-1">接口 <a class="header-anchor" href="#接口" aria-label="Permalink to &quot;接口&quot;">​</a></h3><p>是指一组方法的集合，不是类，不能被实例化</p><p>只可使用public。</p><p>通常用于定义一些规范，让代码更加有条理，不易出错</p><hr><p>lnterface 名字（）接口</p><p>implements 实现</p><p>基本格式：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>interface xxx{
+
+...
+
+}
+
+class xxx implements xxx{
+
+...
+
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>注意：interface里含的方法要全部在implements里包含</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312201932040.png" alt="image-20231220193238918" loading="lazy" decoding="async"></figure><hr><h3 id="抽象类和抽象方法" tabindex="-1">抽象类和抽象方法 <a class="header-anchor" href="#抽象类和抽象方法" aria-label="Permalink to &quot;抽象类和抽象方法&quot;">​</a></h3><p>抽象类：</p><p>抽象类是一种特殊的类，只能被继承，不能被实例化</p><p>抽象类用于定义一组相关的方法，但这些方法的具体实现由继承它的子类来完成·</p><p>子类继承抽象类后，必须实现抽象类中的所有抽象方法</p><p>抽象类可以包含抽象方法和普通方法</p><hr><p>abstract关键字</p><p>在class前加上abstract就创建了一个抽象类</p><hr><p>抽象方法：</p><p>抽象方法是没有具体实现的方法，只有方法的声明，而<strong>不需要方法体</strong></p><p><strong>抽象方法只能存在抽象类中</strong></p><p>可以使用protected，但不能使用private私有</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312201952427.png" alt="image-20231220195253364" loading="lazy" decoding="async"></figure><hr><h3 id="trait代码复用" tabindex="-1">trait代码复用 <a class="header-anchor" href="#trait代码复用" aria-label="Permalink to &quot;trait代码复用&quot;">​</a></h3><p>解决类的单一继承问题</p><p>可同时使用多个trait，用逗号隔开</p><p>把常用的、通用的代码抽离出来，写成trait</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>trait A{
+
+}
+trait B{
+
+}
+class c{
+use A,B;
+}
+把A,B继承到C里
+</code></pre><button class="code-block-unfold-btn"></button></div><p>trait中可使用抽象方法</p><p>trait中可使用静态属性和方法</p><p>trait中可使用其他trait</p><p>trait中可使用parent</p><hr><p>trait的同名方法冲突和重命名</p><p>同名冲突：</p><p>当一个类同时引用了多个trait，并且这些trait中存在同名方法时，就会产生方法冲突。</p><p>用insteadof替换，用as重命名（还可以重命名权限）</p><p><strong>属性重名无法更改</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>use A,B{
+B::eat insteadof A;
+A::eat as Aeat;
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h2 id="网络请求" tabindex="-1">网络请求 <a class="header-anchor" href="#网络请求" aria-label="Permalink to &quot;网络请求&quot;">​</a></h2><p>若想要获得get请求数据 使用var_dump($_GET);</p><p>若想要获得post请求数据 使用var_dump($_POST);</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312202053042.png" alt="image-20231220205303938" loading="lazy" decoding="async"></figure><hr><p>超级全局变量</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$_REQUEST变量包含了$_GET，$__POST和$_COOKLE的内容
+</code></pre><button class="code-block-unfold-btn"></button></div><p>$_SERVER是一个包含诸多头信息、路径、以及脚本位置等等信息的数组</p><p>注意：要想获得信息，通过print_r(超级全局变量 )来寻找key</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png" alt="image-20231217141534425" loading="lazy" decoding="async"></figure><p>htmlspecialchars()函数</p><p>用于将字符串中的特殊字符转换为HTMl实体，以避免在HTML文档中引起解析错误或安全漏洞</p><p>&amp;（和号）成为&amp;amp</p><p>“（双引号）成为&amp;quot；</p><p>’（单引号）成为&amp;#039；</p><p>&lt;(小于)成为&amp;lt</p><p>&gt;(大于)成为&amp;gt;</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/php" target="_blank" title="本文链接">https://kinsey973.github.io/posts/php</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/MySQL%25E5%25AD%25A6%25E4%25B9%25A0" class="post-nav-prev" title="MySQL学习"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">MySQL学习</span></a></div><div class="post-nav-item"><a href="/posts/HTML%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AF%2587" class="post-nav-next" title="HTML学习篇"><span class="title truncate" text="sm">HTML学习篇</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2023-12-17T13:59:53.000Z","datePublished":"2023-12-17T13:59:53.000Z","inLanguage":"zh-CN","name":"php","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2023-12-17T13:59:53.000Z","datePublished":"2023-12-17T13:59:53.000Z","description":"山行野宿，孤身万里","name":"php","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2023-12-17T13:59:53.000Z","datePublished":"2023-12-17T13:59:53.000Z","description":"山行野宿，孤身万里","headline":"php","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312171415553.png"}]}</script>
+  
+</body>
+</html>

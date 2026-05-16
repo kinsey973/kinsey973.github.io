@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/Java.BblVFOB0.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="Java">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030404.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">Java</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-11-12 18:49:38"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-11-12</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">11k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">42m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=java" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>java</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：Java ------ 注释 単行注释 格式 //注释信息 多行注释 格式 /注释信息/ 文档注释 格式 /\注释信息/ 关键字 class关键字 用于（创建/定义）一个类，类是Java最基本的组成单元 字面量 制表符 \t 在打印时，把前面字符串长度补齐到8或者8的整数倍，最少一个空格，最多8</p><p>&lt;!-- more --&gt;</p><h3 id="java" tabindex="-1">Java <a class="header-anchor" href="#java" aria-label="Permalink to &quot;Java&quot;">​</a></h3><hr><h3 id="注释" tabindex="-1">注释 <a class="header-anchor" href="#注释" aria-label="Permalink to &quot;注释&quot;">​</a></h3><h4 id="単行注释" tabindex="-1">単行注释 <a class="header-anchor" href="#単行注释" aria-label="Permalink to &quot;単行注释&quot;">​</a></h4><p>格式 //注释信息</p><h4 id="多行注释" tabindex="-1">多行注释 <a class="header-anchor" href="#多行注释" aria-label="Permalink to &quot;多行注释&quot;">​</a></h4><p>格式 /*注释信息*/</p><h4 id="文档注释" tabindex="-1">文档注释 <a class="header-anchor" href="#文档注释" aria-label="Permalink to &quot;文档注释&quot;">​</a></h4><p>格式 /**注释信息*/</p><h3 id="关键字" tabindex="-1">关键字 <a class="header-anchor" href="#关键字" aria-label="Permalink to &quot;关键字&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030404.png" alt="image-20241014203025134" loading="lazy" decoding="async"></figure><h4 id="class关键字" tabindex="-1">class关键字 <a class="header-anchor" href="#class关键字" aria-label="Permalink to &quot;class关键字&quot;">​</a></h4><p>用于（创建/定义）一个类，类是Java最基本的组成单元</p><h3 id="字面量" tabindex="-1">字面量 <a class="header-anchor" href="#字面量" aria-label="Permalink to &quot;字面量&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030688.png" alt="image-20241014203057613" loading="lazy" decoding="async"></figure><h4 id="制表符" tabindex="-1">制表符 <a class="header-anchor" href="#制表符" aria-label="Permalink to &quot;制表符&quot;">​</a></h4><p>\t 在打印时，把前面字符串长度补齐到8或者8的整数倍，最少一个空格，最多8个空格</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142034225.png" alt="image-20241014203401136" loading="lazy" decoding="async"></figure><h3 id="变量名" tabindex="-1">变量名 <a class="header-anchor" href="#变量名" aria-label="Permalink to &quot;变量名&quot;">​</a></h3><p><strong>int</strong> 整数类型</p><p>**byte **</p><p><strong>short</strong></p><p><strong>long</strong> 定义时，数据值要加一个L作为后缀.可以大写也可以小写</p><p><strong>double</strong> 小数类型</p><p><strong>float</strong> 定义时，数据值要加一个F作为后缀</p><p><strong>char</strong> 字符类型</p><p><strong>String</strong> 字符串类型 注：S<strong>要大写</strong></p><p><strong>boolean</strong> 布尔类型</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142048988.png" alt="image-20241014204822919" loading="lazy" decoding="async"></figure><h4 id="使用方法" tabindex="-1">使用方法 <a class="header-anchor" href="#使用方法" aria-label="Permalink to &quot;使用方法&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142037126.png" alt="image-20241014203700067" loading="lazy" decoding="async"></figure><h4 id="注意事项" tabindex="-1">注意事项 <a class="header-anchor" href="#注意事项" aria-label="Permalink to &quot;注意事项&quot;">​</a></h4><p>1.只能存一个值</p><p>2.变量名不允许重复定义</p><p>3.一条语句可以定义多个变量</p><p>int a=1,b=2,c=3;</p><p>4.变量在使用之前要进行赋值</p><p>5.变量要注意作用域范围</p><h3 id="类型" tabindex="-1">类型 <a class="header-anchor" href="#类型" aria-label="Permalink to &quot;类型&quot;">​</a></h3><p>分为基本类型和引用类型</p><h4 id="基本类型" tabindex="-1">基本类型 <a class="header-anchor" href="#基本类型" aria-label="Permalink to &quot;基本类型&quot;">​</a></h4><p>基本类型是 Java 中最简单、最基本的数据类型，用于存储原始的数据值。它们直接存储数据，大小固定，并且没有附带任何方法或功能。</p><p>Java 有 8 种基本数据类型：</p><table><thead><tr><th>数据类型</th><th>大小</th><th>默认值</th><th>示例</th></tr></thead><tbody><tr><td><code>byte</code></td><td>1 字节</td><td>0</td><td><code>byte b = 10;</code></td></tr><tr><td><code>short</code></td><td>2 字节</td><td>0</td><td><code>short s = 100;</code></td></tr><tr><td><code>int</code></td><td>4 字节</td><td>0</td><td><code>int i = 1000;</code></td></tr><tr><td><code>long</code></td><td>8 字节</td><td>0L</td><td><code>long l = 100000000L;</code></td></tr><tr><td><code>float</code></td><td>4 字节</td><td>0.0f</td><td><code>float f = 3.14f;</code></td></tr><tr><td><code>double</code></td><td>8 字节</td><td>0.0</td><td><code>double d = 3.14159;</code></td></tr><tr><td><code>char</code></td><td>2 字节</td><td>‘\u0000’</td><td><code>char c = &#39;A&#39;;</code></td></tr><tr><td><code>boolean</code></td><td>1 字节</td><td><code>false</code></td><td><code>boolean flag = true;</code></td></tr></tbody></table><ul><li><strong>数值类型</strong>：<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>float</code>、<code>double</code>。</li><li><strong>字符类型</strong>：<code>char</code>。</li><li><strong>布尔类型</strong>：<code>boolean</code>。</li></ul><h4 id="引用类型" tabindex="-1">引用类型 <a class="header-anchor" href="#引用类型" aria-label="Permalink to &quot;引用类型&quot;">​</a></h4><p>引用类型的变量保存了对实际对象的引用（内存地址）。常见的引用类型包括类、数组和接口。</p><p>引用类型的例子：</p><ul><li><strong>类</strong>：如 <code>String</code>、<code>ArrayList</code>、<code>Person</code> 等</li><li><strong>数组</strong>：如 <code>int[]</code>、<code>String[]</code> 等</li><li><strong>接口</strong>：如 <code>List</code>、<code>Runnable</code> 等</li></ul><h3 id="标识符" tabindex="-1">标识符 <a class="header-anchor" href="#标识符" aria-label="Permalink to &quot;标识符&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142158637.png" alt="image-20241014215821487" loading="lazy" decoding="async"></figure><h3 id="输入" tabindex="-1">输入 <a class="header-anchor" href="#输入" aria-label="Permalink to &quot;输入&quot;">​</a></h3><p>Scanner,这个类可以接受键盘输入的数字</p><p>导包，要写在类定义的上面</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142200057.png" alt="image-20241014220038909" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>//1
+import java.util.Scanner;
+
+public class hellow1 {
+    public static void main(String[] args) {
+    //2
+       Scanner sc = new Scanner(System.in);
+       //3
+       int i=sc.nextInt();
+        System.out.println(i);
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="运算符" tabindex="-1">运算符 <a class="header-anchor" href="#运算符" aria-label="Permalink to &quot;运算符&quot;">​</a></h3><h4 id="数值相加" tabindex="-1">数值相加 <a class="header-anchor" href="#数值相加" aria-label="Permalink to &quot;数值相加&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142217870.png" alt="image-20241014221741757" loading="lazy" decoding="async"></figure><p>如果在计算时有小数参与，结果可能会不准确</p><p>算数语法跟c语言一样</p><p>数字进行运算时，数据类型不一样不能运算，需要转成一样的，才能运算</p><p>**隐式转换：**取值范围小的数值–&gt;取值范围大的数值</p><p>**强制转换：**取值范围大的数值–&gt;取值范围小的数值</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142224812.png" alt="image-20241014222431627" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142225733.png" alt="image-20241014222543564" loading="lazy" decoding="async"></figure><h4 id="字符串相加" tabindex="-1">字符串相加 <a class="header-anchor" href="#字符串相加" aria-label="Permalink to &quot;字符串相加&quot;">​</a></h4><p>字符串的“+”操作，跟python差不多</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142228327.png" alt="image-20241014222811242" loading="lazy" decoding="async"></figure><h4 id="字符相加" tabindex="-1">字符相加 <a class="header-anchor" href="#字符相加" aria-label="Permalink to &quot;字符相加&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142230328.png" alt="image-20241014223003209" loading="lazy" decoding="async"></figure><h4 id="自增、自减" tabindex="-1">自增、自减 <a class="header-anchor" href="#自增、自减" aria-label="Permalink to &quot;自增、自减&quot;">​</a></h4><p>跟c差不多</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142232844.png" alt="image-20241014223228739" loading="lazy" decoding="async"></figure><h4 id="赋值运算符" tabindex="-1">赋值运算符 <a class="header-anchor" href="#赋值运算符" aria-label="Permalink to &quot;赋值运算符&quot;">​</a></h4><p>+=、-=、/==等等 ，跟c一样</p><h4 id="逻辑运算符" tabindex="-1">逻辑运算符 <a class="header-anchor" href="#逻辑运算符" aria-label="Permalink to &quot;逻辑运算符&quot;">​</a></h4><p>&amp;、 |、 ^ 、!</p><p>&amp;&amp;、|| 当左边的表达式能确定最终的结果时，右边就不会参与运行了</p><h4 id="三元运算符" tabindex="-1">三元运算符 <a class="header-anchor" href="#三元运算符" aria-label="Permalink to &quot;三元运算符&quot;">​</a></h4><p>a?b:c 、; 跟c差不多</p><h4 id="优先级" tabindex="-1">优先级 <a class="header-anchor" href="#优先级" aria-label="Permalink to &quot;优先级&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410151427720.png" alt="image-20241015142719609" loading="lazy" decoding="async"></figure><h3 id="判断语句" tabindex="-1">判断语句 <a class="header-anchor" href="#判断语句" aria-label="Permalink to &quot;判断语句&quot;">​</a></h3><h4 id="if语句" tabindex="-1">if语句 <a class="header-anchor" href="#if语句" aria-label="Permalink to &quot;if语句&quot;">​</a></h4><p>跟c一样</p><h4 id="switch语句" tabindex="-1">switch语句 <a class="header-anchor" href="#switch语句" aria-label="Permalink to &quot;switch语句&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410151431700.png" alt="image-20241015143106616" loading="lazy" decoding="async"></figure><p>在jdk12时，可以使用</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>switch(a)
+case 值1-&gt; {
+
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>循环语句</p><p>跟c一样有for，while，do…while</p><h3 id="数组" tabindex="-1">数组 <a class="header-anchor" href="#数组" aria-label="Permalink to &quot;数组&quot;">​</a></h3><h4 id="定义方式" tabindex="-1">定义方式 <a class="header-anchor" href="#定义方式" aria-label="Permalink to &quot;定义方式&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>格式一
+数据类型 [] 数组名;
+//例如
+int [] array;
+
+格式二
+数据类型  数组名 [];
+//例如
+int array [];
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>**注意：**不同的数据类型对应不同的默认值</p><ul><li>整数类型：0</li><li>小数类型：0.0</li><li>布尔类型：false</li><li>字符类型：‘\u0000’</li><li>引用类型：null</li></ul><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411242052644.png" alt="image-20241124205246536" loading="lazy" decoding="async"></figure><h4 id="数组的初始化" tabindex="-1">数组的初始化 <a class="header-anchor" href="#数组的初始化" aria-label="Permalink to &quot;数组的初始化&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>格式一
+数据类型[] 数组名 = new 数据类型[]{元素1，元素2，元素3，元素4...};
+//例如
+double[] arr = new double[]{1.1,1.2,1.3};
+
+格式二
+数据类型[] 数组名 = {元素1，元素2，元素3，元素4...};
+//例如
+int[] array = {1,2,3,4,5};
+ 
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="数组的地址值" tabindex="-1">数组的地址值 <a class="header-anchor" href="#数组的地址值" aria-label="Permalink to &quot;数组的地址值&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>int arr[]={1,2,3,4,5,6,7,8,9,10};
+System.out.println(arr);
+
+docker run -d \
+  --name java-chains \
+  --restart=always \
+  -p 8011:8011 \
+  -p 58080:58080 \
+  -p 50389:50389 \
+  -p 50388:50388 \
+  -p 3308:3308 \
+  -p 13999:13999 \
+  -p 50000:50000 \
+  -p 11527:11527 \
+  -e CHAINS_AUTH=true \
+  -e CHAINS_PASS=javajava \
+  javachains/javachains:1.4.0
+//打印的是第一个元素的地址值 [I@14ae5a5
+</code></pre><button class="code-block-unfold-btn"></button></div><p>[I@14ae5a5</p><p>解读：</p><p>[ 表示是数组.</p><p>i 表示是int类型</p><p>@ 表示一个间隔符号（固定格式）</p><p>14ae5a5 数组真正的地址值（十六进制）</p><p>通常把这个整体统称为地址</p><h4 id="数组的遍历" tabindex="-1">数组的遍历 <a class="header-anchor" href="#数组的遍历" aria-label="Permalink to &quot;数组的遍历&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">第一种 fro循环遍历
+int arr[]={1,2,3,4,5,6,7,8,9,10};
+        
+        for (int i=0;i&lt;arr.length;i++) {
+            System.out.println(arr[i]);
+        }
+        //arr.length 获取数组长度
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">第二种
+arr.fori 自动生成
+
+ arr.fori ==&gt;  for (int i = 0; i &lt; arr.length; i++) {
+            
+        }    
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">第三种  foreach语句遍历
+
+for(type element: array)
+{
+    System.out.println(element);
+}
+
+ docker run -d \
+  --name java-chains \
+  --restart=always \
+  -p 8011:8011 \
+  -p 58080:58080 \
+  -p 50389:50389 \
+  -p 50388:50388 \
+  -p 3308:3308 \
+  -p 13999:13999 \
+  -p 50000:50000 \
+  -p 11527:11527 \
+  -e CHAINS_AUTH=true \
+  -e CHAINS_PASS= javajava\
+  javachains/javachains:1.4.0
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411242204255.png" alt="image-20241124220458160" loading="lazy" decoding="async"></figure><h4 id="java内存分配" tabindex="-1">java内存分配 <a class="header-anchor" href="#java内存分配" aria-label="Permalink to &quot;java内存分配&quot;">​</a></h4><p>栈 方法运行时使用的内存，比如main方法运行，进入方法栈中执行</p><p>堆 存储对象或者数组，new来创建的，都存储在堆内存中</p><p>方法区 存储可以运行的class文件</p><p>本地方法栈 JVM在使用操作系统功能的时候使用，和我们开发无关</p><p>寄存器 给cpu使用 ，和我们开发无关</p><h3 id="方法" tabindex="-1">方法 <a class="header-anchor" href="#方法" aria-label="Permalink to &quot;方法&quot;">​</a></h3><h4 id="方法的定义" tabindex="-1">方法的定义 <a class="header-anchor" href="#方法的定义" aria-label="Permalink to &quot;方法的定义&quot;">​</a></h4><p>程序中最小的执行单元</p><h4 id="方法的格式" tabindex="-1">方法的格式 <a class="header-anchor" href="#方法的格式" aria-label="Permalink to &quot;方法的格式&quot;">​</a></h4><p><strong>最简单的格式</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public static void 方法名(){
+		方法体（就是打包起来的代码）
+}
+
+方法名();
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>带参数的格式</strong></p><p>有实参和形参的区别</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public static void 方法名(int num1, int num2){
+
+		方法体
+		System.out.println(num1+num2);
+		
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>带返回值的格式</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public static 返回值类型 方法名(参数){
+		方法体
+		return 返回值;
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="方法的重载" tabindex="-1">方法的重载 <a class="header-anchor" href="#方法的重载" aria-label="Permalink to &quot;方法的重载&quot;">​</a></h4><p>在同一个类中，定义了多个同名的方法，这些同名的方法具有同种的功能。</p><p>每个方法具有不同的参数类型或参数个数，这些同名的方法，就构成了重载关系</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411242237542.png" alt="image-20241124223719405" loading="lazy" decoding="async"></figure><p>注意，一个变量不构成重载关系</p><h4 id="方法的基本数据型和引用数据类型" tabindex="-1">方法的基本数据型和引用数据类型 <a class="header-anchor" href="#方法的基本数据型和引用数据类型" aria-label="Permalink to &quot;方法的基本数据型和引用数据类型&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411251911421.png" alt="image-20241125191132351" loading="lazy" decoding="async"></figure><h3 id="修饰符" tabindex="-1">修饰符 <a class="header-anchor" href="#修饰符" aria-label="Permalink to &quot;修饰符&quot;">​</a></h3><p>在 Java 中，<strong>修饰符</strong>（Modifiers）用于控制类、方法、变量的访问权限、行为以及其他特性。修饰符分为两大类：<strong>访问修饰符</strong> 和 <strong>非访问修饰符</strong>。修饰符提供了对类、方法、属性等的访问控制、功能增强以及其他特性管理。</p><p><strong>访问修饰符</strong></p><p>访问修饰符用于定义类、方法、变量的访问范围，即控制哪些类、方法、变量可以被访问。Java 提供了四种访问修饰符：</p><p><strong><code>public</code></strong></p><ul><li><strong>含义</strong>：表示该成员可以被任何其他类访问。</li><li><strong>适用范围</strong>：类、方法、变量。</li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class MyClass {
+    public int number;
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong><code>private</code></strong></p><ul><li><strong>含义</strong>：表示该成员只能在定义它的类内部访问，不能在类外部访问。</li><li><strong>适用范围</strong>：方法、变量。</li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class MyClass {
+    private int number;
+    
+    private void display() {
+        System.out.println(number);
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong><code>protected</code></strong></p><ul><li><strong>含义</strong>：表示该成员可以在同一包中的其他类访问，也可以在不同包中通过继承访问。</li><li><strong>适用范围</strong>：方法、变量。</li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class MyClass {
+    protected int number;
+    
+    protected void display() {
+        System.out.println(number);
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>默认</strong></p><ul><li><strong>含义</strong>：如果没有指定访问修饰符，默认是包私有，表示该成员仅能在同一包内的类中访问，包外不可访问。</li><li><strong>适用范围</strong>：方法、变量。</li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class MyClass {
+    int number;  // 默认访问修饰符（包私有）
+    
+    void display() {
+        System.out.println(number);
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="面向对象" tabindex="-1">面向对象 <a class="header-anchor" href="#面向对象" aria-label="Permalink to &quot;面向对象&quot;">​</a></h3><h4 id="类和对象" tabindex="-1">类和对象 <a class="header-anchor" href="#类和对象" aria-label="Permalink to &quot;类和对象&quot;">​</a></h4><p><strong>类</strong>是一个模板或蓝图，用于创建对象。类定义了对象的<strong>属性</strong>（成员变量）和<strong>行为</strong>（方法）。它是对现实世界中的一类事物的抽象描述。</p><p>类的构成：</p><ul><li><strong>成员变量（属性）</strong>：表示对象的状态或特征。</li><li><strong>方法（行为）</strong>：表示对象可以执行的操作。</li></ul><p><strong>对象</strong>是类的一个实例。通过类定义的蓝图，我们可以创建多个对象，每个对象都有自己的属性值（状态）和可以执行的方法（行为）。对象在内存中有实际的存储空间，每个对象的属性是独立的。</p><p>创建对象：</p><p>创建对象的语法是使用 <code>new</code> 关键字，并调用类的构造方法（如果有定义）。</p><p><strong>在JAVA中必须先设计类，才能获得对象</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class 类名{    
+    1.成员变量
+    2.成员方法
+    3.构造器
+    4.代码块
+    5.内部类
+}
+
+public class Phone{
+   //属性（成员变量）
+   String brand;
+   
+   //方法
+   public void call(){
+   
+   }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="测试类、javabean类和工具类" tabindex="-1">测试类、javaBean类和工具类 <a class="header-anchor" href="#测试类、javabean类和工具类" aria-label="Permalink to &quot;测试类、javaBean类和工具类&quot;">​</a></h4><ol><li>测试类（Test Class）</li></ol><p>测试类通常用于单元测试（Unit Testing）。它的目的是验证你的代码是否按预期工作。Java 中有一些常用的测试框架，如 JUnit、TestNG 等，它们帮助你创建和运行测试。</p><p><strong>特点：</strong></p><ul><li>包含测试方法，通常以 <code>@Test</code> 注解标注。</li><li>每个测试方法通常是独立的，验证特定功能或方法。</li><li>测试类不用于业务逻辑实现，而是用于验证程序的正确性。</li></ul><p><strong>例子：</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CalculatorTest {
+
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(1, 2);
+        assertEquals(3, result);
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在上面的代码中，<code>CalculatorTest</code> 类是一个测试类，<code>testAdd()</code> 是一个测试方法，它验证 <code>Calculator</code> 类中的 <code>add()</code> 方法是否正确。</p><ol start="2"><li><h6 id="javabean-类" tabindex="-1">JavaBean 类 <a class="header-anchor" href="#javabean-类" aria-label="Permalink to &quot;JavaBean 类&quot;">​</a></h6></li></ol><p>JavaBean 是一种符合特定规范的 Java 类，它通常用于数据封装。JavaBean 类的主要目的是通过提供一组 getter 和 setter 方法，使得它可以作为一个数据传输对象（DTO）在应用程序中传递数据。</p><p><strong>特点：</strong></p><ul><li>JavaBean 必须有一个无参构造函数。</li><li>类中的成员变量通常是私有的（<code>private</code>），通过公共的 getter 和 setter 方法访问。</li><li>它应该实现 <code>Serializable</code> 接口，以便可以进行序列化。</li><li>常用于数据库的实体映射或网络传输。</li></ul><p><strong>例子：</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class User implements java.io.Serializable {
+    private String name;
+    private int age;
+
+    // 无参构造函数
+    public User() {}
+
+    // getter 和 setter 方法
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在这个例子中，<code>User</code> 类是一个 JavaBean 类，包含了私有成员变量 <code>name</code> 和 <code>age</code>，以及它们的 getter 和 setter 方法。这个类符合 JavaBean 的规范，通常用于传递用户信息。</p><ol start="3"><li><h6 id="工具类-utility-class" tabindex="-1">工具类（Utility Class） <a class="header-anchor" href="#工具类-utility-class" aria-label="Permalink to &quot;工具类（Utility Class）&quot;">​</a></h6></li></ol><p>工具类是一个包含一组静态方法的类，这些方法提供常用的功能，通常与某些操作或计算相关。工具类中的方法通常是通用的，因此可以在应用程序的不同部分重复使用。工具类通常只包含静态方法，并且不需要实例化。</p><p><strong>特点：</strong></p><ul><li>工具类通常只包含静态方法，方便调用。</li><li>通常不需要实例化对象。</li><li>可以包含各种实用功能，如字符串处理、日期处理、数学计算等。</li></ul><p><strong>例子：</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class StringUtils {
+
+    // 判断字符串是否为空
+    public static boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+
+    // 字符串反转
+    public static String reverse(String str) {
+        if (str == null) {
+            return null;
+        }
+        return new StringBuilder(str).reverse().toString();
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在上面的 <code>StringUtils</code> 类中，<code>isEmpty()</code> 和 <code>reverse()</code> 方法是工具方法。你可以直接调用这些静态方法而不需要创建 <code>StringUtils</code> 的实例。</p><p>主要区别总结：</p><ul><li><strong>测试类</strong>：用于测试应用程序的代码是否按预期工作，通常包含测试框架（如 JUnit）的测试方法。</li><li><strong>JavaBean 类</strong>：用于封装数据，通常包含私有字段和公共的 getter/setter 方法，符合 JavaBean 的规范。</li><li><strong>工具类</strong>：包含常用的静态方法，用于实现通用功能（如字符串处理、文件操作等），通常不需要实例化。</li></ul><h4 id="如何得到类的对象" tabindex="-1">如何得到类的对象 <a class="header-anchor" href="#如何得到类的对象" aria-label="Permalink to &quot;如何得到类的对象&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>类名 对象名=new 类名();
+
+Phone p =new Phone();
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="类的封装" tabindex="-1">类的封装 <a class="header-anchor" href="#类的封装" aria-label="Permalink to &quot;类的封装&quot;">​</a></h4><p>对象代表什么，就得封装对应的数据，并提供数据对应的行为</p><p>封装通常通过设置<strong>私有属性</strong>和<strong>公共方法</strong>来实现</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public class Person {
+    // 私有属性，外部无法直接访问
+    private String name;
+    private int age;
+
+    // 公共的 getter 和 setter 方法
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        // 在 setter 方法中可以加入一些控制逻辑，确保数据合法
+        if (age &gt; 0) {
+            this.age = age;
+        } else {
+            System.out.println(&quot;Age must be positive.&quot;);
+        }
+    }
+
+    // 公共方法，类的行为
+    public void introduce() {
+        System.out.println(&quot;Hi, my name is &quot; + name + &quot; and I am &quot; + age + &quot; years old.&quot;);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Person person = new Person();
+        
+        // 使用 setter 方法设置属性
+        person.setName(&quot;Alice&quot;);
+        person.setAge(25);
+        
+        // 使用 getter 方法获取属性值
+        System.out.println(person.getName()); // 输出：Alice
+        System.out.println(person.getAge());  // 输出：25
+
+        // 调用公共方法
+        person.introduce(); // 输出：Hi, my name is Alice and I am 25 years old.
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="this关键字" tabindex="-1">this关键字 <a class="header-anchor" href="#this关键字" aria-label="Permalink to &quot;this关键字&quot;">​</a></h4><p>this用来调用成员变量，区分成员变量和局部变量</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>
+public class Phone{
+   //属性（成员变量）
+   int age=20;
+   
+   //方法
+   public void call(){
+   
+   int age=10;
+    System.out.println(brand); //输出10
+   System.out.println(this.brand); //输出20
+   
+   }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="构造方法" tabindex="-1">构造方法 <a class="header-anchor" href="#构造方法" aria-label="Permalink to &quot;构造方法&quot;">​</a></h4><p>作用：在创建对象的时候给成员变量进行赋值</p><p><strong>无参</strong>数构造方法： 初始化的对象时，成员变量的数据均采用默认值，</p><p><strong>有参</strong>数构造方法: 在初始化对象的时候，同时可以为对象进行赋值。</p><p><strong>形式</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class Student{
+	
+	修饰符 类名(参数){
+	方法体
+	
+	}
+
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>特点：</strong></p><p>1.方法名与类名相同，大小写也要一致</p><p>2.没有返回类型，连void也没有</p><p>3.没有具体的返回值(不能由retrun带回结果数据)</p><p><strong>执行时机:</strong></p><p>1.创建对象的时候由虚拟机调用，不能手动调用构造方法</p><p>2.每创建一次对象，就会调用一次构造方法</p><p><strong>注意事项</strong></p><p>① 构造方法的定义</p><p>如果没有定义构造方法，系统将给出一个默认的无参数构造方法</p><p>如果定义了构造方法，系统将不再提供默认的构造方法</p><p>② 构造方法的重载</p><p>带参构造方法，和无参数构造方法，两者方法名相同，但是参数不同，这叫做构造方法的重载</p><p>③ 推荐的使用方式</p><p>无论是否使用，都手动书写无参数构造方法，和带全部参数的构造方法</p><h4 id="标准javabean" tabindex="-1">标准JavaBean <a class="header-anchor" href="#标准javabean" aria-label="Permalink to &quot;标准JavaBean&quot;">​</a></h4><ol><li>类名需要见名知意</li><li>成员变量使用private修饰</li><li>提供至少两个构造方法 <ol><li>无参构造方法</li><li>带全部参数的构造方法</li></ol></li><li>成员方法 提供每一个成员变量对应的setXxx()/getXxx() 如果还有其他行为，也需要写上</li></ol><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411252210243.png" alt="image-20241125221012155" loading="lazy" decoding="async"></figure><h4 id="static" tabindex="-1">static <a class="header-anchor" href="#static" aria-label="Permalink to &quot;static&quot;">​</a></h4><p>static表示静态，是Java中的一个修饰符，可以修饰成员方法和成员变量</p><p>被static修饰的成员变量叫做<strong>静态变量</strong>(类变量)</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411252231802.png" alt="image-20241125223150756" loading="lazy" decoding="async"></figure><p>被static修饰的成员方法，叫做<strong>静态方法</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261447025.png" alt="image-20241126144657919" loading="lazy" decoding="async"></figure><h6 id="注意事项-1" tabindex="-1">注意事项 <a class="header-anchor" href="#注意事项-1" aria-label="Permalink to &quot;注意事项&quot;">​</a></h6><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261503699.png" alt="image-20241126150304641" loading="lazy" decoding="async"></figure><h4 id="类的继承" tabindex="-1">类的继承 <a class="header-anchor" href="#类的继承" aria-label="Permalink to &quot;类的继承&quot;">​</a></h4><p>Java中提供一个关键字extends，用这个关键字，我们可以让一个类和你应该类建立起继承关系</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class Student extends Person {}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>student成为子类(派生类)，Person成为父类(基类或超类)</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>// 父类
+class Animal {
+    void speak() {
+        System.out.println(&quot;Animal speaks&quot;);
+    }
+}
+
+// 子类
+class Dog extends Animal {
+    // 子类重写父类方法
+    @Override
+    void speak() {
+        System.out.println(&quot;Dog barks&quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.speak();  // 输出：Dog barks
+        
+        Animal animal = new Animal();
+        animal.speak();  // 输出：Animal speaks
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>使用继承的好处</strong></p><p>可以把多个子类中重复的代码抽取到父类中了，提高代码的复用性</p><p>子类可以在父类的基础上，增加其他的功能，使子类更强大，</p><p><strong>使用条件</strong></p><p>当类与类之间，存在相同(共性)的内容，并满足子类是父类的一种，就可以考虑使用继承，来优化代码</p><h5 id="继承的特点" tabindex="-1">继承的特点 <a class="header-anchor" href="#继承的特点" aria-label="Permalink to &quot;继承的特点&quot;">​</a></h5><p>Java只支持但继承，不支持多继承，但支持多层继承</p><p>多层继承：子类A可以继承父类B，父类B可以继承父类C</p><p>每一个类都直接或者间接的继承于Object</p><h5 id="子类能继承父类的内容" tabindex="-1">子类能继承父类的内容 <a class="header-anchor" href="#子类能继承父类的内容" aria-label="Permalink to &quot;子类能继承父类的内容&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261558114.png" alt="image-20241126155824043" loading="lazy" decoding="async"></figure><h5 id="成员变量和成员方法访问特点" tabindex="-1">成员变量和成员方法访问特点 <a class="header-anchor" href="#成员变量和成员方法访问特点" aria-label="Permalink to &quot;成员变量和成员方法访问特点&quot;">​</a></h5><p>遵循就近原则：谁离我近，我就用谁</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Parent {
+    int x = 10;  // 父类成员变量
+}
+
+class Child extends Parent {
+    int x = 20;  // 子类成员变量
+    void printX() {
+        System.out.println(x);  // 访问子类的x
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.printX();  // 输出：20
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>如果出现了重名变量</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Parent {
+    int x = 10;  // 父类的变量
+}
+
+class Child extends Parent {
+    int x = 20;  // 子类的变量，遮蔽父类的同名变量
+
+    void printX() {
+        System.out.println(x);  // 从局部变量找
+        System.out.println(this.x); //从子类找
+        System.out.println(super.x);  // 访问的是父类的x
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.printX();  // 输出：20 20  10 
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>方法重写注意事项和要求</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261625965.png" alt="image-20241126162508846" loading="lazy" decoding="async"></figure><p>注意：子类中重写的方法上面要加上@override</p><h5 id="构造方法的访问特点" tabindex="-1">构造方法的访问特点 <a class="header-anchor" href="#构造方法的访问特点" aria-label="Permalink to &quot;构造方法的访问特点&quot;">​</a></h5><p><strong>继承中：构造方法的访问特点</strong></p><p>父类中的构造方法不会被子类继承。</p><p>子类中所有的构造方法默认先访问父类中的无参构造，再执行自己</p><p><strong>为什么?</strong></p><p>子类在初始化的时候，有可能会使用到父类中的数据，如果父类没有完成初始化，子类将无法使用父类的数据</p><p>子类初始化之前，一定要调用父类构造方法先完成父类数据空间的初始化。</p><p>使用this()访问本类的构造方法</p><p>使用super访问父类的构造方法</p><h4 id="this、super总结" tabindex="-1">this、super总结 <a class="header-anchor" href="#this、super总结" aria-label="Permalink to &quot;this、super总结&quot;">​</a></h4><p>this ： 理解为一个变量，表示当前方法调用者的地址值</p><p>super: 代表父类存储空间</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261645171.png" alt="image-20241126164556106" loading="lazy" decoding="async"></figure><h4 id="类的多态" tabindex="-1">类的多态 <a class="header-anchor" href="#类的多态" aria-label="Permalink to &quot;类的多态&quot;">​</a></h4><p>对象代表什么，就得封装对应的数据，并提供数据对应的行为</p><p><strong>定义</strong></p><p>同类型的对象，表现出不同形态</p><p><strong>多态表现形式</strong></p><p>父类类型 对象名称 = 子类对象</p><p><strong>多态的前提</strong></p><ol><li>有继承关系</li><li>有父引用指向子类对象</li><li>有方法重写</li></ol><h5 id="多态调用成员特点" tabindex="-1">多态调用成员特点 <a class="header-anchor" href="#多态调用成员特点" aria-label="Permalink to &quot;多态调用成员特点&quot;">​</a></h5><p>变量调用：编译看左边，运行也看左边</p><p>方法调用：编译看左边，运行看右边</p><h5 id="变量调用" tabindex="-1">变量调用 <a class="header-anchor" href="#变量调用" aria-label="Permalink to &quot;变量调用&quot;">​</a></h5><p><strong>编译看左边</strong>:javac编译代码的时候，会看左边的父类中有没有这个变量，如果有，编译成功，如果没有编译失败。</p><p>在Java中，<strong>编译时</strong>的行为是由引用变量的类型（也就是“左边”）决定的。Java编译器在编译代码时，确定方法调用或成员访问是根据引用类型来进行检查的。因此，编译时检查的是引用变量所声明的类型，而不是它实际指向的对象类型。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        System.out.println(obj.x); // 编译错误 实际上会访问 Parent的x的值
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>编译时</strong>：在上面的代码中，<code>obj</code>是<code>Parent</code>类型的引用，而不是<code>Child</code>类型。因此，编译器会检查<code>Parent</code>类中是否有名为<code>x</code>的变量，虽然<code>obj</code>在运行时指向<code>Child</code>对象，但编译器只会检查<code>Parent</code>类中的<code>x</code>，因此无法找到<code>x</code>变量，编译器会报错。如果我们使用<code>obj.x</code>，编译器就无法知道它是否在<code>Child</code>类中有<code>x</code>字段，它只会根据<code>Parent</code>类的声明进行检查。</p><p><strong>运行也看左边</strong>:java运行代码的时候，实际获取的就是左边父类中成员变量的值</p><p>在<strong>运行时</strong>，Java会根据实际对象的类型来决定使用哪个成员变量或方法。这是Java中<strong>动态绑定</strong>的特性（尤其是方法的动态绑定）。对于成员变量（尤其是实例变量），它会选择实际对象中的值，即使引用类型是父类类型，也会访问实际对象中（子类）的成员变量。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child();  // 父类引用指向子类对象
+        System.out.println(obj.x);  // 输出：10
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>运行时</strong>：虽然<code>obj</code>是<code>Parent</code>类型的引用，但它指向的是<code>Child</code>类型的对象。<code>obj.x</code>访问的是<code>Parent</code>类中的<code>x</code>变量，因为编译器在编译时是根据<code>obj</code>的声明类型<code>Parent</code>来查找成员变量的，而不是<code>Child</code>类的成员变量。</p><h5 id="方法调用" tabindex="-1">方法调用 <a class="header-anchor" href="#方法调用" aria-label="Permalink to &quot;方法调用&quot;">​</a></h5><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>class Animal {
+    void sound() {
+        System.out.println(&quot;Animal makes a sound&quot;);
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println(&quot;Dog barks&quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal obj = new Dog();  // 父类引用指向子类对象
+        obj.sound();  // 运行时调用Dog类的sound()方法
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><ol><li><strong>编译时看左边：</strong></li></ol><ul><li>在编译时，<code>obj</code>的引用类型是<code>Animal</code>，所以编译器会检查<code>Animal</code>类中是否有<code>sound()</code>方法。</li><li>编译器会发现<code>Animal</code>类有<code>sound()</code>方法，因此不会报编译错误。</li></ul><ol start="2"><li><strong>运行时看右边：</strong></li></ol><ul><li>运行时，<code>obj</code>指向的是<code>Dog</code>类的对象。因此，Java会根据实际对象的类型（<code>Dog</code>）来调用重写后的<code>Dog</code>类中的<code>sound()</code>方法。</li><li>尽管引用类型是<code>Animal</code>，运行时仍然会调用子类<code>Dog</code>的<code>sound()</code>方法，输出的是<code>Dog barks</code>，而不是<code>Animal makes a sound</code>。</li></ul><h5 id="多态的优势和弊端" tabindex="-1">多态的优势和弊端 <a class="header-anchor" href="#多态的优势和弊端" aria-label="Permalink to &quot;多态的优势和弊端&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411261950890.png" alt="image-20241126195058762" loading="lazy" decoding="async"></figure><h4 id="包和final" tabindex="-1">包和final <a class="header-anchor" href="#包和final" aria-label="Permalink to &quot;包和final&quot;">​</a></h4><h5 id="包" tabindex="-1">包 <a class="header-anchor" href="#包" aria-label="Permalink to &quot;包&quot;">​</a></h5><p>包就是文件夹。用来管理各种不同功能的Java类，方便后期维护</p><p>包名通常基于公司或项目的域名（反向域名命名法），以减少与其他组织或项目的包名冲突。</p><p>例如，如果你的公司网站是 <code>example.com</code>，那么包名的前缀应是 <code>com.example.包的作用</code>。</p><h6 id="使用其他类的规则" tabindex="-1">使用其他类的规则 <a class="header-anchor" href="#使用其他类的规则" aria-label="Permalink to &quot;使用其他类的规则&quot;">​</a></h6><p>使用其他类时，需要使用全类名（com.example.包的作用.类名）</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181547149.png" alt="image-20250218154739059" loading="lazy" decoding="async"></figure><ul><li>使用同一个包中的类时，不需要导包</li><li>使用java.lang包中的类时，不需要导包</li><li>其他情况都需要导包</li><li>如果同时使用两个包中的同名类，需要使用全类名</li></ul><h5 id="final" tabindex="-1">final <a class="header-anchor" href="#final" aria-label="Permalink to &quot;final&quot;">​</a></h5><p>可以修饰方法、类、变量</p><p>final 方法：表明该方法是最终方法，不能被重写</p><p>final 类 ：表明该类是最终类，不能被继承</p><p>final 变量：叫做常量，只能被赋值一次</p><h4 id="抽象类和抽象方法" tabindex="-1">抽象类和抽象方法 <a class="header-anchor" href="#抽象类和抽象方法" aria-label="Permalink to &quot;抽象类和抽象方法&quot;">​</a></h4><p>类用于描述现实生活中一类事物。类中有属性、方法等成员。</p><p>父类中的方法，被它的子类们重写，子类各自的实现都不尽相同。那么父类的方法声明和方法主体，只有声明还有 意义，而方法主体则没有存在的意义了。</p><p>某种情况下，父类只能知道子类应该具备一个怎样的方法，但是不能够明确知道如何实现该方法。只能在子类中才能确定如何去实现方法体。例如：所有几何图形都应该具备一个计算面积的方法。但是不同的几何图形计算面积的方式不同。</p><p>我们把没有方法主体的方法称为<strong>抽象方法</strong>。Java语法规定，包含抽象方法 的类就是<strong>抽象类</strong>。</p><h5 id="抽象方法" tabindex="-1">抽象方法 <a class="header-anchor" href="#抽象方法" aria-label="Permalink to &quot;抽象方法&quot;">​</a></h5><p><strong>抽象方法</strong> ： 只有方法的声明，没有方法体，以分号 ; 结尾，使用 <code>abstract</code> 关键字修饰</p><p>定义格式：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">修饰符 abstract 返回值类型 方法名(参数列表);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>代码举例：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public abstract void run();
+</code></pre><button class="code-block-unfold-btn"></button></div><blockquote><p>抽象方法不能用private、final、static、native修饰</p></blockquote><h5 id="抽象类" tabindex="-1"><strong>抽象类</strong> <a class="header-anchor" href="#抽象类" aria-label="Permalink to &quot;**抽象类**&quot;">​</a></h5><p><strong>抽象类</strong>：包含抽象方法的类。如果一个类包含抽象方法，那么该类必须是抽象类，使用 <code>abstract</code> 关键字修饰</p><p>定义格式：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public abstract class 类名 {
+    //抽象类中可以包含变量、常量，抽象方法，非抽象方法
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>代码举例：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public abstract class Person {
+    public abstract void work()；
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="抽象类的使用" tabindex="-1"><strong>抽象类的使用</strong> <a class="header-anchor" href="#抽象类的使用" aria-label="Permalink to &quot;**抽象类的使用**&quot;">​</a></h5><p>抽象类不能实例化，不能直接创建对象。抽象类是用来被继承的，继承抽象类的子类<strong>必须重写父类所有的抽象方法</strong>。否则，该子类也必须声明为抽象类，使用 <code>abstract</code> 关键字修饰</p><p>抽象类也是类，因此原来类中可以有的成员，抽象类都可以有，那么抽象类不能直接创建对象，为什么还有构造器呢？供子类调用，子类创建对象时，需要为从父类继承的属性初始化。</p><p>抽象类不能使用final修饰</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public class Teacher extends Person {
+    public void work() {
+      	System.out.println(&quot;讲课&quot;); 	 
+    }
+}
+public class Abstract ClassTest {
+ 	 public static void main(String[] args) {
+        // 创建子类对象
+        Teacher t = new Teacher(); 
+       
+        // 调用run方法
+        t.work();
+  	}
+}
+
+输出结果：
+讲课
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>此时的方法重写，是对子类对父类抽象方法的完成实现，我们将这种方法重写的操作，叫做实现方法</p><p css-module=".">实现：去掉abstract关键字，加上方法体</p><p><strong>抽象类注意事项</strong>：</p><ol><li><p>抽象类<strong>不能创建对象</strong>，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。</p><blockquote><p>理解：假设创建了抽象类的对象，调用抽象的方法，而抽象方法没有具体的方法体，没有意义。</p></blockquote></li><li><p>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的。</p><blockquote><p>理解：子类的构造方法中，有默认的super()，需要访问父类构造方法。</p></blockquote></li><li><p>抽象类中，可以有成员变量。</p><blockquote><p>理解：子类的共性的成员变量 , 可以定义在抽象父类中。</p></blockquote></li><li><p>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</p><blockquote><p>理解：未包含抽象方法的抽象类，声明为抽象类目的就是不想让使用者创建该类的对象，通常用于某些特殊的类结构设计。</p></blockquote></li><li><p>抽象类的子类，必须重写抽象父类中<strong>所有的</strong>抽象方法，否则，编译报错。除非该子类也是抽象类。</p><blockquote><p>理解：假设不重写所有抽象方法，则类中可能包含抽象方法。那么创建对象后，调用抽象的方法，没有意义。</p></blockquote></li></ol><h4 id="接口" tabindex="-1">接口 <a class="header-anchor" href="#接口" aria-label="Permalink to &quot;接口&quot;">​</a></h4><p>在抽象类中，抽象方法本质上是定义接口规范：即规定高层类的接口，从而保证所有子类都有相同的接口实现，这样，多态就能发挥出威力。</p><p>如果一个抽象类没有字段，所有方法全部都是抽象方法：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">abstract class Person {
+    public abstract void run();
+    public abstract String getName();
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>就可以把该抽象类改写为接口：<code>interface</code>。</p><p>在Java中，使用<code>interface</code>可以声明一个接口：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">interface Person {
+    void run();
+    String getName();
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>所谓<code>interface</code>，就是比抽象类还要抽象的纯抽象接口，因为它连字段都不能有。因为接口定义的所有方法默认都是<code>public abstract</code>的，所以这两个修饰符不需要写出来（写不写效果都一样）。</p><p>当一个具体的<code>class</code>去实现一个<code>interface</code>时，需要使用<code>implements</code>关键字。举个例子：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">class Student implements Person {
+    private String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(this.name + &quot; run&quot;);
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们知道，在Java中，一个类只能继承自另一个类，不能从多个类继承。但是，一个类可以实现多个<code>interface</code>，例如：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">class Student implements Person, Hello { // 实现了两个interface
+    ...
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="常量" tabindex="-1">常量 <a class="header-anchor" href="#常量" aria-label="Permalink to &quot;常量&quot;">​</a></h3><p>常量一般作为系统的配置信息，方便维护，提高可读性</p><p>常量的命名规范：</p><p>単个单词：全部大写</p><p>多个单词：全部大写，单词之间用下划线隔开</p><p><strong>注意：</strong></p><p>final修饰的变量是基本类型：那么变量存储的数据值不能发生改变</p><p>final修饰的变量是引用类型：那么变量存储的地址值不能发生改变，对象内部可以改变</p><h3 id="术语" tabindex="-1">术语 <a class="header-anchor" href="#术语" aria-label="Permalink to &quot;术语&quot;">​</a></h3><p>注意区分术语：</p><p>Java的接口特指<code>interface</code>的定义，表示一个接口类型和一组方法签名，而编程接口泛指接口规范，如方法签名，数据格式，网络协议等。</p><p>抽象类和接口的对比如下：</p><table><thead><tr><th></th><th style="text-align:left;">abstract class</th><th style="text-align:left;">interface</th></tr></thead><tbody><tr><td>继承</td><td style="text-align:left;">只能extends一个class</td><td style="text-align:left;">可以implements多个interface</td></tr><tr><td>字段</td><td style="text-align:left;">可以定义实例字段</td><td style="text-align:left;">不能定义实例字段</td></tr><tr><td>抽象方法</td><td style="text-align:left;">可以定义抽象方法</td><td style="text-align:left;">可以定义抽象方法</td></tr><tr><td>非抽象方法</td><td style="text-align:left;">可以定义非抽象方法</td><td style="text-align:left;">可以定义default方法</td></tr></tbody></table><h3 id="接口继承" tabindex="-1">接口继承 <a class="header-anchor" href="#接口继承" aria-label="Permalink to &quot;接口继承&quot;">​</a></h3><p>一个<code>interface</code>可以继承自另一个<code>interface</code>。<code>interface</code>继承自<code>interface</code>使用<code>extends</code>，它相当于扩展了接口的方法。例如：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">interface Hello {
+    void hello();
+}
+
+interface Person extends Hello {
+    void run();
+    String getName();
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>此时，<code>Person</code>接口继承自<code>Hello</code>接口，因此，<code>Person</code>接口现在实际上有3个抽象方法签名，其中一个来自继承的<code>Hello</code>接口。</p><h3 id="继承关系" tabindex="-1">继承关系 <a class="header-anchor" href="#继承关系" aria-label="Permalink to &quot;继承关系&quot;">​</a></h3><p>合理设计<code>interface</code>和<code>abstract class</code>的继承关系，可以充分复用代码。一般来说，公共逻辑适合放在<code>abstract class</code>中，具体逻辑放到各个子类，而接口层次代表抽象程度。可以参考Java的集合类定义的一组接口、抽象类以及具体子类的继承关系：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>┌───────────────┐
+│   Iterable    │
+└───────────────┘
+        ▲                ┌───────────────────┐
+        │                │      Object       │
+┌───────────────┐        └───────────────────┘
+│  Collection   │                  ▲
+└───────────────┘                  │
+        ▲     ▲          ┌───────────────────┐
+        │     └──────────│AbstractCollection │
+┌───────────────┐        └───────────────────┘
+│     List      │                  ▲
+└───────────────┘                  │
+              ▲          ┌───────────────────┐
+              └──────────│   AbstractList    │
+                         └───────────────────┘
+                                ▲     ▲
+                                │     │
+                                │     │
+                     ┌────────────┐ ┌────────────┐
+                     │ ArrayList  │ │ LinkedList │
+                     └────────────┘ └────────────┘
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在使用的时候，实例化的对象永远只能是某个具体的子类，但总是通过接口去引用它，因为接口比抽象类更抽象：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">List list = new ArrayList(); // 用List接口引用具体子类的实例
+Collection coll = list; // 向上转型为Collection接口
+Iterable it = coll; // 向上转型为Iterable接口
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="default方法" tabindex="-1">default方法 <a class="header-anchor" href="#default方法" aria-label="Permalink to &quot;default方法&quot;">​</a></h3><p>在接口中，可以定义<code>default</code>方法。例如，把<code>Person</code>接口的<code>run()</code>方法改为<code>default</code>方法：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">// interface
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Student(&quot;Xiao Ming&quot;);
+        p.run();
+    }
+}
+
+interface Person {
+    String getName();
+    default void run() {
+        System.out.println(getName() + &quot; run&quot;);
+    }
+}
+
+class Student implements Person {
+    private String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>实现类可以不必覆写<code>default</code>方法。<code>default</code>方法的目的是，当我们需要给接口新增一个方法时，会涉及到修改全部子类。如果新增的是<code>default</code>方法，那么子类就不必全部修改，只需要在需要覆写的地方去覆写新增方法。</p><p><code>default</code>方法和抽象类的普通方法是有所不同的。因为<code>interface</code>没有字段，<code>default</code>方法无法访问字段，而抽象类的普通方法可以访问实例字段。</p><h3 id="字符串-api" tabindex="-1">字符串&amp;API <a class="header-anchor" href="#字符串-api" aria-label="Permalink to &quot;字符串&amp;API&quot;">​</a></h3><h5 id="api" tabindex="-1">API <a class="header-anchor" href="#api" aria-label="Permalink to &quot;API&quot;">​</a></h5><p>简单理解:API就是别人已经写好的东西，我们不需要自己编写，直接使用即可</p><p>可通过API帮助文档查找需要的API</p><h5 id="string" tabindex="-1">String <a class="header-anchor" href="#string" aria-label="Permalink to &quot;String&quot;">​</a></h5><p>java.lang.String 类代表字符串，Java 程序中的所有字符串文字(例如“abc”)都为此类的对象。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>String name =&quot;小面&quot;;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>用+可以拼接</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411252031928.png" alt="image-20241125203147721" loading="lazy" decoding="async"></figure><h6 id="字符串的比较" tabindex="-1">字符串的比较 <a class="header-anchor" href="#字符串的比较" aria-label="Permalink to &quot;字符串的比较&quot;">​</a></h6><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411252034486.png" alt="image-20241125203433405" loading="lazy" decoding="async"></figure><p><strong>方法</strong>(一般用这个)</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>string1.equals(string2)  完全一样才是true，否则为false
+
+string1.equalsIgnoreCase(string1,string2)   比较时忽略大小写
+</code></pre><button class="code-block-unfold-btn"></button></div><h6 id="stringbuilder" tabindex="-1">StringBuilder <a class="header-anchor" href="#stringbuilder" aria-label="Permalink to &quot;StringBuilder&quot;">​</a></h6><p>StringBuilder 可以看成是一个容器，创建之后里面的内容是可变的</p><p>作用：提高字符串的操作效率</p><p>它与<code>String</code>的主要区别在于，<code>String</code>对象是不可变的，每次对<code>String</code>进行修改都会生成新的字符串对象；而<code>StringBuilder</code>可以直接在原对象上修改内容，避免创建新的对象，从而提高效率。</p><p><strong>构造方法</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>StringBuilder aa = new StringBuilder(&quot;abc&quot;);  将abc放入StringBuilder对象里
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>常用操作</strong></p><p>append() 添加数据，并返回对象本身</p><p>reverse() 翻转容器中的内容</p><p>length() 返回长度</p><p>toString() 实现吧StringBuilder转换为String</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>StringBuilder aa = new StringBuilder();  
+aa.append(&quot;123&quot;); //123
+aa.reverse();   //321
+aa.length();   //3
+aa.tostring()  // 变成字符串
+</code></pre><button class="code-block-unfold-btn"></button></div><h6 id="stringjoiner" tabindex="-1">StringJoiner <a class="header-anchor" href="#stringjoiner" aria-label="Permalink to &quot;StringJoiner&quot;">​</a></h6><p>Stringloiner跟StringBuilder一样，也可以看成是一个容器，创建之后里面的内容是可变的。</p><p>通常用于将多个字符串以指定分隔符连接成一个单一的字符串</p><p>作用:提高字符串的操作效率，而且代码编写特别简洁，但是目前市场上很少有人用。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>StringJoiner(&quot;间隔符&quot;, &quot;开始符号&quot;, &quot;结束符号&quot;);
+
+import java.util.StringJoiner;
+
+public class Main {
+    public static void main(String[] args) {
+        StringJoiner joiner = new StringJoiner(&quot;, &quot;, &quot;[&quot;, &quot;]&quot;);
+        joiner.add(&quot;apple&quot;);
+        joiner.add(&quot;banana&quot;);
+        joiner.add(&quot;cherry&quot;);
+        
+        System.out.println(joiner.toString());  // 输出: [apple, banana, cherry]
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>常用操作</strong></p><p>add()</p><p>length()</p><p>toString()</p><h3 id="集合" tabindex="-1">集合 <a class="header-anchor" href="#集合" aria-label="Permalink to &quot;集合&quot;">​</a></h3><p>集合中可以存引用数据类型和基本数据类型，但存放基本数据类型时，要使用对应的包装类</p><table><thead><tr><th>基本数据类型</th><th>包装类</th></tr></thead><tbody><tr><td><code>boolean</code></td><td><code>Boolean</code></td></tr><tr><td><code>byte</code></td><td><code>Byte</code></td></tr><tr><td><code>char</code></td><td><code>Character</code></td></tr><tr><td><code>short</code></td><td><code>Short</code></td></tr><tr><td><code>int</code></td><td><code>Integer</code></td></tr><tr><td><code>long</code></td><td><code>Long</code></td></tr><tr><td><code>float</code></td><td><code>Float</code></td></tr><tr><td><code>double</code></td><td><code>Double</code></td></tr></tbody></table><p><strong>与数组的区别</strong></p><p><strong>数组</strong>：数组的大小是固定的，一旦定义，就无法更改。在创建数组时，必须指定其长度，并且一旦数组创建完成，大小就不能再修改。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>
+int[] arr = new int[5];  // 创建一个包含 5 个元素的数组
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>集合</strong>：集合的大小是动态的，可以根据需要自动增长或缩小。例如，<code>ArrayList</code> 可以根据添加或删除元素自动调整大小。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+list.add(10);
+list.add(20);
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="创建集合的对象" tabindex="-1"><strong>创建集合的对象</strong> <a class="header-anchor" href="#创建集合的对象" aria-label="Permalink to &quot;**创建集合的对象**&quot;">​</a></h5><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>
+泛型：限定集合中存储数据的类型
+ArrayList&lt;包装类&gt; list = new ArrayList&lt;&gt;();  只能存储这种包装类的  //在JDK7以上使用
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>成员方法</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411252127044.png" alt="image-20241125212751941" loading="lazy" decoding="async"></figure><h3 id="反射" tabindex="-1">反射 <a class="header-anchor" href="#反射" aria-label="Permalink to &quot;反射&quot;">​</a></h3><h4 id="什么是反射" tabindex="-1">什么是反射 <a class="header-anchor" href="#什么是反射" aria-label="Permalink to &quot;什么是反射&quot;">​</a></h4><p>反射允许对封装类的字段，方法和构造函数的信息进行编程访问</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181646735.png" alt="image-20250218164622512" loading="lazy" decoding="async"></figure><h4 id="获取class对象的三种方式" tabindex="-1">获取class对象的三种方式 <a class="header-anchor" href="#获取class对象的三种方式" aria-label="Permalink to &quot;获取class对象的三种方式&quot;">​</a></h4><p>1.Class.forName(全类名) 最为常用的</p><p>2.类名.class 当做参数进行传递</p><p>3.对象.getClass();</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181657494.png" alt="image-20250218165756402" loading="lazy" decoding="async"></figure><h4 id="获取构造方法" tabindex="-1">获取构造方法 <a class="header-anchor" href="#获取构造方法" aria-label="Permalink to &quot;获取构造方法&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181701119.png" alt="image-20250218170101029" loading="lazy" decoding="async"></figure><p>先获取class对象，再获取构造方法</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">Class clazz=Class.forName(&quot;全类名&quot;);
+Constructor[] cons1=clazz.getConstructors();
+for(Constructor con:cons2){
+System.out.println(con)
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181855001.png" alt="image-20250218185506888" loading="lazy" decoding="async"></figure><h4 id="获取成员变量" tabindex="-1">获取成员变量 <a class="header-anchor" href="#获取成员变量" aria-label="Permalink to &quot;获取成员变量&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181855366.png" alt="image-20250218185552296" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>Class clazz=Class.forName(&quot;全类名&quot;);
+Field[] fie1=clazz.getConstructors();
+for(Field field:fie2){
+System.out.println(con)
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="获取成员方法" tabindex="-1">获取成员方法 <a class="header-anchor" href="#获取成员方法" aria-label="Permalink to &quot;获取成员方法&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181917171.png" alt="image-20250218191740079" loading="lazy" decoding="async"></figure><h4 id="动态代理" tabindex="-1">动态代理 <a class="header-anchor" href="#动态代理" aria-label="Permalink to &quot;动态代理&quot;">​</a></h4><p>特点：无侵入式的给代码增加额外的功能</p><p>java通过接口保证，后面的对象和代理需要实现同一个接口，接口就是被代理的所有方法</p><h4 id="如何为java对象创建代理对象" tabindex="-1">如何为Java对象创建代理对象 <a class="header-anchor" href="#如何为java对象创建代理对象" aria-label="Permalink to &quot;如何为Java对象创建代理对象&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502181510170.png" alt="image-20250218151025096" loading="lazy" decoding="async"></figure><h3 id="io流" tabindex="-1">IO流 <a class="header-anchor" href="#io流" aria-label="Permalink to &quot;IO流&quot;">​</a></h3><p>IO流:存储和读取数据的解决方案</p><h4 id="io流的分类" tabindex="-1">IO流的分类 <a class="header-anchor" href="#io流的分类" aria-label="Permalink to &quot;IO流的分类&quot;">​</a></h4><p>按照流分为：输入流和写出流</p><p>按照操作文件类型分为：字节流（操作所有类型的文件）和字符流（操作纯文本文件，比如md和txt）</p><p>字节流：InputStream，OutputStream，FileInputStream（操作本地文件的字节输入流），FileOutputStream（操作本地文件的字节输出流）</p><p>字符流:：Reader，Write</p><p>它们都是抽象类</p><h4 id="fileoutputstream" tabindex="-1">FileOutputStream <a class="header-anchor" href="#fileoutputstream" aria-label="Permalink to &quot;FileOutputStream&quot;">​</a></h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p><p>书写步骤：</p><p>1、创建对象</p><p>1}.参数是字符串表示的路径或者是File对象都是可以的</p><p>2}.如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的</p><p>3}.如果文件已存在，写入的东西会覆盖文件</p><p>2、写数据</p><p>1）write方法的参数是整数，但实际上写到文件的是整数在ASCII上对应的字符</p><p>3、释放资源</p><p>每次使用完流后要释放资源</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo {
+    public static void main(String[] args) throws IOException {
+        FileOutputStream fos = new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        fos.write(97);
+        fos.close();
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="fileoutputstream写数据的三种方式" tabindex="-1">FileOutputStream写数据的三种方式 <a class="header-anchor" href="#fileoutputstream写数据的三种方式" aria-label="Permalink to &quot;FileOutputStream写数据的三种方式&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504162109989.png" alt="image-20250416210913912" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo2 {
+    public static void main(String[] args) throws IOException {
+        FileOutputStream fos=new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        byte[] buf={97,98,99,100};
+        fos.write(buf);//abcd
+        fos.close();
+         fos.write(buf,0,2); //ab
+        fos.close();
+
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="换行写和续写" tabindex="-1">换行写和续写 <a class="header-anchor" href="#换行写和续写" aria-label="Permalink to &quot;换行写和续写&quot;">​</a></h5><p>换行写：传入一个\r\n</p><p>续写：将FileOutputStream第二个参数设置为true</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo3 {
+    /*
+    * 换行写:再写一个换行符
+    *windows: \r\n
+    * Linux: \n
+    * Mac: \r
+    * 细节：在windows操作系统中，java对回车换行进行了优化
+    * 虽然完整的是\r\n，但是我们写其中一个\r或\n
+    * java也是可以实现换行，因为java会在底层补全
+    *
+    * 续写
+    * FileOutputStream第二个参数是续写功能，为bollean参数
+    * 默认false
+    * 手动传递true：表示打开续写,此是创建对象不会清空文件
+    * */
+    public static void main(String[] args) throws IOException {
+        FileOutputStream fos=new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        //写数据换行
+        String str=&quot;wohaoshuai&quot;;
+        fos.write(str.getBytes());
+        String str2=&quot;\r\n&quot;;
+        fos.write(str2.getBytes());
+        String str3=&quot;666&quot;;
+        fos.write(str2.getBytes());
+        fos.close();
+        //续写
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="fileinputstream" tabindex="-1">FileInputStream <a class="header-anchor" href="#fileinputstream" aria-label="Permalink to &quot;FileInputStream&quot;">​</a></h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来。</p><p><strong>书写步骤：</strong></p><p>1、创建对象</p><p>如果文件不存在，就会直接报错。</p><p>2、读取数据</p><p>1）一次读一个字节，读出来的是数据在ASCII上对应的数字</p><p>2）读到文件末尾是，read方法返回-1</p><p>3、释放资源</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+/*
+* 实现需求:读取文件中的数据。(暂时不写中文)
+* */
+public class StreamDemo4 {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis=new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        int b1= fis.read();
+        System.out.println((char)b1);//读到的是文件的第一个字母的ascii值
+        fis.close();
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="字节输入流循环读取" tabindex="-1">字节输入流循环读取 <a class="header-anchor" href="#字节输入流循环读取" aria-label="Permalink to &quot;字节输入流循环读取&quot;">​</a></h5><div class="language-rust"><button title="Copy code" class="copy"></button><span class="lang">rust</span><pre><code class="language-rust">package myio;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+/*
+ * 实现需求:读取文件中的数据。(暂时不写中文)
+ * */
+public class StreamDemo5 {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis=new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        int b;
+        while((b=fis.read())!=-1){
+            System.out.println((char)b);
+        }
+        fis.close();
+
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="文件拷贝" tabindex="-1">文件拷贝 <a class="header-anchor" href="#文件拷贝" aria-label="Permalink to &quot;文件拷贝&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo6 {
+    /*
+    * 文件拷贝
+    *
+    *
+    * */
+    public static void main(String[] args) throws IOException {
+        //1.创建对象
+        FileInputStream fis =new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        FileOutputStream fos =new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\b.txt&quot;);
+
+        //拷贝
+        //核心思想：边读边写
+        int b;
+        while((b=fis.read())!=-1){
+            fos.write(b);
+        }
+        //释放资源
+        //规则::先开的最后关闭
+        fos.close();
+        fis.close();
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="文件拷贝的弊端和解决方案" tabindex="-1">文件拷贝的弊端和解决方案 <a class="header-anchor" href="#文件拷贝的弊端和解决方案" aria-label="Permalink to &quot;文件拷贝的弊端和解决方案&quot;">​</a></h5><p>如果拷贝的文件过大，怎么处理</p><p>原因：FileInputStream一次读写一个字节</p><p>解决方法</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504171924853.png" alt="image-20250417192433711" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class StreamDemo7
+{
+    public static void main(String[] args) throws IOException {
+        /*
+        * public int read(byte[] buffer) 一次读取一个字节
+        *
+        * */
+        FileInputStream fis=new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\b.txt&quot;);//woh
+        byte[] bytes=new byte[2];
+        //一次读取多个字节数据，具体读多少，跟数组的长度有关
+        //返回值:本次读取到多个数据
+        int len=fis.read(bytes);
+        System.out.println(len);//2
+        String str=new String(bytes);
+        System.out.println(str);//wo
+
+        int len1=fis.read(bytes);
+        System.out.println(len1);//1
+        String str1=new String(bytes);
+        System.out.println(str1);//ho
+        fis.close();
+
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="fileinputstring一次读多个字节" tabindex="-1">FileInputString一次读多个字节 <a class="header-anchor" href="#fileinputstring一次读多个字节" aria-label="Permalink to &quot;FileInputString一次读多个字节&quot;">​</a></h5><p>为什么上面第二个len的值为1，因为它是按照顺存将文件的字符存放在bytes数组中的</p><p>最开始是w和o，当第二次读取时，由于只剩下了一个h，就将h覆盖了w，于是输出了wo</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504171940279.png" alt="image-20250417194015197" loading="lazy" decoding="async"></figure><p>解决方法：</p><p>使用new String(bytes,0,len)进行获取</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo8 {
+    public static void main(String[] args) throws IOException {
+        long l = System.currentTimeMillis();
+        FileInputStream fis = new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        FileOutputStream fos = new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\b.txt&quot;);
+        int len;
+        byte[] bytes = new byte[1024];
+        while((len = fis.read(bytes))!=-1){
+            fos.write(bytes,0,len);
+        }
+        fis.close();
+        fis.close();
+        long l1 = System.currentTimeMillis();
+        System.out.println(l1-l);
+    }
+
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>拷贝很快</p><h4 id="io流不同jdk版本捕获异常" tabindex="-1">IO流不同JDK版本捕获异常 <a class="header-anchor" href="#io流不同jdk版本捕获异常" aria-label="Permalink to &quot;IO流不同JDK版本捕获异常&quot;">​</a></h4><p>try…catch…finally异常处理</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504172006574.png" alt="image-20250417200608502" loading="lazy" decoding="async"></figure><p>但资源释放很麻烦</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504172030537.png" alt="image-20250417203018437" loading="lazy" decoding="async"></figure><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package myio;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class StreamDemo9 {
+    public static void main(String[] args)  {
+        /*
+        *   JDK7:IO流中捕获异常的写法
+        *       try后面的小括号中写创建对象的代码
+        *       注意：只有实现了AutoCloseable接口的类，才能在小括号中创建对象
+        *
+        *
+        *
+        *
+        * */
+//        try(FileInputStream fis = new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+//            FileOutputStream fos = new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\b.txt&quot;))
+//        {
+//            int len;
+//            byte[] bytes = new byte[1024];
+//            while ((len = fis.read(bytes)) != -1) {
+//                fos.write(bytes, 0, len);
+//            }
+//        }catch(IOException e){
+//            e.printStackTrace();
+//        }
+
+        /*
+        * JDK9:IO流中捕获异常的写法
+        *
+        * */
+        FileInputStream fis = new FileInputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\a.txt&quot;);
+        FileOutputStream fos = new FileOutputStream(&quot;E:\\web\\jav\\zuoye\\src\\myio\\b.txt&quot;);
+        try(fis;fos)
+        {
+            int len;
+            byte[] bytes = new byte[1024];
+            while ((len = fis.read(bytes)) != -1) {
+                fos.write(bytes, 0, len);
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="计算机存储规则" tabindex="-1">计算机存储规则 <a class="header-anchor" href="#计算机存储规则" aria-label="Permalink to &quot;计算机存储规则&quot;">​</a></h4><ol><li>在计算机中，任意数据都是以二进制的形式来存储的</li><li>计算机中最小的存储单元是一个字节</li><li>ASCII字符集中，一个英文占一个字节</li><li>简体中文版Windows，默认使用GBK字符集</li><li>GBK字符集完全兼容ASCII字符集 一个英文占一个字节，二进制第一位是0 一个中文占两个字节，二进制高位字节的第一位是1</li></ol><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504172100106.png" alt="image-20250417210049019" loading="lazy" decoding="async"></figure><h5 id="unicode字符集" tabindex="-1">unicode字符集 <a class="header-anchor" href="#unicode字符集" aria-label="Permalink to &quot;unicode字符集&quot;">​</a></h5><p>unicode字符集：指某种语言或系统中可以使用的所有字符的集合</p><p>所以utf-8<strong>不是</strong>一个字符集，而是一种字节编码方式</p><p>编码方式有：</p><p>utf-16编码规则：用2到4个字节保存</p><p>utf-32编码规则：固定使用4个字节保存</p><p>utf-8编码规则：用1到4个字节保存，英文一个字节表示，中文3个字节表示</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504172132606.png" alt="image-20250417213233551" loading="lazy" decoding="async"></figure><h5 id="为什么会出现乱码" tabindex="-1">为什么会出现乱码 <a class="header-anchor" href="#为什么会出现乱码" aria-label="Permalink to &quot;为什么会出现乱码&quot;">​</a></h5><p>原因：1.读取数据时未读完整个汉字</p><p>使用字节流读取时，因此只读取一个字节吗，但汉字由三个字节构成，因此只读取一个字节就会出现乱码</p><p>但使用拷贝时不会出现乱码</p><p>​ 2.编码和解码时的方式不统一</p><p>解决方法：</p><p>1.不要使用字节流读取文本文件</p><p>2.编码解码时使用同一个码表，同一个编码方式</p><h4 id="java中编码和解码的代码实现" tabindex="-1">java中编码和解码的代码实现 <a class="header-anchor" href="#java中编码和解码的代码实现" aria-label="Permalink to &quot;java中编码和解码的代码实现&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202504172139792.png" alt="image-20250417213949713" loading="lazy" decoding="async"></figure><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/Java" target="_blank" title="本文链接">https://kinsey973.github.io/posts/Java</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/hello-valaxy" class="post-nav-prev" title="Hello, Valaxy!"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">Hello, Valaxy!</span></a></div><div class="post-nav-item"><a href="/posts/vulhub" class="post-nav-next" title="vulhub"><span class="title truncate" text="sm">vulhub</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-11-12T18:49:38.000Z","datePublished":"2025-11-12T18:49:38.000Z","inLanguage":"zh-CN","name":"Java","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-11-12T18:49:38.000Z","datePublished":"2025-11-12T18:49:38.000Z","description":"山行野宿，孤身万里","name":"Java","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-11-12T18:49:38.000Z","datePublished":"2025-11-12T18:49:38.000Z","description":"山行野宿，孤身万里","headline":"Java","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030404.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030404.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410142030404.png"}]}</script>
+  
+</body>
+</html>

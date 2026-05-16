@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/crypto-suanfa.rL1sbsI5.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>crypto-suanfa - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="crypto-suanfa">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503102208453.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">crypto-suanfa</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-05-06 20:37:35"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-05-06</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">5k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">21m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AF%86%E7%A0%81%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>密码笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=crypto" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>crypto</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：网鼎杯 2020 青龙组youraisemeup（大步小步算法） 首先，我们审计题目，可以发现题目中给予了我们m、c和n的值，其中n=2\512,m则是在（2，m）之间的值，c是m^flag = c mod n 可以看出，这是一道求指标的题目，我们可以通过以下方法进行计算，已知的条件为： 2^e =。</p><p>&lt;!-- more --&gt;</p><h4 id="网鼎杯-2020-青龙组-you-raise-me-up-大步小步算法" tabindex="-1">[网鼎杯 2020 青龙组]you_raise_me_up（大步小步算法） <a class="header-anchor" href="#网鼎杯-2020-青龙组-you-raise-me-up-大步小步算法" aria-label="Permalink to &quot;[网鼎杯 2020 青龙组]you_raise_me_up（大步小步算法）&quot;">​</a></h4><p>首先，我们审计题目，可以发现题目中给予了我们m、c和n的值，其中n=2**512,m则是在（2，m）之间的值，c是m^flag = c mod n</p><p>可以看出，这是一道求指标的题目，我们可以通过以下方法进行计算，已知的条件为：</p><p>2^e = c1 mod n 在这其中，除了e其余条件我们都已知，在这里，我们需要使用离散对数求解的思路：</p><blockquote><p>Shanks’s Babystep-Giantstep Algorithm算法： 1、n=[ √n ]+1</p><p>2、构造两个列表</p><p>list1=[1,g,g^2,g^3,…,g^n]</p><p>list2=[h,hg^(-n),hg^(-2n),…,hg^(-n**2)]</p><p>3、在两个列表中，找到两个相同的数 g^i=hg^(-jn)</p><p>=&gt;g^(i+jn)=h mod n</p><p>4、我们所求的e=i+jn python库应用：</p><p>python(sympy库) x=sympy.discrete_log(n,a,g)</p></blockquote><p>exp</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>m = 391190709124527428959489662565274039318305952172936859403855079581402770986890308469084735451207885386318986881041563704825943945069343345307381099559075
+c = 6665851394203214245856789450723658632520816791621796775909766895233000234023642878786025644953797995373211308485605397024123180085924117610802485972584499
+n=2**512
+ 
+ 
+import gmpy2
+from Crypto.Util.number import *
+import sympy
+x=sympy.discrete_log(n,c,m)
+print(long_to_bytes(x))
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="救世捷径-dijstra算法" tabindex="-1">救世捷径（dijstra算法） <a class="header-anchor" href="#救世捷径-dijstra算法" aria-label="Permalink to &quot;救世捷径（dijstra算法）&quot;">​</a></h4><p>这道题感觉跟acm的寻找最短路径一样.</p><p>txt文件中每行的前两个数字作为无向图的顶点，第三个数字是两顶点之间的距离，最后的字符串是两顶点之间的内容，将起点到终点最短路径经过的边上的内容组合起来便是flag。 单源点最短路径算法：dijstra算法。 一些想到哪是哪的tips写在这里咯：</p><p><strong>1.一些前期的初始化和数据处理</strong></p><p>1）初始化各点之间的距离为“无穷远”（在程序中用一个比较大的数代替这个无穷远的概念），一般可以直观地想出用27*27的二维数组存这些距离值（Python中是用list套list作为过去高级语言中二维数组的那种存在……而且要注意要初始化把list里面都放上东西才行！），之后我们就操作索引是1-26的那些元素，浪费掉位置0处的空间，但可以恰好对应顶点1-26，清晰明了~</p><p>2）按行读取题目txt文件中的内容，用的是readlines()，得到的数据形式是每行作为一个元素组成的list。然后用strip()去掉行尾的换行符’\n’，再用split(’ &#39;)将每行内容按空格分割组成新的list，方便后面在程序中的调用。</p><p>3）因为在2）步中已经分割出了每行的元素，就可以用2）步中的数据去初始化1）步中27*27的list中的数据，把已知的那些两点之间的距离放入即可，具体写法见程序代码。</p><p><strong>2.实现dijstra算法的函数</strong></p><p>1）初始化一个长度是27，元素全是0xffff（代表距离很远）的list，用于记录当前顶点（索引与顶点序号一致是1-26）对于顶点1的最短距离。</p><p>2）初始化一个长度为27，元素全是0的list，元素值用于记录当前顶点（索引与顶点序号一致是1-26）是否已经找到了距离顶点1的最短路径，确定了最短路径就置该顶点序号对应索引值的元素为1。后面将这里元素值是1的顶点称为“已经确定的集合”。每次更新完各顶点到顶点1的距离后，找到最短的一个，将该顶点位置元素置1，该顶点就不再参与后续的遍历。</p><p>3）初始化一个长度为27，元素全是1的list，用于记录当前顶点到顶点1的最短路径的前驱顶点，用于最后回溯路径。</p><p><strong>过程：</strong></p><p>首先找到和顶点1直连的顶点，找到这些顶点中距离顶点1最短的一个顶点，将该顶点加入“已经确定的集合“，遍历该顶点的邻接顶点，更新顶点1到各个邻接顶点的最短距离。再找到现在与顶点1距离最短的顶点（在”已经确定的集合“中的顶点就不再遍历），再去遍历该顶点的邻接顶点，更新顶点1到这些邻接顶点的最短距离，从中找到距离最短的顶点加入“已经确定的集合”，再遍历该顶点的邻接顶点，更新这些顶点与顶点1的最短距离，找到与顶点1距离最短的顶点……以此循环直至所有顶点都加入“确定的集合”。</p><p>核心思想：</p><p>每次循环都找到当前距离顶点1最近的一个顶点，判断路径中经过该顶点后再到达与其邻接的其他顶点的距离，是否比之前存储的这些顶点到顶点1的距离更短，如果更短就更新对应顶点到顶点1的最短距离，更新完后再找到与顶点1距离最短的顶点重复上述操作。</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">graph=[]
+for i in range(27):
+    graph.append([]) #在一个list中放27个list，索引0-26
+for i in range(27):
+    for j in range(27):
+        graph[i].append(0xffff) #先将图中各个顶点之间的距离初始化为一个比较大的数
+f=open(&#39;./Downloads/dij.txt&#39;,&#39;r&#39;).readlines()  #按行读取，每行内容是list中的一个元素，全部内容组成一个整体的list
+#这里需要先手动将txt文件中的最后一行换行去掉否则会多一个&#39;\n&#39;
+#print(f)
+li=[]
+for x in f:
+    li.append(x.strip().split(&#39; &#39;)) #strip()删除字符串前后空格，这里是去掉了最后的换行符&#39;\n&#39;，然后再按&#39; &#39;分割每行的每个元素，原本在同一子list中的一行元素也彼此独立出来
+#print(li)
+for x in li:
+    graph[int(x[0])][int(x[1])]=int(x[2])
+    graph[int(x[1])][int(x[0])]=int(x[2])
+
+def try_dijstra():
+    min_d=[0xffff for i in range(27)]  #记录点i到起点1的最短距离
+    route=[1 for i in range(27)]  #记录前驱顶点
+    isSure=[0 for i in range(27)]  #记录各点到起点距离是否已经确定
+    for i in range(2,27):
+        min_d[i]=graph[i][1]  #初始化一下能直连1的顶点和1的距离
+    min_d[1]=0
+    isSure[1]=1
+
+    for i in range(26):
+        min=0xfffff
+        temp=-1
+        for j in range(2,27): # 找到当前离顶点1最近的顶点加入已经确定的“顶点阵营”
+            if isSure[j]==0 and min&gt;min_d[j]:
+                min=min_d[j]
+                temp=j
+        isSure[temp]=1
+        for j in range(2,27):# 判断从顶点1开始，在经过该顶点后，再到达其邻接顶点的距离，是否比其邻接顶点原本到顶点1的距离更近，如果更近就更新最短距离
+            if min_d[j]&gt;min_d[temp]+graph[temp][j]:
+                min_d[j]=min_d[temp]+graph[temp][j]
+                route[j]=temp
+    return (route,min_d)
+
+route,min_d=try_dijstra()
+print(min_d[26]) #最短距离
+print(route) #前驱顶点
+
+passv=[]  #存放顶点之间的“内容”（内容最后要组成flag
+for i in range(27):
+    passv.append([]) # 还是在一个list中放27个list
+for i in range(27):
+    for j in range(27):
+        passv[i].append(0)  #需要将内部list中初始化出27个“位置”否则会报错索引越界
+for x in li:
+    passv[int(x[0])][int(x[1])]=x[3]
+    passv[int(x[1])][int(x[0])]=x[3]
+
+y=26
+l=[]
+while y!=1:
+    print(y) #输出终点到起点的最短路径经过的顶点
+    l.append(passv[y][route[y]]) #y到其前驱顶点route[y]之间的内容
+    y=route[y]
+print()
+l=l[::-1]
+for i in range(len(l)):
+    print(l[i],end=&#39;&#39;)
+
+&#39;&#39;&#39;
+339
+[1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 5, 5, 5, 4, 4, 4, 6, 6, 6, 25, 9, 11, 12, 6, 18, 22, 25]
+26 25 22 12 5 2 
+FLAG{WEIVKASJVLSJCHFSJVHJSDEV}
+&#39;&#39;&#39;
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="gkctf-2021-random-梅森算法" tabindex="-1">[GKCTF 2021]Random（梅森算法） <a class="header-anchor" href="#gkctf-2021-random-梅森算法" aria-label="Permalink to &quot;[GKCTF 2021]Random（梅森算法）&quot;">​</a></h4><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import random
+from hashlib import md5
+
+def get_mask():
+    file = open(&quot;random.txt&quot;,&quot;w&quot;)
+    for i in range(104):
+        file.write(str(random.getrandbits(32))+&quot;\n&quot;)
+        file.write(str(random.getrandbits(64))+&quot;\n&quot;)
+        file.write(str(random.getrandbits(96))+&quot;\n&quot;)
+    file.close()
+get_mask()
+flag = md5(str(random.getrandbits(32)).encode()).hexdigest()
+print(flag)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>通过阅读代码，我们知道是求生成104组随机数后的卜随机数</p><p>通过算法出的随机数是伪随机数，这里用到的随机数生成函数式random.getrandbits(k)</p><blockquote><p>random.getrandbits(k)</p><p>返回具有 k 个随机比特位的非负 Python 整数。 此方法随 MersenneTwister 生成器一起提供，其他一些生成器也可能将其作为 API 的可选部分提供。 在可能的情况下，getrandbits() 会启用 randrange() 来处理任意大的区间。在 3.9 版更改: 此方法现在接受零作为 k 的值。</p></blockquote><p>所以这题考的其实是梅森算法，Mersenne Twister是为了解决过去伪随机生成器PRNG产生的伪随机数质量不高而生成的（传送门：<a href="https://liam.page/2018/01/12/Mersenne-twister/#:~:text=%E6%A2%85%E6%A3%AE%E6%97%8B%E8%BD%AC%E7%AE%97%E6%B3%95%EF%BC%88Mersenne%20Twister%20Algorithm%EF%BC%8C%E7%AE%80%E7%A7%B0%20MT%EF%BC%89%E6%98%AF%E4%B8%BA%E4%BA%86%E8%A7%A3%E5%86%B3%E8%BF%87%E5%8E%BB%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%8F%91%E7%94%9F%E5%99%A8%EF%BC%88Pseudo-Random%20Number%20Generator%EF%BC%8C%E7%AE%80%E7%A7%B0%20PRNG%EF%BC%89%E4%BA%A7%E7%94%9F%E7%9A%84%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E8%B4%A8%E9%87%8F%E4%B8%8D%E9%AB%98%E8%80%8C%E6%8F%90%E5%87%BA%E7%9A%84%E6%96%B0%E7%AE%97%E6%B3%95%E3%80%82.%20%E8%AF%A5%E7%AE%97%E6%B3%95%E7%94%B1%E6%9D%BE%E6%9C%AC%E7%9C%9E%EF%BC%88Makoto,%E6%98%AF%E4%B8%BA%E4%BA%86%E8%A7%A3%E5%86%B3%E8%BF%87%E5%8E%BB%20PRNG%20%E8%B4%A8%E9%87%8F%E4%BD%8E%E4%B8%8B%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E9%82%A3%E4%B9%88%E9%A6%96%E5%85%88%E6%88%91%E4%BB%AC%E5%B0%B1%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E4%B8%80%E4%B8%AA%E8%83%BD%E5%A4%9F%E5%BA%A6%E9%87%8F%20PRNG%20%E8%B4%A8%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82.%20%E5%90%A6%E5%88%99%EF%BC%8C%E3%80%8C%E5%85%AC%E8%AF%B4%E5%85%AC%E6%9C%89%E7%90%86%E5%A9%86%E8%AF%B4%E5%A9%86%E6%9C%89%E7%90%86%E3%80%8D%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E6%97%A0%E6%B3%95%E5%AF%B9%20PRNG%20%E4%BD%9C%E5%87%BA%E7%BB%9F%E4%B8%80%E7%9A%84%E8%AF%84%E4%BB%B7%E4%BA%86%E3%80%82." target="_blank" rel="noreferrer">梅森旋转算法</a>）。我们了解MT19937能做生成在1&lt;=k&lt;=623个均匀分布的32位随机数。而真巧我们已经有624(（104+104*64/32+104*96/32）=624)个生成的随机数了，也就是说，根据已有的随机数，我们完全可以推出下面会生成的随机数</p><p>我们需要用到rendcrack库</p><p>先了解一下rendcrack</p><blockquote><p>randcrack 工作原理 该生成器基于M e r s e n n e T w i s t e r MersenneTwisterMersenneTwister（梅森算法），能够生成具有优异统计特性的数字（与真正的随机数无法区分）。但是，此生成器的设计目的不是加密安全的。您不应在关键应用程序中用作加密方案的PRNG。 您可以[在维基百科上]了解有关此生成器的更多信息(<a href="https://en.wikipedia.org/wiki/Mersenne_Twister" target="_blank" rel="noreferrer">https://en.wikipedia.org/wiki/Mersenne_Twister</a>). 这个饼干的工作原理如下。 它从生成器获得前624个32位数字，并获得Mersenne Twister矩阵的最可能状态，即内部状态。从这一点来看，发电机应该与裂解器同步。 如何使用 将生成器生成的32位整数准确地输入cracker非常重要，因为它们无论如何都会生成，但如果您不请求它们，则会删除它们。 同样，您必须在出现新种子之后，或者在生成624 ∗ 32 位之后，准确地为破解程序馈电，因为每个624 ∗ 32 位数字生成器都会改变其状态，并且破解程序设计为从某个状态开始馈电。</p></blockquote><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from hashlib import md5
+from randcrack import RandCrack
+def foo(l,i):
+    a=[]
+    a.append(l[i])
+    b1=l[i+1]&gt;&gt;32
+    b2=l[i+1]&amp;(2**32-1)
+    a.append(b2)
+    a.append(b1)
+    b1=l[i+2]&gt;&gt;64
+    b2=(l[i+2]&amp;(2**64-1))&gt;&gt;32
+    b3=l[i+2]&amp;(2**32-1)
+    a.append(b3)
+    a.append(b2)
+    a.append(b1)
+    return a
+with open(r&#39;random.txt&#39;,&#39;r&#39;) as f:
+    l=f.readlines()
+l=[int(i.strip()) for i in l]
+ll=[]
+for i in range(0,len(l),3):
+    ll+=foo(l,i)
+rc=RandCrack()
+for i in ll:
+    rc.submit(i)
+aa=rc.predict_getrandbits(32)
+print(md5(str(aa).encode()).hexdigest())
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>脚本源于：</p><p>代码就很容易读懂了，先将我们有的随机数排列到一个列表ll中，然后挨个用RandCrack.submit()提交，最后用RandCrack.predict_getrandbits()预测下一个32位随机数，然后md5一下输出就好了</p><h4 id="suctf2019-mt-梅森算法" tabindex="-1">[SUCTF2019]MT（梅森算法） <a class="header-anchor" href="#suctf2019-mt-梅森算法" aria-label="Permalink to &quot;[SUCTF2019]MT（梅森算法）&quot;">​</a></h4><p>考点是MT19937,也就是梅森旋转算法</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from Crypto.Random import random
+from Crypto.Util import number
+from flag import flag
+
+def convert(m):
+    m = m ^ m &gt;&gt; 13
+    m = m ^ m &lt;&lt; 9 &amp; 2029229568
+    m = m ^ m &lt;&lt; 17 &amp; 2245263360
+    m = m ^ m &gt;&gt; 19
+    return m
+
+def transform(message):
+    assert len(message) % 4 == 0
+    new_message = &#39;&#39;
+    for i in range(len(message) / 4):
+        block = message[i * 4 : i * 4 +4]
+        block = number.bytes_to_long(block)
+        block = convert(block)
+        block = number.long_to_bytes(block, 4)
+        new_message += block
+    return new_message
+
+transformed_flag = transform(flag[5:-1].decode(&#39;hex&#39;)).encode(&#39;hex&#39;)
+print &#39;transformed_flag:&#39;, transformed_flag
+# transformed_flag: 641460a9e3953b1aaa21f3a2
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>加密原理很简单，就是通过 <strong>convert()</strong> 函数获取随机数将 flag 加密。考的题型是 <strong>逆向 extract_number函数</strong></p><p>解题EXP：</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">#python2
+from Crypto.Util import number
+
+# right shift inverse
+def inverse_right(res, shift, bits=32):
+    tmp = res
+    for i in range(bits // shift):
+        tmp = res ^ tmp &gt;&gt; shift
+    return tmp
+
+# right shift with mask inverse
+def inverse_right_mask(res, shift, mask, bits=32):
+    tmp = res
+    for i in range(bits // shift):
+        tmp = res ^ tmp &gt;&gt; shift &amp; mask
+    return tmp
+
+# left shift inverse
+def inverse_left(res, shift, bits=32):
+    tmp = res
+    for i in range(bits // shift):
+        tmp = res ^ tmp &lt;&lt; shift
+    return tmp
+
+# left shift with mask inverse
+def inverse_left_mask(res, shift, mask, bits=32):
+    tmp = res
+    for i in range(bits // shift):
+        tmp = res ^ tmp &lt;&lt; shift &amp; mask
+    return tmp
+
+def extract_number(y):
+    y = y ^ y &gt;&gt; 11
+    y = y ^ y &lt;&lt; 7 &amp; 2636928640
+    y = y ^ y &lt;&lt; 15 &amp; 4022730752
+    y = y ^ y &gt;&gt; 18
+    return y&amp;0xffffffff
+
+def convert(y):
+    y = inverse_right(y,19)
+    y = inverse_left_mask(y,17,2245263360)
+    y = inverse_left_mask(y,9,2029229568)
+    y = inverse_right(y,13)
+    return y&amp;0xffffffff
+
+def transform(message):
+    assert len(message) % 4 == 0
+    new_message = &#39;&#39;
+    for i in range(len(message) / 4):
+        block = message[i * 4 : i * 4 +4]
+        block = number.bytes_to_long(block)
+        block = convert(block)
+        block = number.long_to_bytes(block, 4)
+        new_message += block
+    return new_message
+
+transformed_flag = &#39;641460a9e3953b1aaa21f3a2&#39;
+c = transformed_flag.decode(&#39;hex&#39;)
+flag = transform(c)
+print flag.encode(&#39;hex&#39;)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>第二种解法是基于出题人的算法，使得明文通过不断的加密最后还是明文。</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">#python2
+from Crypto.Random import random
+from Crypto.Util import number
+
+def convert(m):
+    m = m ^ m &gt;&gt; 13
+    m = m ^ m &lt;&lt; 9 &amp; 2029229568
+    m = m ^ m &lt;&lt; 17 &amp; 2245263360
+    m = m ^ m &gt;&gt; 19
+    return m
+
+def transform(message):
+    assert len(message) % 4 == 0
+    new_message = &#39;&#39;
+    for i in range(len(message) / 4):
+        block = message[i * 4 : i * 4 +4]
+        block = number.bytes_to_long(block)
+        block = convert(block)
+        block = number.long_to_bytes(block, 4)
+        new_message += block
+    return new_message
+def circle(m):
+    t=m
+    while True:
+        x=t
+        t=transform(t)
+        if t==m:
+            return x
+transformed_flag=&#39;641460a9e3953b1aaa21f3a2&#39;
+flag = circle(transformed_flag.decode(&#39;hex&#39;)).encode(&#39;hex&#39;)
+print(&#39;transformed_flag:&#39;, flag)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="de1ctf2019-xorz-重复密钥异或用汉明距离" tabindex="-1">[De1CTF2019]xorz（重复密钥异或用汉明距离） <a class="header-anchor" href="#de1ctf2019-xorz-重复密钥异或用汉明距离" aria-label="Permalink to &quot;[De1CTF2019]xorz（重复密钥异或用汉明距离）&quot;">​</a></h4><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from itertools import *
+from data import flag,plain
+
+key=flag.strip(&quot;de1ctf{&quot;).strip(&quot;}&quot;)
+assert(len(key)&lt;38) 37
+salt=&quot;WeAreDe1taTeam&quot;
+ki=cycle(key)
+si=cycle(salt)
+cipher = &#39;&#39;.join([hex(ord(p) ^ ord(next(ki)) ^ ord(next(si)))[2:].zfill(2) for p in plain])
+print cipher
+# output:
+# 49380d773440222d1b421b3060380c3f403c3844791b202651306721135b6229294a3c3222357e766b2f15561b35305e3c3b670e49382c295c6c170553577d3a2b791470406318315d753f03637f2b614a4f2e1c4f21027e227a4122757b446037786a7b0e37635024246d60136f7802543e4d36265c3e035a725c6322700d626b345d1d6464283a016f35714d434124281b607d315f66212d671428026a4f4f79657e34153f3467097e4e135f187a21767f02125b375563517a3742597b6c394e78742c4a725069606576777c314429264f6e330d7530453f22537f5e3034560d22146831456b1b72725f30676d0d5c71617d48753e26667e2f7a334c731c22630a242c7140457a42324629064441036c7e646208630e745531436b7c51743a36674c4f352a5575407b767a5c747176016c0676386e403a2b42356a727a04662b4446375f36265f3f124b724c6e346544706277641025063420016629225b43432428036f29341a2338627c47650b264c477c653a67043e6766152a485c7f33617264780656537e5468143f305f4537722352303c3d4379043d69797e6f3922527b24536e310d653d4c33696c635474637d0326516f745e610d773340306621105a7361654e3e392970687c2e335f3015677d4b3a724a4659767c2f5b7c16055a126820306c14315d6b59224a27311f747f336f4d5974321a22507b22705a226c6d446a37375761423a2b5c29247163046d7e47032244377508300751727126326f117f7a38670c2b23203d4f27046a5c5e1532601126292f577776606f0c6d0126474b2a73737a41316362146e581d7c1228717664091c
+</code></pre><button class="code-block-unfold-btn"></button></div><p>cycle函数</p><p><code>cycle()</code> 函数是 Python 标准库 <code>itertools</code> 中的一个函数，可以在一个可迭代对象（例如列表、元组或字符串）中无限循环遍历元素。</p><p>zfill函数</p><p>返回指定长度的字符串，原字符串右对齐，前面填充0。</p><p>我们来审计代码，代码使用了p、ki、si进行了异或，未知部分有两个，flag和plain，最后输出结果是16进制的密文，salt和key都是循环使用的</p><p>salt是已知的，因此先把salt层去掉</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from itertools import *
+salt=&quot;WeAreDe1taTeam&quot;
+si=cycle(salt)
+c = &#39;49380d773440222d1b421b3060380c3f403c3844791b202651306721135b6229294a3c3222357e766b2f15561b35305e3c3b670e49382c295c6c170553577d3a2b791470406318315d753f03637f2b614a4f2e1c4f21027e227a4122757b446037786a7b0e37635024246d60136f7802543e4d36265c3e035a725c6322700d626b345d1d6464283a016f35714d434124281b607d315f66212d671428026a4f4f79657e34153f3467097e4e135f187a21767f02125b375563517a3742597b6c394e78742c4a725069606576777c314429264f6e330d7530453f22537f5e3034560d22146831456b1b72725f30676d0d5c71617d48753e26667e2f7a334c731c22630a242c7140457a42324629064441036c7e646208630e745531436b7c51743a36674c4f352a5575407b767a5c747176016c0676386e403a2b42356a727a04662b4446375f36265f3f124b724c6e346544706277641025063420016629225b43432428036f29341a2338627c47650b264c477c653a67043e6766152a485c7f33617264780656537e5468143f305f4537722352303c3d4379043d69797e6f3922527b24536e310d653d4c33696c635474637d0326516f745e610d773340306621105a7361654e3e392970687c2e335f3015677d4b3a724a4659767c2f5b7c16055a126820306c14315d6b59224a27311f747f336f4d5974321a22507b22705a226c6d446a37375761423a2b5c29247163046d7e47032244377508300751727126326f117f7a38670c2b23203d4f27046a5c5e1532601126292f577776606f0c6d0126474b2a73737a41316362146e581d7c1228717664091c&#39;.decode(&#39;hex&#39;)
+no_salt = &#39;&#39;.join([chr(ord(p) ^ ord(next(si))) for p in c])
+print no_salt.encode(&#39;hex&#39;)
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>no_salt =1e5d4c055104471c6f234f5501555b5a014e5d001c2a54470555064c443e235b4c0e590356542a130a4242335a47551a590a136f1d5d4d440b0956773613180b5f184015210e4f541c075a47064e5f001e2a4f711844430c473e2413011a100556153d1e4f45061441151901470a196f035b0c4443185b322e130806431d5a072a46385901555c5b550a541c1a2600564d5f054c453e32444c0a434d43182a0b1c540a55415a550a5e1b0f613a5c1f10021e56773a5a0206100852063c4a18581a1d15411d17111b052113460850104c472239564c0755015a13271e0a55553b5a47551a54010e2a06130b5506005a393013180c100f52072a4a1b5e1b165d50064e411d0521111f235f114c47362447094f10035c066f19025402191915110b4206182a544702100109133e394505175509671b6f0b01484e06505b061b50034a2911521e44431b5a233f13180b5508131523050154403740415503484f0c2602564d470a18407b775d031110004a54290319544e06505b060b424f092e1a770443101952333213030d554d551b2006064206555d50141c454f0c3d1b5e4d43061e453e39544c17580856581802001102105443101d111a043c03521455074c473f3213000a5b085d113c194f5e08555415180f5f433e270d131d420c1957773f560d11440d40543c060e470b55545b114e470e193c155f4d47110947343f13180c100f565a000403484e184c15050250081f2a54470545104c5536251325435302461a3b4a02484e12545c1b4265070b3b5440055543185b36231301025b084054220f4f42071b1554020f430b196f19564d4002055d79
+</code></pre><button class="code-block-unfold-btn"></button></div><p>去掉salt层后，就只剩下plain和key了，key就是我们要求的flag，这里我们注意到key的位数小于38位，所以使用key来循环异或加密的，对于利用重复密钥异或的情况，我们有现成的脚本Break repeating-key XOR，原理为汉明距离hamming_distance</p><p>例子</p><ul><li>“karolin” and “kathrin” is 3.</li><li>“karolin” and “kerstin” is 3.</li><li>1011101 and 1001001 is 2.</li><li>2173896 and 2233796 is 3.</li></ul><blockquote><p><strong>汉明距离（Hamming Distance）</strong> 是衡量两个字符串（或两个二进制数）之间的差异的度量。它表示的是两个字符串（或二进制数）中相同位置上不同字符的个数。简而言之，它就是计算两个字符串中对应字符不同的位置的数量。</p><p>或者</p><p><strong>hamming_distance</strong>：在信息论中表示两个等长字符串在对应位置上不同字符的数目 以d(x, y)表示字符串x和y之间的汉明距离 简单来说 汉明距离度量了通过替换字符的方式将字符串x变成y所需要的最小的替换次数</p></blockquote><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py"># coding:utf-8
+
+# python3
+
+no_salt =bytes.fromhex(&#39;1e5d4c055104471c6f234f5501555b5a014e5d001c2a54470555064c443e235b4c0e590356542a130a4242335a47551a590a136f1d5d4d440b0956773613180b5f184015210e4f541c075a47064e5f001e2a4f711844430c473e2413011a100556153d1e4f45061441151901470a196f035b0c4443185b322e130806431d5a072a46385901555c5b550a541c1a2600564d5f054c453e32444c0a434d43182a0b1c540a55415a550a5e1b0f613a5c1f10021e56773a5a0206100852063c4a18581a1d15411d17111b052113460850104c472239564c0755015a13271e0a55553b5a47551a54010e2a06130b5506005a393013180c100f52072a4a1b5e1b165d50064e411d0521111f235f114c47362447094f10035c066f19025402191915110b4206182a544702100109133e394505175509671b6f0b01484e06505b061b50034a2911521e44431b5a233f13180b5508131523050154403740415503484f0c2602564d470a18407b775d031110004a54290319544e06505b060b424f092e1a770443101952333213030d554d551b2006064206555d50141c454f0c3d1b5e4d43061e453e39544c17580856581802001102105443101d111a043c03521455074c473f3213000a5b085d113c194f5e08555415180f5f433e270d131d420c1957773f560d11440d40543c060e470b55545b114e470e193c155f4d47110947343f13180c100f565a000403484e184c15050250081f2a54470545104c5536251325435302461a3b4a02484e12545c1b4265070b3b5440055543185b36231301025b084054220f4f42071b1554020f430b196f19564d4002055d79&#39;)
+import base64
+import string
+
+def bxor(a, b):# xor two byte strings of different lengths
+   if len(a) &gt; len(b):
+        return bytes([x ^ y for x, y in zip(a[:len(b)], b)])
+   else:
+      return bytes([x ^ y for x, y in zip(a, b[:len(a)])])
+def hamming_distance(b1, b2):
+    differing_bits =0
+
+    for byte in bxor(b1, b2):
+        differing_bits += bin(byte).count(&quot;1&quot;)
+    return differing_bits
+
+def score(s):
+   freq = {}
+   freq[&#39; &#39;] = 700000000
+   freq[&#39;e&#39;] = 390395169
+   freq[&#39;t&#39;] = 282039486
+   freq[&#39;a&#39;] = 248362256
+   freq[&#39;o&#39;] = 235661502
+   freq[&#39;i&#39;] = 214822972
+   freq[&#39;n&#39;] = 214319386
+   freq[&#39;s&#39;] = 196844692
+   freq[&#39;h&#39;] = 193607737
+   freq[&#39;r&#39;] = 184990759
+   freq[&#39;d&#39;] = 134044565
+   freq[&#39;l&#39;] = 125951672
+   freq[&#39;u&#39;] = 88219598
+   freq[&#39;c&#39;] = 79962026
+   freq[&#39;m&#39;] = 79502870
+   freq[&#39;f&#39;] = 72967175
+   freq[&#39;w&#39;] = 69069021
+   freq[&#39;g&#39;] = 61549736
+   freq[&#39;y&#39;] = 59010696
+   freq[&#39;p&#39;] = 55746578
+   freq[&#39;b&#39;] = 47673928
+   freq[&#39;v&#39;] = 30476191
+   freq[&#39;k&#39;] = 22969448
+   freq[&#39;x&#39;] = 5574077
+   freq[&#39;j&#39;] = 4507165
+   freq[&#39;q&#39;] = 3649838
+   freq[&#39;z&#39;] = 2456495
+
+   score = 0
+   string=bytes.decode(s)
+   for c in string.lower():
+       if c in freq:
+            score += freq[c]
+   return score
+
+def break_single_key_xor(b1):
+    max_score = 0
+    english_plaintext = 0
+    key = 0
+
+    for i in range(0,256):
+        b2 = [i]* len(b1)
+        try:
+            plaintext = bxor(b1, b2)
+            pscore = score(plaintext)
+        except Exception:
+            continue
+        if pscore &gt; max_score or not max_score:
+           max_score = pscore
+           english_plaintext = plaintext
+           key = chr(i)
+    return key
+
+b = no_salt
+
+normalized_distances = []
+
+for KEYSIZE in range(2, 40):
+
+   # 我们取其中前6段计算平局汉明距离
+
+   b1 = b[: KEYSIZE]
+   b2 = b[KEYSIZE: KEYSIZE * 2]
+   b3 = b[KEYSIZE * 2: KEYSIZE * 3]
+   b4 = b[KEYSIZE * 3: KEYSIZE * 4]
+   b5 = b[KEYSIZE * 4: KEYSIZE * 5]
+   b6 = b[KEYSIZE * 5: KEYSIZE * 6]
+   b7 = b[KEYSIZE * 6: KEYSIZE * 7]
+
+   normalized_distance = float(
+      hamming_distance(b1, b2) +
+      hamming_distance(b2, b3) +
+      hamming_distance(b3, b4) +
+      hamming_distance(b4, b5) +
+      hamming_distance(b5, b6) 
+   ) / (KEYSIZE * 5)
+   normalized_distances.append(
+      (KEYSIZE, normalized_distance)
+   )
+
+normalized_distances = sorted(normalized_distances, key=lambda x: x[1])
+
+for KEYSIZE, _ in normalized_distances[:5]:
+   block_bytes = [[] for _ in range(KEYSIZE)]
+   for i, byte in enumerate(b):
+        block_bytes[i % KEYSIZE].append(byte)
+   keys = &#39;&#39;
+
+   for bbytes in block_bytes:
+        keys += break_single_key_xor(bbytes)
+   key = bytearray(keys * len(b), &quot;utf-8&quot;)
+   plaintext = bxor(b, key)
+   print(&quot;keysize:&quot;, KEYSIZE)
+   print(&quot;key is:&quot;, keys, &quot;n&quot;)
+   s = bytes.decode(plaintext)
+   print(s)
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503102208453.png" alt="image-20250310220753348" loading="lazy" decoding="async"></figure><p>参考</p><p><a href="https://www.jianshu.com/p/ecd767d9af0d" target="_blank" rel="noreferrer">https://www.jianshu.com/p/ecd767d9af0d</a></p><p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.anquanke.com%2Fpost%2Fid%2F161171" target="_blank" rel="noreferrer">小记一类ctf密码题解题思路 </a></p><p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fxz.aliyun.com%2Ft%2F3256%23toc-22" target="_blank" rel="noreferrer">https://xz.aliyun.com/t/3256#toc-22</a></p><p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fcypher.codes%2Fwriting%2Fcryptopals-challenge-set-1" target="_blank" rel="noreferrer">https://cypher.codes/writing/cryptopals-challenge-set-1</a></p><p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fcryptopals.com%2Fsets%2F1%2Fchallenges%2F6" target="_blank" rel="noreferrer">https://cryptopals.com/sets/1/challenges/6</a></p><p><a href="https://mp.weixin.qq.com/s?__biz=MzU3ODc2NTg1OA==&amp;mid=2247484089&amp;idx=1&amp;sn=3f41f1d65595f47dc72918b22cffc128&amp;chksm=fd7117f4ca069ee292d6bbabe37d5aa9445747d0c13dd8b2d2f1d274f7afa32f910fe28ff07e&amp;mpshare=1&amp;scene=23&amp;srcid=&amp;sharer_sharetime=1565101436270&amp;sharer_shareid=0a12e40935fbeb4e04dfab7ff42aca93#rd" target="_blank" rel="noreferrer">https://mp.weixin.qq.com/s?__biz=MzU3ODc2NTg1OA==&amp;mid=2247484089&amp;idx=1&amp;sn=3f41f1d65595f47dc72918b22cffc128&amp;chksm=fd7117f4ca069ee292d6bbabe37d5aa9445747d0c13dd8b2d2f1d274f7afa32f910fe28ff07e&amp;mpshare=1&amp;scene=23&amp;srcid=&amp;sharer_sharetime=1565101436270&amp;sharer_shareid=0a12e40935fbeb4e04dfab7ff42aca93#rd</a></p><h4 id="羊城杯-2020-gmc-二次剩余和勒让德符号" tabindex="-1">[羊城杯 2020]GMC（二次剩余和勒让德符号） <a class="header-anchor" href="#羊城杯-2020-gmc-二次剩余和勒让德符号" aria-label="Permalink to &quot;[羊城杯 2020]GMC（二次剩余和勒让德符号）&quot;">​</a></h4><h4 id="de1ctf2019-babylfsr-b-m算法" tabindex="-1">[De1CTF2019]Babylfsr(B-M算法) <a class="header-anchor" href="#de1ctf2019-babylfsr-b-m算法" aria-label="Permalink to &quot;[De1CTF2019]Babylfsr(B-M算法)&quot;">​</a></h4><p>参考：<a href="https://ctf-wiki.org/crypto/streamcipher/fsr/lfsr/#b-m" target="_blank" rel="noreferrer">ctfwiki</a></p><h4 id="utctf2020-curveball-shamir秘密共享算法" tabindex="-1">[UTCTF2020]Curveball（Shamir秘密共享算法） <a class="header-anchor" href="#utctf2020-curveball-shamir秘密共享算法" aria-label="Permalink to &quot;[UTCTF2020]Curveball（Shamir秘密共享算法）&quot;">​</a></h4><p>Shamir秘密共享算法基本原理</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507241103589.png" alt="image-20250724110310401" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507241131729.png" alt="image-20250724113125617" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>(C81E728D9D4C2F636F067F89CC14862C, 31E96A93BF1A7CE1872A3CCDA6E07F86)
+(ECCBC87E4B5CE2FE28308FD9F2A7BAF3, ADF6E4F1052BDE978344743CCDCF5771)
+(E4DA3B7FBBCE2345D7772B0674A318D5, 0668FBCFE4098FEA0218163AC21E6531)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>题目中的三组数据为md5加密后的数据，md5解密得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>(2,5398141)
+(3,5398288)
+(5,5398756)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>所以用sage在有限域上解密 exp.sage</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>x_0,y_0 = (2,5398141)
+x_1,y_1 = (3,5398288)
+x_2,y_2 = (5,5398756)
+R.&lt;x&gt; = QQ[]
+l_0 = ((x-x_1)/(x_0-x_1))*((x-x_2)/(x_0-x_2))
+l_1 = ((x-x_0)/(x_1-x_0))*((x-x_2)/(x_1-x_2))
+l_2 = ((x-x_0)/(x_2-x_0))*((x-x_1)/(x_2-x_1))
+f_x = (y_0*l_0) + （y_1*l_1） + （y_2*l_2）
+print(f_x)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>29*x^2 + 2*x + 5398021
+</code></pre><button class="code-block-unfold-btn"></button></div><p>但5398021不是flag，那只能是txt行数，我们在5398021看到flag</p><figure><img src="https://i-blog.csdnimg.cn/blog_migrate/5b011611a86ccd031604a199941fff21.png" alt="在这里插入图片描述" loading="lazy" decoding="async"></figure><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/crypto-suanfa" target="_blank" title="本文链接">https://kinsey973.github.io/posts/crypto-suanfa</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/crypto-1" class="post-nav-prev" title="crypto-"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">crypto-</span></a></div><div class="post-nav-item"><a href="/posts/ctfshow-xss" class="post-nav-next" title="ctfshow xss"><span class="title truncate" text="sm">ctfshow xss</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-05-06T20:37:35.000Z","datePublished":"2025-05-06T20:37:35.000Z","inLanguage":"zh-CN","name":"crypto-suanfa","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-05-06T20:37:35.000Z","datePublished":"2025-05-06T20:37:35.000Z","description":"山行野宿，孤身万里","name":"crypto-suanfa","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-05-06T20:37:35.000Z","datePublished":"2025-05-06T20:37:35.000Z","description":"山行野宿，孤身万里","headline":"crypto-suanfa","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503102208453.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503102208453.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202503102208453.png"}]}</script>
+  
+</body>
+</html>

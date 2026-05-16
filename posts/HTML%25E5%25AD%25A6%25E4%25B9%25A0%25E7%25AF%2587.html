@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/HTML学习篇.CgGDOsnT.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML学习篇 - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="HTML学习篇">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101447318.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">HTML学习篇</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2023-12-09 18:12:26"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2023-12-09</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">2.9k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">11m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=%E9%A2%98%E8%A7%A3" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>题解</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：HTML是什么 HTML 不是一门编程语言，而是一种用于定义内容结构的标记语言。HTML 由一系列的组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。</p><p>&lt;!-- more --&gt;</p><h1 id="html是什么" tabindex="-1">HTML是什么 <a class="header-anchor" href="#html是什么" aria-label="Permalink to &quot;HTML是什么&quot;">​</a></h1><p>HTML 不是一门编程语言，而是一种用于定义内容结构的<em>标记语言</em>。HTML 由一系列的<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Element" target="_blank" rel="noreferrer">元素</a>组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Tag" target="_blank" rel="noreferrer">标签</a>可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。</p><p>在了解前，先看一下大概：<a href="https://www.runoob.com/tags/html-reference.html" target="_blank" rel="noreferrer">HTML 标签列表(字母排序)</a></p><h1 id="html学习" tabindex="-1">HTML学习 <a class="header-anchor" href="#html学习" aria-label="Permalink to &quot;HTML学习&quot;">​</a></h1><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101447318.png" alt="image-20231209193738651-170213087190711" loading="lazy" decoding="async"></figure><h2 id="基础语法" tabindex="-1">基础语法 <a class="header-anchor" href="#基础语法" aria-label="Permalink to &quot;基础语法&quot;">​</a></h2><h3 id="标签" tabindex="-1">标签 <a class="header-anchor" href="#标签" aria-label="Permalink to &quot;标签&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>单标签 ：   无属性&lt;标签名 /&gt;
+
+​          有属性&lt;标签名 属性名=&quot;属性值&quot;&gt;&lt;/标签名&gt;
+
+双标签 ：   无属性 &lt;标签名&gt;&lt;/标签名&gt;
+
+​           有属性&lt;标签名 属性名=&quot;属性值&quot;&gt;&lt;/标签名&gt;    
+DOCTYPE
+
+&lt;!DOCTYPE html&gt; heml 5版本声明，需写在文档第一行
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>例如：&lt;meta charset=&quot;utf-8&quot; /&gt;   meta为标签，charset为属性，utf-8为属性值
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>‘ / ’是结束标志</strong></p><h3 id="整体结构" tabindex="-1">整体结构 <a class="header-anchor" href="#整体结构" aria-label="Permalink to &quot;整体结构&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;html&gt;...&lt;/html&gt; 表示当前是一个网页
+
+&lt;head&gt;...&lt;/head&gt; 头部信息
+
+&lt;body&gt;...&lt;/body&gt; 身体部分
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="doctype" tabindex="-1">DOCTYPE <a class="header-anchor" href="#doctype" aria-label="Permalink to &quot;DOCTYPE&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;!DOCTYPE html&gt;  html 5版本声明，需写在文档的第一行，‘！’要加
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="例子" tabindex="-1">例子 <a class="header-anchor" href="#例子" aria-label="Permalink to &quot;例子&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101448705.png" alt="image-20231209211145818-170213088699513" loading="lazy" decoding="async"></figure><h2 id="常用标签" tabindex="-1">常用标签 <a class="header-anchor" href="#常用标签" aria-label="Permalink to &quot;常用标签&quot;">​</a></h2><p><strong>标签的属性之间要以空格隔开</strong></p><p>若想要给页面设置颜色，参考以下文章：<a href="https://www.runoob.com/cssref/pr-text-color.html" target="_blank" rel="noreferrer">CSS color 属性</a></p><h3 id="标题和水平线" tabindex="-1">标题和水平线 <a class="header-anchor" href="#标题和水平线" aria-label="Permalink to &quot;标题和水平线&quot;">​</a></h3><p>标题标签：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;h1&gt;&lt;/h1&gt;~&lt;h6&gt;&lt;/h6&gt;  标题依次从大到小
+</code></pre><button class="code-block-unfold-btn"></button></div><p><em><strong>不建议在页面中使用多个h1标签，h1标签可以被搜索引擎获取到，如果有多个，可能会被搜索引擎拉黑</strong></em></p><p>水平线标签：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;hr&gt;   放在body内任意一行，都会在该行生成一个水平线
+
+常用属性：
+width 宽度    1.百分比 
+              2. px
+
+align 对齐方式 left      right     center（默认）
+
+size  水平线粗细
+
+例如：
+&lt;hr width=&quot;50%&quot; alien=&quot;left&quot; size=&quot;5” /&gt; 
+宽度为50% 居左 大小为5的水平线
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="段落和换行" tabindex="-1">段落和换行 <a class="header-anchor" href="#段落和换行" aria-label="Permalink to &quot;段落和换行&quot;">​</a></h3><p>段落标签：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;p&gt;...&lt;p/&gt; 段落会自动换行
+常用属性：
+    align 对齐方式:
+             left  居左对齐
+             right 居右对齐
+             center 居中对齐
+             justify 两端对齐
+例如：             
+&lt;p align=&quot;left&quot;&gt;...&lt;/p&gt; 
+段落居左对齐
+</code></pre><button class="code-block-unfold-btn"></button></div><p>换行标签：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;br/&gt; 有几个换几行
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>段落标签和换行标签的区别：</strong></p><p>段落标签换行的距离比换行标签换行的距离大</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101513952.png" alt="image-20231210151308888" loading="lazy" decoding="async"></figure><p>第一行与第二行间用的是段落标签，第四行和第五行之间用的是换行标签</p><h3 id="列表" tabindex="-1">列表 <a class="header-anchor" href="#列表" aria-label="Permalink to &quot;列表&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>无序列表：
+格式：&lt;ul&gt;
+       &lt;li&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+常用属性：
+    type列表的图标：
+           square 实心方块
+           circle 空心圆
+           disc   实心圆      
+例如：           
+ &lt;ul type=&quot;square&quot;&gt; 
+       &lt;li&gt;...&lt;/li&gt;
+       &lt;li&gt;...&lt;/li&gt;
+  &lt;/ul&gt;   
+  ...前有实心方块    
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>有序列表：
+格式：&lt;ol&gt;
+        &lt;li&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+常用属性：
+    type 列表的图标
+        1  数字序号
+        a  小写字母
+        A  大写字母
+        i  小写罗马字母
+        I  大写罗马字母 
+例如：        
+&lt;ol type=&quot;1&quot;&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;   
+...前从1开始标号
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="div和span" tabindex="-1">div和span <a class="header-anchor" href="#div和span" aria-label="Permalink to &quot;div和span&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>div标签
+   层，块级元素，标签会自动换行
+   常用于布局。
+   常用元素：
+         align   div元素中内容的对齐方式
+
+span标签
+    块，行内元素，标签不会自动换行
+       
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>div标签和span标签主要结合css用于布局</strong></p><p>区别参考csdn：<a href="https://blog.csdn.net/Obito_TXP/article/details/120106931#:~:text=div%E5%92%8Cspan%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9Adiv%E6%A0%87%E7%AD%BE%E6%98%AF%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%EF%BC%8C%E6%AF%8F%E4%B8%AAdiv%E6%A0%87%E7%AD%BE%E9%83%BD%E4%BC%9A%E4%BB%8E%E6%96%B0%E8%A1%8C%E5%BC%80%E5%A7%8B%E6%98%BE%E7%A4%BA%EF%BC%8C%E5%8D%A0%E6%8D%AE%E4%B8%80%E8%A1%8C%EF%BC%9Bdiv%E6%A0%87%E7%AD%BE%E5%86%85%E5%8F%AF%E4%BB%A5%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E7%9A%84%E6%A0%87%E7%AD%BE%E5%85%83%E7%B4%A0%EF%BC%88%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E9%83%BD%E8%A1%8C%EF%BC%89%E3%80%82,%E8%80%8C%EF%BC%8Cspan%E6%A0%87%E7%AD%BE%E6%98%AF%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%EF%BC%8C%E4%BC%9A%E5%9C%A8%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%9Bspan%E6%A0%87%E7%AD%BE%E5%86%85%E5%8F%AA%E8%83%BD%E6%B7%BB%E5%8A%A0%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%9A%84%E6%A0%87%E7%AD%BE%E6%88%96%E6%96%87%E6%9C%AC%E3%80%82" target="_blank" rel="noreferrer">span和div的区别是什么</a></p><h3 id="格式化标签" tabindex="-1">格式化标签 <a class="header-anchor" href="#格式化标签" aria-label="Permalink to &quot;格式化标签&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>font
+   设置字体相关的属性
+   常用属性：
+        color 字体颜色
+        size  字体大小
+        face  字体风格
+ 例如：       
+ &lt;font color=&quot;red&quot; size=&quot;5&quot; face=&quot;楷体&quot;&gt;
+       ...
+ &lt;/font&gt; 
+ ...为红色，字体大小为5的楷体
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>pre
+   定义预格式化的文本。保留文本中的空格和换行。文本呈现等宽字体
+例如：  
+&lt;pre&gt;
+     hello
+     world
+&lt;/pre&gt;   
+hello在一行，world在另一行，且hello前没有空格，world前有空格    
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>字体
+    粗体：            例子
+    b或者strong    &lt;b&gt;hello&lt;/b&gt;   得到粗体hello
+    
+    斜体：
+    i             &lt;i&gt;hello&lt;/i&gt;   得到斜体hello
+    
+    下划线：
+    u             &lt;u&gt;hello&lt;/u&gt;   得到有下划线的hello
+    
+    中划线：
+    del            &lt;del&gt;hello&lt;/del&gt;  得到中间有一条线的hello
+    
+    下标：
+    sub             H&lt;sub&gt;2&lt;sub&gt;O    得到H₂O
+    
+    上标
+    sup             10&lt;sup&gt;2&lt;sup&gt;   得到10²
+  
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="a标签" tabindex="-1">a标签 <a class="header-anchor" href="#a标签" aria-label="Permalink to &quot;a标签&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>超链接a标签：
+    定义超链接：用于从一个页面链接到另外一个页面
+    
+    常用属性
+        href  必须要有属性值（若无，则a标签与普通标签无异）
+            需要跳转的地址
+            
+       例： &lt;a href=&quot;网站地址&quot;&gt;网站&lt;/a&gt;   覆盖当前页面，跳转到新的页面
+        
+        target
+               窗口打开的方式
+               _self  当前窗口打开（默认）
+               _blank 新开空白窗口打开
+               
+     例：   &lt;a href=&quot;网站地址&quot; target=&quot;_blank&quot;&gt;网站&lt;/a&gt;  新开页面打开网站 
+    
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="a标签扩展——锚点的实现" tabindex="-1">a标签扩展——锚点的实现 <a class="header-anchor" href="#a标签扩展——锚点的实现" aria-label="Permalink to &quot;a标签扩展——锚点的实现&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>如果想要跳转到当前页面，那么href的值可以设置为#
+    1.利用a标签的name属性
+    
+     &lt;a name=&quot;dd&quot;&gt;&lt;/a&gt;a...
+        b...
+        c...
+        d...
+     &lt;a href=&quot;#dd&quot;&gt;跳转&lt;/a&gt;  
+     点击跳转就会跳转到a...这行。
+     
+     注意：若未设name属性，则直接跳转到页面最上方  例如：&lt;a href=&quot;# &quot;&gt;跳转&lt;/a&gt; 点击跳转就会来到页面最上方
+     
+     2.利用其他标签的id属性
+     
+        &lt;p &gt; 1...&lt;/p&gt;
+          &lt;p id=&quot;dd&quot;&gt; 2...&lt;/p&gt;
+          &lt;p&gt; 3...&lt;/p&gt; 
+         &lt;p&gt; 4...&lt;/p&gt;
+         &lt;a href=&quot;#dd&quot;&gt;跳转&lt;/a&gt;
+         点击跳转就会来到2...这一行
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="图片" tabindex="-1">图片 <a class="header-anchor" href="#图片" aria-label="Permalink to &quot;图片&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>img 标签：
+    必须属性：
+    	src   被引入图片的地址
+    常用属性：
+        title 当鼠标悬停在图片上的文字
+        alt   当图片加载失败时显示的文本
+        width 设置图片的宽度
+        height 设置图片的高度
+        align  规定如何根据文本来排列图像
+        border  给图片加框
+
+例：
+&lt;img src=&quot;图片地址&quot; alt=&quot;图片错误&quot;/&gt;
+&lt;img src=&quot;图片地址&quot; width=&quot;200px&quot; height=&quot;100px&quot;/&gt;
+
+&lt;a href=&quot;网站地址&quot;&gt;
+&lt;img src=&quot;图片地址 &quot; title=&quot;...&quot; border=&quot;2&quot;/&gt;
+&lt;/a&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="表格" tabindex="-1">表格 <a class="header-anchor" href="#表格" aria-label="Permalink to &quot;表格&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> 表格标签：
+    table 表示表格
+    tr    表示表格中的行（每一行可以包含多个th或tr）
+    td    表示表格中的标准单元格
+    th    表示表格中的表头单元格（具有标题的效果，字体加粗，居中显示）
+    
+************************    
+ table 常用属性
+     border 表格的边框
+     width  表格的宽度（使用像素值或百分比，如果是百分比，参考的是上一元素，如果上一元素未设置，则参考屏幕宽度）
+     height 表格的高度
+     align  表格的对齐方式（left right center）
+     
+************************     
+ tr和th 常用属性 
+       align 每行中文本内容的水平方向对齐方式
+       valign 每行中文本内容的垂直方向对齐方式（top bottom middle）
+       bgcolor 设置行的背景颜色
+       
+********************
+ css样式
+   border-collapse:collapse; 合并表格边框
+  
+ **************** 
+ 合并单元格
+    &lt;td&gt;的colspan和rowspan分别规定单元格横跨的列数和行数
+    纵向合并 rowspan
+    横向合并 colspan
+       
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>例：
+&lt;table border=&quot;1&quot; width=&quot;500px&quot; align=&quot;center&quot; style=&quot;border-collaspe:collaspe;&quot;&gt;
+&lt;tr&gt;
+   &lt;th colspan=&quot;2&quot;&gt;班级+姓名&lt;/th&gt;
+   &lt;th&gt;年龄&lt;/th&gt;
+   &lt;th&gt;性别&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr align=&quot;center&quot;&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;101班&lt;/td&gt;
+    &lt;td&gt;张三&lt;/td&gt;
+    &lt;td&gt;18&lt;/td&gt;
+    &lt;td&gt;男&lt;/td&gt;
+ &lt;/tr&gt;   
+ &lt;tr align=&quot;center&quot;&gt;
+    &lt;td &gt;101班&lt;/td&gt;
+    &lt;td&gt;李四&lt;/td&gt;
+    &lt;td&gt;19&lt;/td&gt;
+    &lt;td&gt;女&lt;/td&gt;
+ &lt;/tr&gt;   
+ &lt;tr align=&quot;center&quot;&gt;
+    &lt;td&gt;102班&lt;/td&gt;
+    &lt;td&gt;王五&lt;/td&gt;
+    &lt;td&gt;19&lt;/td&gt;
+    &lt;td&gt;男&lt;/td&gt;
+ &lt;/tr&gt;   
+</code></pre><button class="code-block-unfold-btn"></button></div><p>效果图：<img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312122036586.png" alt="image-20231212203606559"></p><h3 id="表单form" tabindex="-1">表单form <a class="header-anchor" href="#表单form" aria-label="Permalink to &quot;表单form&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>	所有标签都有的属性：
+	       id属性   用来标识元素的唯一性
+	       name属性 提交数据时的参数名
+	       style属性 设置元素的行内样式
+	       class属性 设置元素的样式名
+	       
+******************************************************
+
+	form 
+        表单用于向服务器传输数据。form元素是块级元素，其前后会产生折行
+        表单提交时，必须设置表单元素的name属性值，否则无法获取数据
+        表单需要结合表单元素一起使用
+        
+       常用属性
+          action 提交表单的地址
+          method 提交方式（不区分大小写）
+             get提交 GET
+             post提交 POST
+          target 提交数据时打开窗口的方式
+             _self 当前窗口
+             _blank 空白窗口
+   
+   GET请求和POST请求的区别：
+        1.get请求时参数会跟在浏览器地址后面，而post请求不会
+        2.get请求相当于post而言，不那么安全
+        3.get请求传递的数据长度是有限的，而post请求基本没有（长度与服务器有关）
+        4.get请求比post快（2倍）
+        5.get请求有缓存，而post无
+ 
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="input标签" tabindex="-1">input标签 <a class="header-anchor" href="#input标签" aria-label="Permalink to &quot;input标签&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> input标签（行内元素）
+     type   元素的类型
+          text  文本框
+          psaaword 密码框
+          radio   单选框
+          checkbox 复选框
+          file     文件域
+          hidden   隐藏域
+          button   普通按钮
+          submit   提交按钮
+          reset    重置按钮
+          date     日期框
+      value    元素的值
+      readonly  只读状态
+      maxlength  最多输入的长度
+      disabled   禁用标签
+      
+注意：
+    1.单选框需要通过name属性设置为一组，复选框需要通过name属性设置为一组。
+    2.如果是上传文件的表单，则表单需要设置一个属性 enctype=“multipart/form-date”，提交方式为post请求
+    3.没有name属性是无法提交数据的。
+    
+    
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;body&gt;
+    &lt;form action=&quot;http://www.baidu.com&quot; method=&quot;get&quot;&gt;
+     文本框：&lt;input type=&quot;text&quot; value=&quot;zhangsan&quot; maxlength=&quot;10&quot;/&gt;&lt;br/&gt;
+     文本框：&lt;input type=&quot;text&quot; value=&quot;zhangsan&quot; readonly=&quot;readonly&quot;/&gt;&lt;br/&gt;
+     密码框:&lt;input type=&quot;password&quot; /&gt;&lt;br /&gt;
+     单选框：&lt;input type=&quot;radio&quot; value=&quot;man&quot; name=&quot;sex&quot;&gt;男
+     		&lt;input type=&quot;radio&quot; value=&quot;woman&quot; name=&quot;sex&quot;&gt;女 &lt;br/&gt;
+     复选框：&lt;input type=&quot;checkbox&quot; value=&quot;1&quot; name=&quot;test&quot;&gt; 1
+            &lt;input type=&quot;checkbox&quot; value=&quot;2&quot; name=&quot;test&quot;&gt; 2
+     		&lt;input type=&quot;checkbox&quot; value=&quot;3&quot; name=&quot;test&quot;&gt; 3 &lt;br/&gt;
+     文件域: &lt;input type=&quot;file&quot; /&gt;&lt;br/&gt;
+     隐藏域：&lt;input type=&quot;hidden&quot; value=&quot;admin&quot; /&gt;&lt;br/&gt;
+     普通按钮：&lt;input type=&quot;button&quot; value=&quot;普通按钮&quot;&gt;&lt;br/&gt;
+     提交按钮：&lt;input type=&quot;submit&quot; value=&quot;提交按钮&quot;&gt;&lt;br/&gt;
+     重置按钮：&lt;input type=&quot;reset&quot; value=&quot;重置按钮&quot;&gt;&lt;br/&gt;
+     日期框：&lt;input type=&quot;date&quot; /&gt;&lt;br/&gt;
+    &lt;/form&gt;
+&lt;/body&gt;    
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312122033423.png" alt="image-20231212203322384" loading="lazy" decoding="async"></figure><h3 id="textarea和label标签" tabindex="-1">textarea和label标签 <a class="header-anchor" href="#textarea和label标签" aria-label="Permalink to &quot;textarea和label标签&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>textarea: 定义可输入多行文本的控件
+          cols 文本的可见宽度
+          rows 文本的可见行数
+label：元素聚焦
+      for属性
+      当for属性与元素的id属性一致时，点击label标签，会自动续航
+
+例：
+简历：&lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+  &lt;label for=&quot;uname&quot;&gt;姓名&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;uname&quot;/&gt;&lt;br/&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="按钮" tabindex="-1">按钮 <a class="header-anchor" href="#按钮" aria-label="Permalink to &quot;按钮&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>input按钮：
+   type=&quot;button&quot;  普通按钮
+   type=&quot;submit&quot;  提交按钮
+   type=&quot;reset&quot;  重置按钮
+button标签：
+  type=&quot;button&quot;  普通按钮
+   type=&quot;submit&quot;  提交按钮（默认）  注意 不写type就相当于提交按钮！！！
+   type=&quot;reset&quot;  重置按钮
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="下拉框" tabindex="-1">下拉框 <a class="header-anchor" href="#下拉框" aria-label="Permalink to &quot;下拉框&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>select 下拉框标签
+option  下拉框的选项标签
+
+select：
+     multiple  设置下拉框多选
+     size      设置下拉框可见选项数
+     disabled  禁用元素
+option：
+      selected  默认选中值
+      disabled  禁用某个选项
+      value     提交给服务器的选项值
+      注意： 如果设置了value属性值，则提交的是value的值
+            如果未设置，则提交option双标签中的文本值
+            value=&quot;&quot;也相当于设置了。
+            
+</code></pre><button class="code-block-unfold-btn"></button></div><h2 id="常用字符实体" tabindex="-1">常用字符实体 <a class="header-anchor" href="#常用字符实体" aria-label="Permalink to &quot;常用字符实体&quot;">​</a></h2><h3 id="常用字符实体-1" tabindex="-1">常用字符实体 <a class="header-anchor" href="#常用字符实体-1" aria-label="Permalink to &quot;常用字符实体&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;   小于号   &amp;lt
+&gt;   大于号   &amp;gt
+空格        &amp;nbsp
+版权         &amp;copy
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/HTML%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AF%2587" target="_blank" title="本文链接">https://kinsey973.github.io/posts/HTML%E5%AD%A6%E4%B9%A0%E7%AF%87</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/php" class="post-nav-prev" title="php"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">php</span></a></div><div class="post-nav-item"><a href="/posts/%25E5%258D%259A%25E5%25AE%25A2%25E6%2598%25AF%25E5%25A6%2582%25E4%25BD%2595%25E6%2590%25AD%25E5%25BB%25BA%25E7%259A%2584" class="post-nav-next" title="博客是如何搭建的"><span class="title truncate" text="sm">博客是如何搭建的</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2023-12-09T18:12:26.000Z","datePublished":"2023-12-09T18:12:26.000Z","inLanguage":"zh-CN","name":"HTML学习篇","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2023-12-09T18:12:26.000Z","datePublished":"2023-12-09T18:12:26.000Z","description":"山行野宿，孤身万里","name":"HTML学习篇","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2023-12-09T18:12:26.000Z","datePublished":"2023-12-09T18:12:26.000Z","description":"山行野宿，孤身万里","headline":"HTML学习篇","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101447318.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101447318.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202312101447318.png"}]}</script>
+  
+</body>
+</html>

