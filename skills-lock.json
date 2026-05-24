@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "doc-i18n": {
+      "source": "YunYouJun/valaxy",
+      "sourceType": "github",
+      "skillPath": ".codebuddy/skills/doc-i18n/SKILL.md",
+      "computedHash": "4211b9e5ad1aff2eaf1f6518ae44d934063881c93fad769b4b46030538bcf9a0"
+    },
+    "valaxy": {
+      "source": "YunYouJun/valaxy",
+      "sourceType": "github",
+      "skillPath": "skills/valaxy/SKILL.md",
+      "computedHash": "6c90991735301ebba56d39a5a00274487e559dc3ab8c4921b7a550fb8cb3c7fb"
+    }
+  }
+}

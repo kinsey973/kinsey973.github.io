@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add *)",
+      "Bash(pnpm install *)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh pr *)",
+      "WebSearch",
+      "Bash(curl *)",
+      "Bash(pnpm build *)",
+      "Bash(mkdir -p node_modules/@vue)",
+      "Bash(ln -s ../../.pnpm/@vue+runtime-dom@3.5.34/node_modules/@vue/runtime-dom runtime-dom)",
+      "Bash(ln -s ../../.pnpm/@vue+compiler-dom@3.5.34/node_modules/@vue/compiler-dom compiler-dom)",
+      "Bash(ln -s ../../.pnpm/@vue+shared@3.5.34/node_modules/@vue/shared shared)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@vue+runtime-dom@3.5.34/node_modules/@vue/runtime-dom\" runtime-dom)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@vue+compiler-dom@3.5.34/node_modules/@vue/compiler-dom\" compiler-dom)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@vue+shared@3.5.34/node_modules/@vue/shared\" shared)",
+      "Bash(mkdir -p node_modules/@intlify)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@intlify+core-base@11.4.4/node_modules/@intlify/core-base\" core-base)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@intlify+shared@11.4.4/node_modules/@intlify/shared\" shared)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@intlify+devtools-types@11.4.4/node_modules/@intlify/devtools-types\" devtools-types)",
+      "Bash(ln -s \"E:/valaxy-blog/node_modules/.pnpm/@intlify+message-compiler@11.4.4/node_modules/@intlify/message-compiler\" message-compiler)",
+      "Bash(pnpm store *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

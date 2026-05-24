@@ -1,0 +1,9 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  vue-demi: true
+minimumReleaseAgeExclude:
+  - '@valaxyjs/devtools@0.28.9'
+  - '@valaxyjs/utils@0.28.9'
+  - valaxy@0.28.9
+  - valaxy-theme-yun@0.28.9
