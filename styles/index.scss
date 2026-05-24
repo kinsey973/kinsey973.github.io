@@ -1,1 +1,17 @@
 // you can custom css here
+
+// 修改主页标题颜色为白色
+:deep(.site-name),
+:deep(.site-subtitle),
+:deep(.site-description),
+:deep(.site-author-name) {
+  color: white !important;
+}
+
+// 全局覆盖
+.site-name,
+.site-subtitle,
+.site-description,
+.site-author-name {
+  color: white !important;
+}
