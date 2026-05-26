@@ -1,11 +1,12 @@
 // you can custom css here
 
-// 修改主页标题颜色为白色
+// 主页作者信息：柔和暖色，与格言一致
 :deep(.site-name),
 :deep(.site-subtitle),
 :deep(.site-description),
 :deep(.site-author-name) {
-  color: white !important;
+  color: #FFF3E0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 // 全局覆盖
@@ -13,5 +14,27 @@
 .site-subtitle,
 .site-description,
 .site-author-name {
-  color: white !important;
+  color: #FFF3E0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+// 文章页侧边栏：黑色（文章页侧边栏在 .yun-card 内，主页不在）
+.yun-card .site-name,
+.yun-card .site-subtitle,
+.yun-card .site-description,
+.yun-card .site-author-name {
+  color: black !important;
+  text-shadow: none !important;
+}
+
+// 格言组件：柔和暖色，与蓝色背景形成舒适对比
+.say .say-content {
+  color: #FFF3E0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.say .say-author,
+.say .say-from {
+  color: rgba(255, 243, 224, 0.75) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
